@@ -1,0 +1,9 @@
+node_modules/*
+build/*
+README.md
+Dockerfile*
+.gitignore
+.dockerignore
+.eslintrc
+jest.config.js
+yarn-error.log
