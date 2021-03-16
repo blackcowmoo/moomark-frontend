@@ -23,10 +23,10 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": [
-        "./components/*"
+        "./src/components/*"
       ],
       "@styles/*": [
-        "./styles/*"
+        "./src/styles/*"
       ]
     }
   },
