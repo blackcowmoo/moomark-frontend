@@ -1,11 +1,7 @@
-$global-background:#ffffff;
-$focus-brown: #EBC999;
-$focus-blue: #8CA9D3;
-$focus-red: #F26659;
-
-* {
-  
-}
+$global-background: #ffffff;
+$focus-brown: #ebc999;
+$focus-blue: #8ca9d3;
+$focus-red: #f26659;
 
 *,
 *::before,
@@ -13,29 +9,28 @@ $focus-red: #F26659;
   box-sizing: inherit;
 }
 
-// html {
-//    // border까지를 width, height 범위로 본다.
-//   // font-size: 100%; // 1rem = 10px, 10px/16px = 62.5%
-// }
-
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕, 'Nanum Gothic',
+    'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   line-height: 1.6;
   color: rgb(33, 37, 41);
 }
 
-.header{
+
+//header components style
+.header {
+  box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
   font-size: 1.2rem;
   height: 4rem;
   background-color: $global-background;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  .header-container{
+  .header-container {
+    width: calc(100% - 2rem);
+    margin-left: auto;
+    margin-right: auto;
     height: 100%;
     display: flex;
     -webkit-box-align: center;
@@ -43,19 +38,19 @@ body {
     -webkit-box-pack: justify;
     justify-content: space-between;
   }
-  .logo{
+  .logo {
     margin-right: 1rem;
     width: 1.75rem;
     height: 1.75rem;
     display: block;
+    cursor: pointer;
   }
-
-  .search{
+  .search {
     display: flex;
     flex: 0 0 30%;
     align-items: center;
     justify-content: space-between;
-    &__input{
+    &__input {
       border: none;
       padding: 0.7rem 2rem;
       border-radius: 100px;
@@ -66,18 +61,18 @@ body {
         font-weight: 100;
         color: grey;
       }
-      &:focus{
+      &:focus {
         outline: none;
         width: 100%;
         background-color: $focus-brown;
       }
     }
-    
-    &__button{
+
+    &__button {
       // width: 1.125rem;
       // height: 1.125rem;
       border: none;
-      background-color:transparent;
+      background-color: transparent;
       &:focus {
         outline: none;
       }
@@ -90,9 +85,8 @@ body {
       width: 1.125rem;
     }
   }
-  
- 
-  .user-nav{
+
+  .user-nav {
     display: flex;
     align-items: center;
     align-self: stretch;
@@ -105,33 +99,32 @@ body {
       background-color: $focus-brown;
     }
     &__icon {
+      position: relative;
       display: flex;
       align-items: center;
       border-radius: 50%;
-      img{
+      img {
         height: 2rem;
         width: 2rem;
       }
     }
-  
-    
-  
+
     &__notification {
       font-size: 0.8rem;
       height: 1.75rem;
       width: 1.75rem;
       border-radius: 50%;
-      background-color: red;
+      background-color: $focus-red;
       color: white;
       text-align: center;
       position: absolute;
       top: 1.5rem;
       right: 1rem;
     }
-  
+
     &__user {
       border-radius: 50%;
-      img{
+      img {
         border-radius: 50%;
         display: block;
         height: 2.5rem;
@@ -141,31 +134,33 @@ body {
         box-shadow: rgb(0 0 0 / 9%) 0px 0px 8px;
       }
     }
-    
-  }
-  .dropdown{
-    width: 225px;
-	  position: relative;
-	  // display: none;
-    ul{
-      li{
-        position: relative;
-        a{
-          display: block;
-	        background: #dc555f;
-	        color: #fff;
-	        padding: 20px 25px;
-	        width: 100%;
-	        letter-spacing: 2px;
-	        text-transform: uppercase;
-	        transition: all 0.2s ease;
+    .dropdown {
+      position: absolute;
+      right: 0px;
+      top: 4em;
+      .menu-wrapper {
+        // position: relative;
+        display: flex;
+        flex-direction: column;
+        z-index: 0;
+        width: 12rem;
+
+        box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
+        a {
+          color: inherit;
+          text-decoration: none;
+          padding: 0.75rem 1rem;
+          line-height: 1.5;
+          font-weight: 500;
+          &:hover {
+            background-color: $focus-brown;
+          }
         }
       }
-      
     }
   }
 }
 
-.content{
+.content {
   display: flex;
 }

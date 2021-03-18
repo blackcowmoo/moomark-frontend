@@ -27,39 +27,35 @@ const Header: React.FC = () => {
           </button>
         </form>
         {isLogin && (
-          <nav className='user-nav'>
-            <div className='user-nav__icon'>
+          <div className='user-nav'>
+            {/* <div className='user-nav__icon'>
               <img src='/icon/bookmarks.svg' alt='User bookmarks' />
+              <span className="user-nav__notification">13</span>
             </div>
             <div className='user-nav__icon'>
               <img src='/icon/bell.svg' alt='User bookmarks' />
-            </div>
+              
+            </div> */}
             <div className='user-nav__user'>
               <img src='/mockprofile.PNG' alt={'mockNick'} onClick={onToggleDropdown} />
               <i className='arrow'></i>
-              {/* <span className='user-nav__user-name'>mockNick</span> */}
             </div>
-          </nav>
+            {isDropdown && (
+              <div>
+                <div className='dropdown'>
+                  <div className='menu-wrapper'>
+                    <Link href='/editpost'>마이페이지</Link>
+                    <Link href='/editpost'>내 북마크</Link>
+                    <Link href='/editpost'>새 글 작성</Link>
+                    <Link href='/editpost'>임시글 리스트</Link>
+                    <Link href='/editpost'>설정</Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         )}
       </div>
-      {isDropdown && isLogin && (
-        <div className='dropdown'>
-          <ul>
-            <li>
-              <Link href='/editpost'>내 블로그</Link>
-            </li>
-            <li>
-              <Link href='/editpost'>새 글 작성</Link>
-            </li>
-            <li>
-              <Link href='/editpost'>임시글 리스트</Link>
-            </li>
-            <li>
-              <Link href='/editpost'>환경설정</Link>
-            </li>
-          </ul>
-        </div>
-      )}
     </header>
   );
 };
