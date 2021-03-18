@@ -7,7 +7,7 @@ const Index: React.FC<props> = () => {
     <div>
       mooMark main
     </div>
-  )
-}
+  );
+};
 
 export default Index;

@@ -1,17 +1,16 @@
 import Head from 'next/head';
 import AppLayout from '@components/AppLayout';
 import type { AppProps } from 'next/app';
-import { ApolloProvider } from '@apollo/client';
+import { ApolloProvider, ApolloClient } from '@apollo/client';
 import withApolloClient from '../lib/withApollo';
-import ApolloClient from 'apollo-client';
+import '@styles/global.scss';
 
-
-const App = ({ Component, pageProps}: AppProps ) => {
+const App = ({ Component, pageProps, apollo }: AppProps | any) => {
   return (
     <>
       <Head>
         <title>MooMark</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width user-scalable=yes, initial-scale=1.0, maximun-scale=3.0" />
         <meta charSet="utf-8" />
       </Head>
       <ApolloProvider client={apollo}>
@@ -23,10 +22,10 @@ const App = ({ Component, pageProps}: AppProps ) => {
   );
 };
 
-App.getInitialProps = async({ ctx, Component}: AppProps) => {
+App.getInitialProps = async ({ ctx, Component }: any) => {
   const pageProps = await Component.getInitialProps?.(ctx);
 
   return { pageProps };
-}
+};
 
 export default withApolloClient(App);
