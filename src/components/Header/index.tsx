@@ -3,14 +3,11 @@ import Link from 'next/link';
 
 const Header: React.FC = () => {
   const [isDropdown, setDropdown] = useState(false);
-  const onToggleDropdown = useCallback(() => {
+  const [isLogin, setIsLogin] = useState(true);
+  const toggleDropdown = useCallback(() => {
     setDropdown((prev) => !prev);
   }, []);
-  const isLogin: boolean = true;
-  // const toogleDropdown = () => {
-  //   document.getElementById('dropdown');
-  //   classList.toggle('show');
-  // }
+  
   return (
     <header className='header'>
       <div className='header-container'>
@@ -28,16 +25,14 @@ const Header: React.FC = () => {
         </form>
         {isLogin && (
           <div className='user-nav'>
-            {/* <div className='user-nav__icon'>
+            <div className='user-nav__icon'>
               <img src='/icon/bookmarks.svg' alt='User bookmarks' />
-              <span className="user-nav__notification">13</span>
             </div>
             <div className='user-nav__icon'>
               <img src='/icon/bell.svg' alt='User bookmarks' />
-              
-            </div> */}
+            </div>
             <div className='user-nav__user'>
-              <img src='/mockprofile.PNG' alt={'mockNick'} onClick={onToggleDropdown} />
+              <img src='/mockprofile.PNG' alt={'mockNick'} onClick={toggleDropdown} />
               <i className='arrow'></i>
             </div>
             {isDropdown && (
