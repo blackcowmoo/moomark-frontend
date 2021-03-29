@@ -7,7 +7,7 @@ export interface PostProps{
   comment?: CommentProps;
 }
 
-const PostPage: React.FC<PostProps> = ({ comment, tags, content}) => {
+const PostPage: React.FC<PostProps> = ({ comment, tags, content }) => {
   return (
     <>
       <div>{content}</div>

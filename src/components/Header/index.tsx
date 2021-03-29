@@ -3,11 +3,17 @@ import Link from 'next/link';
 
 const Header: React.FC = () => {
   const [isDropdown, setDropdown] = useState(false);
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const toggleDropdown = useCallback(() => {
     setDropdown((prev) => !prev);
   }, []);
-  
+  const setLogOut = useCallback(() => {
+    setIsLogin(false);
+  }, []);
+  const setLogin = useCallback(() => {
+    setIsLogin(true);
+  }, []);
+
   return (
     <header className='header'>
       <div className='header-container'>
@@ -23,7 +29,7 @@ const Header: React.FC = () => {
       </svg> */}
           </button>
         </form>
-        {isLogin && (
+        {isLogin ? (
           <div className='user-nav'>
             <div className='user-nav__icon'>
               <img src='/icon/bookmarks.svg' alt='User bookmarks' />
@@ -44,12 +50,14 @@ const Header: React.FC = () => {
                     <Link href='/editpost'>새 글 작성</Link>
                     <Link href='/editpost'>임시글 리스트</Link>
                     <Link href='/editpost'>설정</Link>
+                    <div onClick={setLogOut}>로그아웃</div>
                   </div>
                 </div>
               </div>
             )}
           </div>
-        )}
+        ) : (<button onClick={setLogin}>login</button>)}
+
       </div>
     </header>
   );

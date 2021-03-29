@@ -3,11 +3,12 @@ export interface editPostProps{
   tags: string[];
 }
 
-const EditPost: React.FC<editPostProps> = (editPostProps) => {
+const EditPost: React.FC<editPostProps> = ({ editorName, tags }) => {
   // document.title = `${editPostProps.editorName}`;
   return (
     <>
-      edit page
+      {editorName}
+      {tags}
     </>
   );
 };

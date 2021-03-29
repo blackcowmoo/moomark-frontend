@@ -20,13 +20,13 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
       "@components/*": [
-        "./src/components/*"
+        "./components/*"
       ],
       "@styles/*": [
-        "./src/styles/*"
+        "./styles/*"
       ]
     }
   },
