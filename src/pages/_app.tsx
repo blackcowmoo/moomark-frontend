@@ -22,10 +22,6 @@ const App = ({ Component, pageProps, apollo }: AppProps | any) => {
   );
 };
 
-App.getInitialProps = async ({ ctx, Component }: any) => {
-  const pageProps = await Component.getInitialProps?.(ctx);
 
-  return { pageProps };
-};
 
 export default withApolloClient(App);
