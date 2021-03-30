@@ -22,6 +22,4 @@ const App = ({ Component, pageProps, apollo }: AppProps | any) => {
   );
 };
 
-
-
 export default withApolloClient(App);
