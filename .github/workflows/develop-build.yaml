@@ -39,6 +39,3 @@ jobs:
         run: yarn test
         env:
           CI: true
-
-      - name: Build docker
-        run: docker build -t admin-frontend ./
