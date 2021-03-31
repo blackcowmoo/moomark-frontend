@@ -6,4 +6,4 @@ Dockerfile*
 .dockerignore
 .eslintrc
 jest.config.js
-yarn-error.log
+yarn-error.log 
