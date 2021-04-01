@@ -34,7 +34,7 @@
       border-radius: 100px;
       width: 90%;
       transition: all 0.2s;
-      // margin-right: -3.5rem;
+      margin-right: -5.5rem;
       &::-webkit-input-placeholder {
         font-weight: 100;
         color: $default-black;
@@ -48,8 +48,6 @@
     }
 
     &__button {
-      // width: 1.125rem;
-      // height: 1.125rem;
       border: none;
       background-color: transparent;
       &:focus {
@@ -120,12 +118,10 @@
       right: 0px;
       top: 4em;
       .menuWrapper {
-        // position: relative;
         display: flex;
         flex-direction: column;
         z-index: 0;
         width: 12rem;
-
         box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
         a, div {
           color: inherit;
@@ -142,24 +138,9 @@
   }
 }
 
-.loginButton{
-  // height: 2rem;
-  // padding-left: 1rem;
-  // padding-right: 1rem;
-  // font-size: 1rem;
-  // border-radius: 1rem;
-  // border: none;
-  // outline: none;
-  // font-weight: bold;
-  // word-break: keep-all;
-  // background:black;
-  // color: $global-background;
-  // transition: all 0.125s ease-in 0s;
-  // cursor: pointer;
-  
+.loginButton{  
     height: 2rem;
     background: $focus-blue;
-    // box-sizing: border-box;
     border-radius: 5px;
     border: none;
     outline: none;
