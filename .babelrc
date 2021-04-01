@@ -4,10 +4,10 @@
     [
       "module-resolver",
       {
-        "root": ["./"],
+        "root": ["./src"],
         "alias": {
-          "@components": "./components",
-          "@styles": "./styles"
+          "@components": "./src/components",
+          "@styles": "./src/styles"
         }
       }
     ]
