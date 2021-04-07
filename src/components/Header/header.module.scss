@@ -123,7 +123,8 @@
         z-index: 0;
         width: 12rem;
         box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
-        a, div {
+        a,
+        div {
           color: inherit;
           text-decoration: none;
           padding: 0.75rem 1rem;
@@ -138,17 +139,17 @@
   }
 }
 
-.loginButton{  
-    height: 2rem;
-    background: $focus-blue;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-  &:hover{
+.loginButton {
+  height: 2rem;
+  background: $focus-blue;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover {
     color: $default-black;
     background: $global-background;
   }

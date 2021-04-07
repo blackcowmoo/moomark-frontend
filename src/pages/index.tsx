@@ -1,12 +1,11 @@
-interface props {
+import Post, {mockProps} from '@components/Post';
 
-}
-
-const Index: React.FC<props> = () => {
+const Index = () => {
   return (
-    <div>
+    <>
       <h1>mooMark main</h1>
-    </div>
+        <Post postProp = {mockProps}/>
+    </>
   );
 };
 

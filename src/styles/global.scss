@@ -1,6 +1,5 @@
 @import './utils';
 
-
 *,
 *::before,
 *::after {
@@ -8,17 +7,14 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 1;
+  padding: 1;
   font-family: 'Source Sans Pro';
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  line-height: 1.6;
-  color: rgb(33, 37, 41);
+  line-height: 2.6;
+  color: rgb(34, 37, 41);
 }
-
-
-
 
 .content {
   display: flex;
