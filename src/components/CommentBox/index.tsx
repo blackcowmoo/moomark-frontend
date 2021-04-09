@@ -1,4 +1,5 @@
 import styles from './comment.module.scss';
+import Comment from './Comment';
 
 interface CommentInfo{
   profileImgSrc?: string;
@@ -6,7 +7,7 @@ interface CommentInfo{
   commentDate: Date;
 }
 
-interface Reply{
+interface Reply {
   info: CommentInfo;
   text: string;
 }
@@ -19,17 +20,18 @@ export interface CommentProps{
 }
 
 interface Props {
-  comments: CommentProps;
+  comments?: CommentProps[];
 }
 
-const Comment = ( {comments}: Props) => {
+const CommentBox = ( {comments}: Props) => {
+  
   return(
     <div className={styles.comment}> 
-      {
-        comments.reply && <div>`${comments.reply.length} 개의 댓글 `</div>
-      }
+        {comments?.map((v) => (
+          <Comment comment={v} />
+        ))}
     </div>
   )
 }
 
-export default Comment;
+export default CommentBox;

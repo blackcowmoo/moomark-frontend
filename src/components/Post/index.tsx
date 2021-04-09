@@ -1,5 +1,5 @@
 // import { CommentProps } from 'antd';
-import Comment, { CommentProps } from '@components/Comment';
+import CommentBox, { CommentProps } from '@components/CommentBox';
 import PostHeader from '@components/PostHeader';
 import styles from './post.module.scss';
 
@@ -39,15 +39,11 @@ const Post = ({ postProp }: props) => {
   return (
     <>
       <PostHeader title={postProp.title} editorName={postProp.editorName} tags={postProp.tags} postDate={postProp.postDate} />
-      <div>{postProp.title}</div>
-      <div>{postProp.editorName}</div>
-      <div>{postProp.tags}</div>
       <div>{postProp.content}</div>
-      <div className={styles.comments}>
-        {postProp.comments?.map((v) => (
-          <Comment key ={v.text} comments={v} />
-        ))}
-      </div>
+      <CommentBox comments ={postProp.comments} />
+      {/* <div className={styles.comments}>
+  
+      </div> */}
     </>
   );
 };

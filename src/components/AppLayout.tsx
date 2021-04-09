@@ -1,8 +1,7 @@
 import Header from './Header';
+import {ReactNode} from 'react';
 
-export interface LayoutProps {}
-
-const AppLayout: React.FC<LayoutProps> = ({ children }) => {
+const AppLayout: React.FC<ReactNode> = ({ children }) => {
   return (
     <>
       <Header/>

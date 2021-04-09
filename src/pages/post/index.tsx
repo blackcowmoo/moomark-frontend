@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import { CommentProps } from 'antd';
 
 export interface PostProps{
@@ -16,11 +15,11 @@ export const mockProps: PostProps = {
 
 const PostPage: React.FC<PostProps> = ({ comment, tags, content }) => {
   return (
-    <Fragment>
+    <>
       <div>{content}</div>
       <div>{tags}</div>
       <div>{comment}</div>
-    </Fragment>
+    </>
   );
 };
 
