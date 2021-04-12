@@ -1,17 +1,22 @@
 import ReactMarkdown from 'react-markdown';
+import { useState } from 'react';
 import styles from './markdown.module.scss';
 
 interface Props{
-  content: string;
+  markdown: string;
 }
 
-const MarkDownRender:React.FC<Props> = ({content}) => {
+const MarkDownRender:React.FC<Props> = ({markdown}) => {
+  const [contents, setContents] = useState(markdown);
+  
+  const onChangeText = (e: any) => {
+    setContents(e.target.value);
+  };
   return (
     <div className={styles.markdown}>
-     <ReactMarkdown>{content}</ReactMarkdown> 
+     <ReactMarkdown source={contents}/> 
     </div>
   )
 }
 
 export default MarkDownRender;
-

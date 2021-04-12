@@ -1,6 +1,14 @@
 @import '@styles/utils';
+@import '@styles/mixin';
 .markdown{
+  display:inline-block;
+  font-size: 1rem;
+  width: 100%;
   color: $default-black;
+  line-height: 1.7;
+  letter-spacing: -0.004em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
   a{
     color: $dark-green;
     text-decoration-line: none;
@@ -9,5 +17,13 @@
       text-decoration-line: underline;
     }
   }
+}
 
+@include mobile{
+  .markdown{
+    font-size: 1.2rem;
+  }
+  .anchorSideMenu{
+    display: none;
+  }
 }

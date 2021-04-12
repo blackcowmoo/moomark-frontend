@@ -8,7 +8,7 @@ interface Props{
 const PostContents:React.FC<Props> = ({contents}) => {
   return (
     <div className={styles.contents}>
-      <MarkdownRender content={contents}/>
+      <MarkdownRender markdown={contents}/>
       
     </div>
   )

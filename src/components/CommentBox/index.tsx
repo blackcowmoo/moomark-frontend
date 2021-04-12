@@ -28,7 +28,7 @@ const CommentBox = ( {comments}: Props) => {
   return(
     <div className={styles.comment}> 
         {comments?.map((v) => (
-          <Comment comment={v} />
+          <Comment comment={v} key={v.text} />
         ))}
     </div>
   )
