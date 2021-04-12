@@ -1,13 +1,22 @@
 @import '../../styles/utils';
 
 .commentBox{
-
-
+  // border-radius: 2rem;
 }
 
 .comment{
-
-  .reply{
-    background-color: black;
+  border-bottom: 1px solid $default-grey;
+  height: 100%;
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  .noreply {
+    padding-left: 1rem;
   }
+  .reply{
+    border-left: 1px solid $default-grey;
+    padding-left: 1rem;
+    //background-color: black;
+  }
+
 }

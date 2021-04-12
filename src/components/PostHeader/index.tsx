@@ -10,7 +10,7 @@ interface PostHeaderProps {
 const PostHeader = ({ title, editorName, tags, postDate }: PostHeaderProps) => {
   return (
     <div className={styles.postHeader}>
-      <div className={styles.mockTitle}>{title}</div>
+      <h1 className={styles.title}>{title}</h1>
       <div className={styles.editorName}>{editorName}</div>
       <div className={styles.editDate}>{postDate.toString()}</div>
       <div className={styles.tags}>{tags?.map((v) => {v})}</div>

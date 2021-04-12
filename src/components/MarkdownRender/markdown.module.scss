@@ -1,0 +1,13 @@
+@import '@styles/utils';
+.markdown{
+  color: $default-black;
+  a{
+    color: $dark-green;
+    text-decoration-line: none;
+    &:hover{
+      color: $focus-red;
+      text-decoration-line: underline;
+    }
+  }
+
+}
