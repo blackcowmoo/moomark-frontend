@@ -1,4 +1,4 @@
-import {PostProps} from './index';
+import { PostProps } from './index';
 
 const mockDate = new Date(2020, 3, 1);
 
@@ -23,7 +23,8 @@ const markdown: string = `공통] 마크다운 markdown 작성법
 	1. 표준이 없다.
 	2. 표준이 없기 때문에 도구에 따라서 변환방식이나 생성물이 다르다.
 	3. 모든 HTML 마크업을 대신하지 못한다.
-`
+`;
+
 const mockData: PostProps = {
   title: 'mockTitle 입니다',
   postDate: mockDate,
@@ -37,6 +38,15 @@ const mockData: PostProps = {
         commentDate: mockDate,
       },
       text: 'comment mocking',
+      reply: [
+        {
+          info: {
+            userName: 'reply1',
+            commentDate: mockDate,
+          },
+          text: 'mock reply',
+        },
+      ],
     },
     {
       info: {
@@ -53,6 +63,6 @@ const mockData: PostProps = {
       text: 'comment mocking',
     },
   ],
-}; 
+};
 
 export default mockData;

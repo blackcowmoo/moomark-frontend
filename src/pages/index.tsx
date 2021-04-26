@@ -1,9 +1,9 @@
-import Post, {mockProps} from '@components/Post';
+import Post, { mockProps } from '@components/Post';
 
 const Index = () => {
   return (
     <>
-      <Post postProp = {mockProps}/>
+      <Post postProp={mockProps} />
     </>
   );
 };

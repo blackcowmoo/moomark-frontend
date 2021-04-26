@@ -1,5 +1,5 @@
+import { ReactNode } from 'react';
 import Header from './Header';
-import {ReactNode} from 'react';
 
 const AppLayout: React.FC<ReactNode> = ({ children }) => {
   return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './headingAnchor.module.scss';
 
 export interface markDownID {
@@ -14,20 +13,18 @@ export interface AnchorList {
 const index: React.FC<AnchorList> = ({ anchorList }) => {
   console.log(`anchorList ${anchorList?.length}`);
   return (
-
-    <div className = {styles.contentsSider}>
-    <div className={styles.anchorPosition}>
-      <div className={styles.wrapper}>
-        <div className={styles.anchorList}>
-          {anchorList?.map((v) => (
-            <div key={v.id} className={styles[`hlevel__${v.level}`]}>
-              <a href={v.id}> {v.name} </a>
-            </div>
-          ))}
+    <div className={styles.contentsSider}>
+      <div className={styles.anchorPosition}>
+        <div className={styles.wrapper}>
+          <div className={styles.anchorList}>
+            {anchorList?.map((v) => (
+              <div key={v.id} className={styles[`hlevel__${v.level}`]}>
+                <a href={v.id}> {v.name} </a>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-
     </div>
   );
 };

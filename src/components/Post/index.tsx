@@ -4,7 +4,6 @@ import PostHeader from '@components/PostHeader';
 import styles from './post.module.scss';
 import mockData from './mockdata';
 
-
 export interface PostProps {
   title: string;
   postDate: Date;
@@ -15,7 +14,6 @@ export interface PostProps {
 }
 
 export const mockProps = mockData;
-
 
 interface props {
   postProp: PostProps;
