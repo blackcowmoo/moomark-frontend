@@ -1,8 +1,3 @@
-import { PostProps } from './index';
-
-const mockDate = new Date(2020, 3, 1);
-
-const markdown: string = `
 # 1. 마크다운에 관하여
 ## 1.1. 마크다운이란?
 [**Markdown**](http://whatismarkdown.com/)은 텍스트 기반의 마크업언어로 2004년 존그루버에 의해 만들어졌으며 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다.
@@ -23,68 +18,3 @@ const markdown: string = `
 	1. 표준이 없다.
 	2. 표준이 없기 때문에 도구에 따라서 변환방식이나 생성물이 다르다.
 	3. 모든 HTML 마크업을 대신하지 못한다.
-`;
-
-const mockData: PostProps = {
-  title: 'mockTitle 입니다',
-  postDate: mockDate,
-  editorName: 'writerMock',
-  content: markdown,
-  tags: ['test', '태그', '안녕하세요', '소통해요'],
-  comments: [
-    {
-      info: {
-        userName: 'test1',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-      reply: [
-        {
-          info: {
-            userName: 'reply1',
-            commentDate: mockDate,
-          },
-          text: 'mock reply',
-        },
-      ],
-    },
-    {
-      info: {
-        userName: 'test2',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-    {
-      info: {
-        userName: 'test3',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-    {
-      info: {
-        userName: 'test3',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-    {
-      info: {
-        userName: 'test3',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-    {
-      info: {
-        userName: 'test3',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-
-  ],
-};
-
-export default mockData;

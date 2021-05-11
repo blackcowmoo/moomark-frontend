@@ -32,10 +32,11 @@ const Comment: React.FC<Props> = ({ comment }) => {
       <div className={styles.text}>{comment.text}</div>
 
       {comment.reply ? (
-        <div className={styles.reply_container}>
-          <button className={styles.toggleButton} onClick={toggleReply}>
-            {showReply ? '닫기' : `${comment.reply.length} 개의 댓글`}
-          </button>
+        <div className={styles.replyContainer}>
+          <div className={styles.toggleButton} onClick={toggleReply}>
+            <span>{showReply ? '🐄  접기' : `🐮 ${comment.reply.length} 개의 댓글`}</span>
+          </div>
+
           {showReply && comment.reply.map((item, index) => <Reply info={item.info} text={item.text} key={index} />)}
         </div>
       ) : (

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import PostContents from '@components/PostContents';
 import CommentBox, { CommentProps } from '@components/CommentBox';
 import PostHeader from '@components/PostHeader';
