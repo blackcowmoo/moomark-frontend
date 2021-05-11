@@ -10,6 +10,7 @@
   position: fixed;
   top: 112px;
 }
+
 .anchorList {
   width: 240px;
   margin-left: 5rem;
@@ -24,22 +25,18 @@
   div {
     margin-top: 4px;
   }
-  .hlevel__1 {
-    margin-left: 0px;
+  a {
+    text-decoration: none;
+    color: inherit;
   }
-  .hlevel__2 {
-    margin-left: 4px;
-  }
-  .hlevel__3 {
-    margin-left: 6px;
-  }
-  .hlevel__4 {
-    margin-left: 8px;
-  }
-  .hlevel__5 {
-    margin-left: 10px;
-  }
-  .hlevel__6 {
-    margin-left: 12px;
+  @for $i from 1 through 6 {
+    .hlevel__#{$i} {
+      margin-left: ($i - 1) * 0.7rem;
+    }
+    .hlevel__#{$i}_focus {
+      color: black;
+      font-weight: bold;
+      margin-left: ($i - 1) * 0.7rem;
+    }
   }
 }
