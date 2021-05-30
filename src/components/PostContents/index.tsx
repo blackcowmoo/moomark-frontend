@@ -11,12 +11,14 @@ interface Props {
 
 const PostContents: React.FC<Props> = ({ contents }) => {
   const [anchorList, setAnchorList] = useState<markDownID[]>([]);
-  const [focusAnchor, setFocusAnchor] = useState<string>('#h1-1');
+  const [focusAnchor, setFocusAnchor] = useState<string>('');
 
   const syncAnchorList = (value: markDownID[]) => {
     setAnchorList([...value]);
   };
   const syncFocusAnchor = (anchorID: string) => {
+    console.log(anchorID);
+    
     setFocusAnchor(anchorID);
   };
 
