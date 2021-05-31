@@ -21,26 +21,21 @@ const index: React.FC<AnchorList> = ({ anchorList, focusAnchor }) => {
       <div className={styles.anchorPosition}>
         <div className={styles.wrapper}>
           <div className={styles.anchorList}>
-            {anchorList?.map((v) => 
-            {
-              if(v.id===focusAnchor){
-                return(
-              <div key={v.id} className={styles[`hlevel__${v.level}_focus`]}>
-                <a href={v.id}> {v.name} </a>
-              </div>
-                )
-
+            {anchorList?.map((v) => {
+              if (v.id === focusAnchor) {
+                return (
+                  <div key={v.id} className={styles[`hlevel__${v.level}_focus`]}>
+                    <a href={`#${v.id}`}> {v.name} </a>
+                  </div>
+                );
+              } else {
+                return (
+                  <div key={v.id} className={styles[`hlevel__${v.level}`]}>
+                    <a href={`#${v.id}`}> {v.name} </a>
+                  </div>
+                );
               }
-              else {
-                return(
-              <div key={v.id} className={styles[`hlevel__${v.level}`]}>
-                <a href={v.id}> {v.name} </a>
-              </div>
-
-                )
-              }
-            }  
-           )}
+            })}
           </div>
         </div>
       </div>

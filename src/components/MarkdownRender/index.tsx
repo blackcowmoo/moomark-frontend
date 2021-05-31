@@ -65,7 +65,7 @@ const MarkDownRender: React.FC<Props> = ({ markdown, updateAnchorList, updateFoc
     return (level: number, name: string) => {
       levelCountArr[level - 1] += 1;
       const idString = `h${level}-${levelCountArr[level - 1]}`;
-      anchorList.push({ level, id: `#${idString}`, name, positionY: -1 });
+      anchorList.push({ level, id: `${idString}`, name, positionY: -1 });
       return idString;
     };
   })();
@@ -74,7 +74,7 @@ const MarkDownRender: React.FC<Props> = ({ markdown, updateAnchorList, updateFoc
     const scrollTop = getScrollTop();
     for (let item of anchorList) {
       console.log(selector?.current?.childNodes);
-      console.log(item.id, document.getElementById(item.id.substr(1))?.offsetTop);
+      console.log(item.id, document.getElementById(item.id)?.offsetTop);
       // item.positionY = document.getElementById(item.id.substr(1))?.offsetTop;
 
       const anchor = document.getElementById(item.id.substr(1));
