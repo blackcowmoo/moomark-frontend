@@ -1,9 +1,7 @@
-import Post, { mockProps } from '@components/Post';
-
 const Index = () => {
   return (
     <>
-      <Post postProp={mockProps} />
+      <h1>mooMark main</h1>
     </>
   );
 };

@@ -1,4 +1,5 @@
 import { CommentProps } from 'antd';
+import Post, { mockProps } from '@components/Post';
 
 export interface PostProps{
   editorName: string;
@@ -7,18 +8,10 @@ export interface PostProps{
   comment?: CommentProps;
 }
 
-export const mockProps: PostProps = {
-  editorName: 'writerMock',
-  content: 'contents contents\n aknasfasdfkkkkk',
-  tags: ['test', '태그', '안녕하세요', '소통해요'],
-};
-
-const PostPage: React.FC<PostProps> = ({ comment, tags, content }) => {
+const PostPage: React.FC<PostProps> = () => {
   return (
     <>
-      <div>{content}</div>
-      <div>{tags}</div>
-      <div>{comment}</div>
+      <Post postProp={mockProps} />
     </>
   );
 };
