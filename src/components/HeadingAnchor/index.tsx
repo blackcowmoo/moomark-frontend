@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import styles from './headingAnchor.module.scss';
 
 export interface markDownID {
   level: number;
   name: string;
   id: string;
-  positionY?: number;
+  height?: number;
 }
 
 export interface AnchorList {
@@ -14,8 +13,8 @@ export interface AnchorList {
 }
 
 const index: React.FC<AnchorList> = ({ anchorList, focusAnchor }) => {
-  console.log(`anchorList ${anchorList?.length}`);
-  console.log(focusAnchor);
+  // console.log(`anchorList ${anchorList?.length}`);
+  // console.log(focusAnchor);
   return (
     <div className={styles.contentsSider}>
       <div className={styles.anchorPosition}>
@@ -28,13 +27,12 @@ const index: React.FC<AnchorList> = ({ anchorList, focusAnchor }) => {
                     <a href={`#${v.id}`}> {v.name} </a>
                   </div>
                 );
-              } else {
-                return (
+              }
+              return (
                   <div key={v.id} className={styles[`hlevel__${v.level}`]}>
                     <a href={`#${v.id}`}> {v.name} </a>
                   </div>
-                );
-              }
+              );
             })}
           </div>
         </div>

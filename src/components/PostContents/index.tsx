@@ -1,13 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import MarkdownRender from '@components/MarkdownRender';
 import HeadingAnchor, { markDownID } from '@components/HeadingAnchor';
-import styles from './postcontents.module.scss';
 
 interface Props {
   contents: string;
 }
-
-
 
 const PostContents: React.FC<Props> = ({ contents }) => {
   const [anchorList, setAnchorList] = useState<markDownID[]>([]);
@@ -17,8 +14,6 @@ const PostContents: React.FC<Props> = ({ contents }) => {
     setAnchorList([...value]);
   };
   const syncFocusAnchor = (anchorID: string) => {
-    console.log(anchorID);
-    
     setFocusAnchor(anchorID);
   };
 
