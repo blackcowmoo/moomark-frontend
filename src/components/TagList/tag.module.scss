@@ -1,0 +1,39 @@
+@import '@styles/utils';
+
+.tagList{
+  display: block;
+
+}
+
+.tag{
+  // background-color: $default-green;
+  border-radius: 1rem;
+  // display: block;
+  font-size: 0.8rem;
+  color: $default-black;
+  display: inline-block;
+  background-color: $default-brown;
+  font-weight: bold;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  a{
+    color: $default-black;
+    text-decoration: none;
+  }
+
+  .removeButton{
+    background-color: transparent;
+    border: 0px;
+    outline: 0px;
+    border-radius: 1rem;
+    &:hover{
+      background-color: $focus-red;
+      color: $global-background;
+    }
+  }
+  
+
+}
