@@ -12,12 +12,8 @@
   "settings": {
     "import/resolver": {
       "babel-module": {},
-      "alias": {
-        "map": [["@", "./"]],
-        "extensions": [".ts", ".tsx", ".js", ".jsx", ".scss"]
-      }
+      "typescript": {}
     }
-    
   },
   "rules": {
     "max-len": ["error", { "code": 160 }],
@@ -33,6 +29,6 @@
     "implicit-arrow-linebreak": ["off"],
     "arrow-body-style": ["off"],
     "react/prop-types": ["off"],
-    "react/react-in-jsx-scope": ["off"]  
+    "react/react-in-jsx-scope": ["off"]
   }
 }

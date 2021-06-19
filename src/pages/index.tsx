@@ -1,12 +1,11 @@
-interface props {
+import Link from 'next/link';
 
-}
-
-const Index: React.FC<props> = () => {
+const Index = () => {
   return (
-    <div>
+    <>
+      <Link href='/post'><a>post</a></Link>
       <h1>mooMark main</h1>
-    </div>
+    </>
   );
 };
 

@@ -40,8 +40,6 @@ const Header: React.FC = () => {
             </div>
             <div className={styles.userNav__user}>
               <img src='/mockprofile.PNG' alt={'mockNick'} onClick={toggleDropdown} />
-              <i className='arrow'></i>
-            </div>
             {isDropdown && (
               <div>
                 <div className={styles.dropdown}>
@@ -56,6 +54,7 @@ const Header: React.FC = () => {
                 </div>
               </div>
             )}
+            </div>
           </div>
         ) : (<button className = {styles.loginButton}onClick={setLogin}>Login</button>)}
 

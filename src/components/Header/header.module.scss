@@ -4,7 +4,7 @@
   box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
   font-size: 1.2rem;
   height: 4rem;
-  background-color: $global-background;
+  background-color: $header-background;
   .headerContainer {
     width: calc(100% - 2rem);
     margin-left: auto;
@@ -43,7 +43,7 @@
         color: $global-background;
         outline: none;
         width: 100%;
-        background: $focus-blue;
+        background: $default-green;
       }
     }
 
@@ -64,6 +64,7 @@
   }
 
   .userNav {
+    position: relative;
     display: flex;
     align-items: center;
     align-self: stretch;
@@ -74,7 +75,7 @@
     }
 
     & > *:hover {
-      background-color: $focus-blue;
+      background-color: $default-green;
     }
     &__icon {
       position: relative;
@@ -114,23 +115,27 @@
       }
     }
     .dropdown {
+      background-color: $global-background;
       position: absolute;
       right: 0px;
       top: 4em;
       .menuWrapper {
+        position: relative;
+        z-index: 3;
         display: flex;
         flex-direction: column;
-        z-index: 0;
         width: 12rem;
         box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
-        a, div {
+        a,
+        div {
           color: inherit;
+          background-color: white;
           text-decoration: none;
           padding: 0.75rem 1rem;
           line-height: 1.5;
           font-weight: 500;
           &:hover {
-            background-color: $focus-blue;
+            background-color: $default-green;
           }
         }
       }
@@ -138,17 +143,17 @@
   }
 }
 
-.loginButton{  
-    height: 2rem;
-    background: $focus-blue;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-  &:hover{
+.loginButton {
+  height: 2rem;
+  background: $default-green;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover {
     color: $default-black;
     background: $global-background;
   }
