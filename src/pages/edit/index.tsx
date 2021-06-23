@@ -1,14 +1,14 @@
-export interface editPostProps{
+import Editor from '@components/Editor';
+
+interface editPostProps{
   editorName: string;
-  tags: string[];
+  isNewPost: boolean;
 }
 
-const EditPost: React.FC<editPostProps> = ({ editorName, tags }) => {
-  // document.title = `${editPostProps.editorName}`;
+const EditPost: React.FC<editPostProps> = (props) => {
   return (
     <>
-      {editorName}
-      {tags}
+      <Editor isNewPost={props.isNewPost} text={'hello?'}/>
     </>
   );
 };
