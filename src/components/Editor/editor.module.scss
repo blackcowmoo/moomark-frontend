@@ -1,43 +1,61 @@
 @import '@styles/utils';
 @import '@styles/mixin';
 
-.container{
+.container {
+  margin-top: 1rem;
   width: 100%;
   height: 100%;
   display: flex;
 }
 
-.editor{
+.editor {
   display: flex;
   flex-direction: column;
   width: 50%;
   height: 100vh;
+  .title {
+    textarea {
+      display: block;
+      border: none;
+      width: 100%;
+      outline: none;
+      font-weight: bold;
+      font-size: 2.5rem;
+      resize: none;
+    }
+  }
+  .tags{
+    
 
-  border-left: $dark-green 1rem;
-  .textarea{
+  }
+
+  .textarea {
+    border: none;
     width: 100%;
     height: 100%;
     resize: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    font-size: 1rem;
   }
-
-
 }
 
-.preview{
-  display:inline-block;
+.preview {
+  display: inline-block;
   font-size: 1rem;
   width: 50%;
   height: 100%;
   color: $default-black;
-  // background-color: $default-green;
   line-height: 1.7;
   letter-spacing: -0.004em;
   word-break: keep-all;
   overflow-wrap: break-word;
-  a{
+  a {
     color: $dark-green;
     text-decoration-line: none;
-    &:hover{
+    &:hover {
       color: $focus-red;
       text-decoration-line: underline;
     }

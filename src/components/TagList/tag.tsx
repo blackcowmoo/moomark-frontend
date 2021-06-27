@@ -12,7 +12,7 @@ const Tag: React.FC<TagComponents> = (props) => {
   return (
     <div className={styles.tag}>
       {props.deleteable
-        ? <div>{props.text} <button className={styles.removeButton} onClick ={() => props.removeTag(props.index)} >x</button></div>
+        ? <div onClick ={() => props.removeTag(props.index)} >{props.text}</div>
         : <Link href='/search'>{props.text}</Link>
       }
     </div>

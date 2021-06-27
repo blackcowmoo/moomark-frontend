@@ -1,30 +1,52 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import Tag from './tag';
 import styles from './tag.module.scss';
 
 export interface tagContainerProps {
-  isDeleteable: boolean;
+  isEditable: boolean;
   tagList: string[];
 }
+
 const tagContainer: React.FC<tagContainerProps> = (props) => {
-  const [tagList, setTagList] = useState<string[]>([]);
+  const [tagArray, setTagList] = useState<string[]>([]);
+  const inputRef = useRef(null);
 
   const removeTag = (index: number) => {
-    const newTagList = [...tagList];
+    const newTagList = [...tagArray];
     newTagList.splice(index, 1);
     setTagList(newTagList);
   };
+
+  const addTag = (tag: string) => {
+    console.log(tag);
+    console.log([...tagArray]);
+    
+    setTagList([...tagArray, tag]);
+  }
+
+  const tagInputCheck = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if(e.key==='Enter' || e.key===' '){
+      console.log(inputRef);
+      console.log(inputRef.current.value);
+      addTag(inputRef.current.value);
+      
+      inputRef.current.value='';
+    }
+  }
 
   useEffect(() => {
     setTagList(props.tagList);
   }, []);
 
   return (
+    <>
     <div className={styles.tagList}>
-      {tagList.map((tag, index) => {
-        return <Tag key ={index} deleteable={props.isDeleteable} text={tag} index={index} removeTag={removeTag} />;
+      {tagArray&& tagArray.map((tag, index) => {
+        return <Tag key={index} deleteable={props.isEditable} text={tag} index={index} removeTag={removeTag} />;
       })}
+      {props.isEditable && <input ref={inputRef} className={styles.edit} onKeyDown={tagInputCheck} />}
     </div>
+    </>
   );
 };
 
