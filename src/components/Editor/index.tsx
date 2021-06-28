@@ -4,6 +4,7 @@ import Preview from './Preview';
 import TagList from '@components/TagList';
 
 interface EditorProps {
+  editorName: string;
   isNewPost: boolean;
   title: string;
   text: string;

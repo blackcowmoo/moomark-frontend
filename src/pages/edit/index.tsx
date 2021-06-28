@@ -5,12 +5,12 @@ interface editPostProps{
   isNewPost: boolean;
 }
 
-const EditPost: React.FC<editPostProps> = (props) => {
+const EditPage: React.FC<editPostProps> = (props) => {
   return (
     <>
-      <Editor isNewPost={props.isNewPost} text={'hello?'}/>
+      <Editor editorName={'mockCow'} isNewPost={props.isNewPost} text={'hello?'} tags={[]} title={''}/>
     </>
   );
 };
 
-export default EditPost;
+export default EditPage;
