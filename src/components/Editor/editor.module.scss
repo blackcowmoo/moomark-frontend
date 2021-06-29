@@ -2,7 +2,7 @@
 @import '@styles/mixin';
 
 .container {
-  margin-top: 1rem;
+  margin-top: 0.2rem;
   width: 100%;
   height: 100%;
   display: flex;
@@ -13,22 +13,23 @@
   flex-direction: column;
   width: 50%;
   height: 100vh;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+
   .title {
-    textarea {
-      display: block;
-      border: none;
-      width: 100%;
+    input {
+      display: inline-flex;
       outline: none;
-      font-weight: bold;
+      cursor: text;
       font-size: 2.5rem;
-      resize: none;
+      font-weight: 800;
+      line-height: 1.5;
+      letter-spacing: -0.006em;
+      margin-bottom: 0.75rem;
+      min-width: 8rem;
+      border: none;
     }
   }
-  .tags{
-    
-
-  }
-
   .textarea {
     border: none;
     width: 100%;
@@ -41,12 +42,15 @@
     font-size: 1rem;
   }
 }
-
-.preview {
-  display: inline-block;
-  font-size: 1rem;
+.previewContainer{
+  background-color: $preview-background;
   width: 50%;
-  height: 100%;
+  display: inline-block;
+}
+.preview {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  font-size: 1rem;
   color: $default-black;
   line-height: 1.7;
   letter-spacing: -0.004em;

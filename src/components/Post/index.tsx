@@ -9,7 +9,7 @@ export interface PostProps {
   postDate: Date;
   editorName: string;
   content: string;
-  tags?: string[];
+  tags: string[];
   comments?: CommentProps[];
 }
 

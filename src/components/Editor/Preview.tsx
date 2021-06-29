@@ -11,10 +11,10 @@ interface previewPostProps {
 const Preview:React.FC<previewPostProps> = (props) => {
   return (
     <div className={styles.preview}>
-      <PostHeader title={props.title} tags={props.tags} editorName={props.editorName} />
+      <PostHeader title={props.title} />
       <ReactMarkdown source={props.text}/>
     </div>
-  )
-}
+  );
+};
 
 export default Preview;

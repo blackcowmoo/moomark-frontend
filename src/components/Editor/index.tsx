@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import TagList from '@components/TagList';
 import styles from './editor.module.scss';
 import Preview from './Preview';
-import TagList from '@components/TagList';
 
 interface EditorProps {
   editorName: string;
@@ -26,14 +26,14 @@ const Editor: React.FC<EditorProps> = (props) => {
   const changeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
     console.log(title);
-  }
+  };
   const changeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
     console.log(text);
   };
   const changeTags = (input: string[]) => {
     setTags(input);
-  }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.editor}>
@@ -41,11 +41,13 @@ const Editor: React.FC<EditorProps> = (props) => {
           <input placeholder='Title' value={title} onChange={changeTitle}/>
         </div>
         <div className={styles.tags}>
-          <TagList isEditable={true} tagList={tags}/>
+          <TagList isEditable={true} tagList={tags} setTagList={changeTags}/>
         </div>
         <textarea className={styles.textarea} value={text} onChange={changeText} />
       </div>
-      <Preview title={title} editorName={'tmp'} tags={tags} text={text} />
+      <div className={styles.previewContainer} id='preview'>
+      <Preview title={title} editorName={props.editorName} tags={tags} text={text} />
+      </div>
     </div>
   );
 };
