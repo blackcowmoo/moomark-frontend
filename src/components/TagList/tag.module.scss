@@ -1,39 +1,45 @@
 @import '@styles/utils';
 
-.tagList{
+.tagList {
   display: block;
-
 }
 
 .tag{
-  // background-color: $default-green;
-  border-radius: 1rem;
-  // display: block;
+  margin: 0 8px 0 0;
+  padding: 0 7px;
+  height: auto;
+  border: solid 1px $tag-border;
+  border-radius: 2px;
   font-size: 0.8rem;
-  color: $default-black;
   display: inline-block;
-  background-color: $default-brown;
+  color: $tag-font;
+  background-color: $tag-background;
   font-weight: bold;
-  padding-left: 1rem;
-  padding-right: 1rem;
   margin-right: 1rem;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-  a{
-    color: $default-black;
+  a {
+    color: $tag-font;
     text-decoration: none;
   }
 
-  .removeButton{
+  button {
     background-color: transparent;
+    color: $tag-font;
     border: 0px;
     outline: 0px;
     border-radius: 1rem;
-    &:hover{
-      background-color: $focus-red;
-      color: $global-background;
+    &:hover {
+      color: $focus-red;
     }
   }
-  
+}
 
+.tagInput{
+  display: inline-flex;
+  outline: none;
+  cursor: text;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  margin-bottom: 0.75rem;
+  min-width: 8rem;
+  border: none;
 }

@@ -44,11 +44,11 @@ const Header: React.FC = () => {
               <div>
                 <div className={styles.dropdown}>
                   <div className={styles.menuWrapper}>
-                    <Link href='/editpost'>마이페이지</Link>
-                    <Link href='/editpost'>내 북마크</Link>
-                    <Link href='/editpost'>새 글 작성</Link>
-                    <Link href='/editpost'>임시글 리스트</Link>
-                    <Link href='/editpost'>설정</Link>
+                    <Link href='/'>마이페이지</Link>
+                    <Link href='/'>내 북마크</Link>
+                    <Link href='/edit'>새 글 작성</Link>
+                    <Link href='/'>임시글 리스트</Link>
+                    <Link href='/'>설정</Link>
                     <div onClick={setLogOut}>로그아웃</div>
                   </div>
                 </div>
