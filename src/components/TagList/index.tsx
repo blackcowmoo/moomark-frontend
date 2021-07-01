@@ -28,8 +28,6 @@ const tagContainer: React.FC<tagContainerProps> = (props) => {
   };
 
   const tagInputCheck = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    console.log(e.key);
-
     if (e.key === 'Enter') {
       if (inputRef?.current?.value) {
         for (const item of tagList) {

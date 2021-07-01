@@ -1,11 +1,15 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import TagList from '@components/TagList';
 import styles from './editor.module.scss';
 import Preview from './Preview';
+import MarkDownEditor from './MarkDownEditor';
 
-interface EditorProps {
+interface EditorProps extends EditorInput {
   editorName: string;
   isNewPost: boolean;
+}
+
+interface EditorInput {
   title: string;
   text: string;
   tags: string[];
@@ -23,30 +27,39 @@ const Editor: React.FC<EditorProps> = (props) => {
       setText(props.text);
     }
   }, []);
-  const changeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value);
-    console.log(title);
-  };
-  const changeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(e.target.value);
-    console.log(text);
-  };
-  const changeTags = (input: string[]) => {
-    setTags(input);
-  };
+  const onChangeTitle = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setTitle(e.target.value);
+    },
+    [title],
+  );
+
+  const onChangeText = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setText(e.target.value);
+    },
+    [text],
+  );
+
+  const onChangeTags = useCallback(
+    (input: string[]) => {
+      setTags(input);
+    },
+    [tags],
+  );
   return (
     <div className={styles.container}>
       <div className={styles.editor}>
         <div className={styles.title}>
-          <input placeholder='Title' value={title} onChange={changeTitle}/>
+          <input name='title' placeholder='Title' value={title} onChange={onChangeTitle} />
         </div>
         <div className={styles.tags}>
-          <TagList isEditable={true} tagList={tags} setTagList={changeTags}/>
+          <TagList isEditable={true} tagList={tags} setTagList={onChangeTags} />
         </div>
-        <textarea className={styles.textarea} value={text} onChange={changeText} />
+        <MarkDownEditor changeText={onChangeText} />
       </div>
       <div className={styles.previewContainer} id='preview'>
-      <Preview title={title} editorName={props.editorName} tags={tags} text={text} />
+        <Preview title={title} editorName={props.editorName} tags={tags} text={text} />
       </div>
     </div>
   );
