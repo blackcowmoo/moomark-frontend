@@ -1,18 +1,18 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import TagList from '@components/TagList';
 import styles from './editor.module.scss';
 import Preview from './Preview';
 import MarkDownEditor from './MarkDownEditor';
 
-interface EditorProps extends EditorInput {
-  editorName: string;
-  isNewPost: boolean;
-}
-
 interface EditorInput {
   title: string;
   text: string;
   tags: string[];
+}
+
+interface EditorProps extends EditorInput {
+  editorName: string;
+  isNewPost: boolean;
 }
 
 const Editor: React.FC<EditorProps> = (props) => {
@@ -35,8 +35,10 @@ const Editor: React.FC<EditorProps> = (props) => {
   );
 
   const onChangeText = useCallback(
-    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      setText(e.target.value);
+    (e: React.ChangeEvent<HTMLTextAreaElement> | string) => {
+      if (typeof e === 'string') {
+        setText(e);
+      } else setText(e.target.value);
     },
     [text],
   );
@@ -56,7 +58,7 @@ const Editor: React.FC<EditorProps> = (props) => {
         <div className={styles.tags}>
           <TagList isEditable={true} tagList={tags} setTagList={onChangeTags} />
         </div>
-        <MarkDownEditor changeText={onChangeText} />
+        <MarkDownEditor changeText={onChangeText} text={text} />
       </div>
       <div className={styles.previewContainer} id='preview'>
         <Preview title={title} editorName={props.editorName} tags={tags} text={text} />
