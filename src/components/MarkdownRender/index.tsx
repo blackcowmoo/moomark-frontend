@@ -1,5 +1,6 @@
 import { useEffect, createElement, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 import { markDownID } from '@components/HeadingAnchor';
 import styles from './markdown.module.scss';
 
@@ -71,7 +72,7 @@ const MarkDownRender: React.FC<Props> = ({ markdown, updateAnchorList, updateFoc
 
   return (
     <div className={styles.markdown} ref={selector}>
-      <ReactMarkdown source={markdown} renderers={{ heading: headingRenderer }} />
+      <ReactMarkdown source={markdown} renderers={{ heading: headingRenderer }} plugins={[gfm]} />
     </div>
   );
 };
