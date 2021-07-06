@@ -13,8 +13,6 @@ export interface AnchorList {
 }
 
 const index: React.FC<AnchorList> = ({ anchorList, focusAnchor }) => {
-  // console.log(`anchorList ${anchorList?.length}`);
-  // console.log(focusAnchor);
   return (
     <div className={styles.contentsSider}>
       <div className={styles.anchorPosition}>

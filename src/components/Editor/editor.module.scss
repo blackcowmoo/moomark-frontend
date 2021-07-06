@@ -64,4 +64,19 @@
       text-decoration-line: underline;
     }
   }
+  pre{
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
+    background-color: #f6f8fa;
+    code {
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      border-radius: 3px;
+    }
+
+  }
 }
