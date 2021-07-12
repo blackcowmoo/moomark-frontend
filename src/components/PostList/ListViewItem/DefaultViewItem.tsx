@@ -13,16 +13,7 @@ const DefaultViewItem: React.FC<props> = ({ value }) => {
     <li className={styles.DefaultViewItem}>
       <h5 className={styles.listItemWrapper}>
         <a className={styles.title}>
-          <Link
-            // href={{
-            //   pathname: '/post/[id]',
-            //   query: { id: id }, // array라 문자화
-            // }}
-            // as={}
-            href={`/post/${id}`}
-          >
-            {title}
-          </Link>
+          <Link href={`/post/${id}`}>{title}</Link>
         </a>
         <div className={styles.postInfo}>
           <div className={styles.author}>{author}</div>

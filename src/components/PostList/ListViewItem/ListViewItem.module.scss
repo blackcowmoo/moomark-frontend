@@ -37,4 +37,16 @@
 }
 
 .TileViewItem {
+  .listItemWrapper {
+    .tileMain {
+      h5 {
+      }
+      .imgWrapper {
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
 }

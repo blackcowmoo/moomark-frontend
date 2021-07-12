@@ -10,12 +10,14 @@ interface props {
 const TileViewItem: React.FC<props> = ({ value }) => {
   const { id, title, author, like, date, thumbnail, description } = value;
   return (
-    <div className={styles.DefaultViewItem}>
+    <div className={styles.TileViewItem}>
       <h5 className={styles.listItemWrapper}>
         <Link href={`/post/${id}`}>
           <a className={styles.tileMain}>
             <h5> {title}</h5>
+            <div className={styles.imgWrapper}>
             {thumbnail ? <img src={thumbnail} alt={thumbnail} /> : <img src={'/mockprofile.PNG'} alt={thumbnail} />}
+            </div>
             <p>{description}</p>
           </a>
         </Link>
