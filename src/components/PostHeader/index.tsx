@@ -9,7 +9,7 @@ export interface PostHeaderProps {
   postDate?: Date;
 }
 
-const PostHeader: React.FC<PostHeaderProps> = ({title, editorName, tags, postDate}) => {
+const PostHeader: React.FC<PostHeaderProps> = ({ title, editorName, tags, postDate }) => {
   return (
     <div className={styles.postHeader}>
       <h1 className={styles.title}>{title}</h1>

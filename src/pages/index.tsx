@@ -1,46 +1,75 @@
-import Link from 'next/link';
 import MainLayout from '@components/layout/MainLayout';
+import TilePostList from '@components/PostList/TilePostList';
 import DefaultPostList from '@components/PostList/DefaultPostList';
-import { PostListViewProps} from 'types';
+import { TilePostProps, PostListViewProps } from 'types';
 
-const date = new Date(2021,2,10);
+const date = new Date(2021, 2, 10);
 
-const mock: PostListViewProps[] =[
+const tileMock:TilePostProps [] = [
+
   {
     id: 0,
-    title: "mockTitle",
-    author: "gosu",
+    title: 'mockTitle',
+    author: 'gosu',
     like: 222,
-    tags: ["응애"],
-    date: date 
+    tags: ['응애'],
+    date,
+    description: '123123',
   },
   {
     id: 0,
-    title: "ddd",
-    author: "gosu",
+    title: 'ddd',
+    author: 'gosu',
     like: 222,
-    tags: ["응애"],
-    date: date 
+    tags: ['응애'],
+    date,
+    description: '123123',
   },
   {
     id: 0,
-    title: "ddd",
-    author: "gosu",
+    title: 'ddd',
+    author: 'gosu',
     like: 222,
-    tags: ["응애"],
-    date: date 
+    tags: ['응애'],
+    date,
+    description: '123123',
+  },
+];
+
+const mock: PostListViewProps[] = [
+  {
+    id: 0,
+    title: 'mockTitle',
+    author: 'gosu',
+    like: 222,
+    tags: ['응애'],
+    date,
   },
   {
     id: 0,
-    title: "ddd",
-    author: "gosu",
+    title: 'ddd',
+    author: 'gosu',
     like: 222,
-    tags: ["응애"],
-    date: date 
+    tags: ['응애'],
+    date,
   },
-]
-
-
+  {
+    id: 0,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    tags: ['응애'],
+    date,
+  },
+  {
+    id: 0,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    tags: ['응애'],
+    date,
+  },
+];
 
 const Index = () => {
   return (
@@ -48,8 +77,8 @@ const Index = () => {
       {/* <Link href='/post'><a>post</a></Link>
       <Link href='/edit'><a>edit</a></Link> */}
       <h1>mooMark main</h1>
-      <DefaultPostList listTitle={'Trending'} postList={mock}/>
-      <DefaultPostList listTitle={'New'} postList={mock}/>
+      <TilePostList listTitle={'Tile'} postList={tileMock}/>
+      <DefaultPostList listTitle={'Default'} postList={mock}/>
     </MainLayout>
   );
 };

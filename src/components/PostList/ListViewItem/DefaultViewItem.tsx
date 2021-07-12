@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { PostListViewProps } from 'types';
 import { timeForToday } from 'lib/common';
 import styles from './ListViewItem.module.scss';
@@ -7,11 +8,22 @@ interface props {
 }
 
 const DefaultViewItem: React.FC<props> = ({ value }) => {
-  const { title, author, like, date } = value;
+  const { id, title, author, like, date } = value;
   return (
-    <li className={styles.DefaultViewItem} >
+    <li className={styles.DefaultViewItem}>
       <h5 className={styles.listItemWrapper}>
-        <a className={styles.title}>{title}</a>
+        <a className={styles.title}>
+          <Link
+            // href={{
+            //   pathname: '/post/[id]',
+            //   query: { id: id }, // array라 문자화
+            // }}
+            // as={}
+            href={`/post/${id}`}
+          >
+            {title}
+          </Link>
+        </a>
         <div className={styles.postInfo}>
           <div className={styles.author}>{author}</div>
           <div className={styles.like}>{like}</div>

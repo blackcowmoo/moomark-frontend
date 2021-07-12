@@ -1,17 +1,23 @@
-import React from 'react'
-import styles from './main.module.scss';
+import { TilePostProps } from 'types';
+import TileViewItem from './ListViewItem/TileViewItem';
+import styles from './PostList.module.scss';
 
-interface Props{
-
-
+interface Props {
+  listTitle: string;
+  postList: TilePostProps[];
 }
 
-const TilePostList: React.FC<Props> = ({children}) => {
+const TilePostList: React.FC<Props> = ({ listTitle, postList }) => {
   return (
-    <ul className={styles.tile_post_list}>
-      {children}
-    </ul>
-  )
-}
+    <div className={styles.tilePostList}>
+      <h2 className={styles.listTitle}>{listTitle}</h2>
+      <div className={styles.listWrapper}>
+        {postList.map((value, index) => {
+          return <TileViewItem value={value} key={index} />;
+        })}
+      </div>
+    </div>
+  );
+};
 
-export default TilePostList
+export default TilePostList;

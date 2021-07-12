@@ -4,5 +4,9 @@ export interface PostListViewProps{
   author: string;
   like: number;
   tags?: string[];
+  thumbnail?: string;
   date: Date;
+}
+export interface TilePostProps extends PostListViewProps{
+  description: string;
 }

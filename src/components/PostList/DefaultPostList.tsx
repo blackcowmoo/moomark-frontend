@@ -1,5 +1,5 @@
-import  DefaultViewItem from './ListViewItem/DefaultViewItem';
 import { PostListViewProps } from 'types';
+import DefaultViewItem from './ListViewItem/DefaultViewItem';
 import styles from './PostList.module.scss';
 
 interface props {
@@ -7,13 +7,13 @@ interface props {
   postList: PostListViewProps[];
 }
 
-const DefaultPostList: React.FC<props> = ({ listTitle,postList }) => {
+const DefaultPostList: React.FC<props> = ({ listTitle, postList }) => {
   return (
     <div className={styles.defaultPostList}>
-      <div className={styles.listTitle}>{listTitle}</div>
+      <h2 className={styles.listTitle}>{listTitle}</h2>
       <ul>
-        {postList.map((value) => {
-          return <DefaultViewItem  value={value} />;
+        {postList.map((value, index) => {
+          return <DefaultViewItem value={value} key={index} />;
         })}
       </ul>
     </div>
