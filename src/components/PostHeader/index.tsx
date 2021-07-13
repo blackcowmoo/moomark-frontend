@@ -1,4 +1,5 @@
 import TagList from '@components/TagList';
+import { timeForToday } from 'lib/common';
 import styles from './postHeader.module.scss';
 
 export interface PostHeaderProps {
@@ -8,13 +9,13 @@ export interface PostHeaderProps {
   postDate?: Date;
 }
 
-const PostHeader: React.FC<PostHeaderProps> = (props) => {
+const PostHeader: React.FC<PostHeaderProps> = ({ title, editorName, tags, postDate }) => {
   return (
     <div className={styles.postHeader}>
-      <h1 className={styles.title}>{props.title}</h1>
-      {props.editorName && <div className={styles.editorName}>{props.editorName}</div>}
-      {props.postDate && <div className={styles.editDate}>{props.postDate.toString()}</div>}
-     {props.tags && <TagList isEditable={false} tagList={props.tags} /> }
+      <h1 className={styles.title}>{title}</h1>
+      {editorName && <div className={styles.editorName}>{editorName}</div>}
+      {postDate && <div className={styles.editDate}>{timeForToday(postDate)}</div>}
+     {tags && <TagList isEditable={false} tagList={tags} /> }
     </div>
   );
 };

@@ -1,0 +1,52 @@
+@import '@styles/utils';
+
+.DefaultViewItem {
+  border-top: 0px;
+  vertical-align: middle;
+  width: 25rem;
+  margin: 0 0 3px 0;
+  border-bottom: solid 1px $default-grey;
+  .listItemWrapper {
+    display: flex;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    .title {
+      flex-grow: 4;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .postInfo {
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      .author {
+        margin-left: 1rem;
+        flex-grow: 1;
+      }
+      .like {
+        margin-left: 1rem;
+        flex-grow: 1;
+      }
+      .date {
+        margin-left: 1rem;
+        flex-grow: 3;
+        color: $default-grey;
+      }
+    }
+  }
+}
+
+.TileViewItem {
+  .listItemWrapper {
+    .tileMain {
+      h5 {
+      }
+      .imgWrapper {
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+}
