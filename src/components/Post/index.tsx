@@ -19,11 +19,11 @@ interface props {
   postProp: PostProps;
 }
 
-const Post:React.FC<props> = ({ postProp }) => {
+const Post: React.FC<props> = ({ postProp }) => {
   return (
-    <div className = {styles.post}>
+    <div className={styles.post}>
       <PostHeader title={postProp.title} editorName={postProp.editorName} tags={postProp.tags} postDate={postProp.postDate} />
-      <PostContents contents ={postProp.content}/>
+      <PostContents contents={postProp.content} />
       <CommentBox comments={postProp.comments} />
     </div>
   );
