@@ -6,13 +6,12 @@ import { TilePostProps, PostListViewProps } from 'types';
 const date = new Date(2021, 2, 10);
 
 const tileMock:TilePostProps [] = [
-
   {
     id: 0,
     title: 'mockTitle',
     author: 'gosu',
     like: 222,
-    tags: ['응애'],
+    tags: ['mockTag'],
     date,
     description: '123123',
   },
@@ -21,7 +20,7 @@ const tileMock:TilePostProps [] = [
     title: 'ddd',
     author: 'gosu',
     like: 222,
-    tags: ['응애'],
+    tags: ['mockTag'],
     date,
     description: '123123',
   },
@@ -30,7 +29,7 @@ const tileMock:TilePostProps [] = [
     title: 'ddd',
     author: 'gosu',
     like: 222,
-    tags: ['응애'],
+    tags: ['mockTag'],
     date,
     description: '123123',
   },
