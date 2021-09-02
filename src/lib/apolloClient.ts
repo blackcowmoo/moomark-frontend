@@ -1,6 +1,5 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
-
 const prod = process.env.NODE_ENV === 'production';
 
 const client = new ApolloClient({

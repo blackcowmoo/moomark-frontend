@@ -31,9 +31,6 @@ const ToolBar: React.FC<toolBarProps> = ({ refTextArea }) => {
   const onClickToolButton = (button: toolButton) => {
     if (refTextArea.current) {
       const field = refTextArea.current;
-      console.log(field.selectionStart);
-      console.log(field.selectionEnd);
-      console.log(button);
       if (field.selectionStart || field.selectionStart === 0) {
         const startPos = field.selectionStart;
         let input: string = '';

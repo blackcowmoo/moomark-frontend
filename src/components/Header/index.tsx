@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { useMutation } from '@apollo/client';
 import { DEV_LOGIN } from 'queries/postData.queries';
 import Link from 'next/link';
@@ -19,7 +19,6 @@ const Header: React.FC = () => {
     console.log(data);
     setIsLogin(true);
   }, []);
-
 
   return (
     <header className={styles.header}>
