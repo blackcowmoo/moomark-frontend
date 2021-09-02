@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   sassOptions: {
@@ -6,6 +7,7 @@ module.exports = {
   },
   webpack: (config, { webpack }) => {
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
+    config.plugins.push(new Dotenv());
     return config;
   },
 };
