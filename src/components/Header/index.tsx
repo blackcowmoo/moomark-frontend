@@ -1,24 +1,28 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { DEV_LOGIN } from 'queries/postData.queries';
 import Link from 'next/link';
 import styles from './header.module.scss';
+import { DEV_LOGIN } from 'queries/postData.queries';
+import { useAuth } from 'context/authContext';
 
 const Header: React.FC = () => {
-  const [login, { loading, data }] = useMutation(DEV_LOGIN);
+  const { user, login, logout } = useAuth();
+  const [mutationLogin, { loading, data }] = useMutation(DEV_LOGIN);
   const [isDropdown, setDropdown] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  const toggleDropdown = useCallback(() => {
+
+  const toggleDropdown = () => {
     setDropdown((prev) => !prev);
-  }, []);
-  const setLogOut = useCallback(() => {
+  };
+  const setLogOut = () => {
     setIsLogin(false);
-  }, []);
-  const setLogin = useCallback(() => {
+    logout();
+  };
+  const setLogin = () => {
     login();
-    console.log(data);
+    mutationLogin();
     setIsLogin(true);
-  }, []);
+  };
 
   return (
     <header className={styles.header}>
@@ -42,11 +46,12 @@ const Header: React.FC = () => {
               <img src='/icon/bell.svg' alt='User bookmarks' />
             </div>
             <div className={styles.userNav__user}>
-              <img src='/mockprofile.PNG' alt={'mockNick'} onClick={toggleDropdown} />
+              <img src='/mockprofile.PNG' alt='mockNick' onClick={toggleDropdown} />
               {isDropdown && (
                 <div>
                   <div className={styles.dropdown}>
                     <div className={styles.menuWrapper}>
+                      <div className={styles.userInfo}>{user}님 환영합니다!</div>
                       <Link href='/'>마이페이지</Link>
                       <Link href='/'>내 북마크</Link>
                       <Link href='/edit'>새 글 작성</Link>
