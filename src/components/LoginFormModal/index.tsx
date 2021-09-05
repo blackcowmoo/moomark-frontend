@@ -8,7 +8,6 @@ const ModalLoginForm: React.FC = () => {
         <input type="checkbox" id="terms"/><p>Remember me</p>
         <button>Login</button>
       </div>
-
    </>
   );
 };

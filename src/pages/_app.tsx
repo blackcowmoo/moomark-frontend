@@ -5,8 +5,11 @@ import { ApolloProvider } from '@apollo/client';
 import client from 'lib/apolloClient';
 import '@styles/global.scss';
 import { AuthContextProvider } from 'context/authContext';
+import { useModal } from 'hooks/useModal';
+import Modal from '@components/common/Modal';
 
 const App = ({ Component, pageProps }: AppProps | any) => {
+  const { isShown, toggle } = useModal();
   return (
     <ApolloProvider client={client}>
       <Head>
@@ -18,6 +21,7 @@ const App = ({ Component, pageProps }: AppProps | any) => {
         <AppLayout>
           <Component {...pageProps} />
         </AppLayout>
+        <Modal title='ddd' isShown={isShown} onClose={toggle} content={<div>modla</div>} />
       </AuthContextProvider>
     </ApolloProvider>
   );

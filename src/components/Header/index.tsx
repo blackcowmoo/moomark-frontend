@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Link from 'next/link';
-import styles from './header.module.scss';
 import { DEV_LOGIN } from 'queries/postData.queries';
 import { useAuth } from 'context/authContext';
+import styles from './header.module.scss';
 
 const Header: React.FC = () => {
   const { user, login, logout } = useAuth();
@@ -21,6 +21,7 @@ const Header: React.FC = () => {
   const setLogin = () => {
     login();
     mutationLogin();
+    console.log(data)
     setIsLogin(true);
   };
 

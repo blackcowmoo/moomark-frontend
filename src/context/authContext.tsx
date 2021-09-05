@@ -26,7 +26,6 @@ export function AuthContextProvider({ children }: Props) {
   const [user, setUser] = useState<string | null>(null);
 
   const login = () => {
-    console.log('login!@');
     setUser('mock');
   };
 
