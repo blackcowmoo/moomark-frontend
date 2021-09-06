@@ -53,7 +53,12 @@ const Editor: React.FC<EditorProps> = (props) => {
     <div className={styles.container}>
       <div className={styles.editor}>
         <div className={styles.title}>
-          <input name='title' placeholder='Title' value={title} onChange={onChangeTitle} />
+          <input
+            name='title'
+            placeholder='Title'
+            value={title}
+            onChange={onChangeTitle}
+          />
         </div>
         <div className={styles.tags}>
           <TagList isEditable={true} tagList={tags} setTagList={onChangeTags} />
@@ -61,7 +66,12 @@ const Editor: React.FC<EditorProps> = (props) => {
         <MarkDownEditor changeText={onChangeText} text={text} />
       </div>
       <div className={styles.previewContainer} id='preview'>
-        <Preview title={title} editorName={props.editorName} tags={tags} text={text} />
+        <Preview
+          title={title}
+          editorName={props.editorName}
+          tags={tags}
+          text={text}
+        />
       </div>
     </div>
   );
