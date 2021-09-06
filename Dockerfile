@@ -13,7 +13,7 @@ COPY . /node
 # COPY .next /node/.next
 
 WORKDIR /node
-RUN yarn --production --frozen-lockfile --no-cache
+RUN yarn --production --frozen-lockfile --no-cache && yarn cache clean
 
 EXPOSE 3000
 STOPSIGNAL SIGINT
