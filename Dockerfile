@@ -10,7 +10,7 @@ FROM node:12-alpine
 
 COPY . /node
 # COPY --from=builder /node/.next /node/.next
-COPY .next /node/.next
+# COPY .next /node/.next
 
 WORKDIR /node
 RUN yarn --production
