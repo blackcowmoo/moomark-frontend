@@ -9,9 +9,10 @@ on:
 
 env:
   # Use docker.io for Docker Hub if empty
-  REGISTRY: ${{ secret.HARBOR_URL }}
+  REGISTRY: ${{ secrets.HARBOR_URL }}/${{ fromJson('"develop":"dev", "master":"live",') }}
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+
   
 jobs:
   build:
