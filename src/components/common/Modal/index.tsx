@@ -1,4 +1,4 @@
-import { ReactChild, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './Modal.module.scss';
 
@@ -10,34 +10,30 @@ interface ModalProps {
 }
 
 const index: React.FC<ModalProps> = ({ isShown, onClose, content, title }) => {
-  const [isBrowser, setIsBrowser] = useState<boolean>(false);
-  const portalDiv = document.getElementById('modal-root');
+  const [portalDiv, setPortalDiv] = useState<HTMLElement | null>(null);
+
   useEffect(() => {
-    setIsBrowser(true);
+    setPortalDiv(document.getElementById('modal-root'));
   }, []);
 
-  if (isBrowser) {
-    return null;
-  } else {
-    return portalDiv
-      ? createPortal(
-          isShown && (
-            <div className={styles.overlay}>
-              <div className={styles.modal}>
-                <div className={styles.header}>
-                  <div className={styles.title}>{title}</div>
-                  <a href='#' onClick={onClose}>
-                    x
-                  </a>
-                </div>
-                <div className={styles.body}>{content}</div>
+  return portalDiv
+    ? createPortal(
+        isShown && (
+          <div className={styles.overlay}>
+            <div className={styles.modal}>
+              <div className={styles.header}>
+                <div className={styles.title}>{title}</div>
+                <a href='#' onClick={onClose}>
+                  x
+                </a>
               </div>
+              <div className={styles.body}>{content}</div>
             </div>
-          ),
-          portalDiv,
-        )
-      : null;
-  }
+          </div>
+        ),
+        portalDiv,
+      )
+    : null;
 };
 
 export default index;
