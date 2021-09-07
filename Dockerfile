@@ -10,7 +10,7 @@ FROM node:12-alpine
 WORKDIR /app
 COPY package.json .
 COPY yarn.lock .
-RUN yarn --production --frozen-lockfile --no-cache && yarn cache clean && npm prune production
+RUN yarn --production --frozen-lockfile --no-cache && yarn cache clean && npm prune --production
 COPY . .
 
 EXPOSE 3000
