@@ -1,5 +1,5 @@
-import { RefObject } from 'react';
-import { insertText } from './InsetTextAtPosition';
+import { RefObject, useState } from 'react';
+import { insertText } from './utils';
 
 interface toolBarProps {
   refTextArea: RefObject<HTMLTextAreaElement>;
@@ -16,6 +16,7 @@ interface toolButton extends inputStyle {
 }
 
 const ToolBar: React.FC<toolBarProps> = ({ refTextArea }) => {
+  const [lastTool, setLastTool] = useState<string | null>(null);
   const buttonList: toolButton[] = [
     { name: 'header_1', prefix: '\n# ' },
     { name: 'header_2', prefix: '\n## ' },
@@ -28,7 +29,18 @@ const ToolBar: React.FC<toolBarProps> = ({ refTextArea }) => {
     { name: 'italic', prefix: '_', suffix: '_' },
     { name: 'code', prefix: '\n```\n', suffix: '\n```\n' },
   ];
+
+  const checkUndoInput = (name: string) => {
+    if (name === lastTool) {
+      return true;
+    }
+    setLastTool(name);
+    return false;
+  };
+
   const onClickToolButton = (button: toolButton) => {
+    if (checkUndoInput(button.name)) return;
+
     if (refTextArea.current) {
       const field = refTextArea.current;
       if (field.selectionStart || field.selectionStart === 0) {
@@ -45,10 +57,10 @@ const ToolBar: React.FC<toolBarProps> = ({ refTextArea }) => {
             input = button.prefix;
             insertText(field, input);
           } else {
-            input = button.prefix;
+            input = button.prefix+ button.name;
             insertText(field, input);
             const startSelection = startPos + button.prefix.length;
-            field.setSelectionRange(startSelection, startSelection);
+            field.setSelectionRange(startSelection, startSelection + button.name.length);
           }
           field.focus();
         }
