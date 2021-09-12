@@ -57,7 +57,7 @@ const ToolBar: React.FC<toolBarProps> = ({ refTextArea }) => {
             input = button.prefix;
             insertText(field, input);
           } else {
-            input = button.prefix+ button.name;
+            input = button.prefix + button.name;
             insertText(field, input);
             const startSelection = startPos + button.prefix.length;
             field.setSelectionRange(startSelection, startSelection + button.name.length);
