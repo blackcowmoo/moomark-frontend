@@ -1,8 +1,9 @@
-import { useState, useEffect, useCallback } from 'react';
-import TagList from '@components/TagList';
+import { useState, useEffect, useRef } from 'react';
+import '@toast-ui/editor/dist/toastui-editor.css';
+import { Editor } from '@toast-ui/react-editor';
+import TagList from '@components/common/TagList';
+import useWindowDimensions from 'hooks/useWindowDimensions';
 import styles from './editor.module.scss';
-import Preview from './Preview';
-import MarkDownEditor from './MarkDownEditor';
 
 interface EditorInput {
   title: string;
@@ -15,10 +16,12 @@ interface EditorProps extends EditorInput {
   isNewPost: boolean;
 }
 
-const Editor: React.FC<EditorProps> = (props) => {
+const PostEditor: React.FC<EditorProps> = (props) => {
   const [title, setTitle] = useState<string>('');
   const [tags, setTags] = useState<string[]>([]);
   const [text, setText] = useState<string>('');
+  const { width } = useWindowDimensions();
+  const editorRef = useRef<Editor>(null);
 
   useEffect(() => {
     if (!props.isNewPost) {
@@ -26,55 +29,44 @@ const Editor: React.FC<EditorProps> = (props) => {
       setTags(props.tags);
       setText(props.text);
     }
+    // window.  window.addEventListener("resize", this.resize.bind(this));
   }, []);
-  const onChangeTitle = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setTitle(e.target.value);
-    },
-    [title],
-  );
 
-  const onChangeText = useCallback(
-    (e: React.ChangeEvent<HTMLTextAreaElement> | string) => {
-      if (typeof e === 'string') {
-        setText(e);
-      } else setText(e.target.value);
-    },
-    [text],
-  );
+  const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(e.target.value);
+  };
 
-  const onChangeTags = useCallback(
-    (input: string[]) => {
-      setTags(input);
-    },
-    [tags],
-  );
+  const onChangeEditor = () => {
+    if (editorRef.current) {
+      setText(editorRef.current.getInstance().getMarkdown());
+    }
+    console.log(text);
+  };
+
+  const onChangeTags = (input: string[]) => {
+    setTags(input);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.editor}>
         <div className={styles.title}>
-          <input
-            name='title'
-            placeholder='Title'
-            value={title}
-            onChange={onChangeTitle}
-          />
+          <input name='title' placeholder='Title' value={title} onChange={onChangeTitle} />
         </div>
         <div className={styles.tags}>
           <TagList isEditable={true} tagList={tags} setTagList={onChangeTags} />
         </div>
-        <MarkDownEditor changeText={onChangeText} text={text} />
-      </div>
-      <div className={styles.previewContainer} id='preview'>
-        <Preview
-          title={title}
-          editorName={props.editorName}
-          tags={tags}
-          text={text}
+        <Editor
+          ref={editorRef}
+          previewStyle={width <= 760 ? 'tab' : 'vertical'}
+          onChange={onChangeEditor}
+          height='100vh'
+          initialEditType='markdown'
+          useCommandShortcut={true}
         />
       </div>
     </div>
   );
 };
 
-export default Editor;
+export default PostEditor;

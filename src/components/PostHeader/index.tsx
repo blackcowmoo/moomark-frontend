@@ -1,4 +1,4 @@
-import TagList from '@components/TagList';
+import TagList from '@components/common/TagList';
 import { timeForToday } from 'lib/common';
 import styles from './postHeader.module.scss';
 
