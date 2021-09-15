@@ -1,4 +1,4 @@
-import { useEffect, createElement  } from 'react';
+import { useEffect, createElement, memo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import { markDownID } from '@components/PostContents/AnchorList';
@@ -70,10 +70,10 @@ const MarkDownRender: React.FC<Props> = ({ markdown, updateAnchorList, updateFoc
   }, []);
 
   return (
-    <div className={styles.markdown} >
-      <ReactMarkdown children={markdown} renderers={{ heading: headingRenderer }} plugins={[gfm]} />
+    <div className={styles.markdown}>
+      <ReactMarkdown source={markdown} renderers={{ heading: headingRenderer }} plugins={[gfm]} />
     </div>
   );
 };
 
-export default MarkDownRender;
+export default memo(MarkDownRender);

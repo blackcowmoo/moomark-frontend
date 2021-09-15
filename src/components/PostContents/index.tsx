@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
-import MarkdownRender from './MarkdownRender';
+import { useState, useCallback } from 'react';
 import AnchorList, { markDownID } from '@components/PostContents/AnchorList';
+import MarkdownRender from './MarkdownRender';
 
 interface Props {
   contents: string;
@@ -10,22 +10,17 @@ const PostContents: React.FC<Props> = ({ contents }) => {
   const [anchorList, setAnchorList] = useState<markDownID[]>([]);
   const [focusAnchor, setFocusAnchor] = useState<string>('');
 
-  const syncAnchorList = (value: markDownID[]) => {
+  const updateAnchorList = useCallback((value: markDownID[]) => {
     setAnchorList([...value]);
-  }
+  }, []);
 
-  // const updateFocusAnchor = useCallback((anchorID: string) => {
-  //   setFocusAnchor(anchorID);
-  // }, [focusAnchor]);
-
-  const updateFocusAnchor = (anchorID:string) => {
-    setFocusAnchor(anchorID)
-  }
-
+  const updateFocusAnchor = useCallback((anchorID: string) => {
+    setFocusAnchor(anchorID);
+  }, []);
   return (
     <div className='postcontents'>
       <AnchorList anchorList={anchorList} focusAnchor={focusAnchor} />
-      <MarkdownRender markdown={contents} updateFocusAnchor={updateFocusAnchor} updateAnchorList={syncAnchorList} />
+      <MarkdownRender markdown={contents} updateFocusAnchor={updateFocusAnchor} updateAnchorList={updateAnchorList} />
     </div>
   );
 };
