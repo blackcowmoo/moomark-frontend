@@ -47,17 +47,15 @@ const Header: React.FC = () => {
             <div className={styles.userNav__user}>
               <img src='/mockprofile.PNG' alt='mockNick' onClick={toggleDropdown} />
               {isDropdown && (
-                <div>
-                  <div className={styles.dropdown} onClick={closeDropdown}>
-                    <div className={styles.menuWrapper}>
-                      <div className={styles.userInfo}>{user}님 환영합니다!</div>
-                      <Link href='/'>마이페이지</Link>
-                      <Link href='/'>내 북마크</Link>
-                      <Link href='/edit'>새 글 작성</Link>
-                      <Link href='/'>임시글 리스트</Link>
-                      <Link href='/'>설정</Link>
-                      <div onClick={setLogOut}>로그아웃</div>
-                    </div>
+                <div className={styles.dropdown} onClick={closeDropdown}>
+                  <div className={styles.menuWrapper}>
+                    <div className={styles.userInfo}>{user}님 환영합니다!</div>
+                    <Link href='/'>마이페이지</Link>
+                    <Link href='/'>내 북마크</Link>
+                    <Link href='/edit'>새 글 작성</Link>
+                    <Link href='/'>임시글 리스트</Link>
+                    <Link href='/'>설정</Link>
+                    <div onClick={setLogOut}>로그아웃</div>
                   </div>
                 </div>
               )}

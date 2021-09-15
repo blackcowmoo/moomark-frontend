@@ -7,12 +7,12 @@ export interface markDownID {
   height?: number;
 }
 
-export interface AnchorList {
+export interface AnchorListProps {
   anchorList?: markDownID[];
   focusAnchor: string;
 }
 
-const index: React.FC<AnchorList> = ({ anchorList, focusAnchor }) => {
+const AnchorList: React.FC<AnchorListProps> = ({ anchorList, focusAnchor }) => {
   return (
     <div className={styles.contentsSider}>
       <div className={styles.anchorPosition}>
@@ -39,4 +39,4 @@ const index: React.FC<AnchorList> = ({ anchorList, focusAnchor }) => {
   );
 };
 
-export default index;
+export default AnchorList;

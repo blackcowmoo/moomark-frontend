@@ -1,5 +1,5 @@
 import { CommentProps } from 'antd';
-import Post, { mockProps } from '@components/Post';
+import PostViewer from '@components/PostViewer';
 
 export interface PostProps{
   editorName: string;
@@ -11,7 +11,7 @@ export interface PostProps{
 const PostPage: React.FC<PostProps> = () => {
   return (
     <>
-      <Post postProp={mockProps} />
+      <PostViewer />
     </>
   );
 };
