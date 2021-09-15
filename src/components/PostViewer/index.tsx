@@ -16,10 +16,10 @@ export interface PostProps {
 export const mockProps = mockData;
 
 interface postViewerProps{
-  postProp: PostProps;
+  postProp?: PostProps;
 }
 
-const PostViewer: React.FC<postViewerProps> = ({ postProp }) => {
+const PostViewer: React.FC<postViewerProps> = ({ postProp = mockData }) => {
   return (
     <div className={styles.post}>
       <PostHeader title={postProp.title} editorName={postProp.editorName} tags={postProp.tags} postDate={postProp.postDate} />

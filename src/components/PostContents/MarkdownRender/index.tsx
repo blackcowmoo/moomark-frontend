@@ -1,7 +1,7 @@
-import { useEffect, createElement, useRef } from 'react';
+import { useEffect, createElement  } from 'react';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
-import { markDownID } from '@components/HeadingAnchor';
+import { markDownID } from '@components/PostContents/AnchorList';
 import styles from './markdown.module.scss';
 
 interface Props {
@@ -12,7 +12,6 @@ interface Props {
 
 const MarkDownRender: React.FC<Props> = ({ markdown, updateAnchorList, updateFocusAnchor }) => {
   const anchorList: markDownID[] = [];
-  const selector = useRef<HTMLDivElement>(null);
 
   const generateId = (() => {
     const levelCountArr = Array.from({ length: 6 }, () => 0);
@@ -71,8 +70,8 @@ const MarkDownRender: React.FC<Props> = ({ markdown, updateAnchorList, updateFoc
   }, []);
 
   return (
-    <div className={styles.markdown} ref={selector}>
-      <ReactMarkdown source={markdown} renderers={{ heading: headingRenderer }} plugins={[gfm]} />
+    <div className={styles.markdown} >
+      <ReactMarkdown children={markdown} renderers={{ heading: headingRenderer }} plugins={[gfm]} />
     </div>
   );
 };
