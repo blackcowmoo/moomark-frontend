@@ -1,6 +1,6 @@
 import MainLayout from '@components/layout/MainLayout';
-import TilePostList from '@components/PostList/TilePostList';
-import DefaultPostList from '@components/PostList/DefaultPostList';
+import TilePostList from '@components/PostList/TileViewPostList/TileViewPostList';
+import DefaultPostList from '@components/PostList/DefaultPostList/DefaultPostList';
 import { TilePostProps, PostListViewProps } from 'types';
 
 const date = new Date(2021, 2, 10);

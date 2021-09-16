@@ -1,6 +1,6 @@
 import { PostListViewProps } from 'types';
-import DefaultViewItem from './ListViewItem/DefaultViewItem';
-import styles from './PostList.module.scss';
+import DefaultViewItem from './DefaultViewItem';
+import styles from './DefaultPostList.module.scss';
 
 interface props {
   listTitle: string;

@@ -1,6 +1,6 @@
 import { TilePostProps } from 'types';
-import TileViewItem from './ListViewItem/TileViewItem';
-import styles from './PostList.module.scss';
+import TileViewItem from './TileViewItem';
+import styles from './TileViewPostList.module.scss';
 
 interface Props {
   listTitle: string;

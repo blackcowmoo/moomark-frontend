@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { PostListViewProps } from 'types';
 import { timeForToday } from 'lib/common';
-import styles from './ListViewItem.module.scss';
+import styles from './DefaultPostList.module.scss';
 
 interface props {
   value: PostListViewProps;
