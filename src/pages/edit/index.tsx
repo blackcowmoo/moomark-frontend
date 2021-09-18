@@ -4,6 +4,7 @@ const PostEditor = dynamic(
   () => import('@components/PostEditor'),
   { ssr: false },
 );
+
 interface editPostProps{
   editorName: string;
   isNewPost: boolean;

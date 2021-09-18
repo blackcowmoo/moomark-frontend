@@ -73,10 +73,8 @@ const mock: PostListViewProps[] = [
 const Index = () => {
   return (
     <MainLayout>
-      {/* <Link href='/post'><a>post</a></Link>
-      <Link href='/edit'><a>edit</a></Link> */}
       <h1>mooMark main</h1>
-      <TilePostList listTitle={'Tile'} postList={tileMock}/>
+      <TilePostList listTitle={'인기'} postList={tileMock}/>
       <DefaultPostList listTitle={'Default'} postList={mock}/>
     </MainLayout>
   );

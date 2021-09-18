@@ -29,7 +29,6 @@ const PostEditor: React.FC<EditorProps> = (props) => {
       setTags(props.tags);
       setText(props.text);
     }
-    // window.  window.addEventListener("resize", this.resize.bind(this));
   }, []);
 
   const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,6 +62,7 @@ const PostEditor: React.FC<EditorProps> = (props) => {
           height='100vh'
           initialEditType='markdown'
           useCommandShortcut={true}
+          initialValue={text || ''}
         />
       </div>
     </div>

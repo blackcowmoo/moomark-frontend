@@ -11,24 +11,33 @@ const TileViewItem: React.FC<props> = ({ value }) => {
   const { id, title, author, like, date, thumbnail, description } = value;
   return (
     <div className={styles.TileViewItem}>
-      <h5 className={styles.listItemWrapper}>
-        <Link href={`/post/${id}`}>
-          <a className={styles.tileMain}>
-            <h5> {title}</h5>
-            <div className={styles.imgWrapper}>
-            {thumbnail ? <img src={thumbnail} alt={thumbnail} /> : <img src={'/mockprofile.PNG'} alt={thumbnail} />}
+      <Link href={`/post/${id}`}>
+        <a>
+          {
+            <div className={styles.thumbnail}>
+              <img src={thumbnail || 'https://pbs.twimg.com/media/ESbTA4rUcAArJfB.jpg'} alt={thumbnail} />
             </div>
-            <p>{description}</p>
+          }
+          <div className={styles.info}>
+            <h4> {title}</h4>
+            <div className={description}>
+              <p>{description}</p>
+            </div>
+            <div className={styles.subInfo}>
+              <span>{timeForToday(date)}</span>
+            </div>
+          </div>
+        </a>
+      </Link>
+
+      <div className={styles.footer}>
+        <Link href={`/user/${author}`}>
+          <a className={styles.author}>
+            by <b>{author}</b>
           </a>
         </Link>
-        <div className={styles.postInfo}>
-          <Link href={`/user/${author}`}>
-            <a className={styles.author}>{author}</a>
-          </Link>
-          <div className={styles.like}> 😘 {like}</div>
-          <div className={styles.date}>{timeForToday(date)}</div>
-        </div>
-      </h5>
+        <div className={styles.like}> 🍕 {like}</div>
+      </div>
     </div>
   );
 };
