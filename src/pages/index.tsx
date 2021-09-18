@@ -1,6 +1,6 @@
 import MainLayout from '@components/layout/MainLayout';
-import TilePostList from '@components/PostList/TilePostList';
-import DefaultPostList from '@components/PostList/DefaultPostList';
+import TilePostList from '@components/PostList/TileViewPostList/TileViewPostList';
+import DefaultPostList from '@components/PostList/DefaultPostList/DefaultPostList';
 import { TilePostProps, PostListViewProps } from 'types';
 
 const date = new Date(2021, 2, 10);
@@ -73,10 +73,8 @@ const mock: PostListViewProps[] = [
 const Index = () => {
   return (
     <MainLayout>
-      {/* <Link href='/post'><a>post</a></Link>
-      <Link href='/edit'><a>edit</a></Link> */}
       <h1>mooMark main</h1>
-      <TilePostList listTitle={'Tile'} postList={tileMock}/>
+      <TilePostList listTitle={'인기'} postList={tileMock}/>
       <DefaultPostList listTitle={'Default'} postList={mock}/>
     </MainLayout>
   );
