@@ -1,5 +1,5 @@
 import TagList from '@components/common/TagList';
-import { timeForToday } from 'lib/common';
+import { timeForToday } from 'utils/common';
 import styles from './postHeader.module.scss';
 
 export interface PostHeaderProps {

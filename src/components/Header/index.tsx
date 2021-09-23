@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { useModal } from 'hooks/useModal';
+import { useModal } from 'utils/hooks/useModal';
 import { useAuth } from 'context/authContext';
 import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginFormModal';

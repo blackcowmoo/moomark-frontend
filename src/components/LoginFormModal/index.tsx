@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useMutation } from '@apollo/client';
-import { DEV_LOGIN } from 'queries/postData.queries';
+import { DEV_LOGIN } from 'api/queries/postData.queries';
 import { useAuth } from 'context/authContext';
 
 interface ModalLoginFormProps {

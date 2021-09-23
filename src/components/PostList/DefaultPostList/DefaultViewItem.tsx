@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { PostListViewProps } from 'types';
-import { timeForToday } from 'lib/common';
+import { timeForToday } from 'utils/common';
 import styles from './DefaultPostList.module.scss';
 
 interface props {
@@ -12,9 +12,9 @@ const DefaultViewItem: React.FC<props> = ({ value }) => {
   return (
     <li className={styles.DefaultViewItem}>
       <h5 className={styles.listItemWrapper}>
-        <a className={styles.title}>
+        <div className={styles.title}>
           <Link href={`/post/${id}`}>{title}</Link>
-        </a>
+        </div>
         <div className={styles.postInfo}>
           <div className={styles.author}>{author}</div>
           <div className={styles.like}>{like}</div>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { TilePostProps } from 'types';
-import { timeForToday } from 'lib/common';
+import { timeForToday } from 'utils/common';
 import styles from './TileViewPostList.module.scss';
 
 interface props {
