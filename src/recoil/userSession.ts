@@ -9,7 +9,7 @@ export const loginUserState = selector({
   key: 'loginUserState',
   get: ({ get }) => {
     const userSession = get(userSessionAtom);
-    const userName = userSession.userName;
+    const { userName } = userSession;
 
     return { userName };
   },

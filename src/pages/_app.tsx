@@ -5,7 +5,6 @@ import { ApolloProvider } from '@apollo/client';
 import client from 'api/apolloClient';
 import { RecoilRoot } from 'recoil';
 import '@styles/global.scss';
-import { AuthContextProvider } from 'context/authContext';
 
 const App = ({ Component, pageProps }: AppProps | any) => {
   return (
@@ -15,11 +14,9 @@ const App = ({ Component, pageProps }: AppProps | any) => {
           <title>MooMark</title>
           <meta name='viewport' content='initial-scale=1.0, width=device-width user-scalable=yes, initial-scale=1.0, maximun-scale=3.0' />
         </Head>
-        <AuthContextProvider>
-          <AppLayout>
-            <Component {...pageProps} />
-          </AppLayout>
-        </AuthContextProvider>
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
       </RecoilRoot>
     </ApolloProvider>
   );
