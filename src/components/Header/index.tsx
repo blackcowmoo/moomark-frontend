@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { userSessionAtom, loginUserState } from 'recoil/userSession';
 import { useModal } from 'utils/hooks/useModal';
-import { useAuth } from 'context/authContext';
 import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginFormModal';
 import styles from './header.module.scss';
 
 const Header: React.FC = () => {
-  const { user, logout } = useAuth();
+  const [userSession, setUserSession] = useRecoilState(userSessionAtom);
+  const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
 
@@ -20,7 +22,7 @@ const Header: React.FC = () => {
   };
 
   const setLogOut = () => {
-    logout();
+    setUserSession({ ...userSession, id: null });
     closeDropdown();
   };
 
@@ -36,7 +38,7 @@ const Header: React.FC = () => {
             <img src='/icon/search.svg' alt='search icon' className={styles.search__icon} />
           </button>
         </form>
-        {user ? (
+        {userSession.id ? (
           <div className={styles.userNav}>
             <div className={styles.userNav__icon}>
               <img src='/icon/bookmarks.svg' alt='User bookmarks' />
@@ -49,7 +51,7 @@ const Header: React.FC = () => {
               {isDropdown && (
                 <div className={styles.dropdown} onClick={closeDropdown}>
                   <div className={styles.menuWrapper}>
-                    <div className={styles.userInfo}>{user}님 환영합니다!</div>
+                    <div className={styles.userInfo}>{userName}님 환영합니다!</div>
                     <Link href='/'>마이페이지</Link>
                     <Link href='/'>내 북마크</Link>
                     <Link href='/edit'>새 글 작성</Link>
