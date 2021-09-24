@@ -7,13 +7,11 @@
 
 ### Production
 FROM node:12-alpine
-
-COPY . /node
-# COPY --from=builder /node/.next /node/.next
-COPY .next /node/.next
-
-WORKDIR /node
-RUN yarn --production
+WORKDIR /app
+COPY package.json .
+COPY yarn.lock .
+RUN yarn --production --frozen-lockfile --no-cache && yarn cache clean && npm prune --production
+COPY . .
 
 EXPOSE 3000
 STOPSIGNAL SIGINT
