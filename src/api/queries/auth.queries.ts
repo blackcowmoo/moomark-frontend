@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const DEV_LOGIN = gql`
+export const LOGIN = gql`
   mutation {
     login
   }

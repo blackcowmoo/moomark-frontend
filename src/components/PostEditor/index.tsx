@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
 import TagList from '@components/common/TagList';
-import useWindowDimensions from 'hooks/useWindowDimensions';
+import useWindowDimensions from 'utils/hooks/useWindowDimensions';
 import styles from './editor.module.scss';
 
 interface EditorInput {

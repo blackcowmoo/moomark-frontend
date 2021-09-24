@@ -1,23 +1,25 @@
 import { useEffect } from 'react';
 import { useMutation } from '@apollo/client';
-import { DEV_LOGIN } from 'queries/postData.queries';
-import { useAuth } from 'context/authContext';
+import { LOGIN } from 'api/queries/auth.queries';
+import { useRecoilState } from 'recoil';
+import { userSessionAtom } from 'recoil/userSession';
 
 interface ModalLoginFormProps {
   onClose: () => void;
 }
 
-const ModalLoginForm: React.FC<ModalLoginFormProps> = ({ onClose }) => {
-  const { login } = useAuth();
-  const [mutationLogin, { data, loading }] = useMutation(DEV_LOGIN);
+const LoginFormModal: React.FC<ModalLoginFormProps> = ({ onClose }) => {
+  const [, setUserSession] = useRecoilState(userSessionAtom);
+  const [mutationLogin, { data, loading }] = useMutation(LOGIN);
   const setLogin = () => {
-    mutationLogin();
+    mutationLogin().then((res) => {
+      const userSession = res.data?.login ?? null;
+      setUserSession({ ...userSession, id: userSession, userName: 'mock' });
+    });
   };
 
   useEffect(() => {
-    console.log(data);
     if (data) {
-      login();
       onClose();
     }
   }, [data, loading]);
@@ -36,4 +38,4 @@ const ModalLoginForm: React.FC<ModalLoginFormProps> = ({ onClose }) => {
   );
 };
 
-export default ModalLoginForm;
+export default LoginFormModal;
