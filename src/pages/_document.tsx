@@ -11,6 +11,7 @@ class MainDocument extends Document {
       <Html>
         <Head>
           <meta charSet='utf-8' />
+          <link rel="icon" href="cow.svg"/>
         </Head>
         <body>
           <Main />
