@@ -3,6 +3,8 @@ import { useMutation } from '@apollo/client';
 import { LOGIN } from 'api/queries/auth.queries';
 import { useRecoilState } from 'recoil';
 import { userSessionAtom } from 'recoil/userSession';
+import styles from './LoginForm.module.scss';
+import GoogleLogo from './GoogleLogo.svg';
 
 interface ModalLoginFormProps {
   onClose: () => void;
@@ -25,16 +27,24 @@ const LoginFormModal: React.FC<ModalLoginFormProps> = ({ onClose }) => {
   }, [data, loading]);
 
   return (
-    <>
-      <div className='login-form'>
-        <div className='header-text'>LogIn MooMark</div>
-        <input type='text' placeholder='Your Email Address' />
-        <input type='password' placeholder='PassWord' />
-        <input type='checkbox' id='terms' />
-        <p>Remember me</p>
+    <div className={styles.container}>
+      <form className={styles.emailForm}>
+        <div className={styles.form}>
+          <label htmlFor='password'>Email</label>
+          <input id='email' type='text' placeholder='Email' required />
+        </div>
+        <div className={styles.form}>
+          <label htmlFor='password'>Password</label>
+          <input id='password' type='password' placeholder='PassWord' required />
+        </div>
         <button onClick={setLogin}>Login</button>
+      </form>
+      <div className={styles.socialForm}>
+        <button onClick={setLogin}>
+          <GoogleLogo fill='white' />
+        </button>
       </div>
-    </>
+    </div>
   );
 };
 
