@@ -19,7 +19,7 @@ const index: React.FC<ModalProps> = ({ isShown, onClose, content, title }) => {
 
   return portalDiv
     ? createPortal(
-        isShown && (
+      isShown && (
           <div className={styles.overlay}>
             <div className={styles.modal}>
               <div className={styles.header}>
@@ -31,9 +31,9 @@ const index: React.FC<ModalProps> = ({ isShown, onClose, content, title }) => {
               <div className={styles.body}>{content}</div>
             </div>
           </div>
-        ),
-        portalDiv,
-      )
+      ),
+      portalDiv,
+    )
     : null;
 };
 
