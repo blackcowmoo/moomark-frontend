@@ -4,7 +4,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { userSessionAtom, loginUserState } from 'recoil/userSession';
 import { useModal } from 'utils/hooks/useModal';
 import Modal from '@components/common/Modal';
-import ModalLoginForm from '@components/LoginFormModal';
+import ModalLoginForm from '@components/LoginForm';
 import styles from './header.module.scss';
 
 const Header: React.FC = () => {
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
           </button>
         )}
       </div>
-      <Modal title='ddd' isShown={isShown} onClose={toggle} content={<ModalLoginForm onClose={toggle} />} />
+      <Modal title='mooMark' isShown={isShown} onClose={toggle} content={<ModalLoginForm onClose={toggle} />} />
     </header>
   );
 };
