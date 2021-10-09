@@ -1,9 +1,7 @@
-import { render } from 'enzyme';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { useRecoilState } from 'recoil';
 import { userSessionAtom } from 'recoil/userSession';
-import GoogleLogo from './GoogleLogo.svg';
 import styles from './LoginForm.module.scss';
 
 interface props {
@@ -41,11 +39,6 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
             <b>google 로그인 / 회원가입</b>
           </p>
         </div>
-
-        // <button className={styles.googleLogin} onClick={renderProps.onClick} disabled={renderProps.disabled}>
-
-        //   This is my custom Google button
-        // </button>
       )}
     />
   );
