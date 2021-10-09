@@ -69,7 +69,7 @@ const Header: React.FC = () => {
           </button>
         )}
       </div>
-      <Modal title='로그인' isShown={isShown} onClose={toggle} content={<ModalLoginForm onClose={toggle} />} />
+      <Modal title='mooMark' isShown={isShown} onClose={toggle} content={<ModalLoginForm onClose={toggle} />} />
     </header>
   );
 };
