@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { userSessionAtom, loginUserState } from 'recoil/userSession';
+import { GoogleLogout } from 'react-google-login';
 import { useModal } from 'utils/hooks/useModal';
 import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginForm';
@@ -57,7 +58,11 @@ const Header: React.FC = () => {
                     <Link href='/edit'>새 글 작성</Link>
                     <Link href='/'>임시글 리스트</Link>
                     <Link href='/'>설정</Link>
-                    <div onClick={setLogOut}>로그아웃</div>
+                    <div onClick={setLogOut}>
+                      <GoogleLogout clientId={process.env.GOOGLE_OAUTH_CLIENT_ID as string} onLogoutSuccess={setLogOut}
+                        render={() => <div className={styles.logout}>로그아웃</div>}
+                       />
+                    </div>
                   </div>
                 </div>
               )}
