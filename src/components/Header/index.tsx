@@ -60,7 +60,7 @@ const Header: React.FC = () => {
                     <Link href='/'>설정</Link>
                     <div onClick={setLogOut}>
                       <GoogleLogout clientId={process.env.GOOGLE_OAUTH_CLIENT_ID as string} onLogoutSuccess={setLogOut}
-                        render={()=><div>로그아웃</div>}
+                        render={() => <div className={styles.logout}>로그아웃</div>}
                        />
                     </div>
                   </div>
