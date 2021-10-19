@@ -1,4 +1,4 @@
-import GoogleSocialLogin from './GoogleSocialLogin';
+import GoogleSocialLogin from './GoogleLogin/GoogleSocialLogin';
 import styles from './LoginForm.module.scss';
 
 interface ModalLoginFormProps {
