@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { useRecoilState } from 'recoil';
 import { userSessionAtom } from 'recoil/userSession';
-import styles from './LoginForm.module.scss';
+import styles from '../LoginForm.module.scss';
 
 interface props {
   onClose: () => void;
