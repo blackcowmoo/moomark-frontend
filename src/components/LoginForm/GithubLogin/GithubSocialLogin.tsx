@@ -10,13 +10,13 @@ interface props {
 
 const GithubSocialLogin: React.FC<props> = ({ onClose }) => {
   const [, setUserSession] = useRecoilState(userSessionAtom);
-  const loginUri: string = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_OAUTH_CLIENT_ID}&scope=repo:status read:repo_hook user:email&redirect_uri=http://localhost:3000`;
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
-  const requestLogin = () => {
-    console.log(loginUri);
-  }
+  const requestLogin = (response: any) => {
+    console.log(process.env.Github);
+    setUserSession({ id: response.tokenId, userName: response?.profileObj?.name });
+    onClose();
+  };
 
   return (
     <>
