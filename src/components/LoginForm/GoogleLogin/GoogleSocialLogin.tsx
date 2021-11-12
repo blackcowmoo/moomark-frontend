@@ -17,6 +17,7 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
   const onSuccess = (response: any) => {
     console.log(response);
     console.log({ id: response.tokenId, userName: response?.profileObj?.name });
+
     setUserSession({ id: response.tokenId, userName: response?.profileObj?.name });
     onClose();
   };
