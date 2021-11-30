@@ -1,4 +1,5 @@
-import GoogleSocialLogin from './GoogleSocialLogin';
+import GoogleSocialLogin from './GoogleLogin/GoogleSocialLogin';
+import GithubSocialLogin from './GithubLogin/GithubSocialLogin';
 import styles from './LoginForm.module.scss';
 
 interface ModalLoginFormProps {
@@ -11,6 +12,9 @@ const LoginFormModal: React.FC<ModalLoginFormProps> = ({ onClose }) => {
       <div className={styles.divider}>소셜 로그인</div>
       <div className={styles.social}>
         <GoogleSocialLogin onClose={onClose} />
+      </div>
+      <div className={styles.social}>
+        <GithubSocialLogin onClose={onClose} />
       </div>
     </div>
   );

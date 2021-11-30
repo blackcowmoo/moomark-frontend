@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { useRecoilState } from 'recoil';
 import { userSessionAtom } from 'recoil/userSession';
-import styles from './LoginForm.module.scss';
+import styles from '../LoginForm.module.scss';
 
 interface props {
   onClose: () => void;
@@ -15,8 +15,9 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
   }, []);
 
   const onSuccess = (response: any) => {
-    console.log(response);
+    console.log('SUCCESS', response);
     console.log({ id: response.tokenId, userName: response?.profileObj?.name });
+
     setUserSession({ id: response.tokenId, userName: response?.profileObj?.name });
     onClose();
   };
