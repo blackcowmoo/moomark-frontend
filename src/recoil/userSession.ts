@@ -1,10 +1,11 @@
 import { atom, selector } from 'recoil';
-interface userSession {
+
+interface IUserSession {
   id: null | string;
   userName: null | string;
-};
+}
 
-export const userSessionAtom = atom<userSession>({
+export const userSessionAtom = atom<IUserSession>({
   key: 'userSession',
   default: { id: null, userName: null },
 });

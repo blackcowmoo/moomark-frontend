@@ -13,7 +13,7 @@ const GithubSocialLogin: React.FC<props> = ({ onClose }) => {
   useEffect(() => {}, []);
 
   const requestLogin = (response: any) => {
-    console.log(response)
+    console.log(response);
     setUserSession({ id: 'githubLogin', userName: 'mock_github' });
     onClose();
   };
