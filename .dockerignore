@@ -1,4 +1,6 @@
 build/*
+src/*
+public/*
 README.md
 Dockerfile*
 .gitignore
@@ -6,3 +8,5 @@ Dockerfile*
 .eslintrc
 jest.config.js
 yarn-error.log 
+.git
+LICENSE
