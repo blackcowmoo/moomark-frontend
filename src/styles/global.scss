@@ -17,7 +17,7 @@ body {
   background-color: $global-background;
 }
 
-div{
+div {
   display: block;
 }
 
@@ -25,7 +25,29 @@ div{
   display: flex;
 }
 
-input, button, textarea{
+input,
+button,
+textarea {
   font-family: inherit;
   font-size: inherit;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+a {
+  text-decoration: none;
+  color: $default-black;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
 }

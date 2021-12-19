@@ -1,5 +1,8 @@
+@import '@styles/utils';
+@import '@styles/mixin';
+
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -11,15 +14,35 @@
 }
 
 .modal {
-  background: white;
-  width: 500px;
-  height: 600px;
-  border-radius: 15px;
-  padding: 15px;
-  .header{
-    display: flex;
-    justify-content: flex-end;
-    font-size: 25px;
+  background: #fff;
+  border-radius: 1rem;
+  @include mobile {
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  .header {
+    height: 54px;
+    padding: 16px 20px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    word-wrap: break-word;
+    .title {
+      vertical-align: middle;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      padding: 15px;
+      line-height: 0;
+    }
   }
   .body {
     padding-top: 10px;

@@ -1,6 +1,9 @@
 @import '@styles/utils';
 
 .header {
+  position: relative;
+  top: 0;
+  width: 100%;
   box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
   font-size: 1.2rem;
   height: 4rem;
@@ -138,6 +141,9 @@
           &:hover {
             background-color: $default-green;
           }
+        }
+        .logout{
+          padding: 0;
         }
       }
     }
