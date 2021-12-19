@@ -19,6 +19,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-${{ hashFiles('yarn.lock') }}
+
+      - name: Install packages
+        run: yarn
+      - name: Build
+        run: yarn build
+
       - name: Set docker registry (PR)
         run: echo "DOCKER_REGISTRY=$REGISTRY/pr" >> $GITHUB_ENV
         if: contains(github.event.pull_request.labels.*.name, 'deploy')
