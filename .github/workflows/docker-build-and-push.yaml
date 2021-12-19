@@ -62,7 +62,7 @@ jobs:
       - name: Download build
         uses: actions/download-artifact@v2
         with:
-          name: .next
+          name: build
 
       - name: Set docker registry (PR)
         run: echo "DOCKER_REGISTRY=$REGISTRY/pr" >> $GITHUB_ENV
