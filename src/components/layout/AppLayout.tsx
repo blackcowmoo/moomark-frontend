@@ -1,13 +1,11 @@
 import { ReactNode } from 'react';
-import Header from './Header';
+import GlobalHeader from '../GlobalHeader';
 
 const AppLayout: React.FC<ReactNode> = ({ children }) => {
   return (
     <>
-      <Header/>
-      <main>
+      <GlobalHeader />
       {children}
-      </main>
     </>
   );
 };

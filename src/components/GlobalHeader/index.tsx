@@ -8,7 +8,7 @@ import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginForm';
 import styles from './header.module.scss';
 
-const Header: React.FC = () => {
+const GlobalHeader: React.FC = () => {
   const [userSession, setUserSession] = useRecoilState(userSessionAtom);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
                     <Link href='/'>내 북마크</Link>
                     <Link href='/edit'>새 글 작성</Link>
                     <Link href='/'>임시글 리스트</Link>
-                    <Link href='/'>설정</Link>
+                    <Link href='/setting'>설정</Link>
                     <div onClick={setLogOut}>
                       <GoogleLogout clientId={process.env.GOOGLE_OAUTH_CLIENT_ID as string} onLogoutSuccess={setLogOut}
                         render={() => <div className={styles.logout}>로그아웃</div>}
@@ -79,4 +79,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default GlobalHeader;
