@@ -58,7 +58,7 @@ jobs:
           key: node-${{ hashFiles('yarn.lock') }}
 
       - name: Install packages
-        run: yarn --production --frozen-lockfile --no-cache
+        run: yarn --production --frozen-lockfile
       - name: Download build
         uses: actions/download-artifact@v2
         with:
