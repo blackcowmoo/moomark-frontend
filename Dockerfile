@@ -1,17 +1,7 @@
-# FROM node:12 as builder
-
-# COPY . /node
-# WORKDIR /node
-
-# RUN yarn && yarn build
-
-### Production
 FROM node:12-alpine
 WORKDIR /app
-COPY package.json .
-COPY yarn.lock .
-RUN yarn --production --frozen-lockfile --no-cache && yarn cache clean && npm prune --production
 COPY . .
+RUN yarn --production --frozen-lockfile --no-cache
 
 EXPOSE 3000
 STOPSIGNAL SIGINT
