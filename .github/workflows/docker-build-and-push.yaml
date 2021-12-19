@@ -14,7 +14,7 @@ env:
 
 jobs:
   build:
-    name: Docker build and push
+    name: Docker build
     runs-on: ubuntu-latest
 
     steps:
@@ -33,6 +33,36 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
+
+      - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
+
+  push:
+    name: Docker push
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-${{ hashFiles('yarn.lock') }}
+
+      - name: Install packages
+        run: yarn --production --frozen-lockfile --no-cache
+      - name: Download build
+        uses: actions/download-artifact@v2
+        with:
+          name: build
 
       - name: Set docker registry (PR)
         run: echo "DOCKER_REGISTRY=$REGISTRY/pr" >> $GITHUB_ENV
