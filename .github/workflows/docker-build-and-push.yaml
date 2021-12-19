@@ -59,10 +59,14 @@ jobs:
 
       - name: Install packages
         run: yarn --production
+      - name: test 1
+        run: ls -al
       - name: Download build
         uses: actions/download-artifact@v2
         with:
           name: .next
+      - name: test 2
+        run: ls -al
 
       - name: Set docker registry (PR)
         run: echo "DOCKER_REGISTRY=$REGISTRY/pr" >> $GITHUB_ENV
