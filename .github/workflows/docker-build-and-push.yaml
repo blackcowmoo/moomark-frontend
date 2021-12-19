@@ -37,7 +37,7 @@ jobs:
       - name: Upload build
         uses: actions/upload-artifact@v2
         with:
-          name: build
+          name: .next
           path: .next
 
   push:
@@ -62,7 +62,7 @@ jobs:
       - name: Download build
         uses: actions/download-artifact@v2
         with:
-          name: build
+          name: .next
 
       - name: Set docker registry (PR)
         run: echo "DOCKER_REGISTRY=$REGISTRY/pr" >> $GITHUB_ENV
