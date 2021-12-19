@@ -1,6 +1,5 @@
 build/*
 src/*
-public/*
 README.md
 Dockerfile*
 .gitignore
