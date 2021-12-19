@@ -55,7 +55,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: node_modules
-          key: node-${{ hashFiles('yarn.lock') }}
+          key: node-production-${{ hashFiles('yarn.lock') }}
 
       - name: Install packages
         run: yarn --production
