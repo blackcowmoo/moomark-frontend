@@ -6,6 +6,9 @@ import { GoogleLogout } from 'react-google-login';
 import { useModal } from 'utils/hooks/useModal';
 import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginForm';
+import ThemeToggle from './ThemeToggle';
+
+import Logo from './Logo.svg';
 import styles from './header.module.scss';
 
 const GlobalHeader: React.FC = () => {
@@ -30,8 +33,11 @@ const GlobalHeader: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
+        <ThemeToggle />
         <Link href='/'>
-          <img className={styles.logo} src='/logo.svg' alt='mooMark logo' />
+          <div className={styles.logo}>
+            <Logo/>
+          </div>
         </Link>
         <form action='#' className={styles.search}>
           <input type='text' className={styles.search__input} placeholder='Search input' />
@@ -59,9 +65,11 @@ const GlobalHeader: React.FC = () => {
                     <Link href='/'>임시글 리스트</Link>
                     <Link href='/setting'>설정</Link>
                     <div onClick={setLogOut}>
-                      <GoogleLogout clientId={process.env.GOOGLE_OAUTH_CLIENT_ID as string} onLogoutSuccess={setLogOut}
+                      <GoogleLogout
+                        clientId={process.env.GOOGLE_OAUTH_CLIENT_ID as string}
+                        onLogoutSuccess={setLogOut}
                         render={() => <div className={styles.logout}>로그아웃</div>}
-                       />
+                      />
                     </div>
                   </div>
                 </div>

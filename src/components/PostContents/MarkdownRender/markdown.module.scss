@@ -1,20 +1,19 @@
 @import '@styles/utils';
 @import '@styles/mixin';
 
-.markdown {
+.markdown{
   display: inline-block;
   font-size: 1rem;
   width: 100%;
-  color: $default-black;
   line-height: 1.7;
   letter-spacing: -0.004em;
   word-break: keep-all;
   overflow-wrap: break-word;
   a {
-    color: $dark-green;
+    color: var(--secondary);
     text-decoration-line: none;
     &:hover {
-      color: $focus-red;
+      color: var(--accent);
       text-decoration-line: underline;
     }
   }
@@ -24,11 +23,13 @@
       overflow: auto;
       font-size: 85%;
       line-height: 1.45;
-      background-color: #070707;
+      background-color: var(--bg-toggle);
       border-radius: 3px;
     }
   }
 }
+
+
 
 @include mobile {
   .markdown {
