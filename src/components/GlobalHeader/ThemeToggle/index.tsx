@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import Sun from './Sun.svg';
+import Moon from './Moon.svg';
+import styles from './ThemeToggle.module.scss';
 
 type Theme = 'light' | 'dark';
 
@@ -20,9 +23,20 @@ const index = () => {
     setActiveTheme(inActiveTheme);
   };
 
-  return <div>
-    <span onClick={toggleTheme}>{activeTheme === 'light' ? '🌞' : '🌙'}</span>
-  </div>;
+  return (
+    <div>
+      <input type='checkbox' className={styles.checkbox} onClick={toggleTheme} checked={activeTheme === 'dark'} id='chk' />
+      <label className={styles.label} htmlFor='chk'>
+        <div className={styles.ball}></div>
+        <div className={styles.moon}>
+          <Moon />
+        </div>
+        <div className={styles.sun}>
+          <Sun />
+        </div>
+      </label>
+    </div>
+  );
 };
 
 export default index;
