@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Sun from './Sun.svg';
-import Moon from './Moon.svg';
+import SunIcon from './Sun.svg';
+import MoonIcon from './Moon.svg';
 import styles from './ThemeToggle.module.scss';
 
 type Theme = 'light' | 'dark';
@@ -29,10 +29,10 @@ const index = () => {
       <label className={styles.label} htmlFor='chk'>
         <div className={styles.ball}></div>
         <div className={styles.moon}>
-          <Moon />
+          <MoonIcon />
         </div>
         <div className={styles.sun}>
-          <Sun />
+          <SunIcon />
         </div>
       </label>
     </div>
