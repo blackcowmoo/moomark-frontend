@@ -52,12 +52,6 @@ const GlobalHeader: React.FC = () => {
           <ThemeToggle />
           {userSession.id ? (
             <div className={styles.userNav}>
-              <div className={styles.userNav__icon}>
-                <img src='/icon/bookmarks.svg' alt='User bookmarks' />
-              </div>
-              <div className={styles.userNav__icon}>
-                <img src='/icon/bell.svg' alt='User bookmarks' />
-              </div>
               <div className={styles.userNav__user}>
                 <img src='/mockprofile.PNG' alt='mockNick' onClick={toggleDropdown} />
                 {isDropdown && (
