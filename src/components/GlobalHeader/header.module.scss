@@ -14,10 +14,7 @@
     margin-right: auto;
     height: 100%;
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
   }
   .logo {
     margin-right: 1rem;
@@ -29,45 +26,11 @@
       fill: var(--accent);
     }
   }
-  .search {
+  .right{
+    width: 15rem;
     display: flex;
-    flex: 0 0 30%;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: space-between;
-    &__input {
-      border: none;
-      padding: 0.7rem 2rem;
-      border-radius: 100px;
-      width: 90%;
-      transition: all 0.2s;
-      margin-right: -5.5rem;
-      &::-webkit-input-placeholder {
-        font-weight: 100;
-        color: var(--text-secondary);
-      }
-      &:focus {
-        color: var(--text-primary);
-        outline: none;
-        width: 100%;
-        background: var(--text-toggle);
-      }
-    }
-
-    &__button {
-      padding-right: 1.5rem;
-      border: none;
-      background-color: transparent;
-      &:focus {
-        outline: none;
-      }
-      &:active {
-        transform: translateY(2px);
-      }
-    }
-    &__icon {
-      height: 1.125rem;
-      width: 1.125rem;
-    }
   }
 
   .userNav {
@@ -157,16 +120,16 @@
 
 .loginButton {
   height: 2rem;
-  background: var(--bg-secondary);
+  color: var(--bg-secondary);
+  background: var(--accent);
   border-radius: 5px;
   border: none;
   outline: none;
-  color: var(--text-primary);
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
   &:hover {
-    color: $default-black;
-    background: $global-background;
+    color: var(--text-primary);
+    background: var(--secondary);
   }
 }
