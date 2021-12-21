@@ -14,7 +14,9 @@
 }
 
 .modal {
-  background: #fff;
+  // background: #fff;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   border-radius: 1rem;
   @include mobile {
     border-radius: 0px;
@@ -26,7 +28,7 @@
     padding: 16px 20px;
     position: relative;
     border-bottom: 1px solid #eee;
-    color: #333;
+    // color: #333;
     text-align: center;
     font-size: 16px;
     font-weight: 600;
@@ -46,5 +48,6 @@
   }
   .body {
     padding-top: 10px;
+    margin: 1rem;
   }
 }

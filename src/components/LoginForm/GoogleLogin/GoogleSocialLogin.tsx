@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { useRecoilState } from 'recoil';
 import { userSessionAtom } from 'recoil/userSession';
+import { useMutation } from '@apollo/client';
+import { LOGIN } from 'api/queries/auth.queries';
 import styles from '../LoginForm.module.scss';
 
 interface props {
@@ -10,15 +12,23 @@ interface props {
 
 const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
   const [, setUserSession] = useRecoilState(userSessionAtom);
+  const updateUser = (res: any) => {
+    console.log(res);
+    setUserSession({ id: 'google', userName: 'googleLog' });
+  };
+
+  const [login, { data }] = useMutation(LOGIN, {
+    onCompleted(res) {
+      updateUser(res);
+    },
+  });
+
   useEffect(() => {
-    console.log(process.env.GOOGLE_OAUTH_CLIENT_ID);
-  }, []);
+    console.log(data);
+  }, [data]);
 
   const onSuccess = (response: any) => {
-    console.log('SUCCESS', response);
-    console.log({ id: response.tokenId, userName: response?.profileObj?.name });
-
-    setUserSession({ id: response.tokenId, userName: response?.profileObj?.name });
+    login({ variables: { type: 'Google', code: response.code } });
     onClose();
   };
 

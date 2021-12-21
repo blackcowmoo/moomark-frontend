@@ -6,6 +6,27 @@
   box-sizing: inherit;
 }
 
+body,
+body[data-theme='light'] {
+  --accent: #ff6b00;
+  --secondary: #ffcf70;
+  --text-primary: #27201a;
+  --text-secondary: #ffcf70;
+  --bg-primary: #fff;
+  --bg-secondary: #fff;
+  --bg-toggle: #fff8e0;
+}
+
+body[data-theme='dark'] {
+  --accent: #ff6b00;
+  --secondary: #4A4742;
+  --text-primary: #e8e6e1;
+  --text-secondary: #4A4742;
+  --bg-primary: #3B3831;
+  --bg-secondary: #25201D;
+  --bg-toggle: #a9a9a9;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -13,8 +34,8 @@ body {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   line-height: 2.6;
-  color: rgb(34, 37, 41);
-  background-color: $global-background;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
 }
 
 div {
