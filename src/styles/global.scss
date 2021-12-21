@@ -19,18 +19,19 @@ body[data-theme='light'] {
 
 body[data-theme='dark'] {
   --accent: #ff6b00;
-  --secondary: #4A4742;
+  --secondary: #4a4742;
   --text-primary: #e8e6e1;
-  --text-secondary: #4A4742;
-  --bg-primary: #3B3831;
-  --bg-secondary: #25201D;
+  --text-secondary: #4a4742;
+  --bg-primary: #3b3831;
+  --bg-secondary: #25201d;
   --bg-toggle: #a9a9a9;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   line-height: 2.6;
