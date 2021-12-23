@@ -8,6 +8,7 @@ import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginForm';
 import ThemeToggle from './ThemeToggle';
 import SearchForm from './SearchForm';
+import HttpHeaderModifier from './HttpHeaderModifier';
 
 import SearchLogo from './SearchForm/Search.svg';
 import MainLogo from './Logo.svg';
@@ -49,6 +50,7 @@ const GlobalHeader: React.FC = () => {
               <SearchLogo />
             </div>
           </Link>
+          {process.env.NODE_ENV==='development' && <HttpHeaderModifier/> }
           <ThemeToggle />
           {userSession.id ? (
             <div className={styles.userNav}>
