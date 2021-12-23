@@ -18,7 +18,7 @@ const PostContents: React.FC<Props> = ({ contents }) => {
     setFocusAnchor(anchorID);
   }, []);
   return (
-    <div className='postcontents'>
+    <div >
       <AnchorList anchorList={anchorList} focusAnchor={focusAnchor} />
       <MarkdownRender markdown={contents} updateFocusAnchor={updateFocusAnchor} updateAnchorList={updateAnchorList} />
     </div>

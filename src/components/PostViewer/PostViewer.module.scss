@@ -1,6 +1,7 @@
 @import '@styles/mixin';
 
 .post{
+  display: block;
   width: 750px;
   margin-top: 3rem;
   margin-left: auto;
@@ -13,7 +14,7 @@
     letter-spacing: -0.006em;
     margin-top: 0.6rem;
     font-weight: 800;
-    color: rgb(52, 58, 64);
+    color: var(--text-primary);
     margin-bottom: 2rem;
     word-break: keep-all;
   }

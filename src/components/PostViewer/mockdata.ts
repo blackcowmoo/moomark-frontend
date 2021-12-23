@@ -26,11 +26,11 @@ const markdown: string = `
 `;
 
 const mockData: PostProps = {
-  title: 'mockTitle 입니다',
+  title: 'mockTitle ',
   postDate: mockDate,
   editorName: 'writerMock',
   content: markdown,
-  tags: ['test', '태그', '안녕하세요', '소통해요'],
+  tags: ['test', 'hasdasdfasf', 'loooooooooooooooooooooongStirng', '무마크'],
   comments: [
     {
       info: {
