@@ -9,19 +9,14 @@ const index = () => {
   const [activeTheme, setActiveTheme] = useState<Theme>(null);
   const inActiveTheme = activeTheme === 'light' ? 'dark' : 'light';
 
-  useEffect(() => {
-    const localTheme = localStorage.getItem('theme');
-    setActiveTheme(localTheme === 'dark' ? 'dark' : 'light');
-  }, []);
-
   const isTheme = (value: any): value is Theme => {
     return typeof value === 'string' && (value === 'light' || value === 'dark');
   };
 
   useEffect(() => {
     if (activeTheme === null) {
-      const localTheme = localStorage.getItem('theme');
-      isTheme(localTheme) ? setActiveTheme(localTheme) : setActiveTheme('light');
+      const htmlTheme = document.body?.dataset.theme ;
+      isTheme(htmlTheme) ? setActiveTheme(htmlTheme) : setActiveTheme('light');
     }
   }, []);
 
