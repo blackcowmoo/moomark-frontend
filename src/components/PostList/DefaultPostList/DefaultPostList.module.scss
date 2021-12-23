@@ -1,15 +1,14 @@
 @import '@styles/utils';
 
 .container {
-  width: 50rem;
+  max-width: 30rem;
   border-radius: 4px;
   background-color: var(--bg-primary);
   box-shadow: var(--box-shadow);
-  height: fit-content;
   margin: 1rem;
-  .listTitle{
+  .listTitle {
     border-bottom: solid 1px var(--text-secondary);
-    padding: 0 1rem ;
+    padding: 0 1rem;
     margin: 0 1rem;
     // width: 80%;
   }
@@ -37,6 +36,7 @@
       flex-grow: 4;
       text-overflow: ellipsis;
       white-space: nowrap;
+      overflow: hidden;
     }
     .postInfo {
       width: auto;
@@ -45,15 +45,22 @@
       .author {
         margin-left: 1rem;
         flex-grow: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
       .like {
         margin-left: 1rem;
         flex-grow: 1;
+        color: var(--accent)
       }
       .date {
         margin-left: 1rem;
         flex-grow: 3;
         color: $default-grey;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }

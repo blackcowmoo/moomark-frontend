@@ -1,7 +1,7 @@
 @import '@styles/utils';
 .container {
   max-width: 1264px;
-  width: 100%;
+  width: 80%;
   background: none;
   justify-content: space-between;
   margin: 0 auto;
@@ -13,4 +13,6 @@
 
 .default{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
