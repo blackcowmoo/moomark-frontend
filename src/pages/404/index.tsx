@@ -1,7 +1,6 @@
 const index = () => {
   return (
     <div>
-
       null
     </div>
   );
