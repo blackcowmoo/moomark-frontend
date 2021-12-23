@@ -20,7 +20,7 @@ const TileViewItem: React.FC<props> = ({ value }) => {
           }
           <div className={styles.info}>
             <h4> {title}</h4>
-            <div className={description}>
+            <div className={styles.description}>
               <p>{description}</p>
             </div>
             <div className={styles.subInfo}>
