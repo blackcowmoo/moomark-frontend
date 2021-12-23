@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - develop
+    types: [labeled]
 
   push:
     branches:
@@ -41,6 +42,7 @@ jobs:
           path: .next
 
   push:
+    if: contains( github.event.pull_request.labels.*.name, 'deploy')
     name: Docker push
     needs: build
     runs-on: ubuntu-latest
