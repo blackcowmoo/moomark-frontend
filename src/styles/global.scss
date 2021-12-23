@@ -19,6 +19,8 @@ body[data-theme='light'] {
   --bg-primary: #fff;
   --bg-secondary: #fff;
   --bg-toggle: #fff8e0;
+  --theme: light;
+  --box-shadow:rgba(149, 157, 165, 0.2) 0px 6px 12px;
 }
 
 body[data-theme='dark'] {
@@ -29,6 +31,8 @@ body[data-theme='dark'] {
   --bg-primary: #3b3831;
   --bg-secondary: #25201d;
   --bg-toggle: #a9a9a9;
+  --theme: 'dark';
+  --box-shadow:rgba(0,0,0, 0.7) 0px 6px 12px;
 }
 
 body {
