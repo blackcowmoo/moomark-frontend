@@ -3,7 +3,7 @@ on:
   pull_request:
     branches:
       - develop
-    types: [labeled]
+    types: [labeled, synchronize, opened]
 
   push:
     branches:
@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/cache@v2
         with:
           path: node_modules
