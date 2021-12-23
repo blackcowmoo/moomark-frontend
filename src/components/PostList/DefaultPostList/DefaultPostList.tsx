@@ -9,7 +9,7 @@ interface props {
 
 const DefaultPostList: React.FC<props> = ({ listTitle, postList }) => {
   return (
-    <div className={styles.defaultPostList}>
+    <div className={styles.container}>
       <h2 className={styles.listTitle}>{listTitle}</h2>
       <ul>
         {postList.map((value, index) => {
