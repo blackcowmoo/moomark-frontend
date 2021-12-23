@@ -10,14 +10,13 @@ const index = () => {
   const inActiveTheme = activeTheme === 'light' ? 'dark' : 'light';
 
   const isTheme = (value: any): value is Theme => {
-    return typeof value === 'string' && (value === 'light' || value === 'dark');
+    return typeof value === 'string' && (value === 'light' || value === 'dark') && typeof value !== 'undefined';
   };
 
   useEffect(() => {
-    if (activeTheme === null) {
-      const htmlTheme = document.body?.dataset.theme ;
-      isTheme(htmlTheme) ? setActiveTheme(htmlTheme) : setActiveTheme('light');
-    }
+    const htmlTheme = document.body.dataset.theme;
+    const theme = isTheme(htmlTheme) ? htmlTheme : 'light';
+    setActiveTheme(theme);
   }, []);
 
   useEffect(() => {
