@@ -8,7 +8,7 @@
 }
 
 .TileViewItem {
-  width: 20rem;
+  width: 14rem;
   background: var(--bg-primary);
   border-radius: 4px;
   transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
@@ -24,8 +24,8 @@
     text-decoration: none;
     .thumbnail {
       padding-top: 52.1921%;
-      width: 100%;
       position: relative;
+      height: 7rem;
       img {
         position: absolute;
         top: 0px;
@@ -39,7 +39,6 @@
     .info {
       padding: 1rem;
       display: flex;
-      flex: 1 1 0%;
       flex-direction: column;
       h4 {
         font-size: 1rem;
@@ -72,8 +71,6 @@
         font-size: 0.75rem;
         line-height: 1.5;
         color: var(--text-secondary);
-        .date {
-        }
       }
     }
   }
@@ -91,6 +88,9 @@
       display: flex;
       -webkit-box-align: center;
       align-items: center;
+      b{
+        margin-left: 0.5rem;
+      }
     }
     .like {
       display: flex;

@@ -1,11 +1,11 @@
-import MainLayout from '@components/layout/MainLayout';
 import TilePostList from '@components/PostList/TileViewPostList/TileViewPostList';
 import DefaultPostList from '@components/PostList/DefaultPostList/DefaultPostList';
 import { TilePostProps, PostListViewProps } from 'types';
+import HomeLayout from '@components/layout/HomeLayout';
 
 const date = new Date(2021, 2, 10);
 
-const tileMock:TilePostProps [] = [
+const tileMock: TilePostProps[] = [
   {
     id: 0,
     title: 'mockTitle',
@@ -70,14 +70,13 @@ const mock: PostListViewProps[] = [
   },
 ];
 
-const Index = () => {
+const HomePage = () => {
   return (
-    <MainLayout>
-      <h1>mooMark main</h1>
-      <TilePostList listTitle={'인기'} postList={tileMock}/>
-      <DefaultPostList listTitle={'Default'} postList={mock}/>
-    </MainLayout>
+    <HomeLayout>
+      <TilePostList listTitle={'인기'} postList={tileMock} />
+      <DefaultPostList listTitle={'Default'} postList={mock} />
+    </HomeLayout>
   );
 };
 
-export default Index;
+export default HomePage;
