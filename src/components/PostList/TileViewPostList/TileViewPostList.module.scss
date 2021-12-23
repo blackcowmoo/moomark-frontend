@@ -4,11 +4,16 @@
     display: flex;
     margin: -1rem;
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 
-.TileViewItem {
-  width: 20rem;
+.tileItem {
+  flex: 1;
+}
+
+.item {
+  width: 14rem;
   background: var(--bg-primary);
   border-radius: 4px;
   transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
@@ -16,18 +21,16 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--box-shadow);
 
-  &[data-theme='light'] {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  }
   a {
     display: block;
     color: inherit;
     text-decoration: none;
     .thumbnail {
       padding-top: 52.1921%;
-      width: 100%;
       position: relative;
+      height: 7rem;
       img {
         position: absolute;
         top: 0px;
@@ -41,7 +44,6 @@
     .info {
       padding: 1rem;
       display: flex;
-      flex: 1 1 0%;
       flex-direction: column;
       h4 {
         font-size: 1rem;
@@ -67,20 +69,16 @@
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;
-          color: var(--text-secondary);
         }
       }
       .subInfo {
         font-size: 0.75rem;
         line-height: 1.5;
-        color: var(--text-secondary);
-        .date {
-        }
       }
     }
   }
   .footer {
-    border-top: 1px solid rgb(248, 249, 250);
+    border-top: 1px solid var(--text-secondary) ;
     display: flex;
     padding: 0.625rem 1rem;
     font-size: 0.9rem;
@@ -93,6 +91,9 @@
       display: flex;
       -webkit-box-align: center;
       align-items: center;
+      b{
+        margin-left: 0.5rem;
+      }
     }
     .like {
       display: flex;

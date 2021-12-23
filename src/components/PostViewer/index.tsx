@@ -1,7 +1,7 @@
 import PostContents from '@components/PostContents';
 import CommentBox, { CommentProps } from '@components/CommentBox';
 import PostHeader from '@components/PostHeader';
-import styles from './post.module.scss';
+import styles from './PostViewer.module.scss';
 import mockData from './mockdata';
 
 export interface PostProps {

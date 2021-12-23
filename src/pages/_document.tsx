@@ -7,15 +7,25 @@ class MainDocument extends Document {
   }
 
   render() {
+    const setInitialTheme = `
+    function getUserPreference() {
+      if(window.localStorage.getItem('theme')) {
+        return window.localStorage.getItem('theme')
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+    }
+    document.body.dataset.theme = getUserPreference();
+  `;
     return (
       <Html>
         <Head>
           <meta charSet='utf-8' />
-          <link rel='icon' href='cow.svg' />
-          {/* <script src='https://apis.google.com/js/platform.js?onload=init' async defer />
-          <meta name='google-signin-client_id' content={process.env.DEV_GOOGLE_OAUTH_CLIENT_ID } /> */}
+          <link rel='icon' href='logo.svg' />
         </Head>
         <body>
+          <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
           <Main />
           <NextScript />
           <div id='modal-root'></div>
