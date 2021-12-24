@@ -1,6 +1,8 @@
 import Modal from '@components/common/Modal';
-import styles from './HttpHeaderModifier.module.scss';
 import { useModal } from 'utils/hooks/useModal';
+import HttpHeaderModifier from './HttpHeaderModifier';
+import styles from './HttpHeaderModifier.module.scss';
+
 const index = () => {
   const { isShown, toggle } = useModal();
   return (
@@ -8,7 +10,7 @@ const index = () => {
       <button className={styles.button} onClick={toggle}>
         🐮
       </button>
-      <Modal title='Http Client Header Custom' isShown={isShown} onClose={toggle} content={<>custom contents</>} />
+      <Modal title='Http Client Header Custom' isShown={isShown} onClose={toggle} content={<HttpHeaderModifier />} />
     </div>
   );
 };

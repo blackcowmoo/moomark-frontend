@@ -50,7 +50,7 @@ const GlobalHeader: React.FC = () => {
               <SearchLogo />
             </div>
           </Link>
-          {process.env.NODE_ENV==='development' && <HttpHeaderModifier/> }
+          {process.env.NODE_ENV === 'development' && <HttpHeaderModifier/> }
           <ThemeToggle />
           {userSession.id ? (
             <div className={styles.userNav}>

@@ -1,8 +1,10 @@
 import { atom, selector } from 'recoil';
 
+export const defaultHeaderOption = { 'x-moom-route': '' };
+
 export const customHeaderAtom = atom<Object>({
   key: 'customheader',
-  default: { 'x-moom-route': '' },
+  default: defaultHeaderOption,
 });
 
 export const customHeaderState = selector({
