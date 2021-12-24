@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { useRecoilState } from 'recoil';
 import { userSessionAtom } from 'recoil/userSession';
+import { customHeaderAtom } from 'recoil/customHeader';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from 'api/queries/auth.queries';
 import styles from '../LoginForm.module.scss';
@@ -11,6 +12,7 @@ interface props {
 }
 
 const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
+  const [customHeader] = useRecoilState(customHeaderAtom);
   const [, setUserSession] = useRecoilState(userSessionAtom);
   const updateUser = (res: any) => {
     console.log(res);
@@ -18,6 +20,11 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
   };
 
   const [login, { data }] = useMutation(LOGIN, {
+    context: {
+      headers: {
+        ...customHeader,
+      },
+    },
     onCompleted(res) {
       updateUser(res);
     },
@@ -28,6 +35,7 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
   }, [data]);
 
   const onSuccess = (response: any) => {
+    console.log(customHeader);
     login({ variables: { type: 'Google', code: response.code } });
     onClose();
   };

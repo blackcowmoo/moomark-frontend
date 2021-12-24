@@ -1,10 +1,28 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, HttpLink, InMemoryCache, ApolloLink, concat } from '@apollo/client';
 
 const prod = process.env.NODE_ENV === 'production';
 
+const uri = prod ? `${process.env.PROD_APOLLO_CLIENT_URI}` : `${process.env.PROD_APOLLO_CLIENT_URI}` + '/graphql';
+const httpLink = new HttpLink({uri: uri});
+
+const authMiddleware = new ApolloLink((operation, forward) => {
+  // add the authorization to the headers
+  operation.setContext(({ headers = {} }) => ({
+    headers: {
+      ...headers,
+      authorization: localStorage.getItem('token') || null,
+    }
+  }));
+
+  return forward(operation);
+})
+
+
+
 const client = new ApolloClient({
-  uri: prod ? `${process.env.PROD_APOLLO_CLIENT_URI}/graphql` : `${process.env.PROD_APOLLO_CLIENT_URI}/graphql`,
   cache: new InMemoryCache(),
+  link: concat(authMiddleware, httpLink)
+  // uri: prod ? `${process.env.PROD_APOLLO_CLIENT_URI}/graphql` : `${process.env.PROD_APOLLO_CLIENT_URI}/graphql`,
 });
 
 export default client;
