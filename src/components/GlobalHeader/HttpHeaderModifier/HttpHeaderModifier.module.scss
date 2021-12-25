@@ -2,8 +2,32 @@
   width: 3rem;
 }
 
-.contents{
-  min-width: 50rem;
+.contents {
+  min-width: 25rem;
   padding: 1rem;
 
+  .item {
+    border-bottom: solid var(--secondary) 1px;
+  }
+
+  input {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    margin-right: 1rem;
+  }
+  button {
+    margin: 1rem;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: var(--text-primary);
+    background-color: var(--accent);
+  }
+  .resetButton {
+    background-color: var(--accent);
+  }
+  .result{
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+  }
 }

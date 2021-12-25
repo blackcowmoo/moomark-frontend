@@ -31,19 +31,6 @@ const HttpHeaderModifier = () => {
     return { ...customHeader, [key]: value };
   };
 
-  const renameKey = (key: string, newKey: string) => {
-    const clonedObj = clone(customHeader);
-    const targetKey = clonedObj[key];
-
-    delete clonedObj[key];
-    clonedObj[newKey] = targetKey;
-    return clonedObj;
-  };
-
-  const onChangeHeaderKey = (key: string, e: React.ChangeEvent<HTMLInputElement>) => {
-    setCustomHeader(renameKey(key, e.target.value));
-  };
-
   const onChangeHeaderValue = (key: string, e: React.ChangeEvent<HTMLInputElement>) => {
     setCustomHeader(changeHeaderValue(key, e.target.value));
   };
@@ -87,7 +74,7 @@ const HttpHeaderModifier = () => {
     <div className={styles.contents}>
       {Object.entries(customHeader).map(([key, value]) => (
         <div className={styles.item} key={key}>
-          <input onChange={(e) => onChangeHeaderKey(key, e)} value={key} />
+          <input value={key} />
           <input onChange={(e) => onChangeHeaderValue(key, e)} value={value} />
           <button onClick={() => removeOption(customHeader, key)}>remove</button>
         </div>
@@ -97,7 +84,11 @@ const HttpHeaderModifier = () => {
         <input value={customValue} onChange={(e) => handleCustomValue(e)} />
         <button onClick={() => addCustomOption(customKey, customValue)}>add</button>
       </div>
-      <button onClick={() => resetHeaderOption()}>Reset Option</button>
+      <button className={styles.resetButton} onClick={() => resetHeaderOption()}>
+        Reset Option
+      </button>
+      <p>check value in localStorage Key: {localStorageKey}</p>
+      <div className={styles.result}>{JSON.stringify(customHeader)}</div>
     </div>
   );
 };
