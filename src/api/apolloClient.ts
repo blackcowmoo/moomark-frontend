@@ -1,4 +1,4 @@
-import { ApolloClient, HttpLink, InMemoryCache, ApolloLink, concat } from '@apollo/client';
+import { ApolloClient, HttpLink, InMemoryCache, ApolloLink, from } from '@apollo/client';
 
 const prod = process.env.NODE_ENV === 'production';
 
@@ -20,7 +20,7 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  link: concat(authMiddleware, httpLink),
+  link: from([authMiddleware, httpLink]),
 });
 
 export default client;
