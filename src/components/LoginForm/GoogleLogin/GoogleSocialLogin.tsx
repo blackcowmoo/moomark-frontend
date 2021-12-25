@@ -45,7 +45,7 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
   };
   return (
     <GoogleLogin
-      clientId={process.env.GOOGLE_OAUTH_CLIENT_ID as string}
+      clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID as string}
       buttonText='Login'
       onSuccess={onSuccess}
       onFailure={onFailure}

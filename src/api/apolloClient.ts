@@ -1,8 +1,8 @@
 import { ApolloClient, HttpLink, InMemoryCache, ApolloLink, from } from '@apollo/client';
 
-const prod = process.env.NODE_ENV === 'production';
+// const prod = process.env.NEXT_PUBLIC_ENV === 'prod';
 
-const uri = prod ? process.env.PROD_APOLLO_CLIENT_URI : `${process.env.DEV_APOLLO_CLIENT_URI}/graphql`;
+const uri = `${process.env.NEXT_PUBLIC_GATEWAY_URL}/graphql`;
 
 const httpLink = new HttpLink({ uri });
 
