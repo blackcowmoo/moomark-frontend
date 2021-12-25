@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "next",
+    "dev": "NEXT_PUBLIC_ENV=dev next",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --noEmit --esModuleInterop",

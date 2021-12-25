@@ -11,7 +11,7 @@ module.exports = {
       use: ['@svgr/webpack'],
     });
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
-    config.plugins.push(new Dotenv());
+    if (process.env.NODE_ENV === 'development') config.plugins.push(new Dotenv());
     return config;
   },
 };
