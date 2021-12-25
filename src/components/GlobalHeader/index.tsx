@@ -8,6 +8,7 @@ import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginForm';
 import ThemeToggle from './ThemeToggle';
 import SearchForm from './SearchForm';
+import HttpHeaderModifier from './HttpHeaderModifier';
 
 import SearchLogo from './SearchForm/Search.svg';
 import MainLogo from './Logo.svg';
@@ -49,6 +50,7 @@ const GlobalHeader: React.FC = () => {
               <SearchLogo />
             </div>
           </Link>
+          {process.env.NEXT_PUBLIC_ENV === 'dev' && <HttpHeaderModifier />}
           <ThemeToggle />
           {userSession.id ? (
             <div className={styles.userNav}>
@@ -65,7 +67,7 @@ const GlobalHeader: React.FC = () => {
                       <Link href='/setting'>설정</Link>
                       <div onClick={setLogOut}>
                         <GoogleLogout
-                          clientId={process.env.GOOGLE_OAUTH_CLIENT_ID as string}
+                          clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID as string}
                           onLogoutSuccess={setLogOut}
                           render={() => <div className={styles.logout}>로그아웃</div>}
                         />
