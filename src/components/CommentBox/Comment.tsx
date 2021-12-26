@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CommentProps } from './index';
 import Reply from './Reply';
+import CommentInputForm from './CommentInputForm';
 import styles from './comment.module.scss';
 
 interface Props {
@@ -31,17 +32,18 @@ const Comment: React.FC<Props> = ({ comment }) => {
 
       <div className={styles.text}>{comment.text}</div>
 
-      {comment.reply ? (
-        <div className={styles.replyContainer}>
+      <div className={styles.replyContainer}>
+        {comment.reply ? (
           <div className={styles.toggleButton} onClick={toggleReply}>
             <span>{showReply ? '🐄  접기' : `🐮 ${comment.reply.length} 개의 댓글`}</span>
+            {showReply && comment.reply.map((item, index) => <Reply info={item.info} text={item.text} key={index} />)}
           </div>
-
-          {showReply && comment.reply.map((item, index) => <Reply info={item.info} text={item.text} key={index} />)}
-        </div>
-      ) : (
-        <div className={styles.noreply}>댓글이 읎어요</div>
-      )}
+        ) : (
+          <div className={styles.noreply}>
+            <CommentInputForm />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
