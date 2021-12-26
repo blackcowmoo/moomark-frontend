@@ -1,6 +1,8 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
+const BASE_PATH = process.env.NEXT_PUBLIC_ENV_ROOT_PATH || '';
+
 module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
@@ -14,4 +16,5 @@ module.exports = {
     if (process.env.NODE_ENV === 'development') config.plugins.push(new Dotenv());
     return config;
   },
+  basePath: BASE_PATH,
 };
