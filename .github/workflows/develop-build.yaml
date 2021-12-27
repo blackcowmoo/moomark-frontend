@@ -10,11 +10,8 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Build
     runs-on: ubuntu-latest
-    # env:
-    #   GRAPHQL_SERVER: http://gateway:7000/graphql
-    #   GOOGLE_OAUTH_CLIENT_ID:
 
     steps:
       - uses: actions/checkout@v2
@@ -34,8 +31,3 @@ jobs:
 
       - name: Run build
         run: yarn build
-
-      - name: Run test
-        run: yarn test
-        env:
-          CI: true

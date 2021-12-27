@@ -15,7 +15,7 @@ module.exports = {
     '^.+\\.(css|less|scss)$': 'babel-jest',
   },
   transformIgnorePatterns: ['node_modules/(?!variables/.*)'],
-  coverageReporters: ['json', 'text'],
+  coverageReporters: ['text'],
   collectCoverageFrom: ['src/**/*.ts*'],
   coveragePathIgnorePatterns: ['/node_modules/', '/.next/'],
   coverageThreshold: {
