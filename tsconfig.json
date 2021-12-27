@@ -5,9 +5,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": ["dom", "es2017"],
-    "module": "esnext",
+    "jsx": "react-jsx",
+    "lib": ["dom", "es2019"],
+    "target": "es2019",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
@@ -16,11 +17,11 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext",
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["./components/*"],
-      "@styles/*": ["./styles/*"]
+      "@styles/*": ["./styles/*"],
+      "@pages/*": ["./pages/*"]
     }
   },
   "exclude": ["node_modules"],

@@ -1,0 +1,38 @@
+name: github-actions/develop/build
+on:
+  pull_request:
+    branches:
+      - develop
+
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    # env:
+    #   GRAPHQL_SERVER: http://gateway:7000/graphql
+    #   GOOGLE_OAUTH_CLIENT_ID:
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ./node_modules
+          key: node-${{ hashFiles('yarn.lock') }}
+          restore-keys: node-
+
+      - name: Install packages
+        run: yarn
+
+      - name: Run test
+        run: yarn test
+        env:
+          CI: true
