@@ -21,7 +21,6 @@ class MainDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta charSet='utf-8' />
           <link rel='icon' href='logo.svg' />
         </Head>
         <body>
