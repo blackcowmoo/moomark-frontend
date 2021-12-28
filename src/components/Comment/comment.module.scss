@@ -24,9 +24,15 @@
       }
     }
     .commentInfo {
+      margin-left: 1rem;
+      display: flex;
       .userName {
+
       }
       .date {
+        margin: 1rem;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
       }
     }
   }
@@ -44,7 +50,7 @@
   border: 0px;
   color: $default-green;
   background-color: $global-background;
-  &:hover{
+  &:hover {
     color: $dark-green;
   }
 }

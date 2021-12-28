@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import { CommentProps } from './index';
+import { ICommentContent } from './index';
 import Reply from './Reply';
 import CommentInputForm from './CommentInputForm';
+import { timeForToday } from 'utils/common';
 import styles from './comment.module.scss';
 
 interface Props {
-  comment: CommentProps;
+  comment: ICommentContent;
 }
 
 const Comment: React.FC<Props> = ({ comment }) => {
+  const { info, reply } = comment;
+  const { user, date } = info;
   const [showReply, setshowReply] = useState(false);
   const toggleReply = () => {
     setshowReply(!showReply);
@@ -18,25 +21,25 @@ const Comment: React.FC<Props> = ({ comment }) => {
     <div className={styles.comment}>
       <div className={styles.header}>
         <div className={styles.userProfile}>
-          {comment.info.profileImgSrc ? (
-            <img src={comment.info.profileImgSrc} alt={`${comment.info.userName}`} className={styles.userImg} />
+          {user.profileImgSrc ? (
+            <img src={user.profileImgSrc} alt={`${user.name}`} className={styles.userImg} />
           ) : (
-            <img src='/mockprofile.PNG' alt={`${comment.info.userName}`} className={styles.userImg} />
+            <img src='/mockprofile.PNG' alt={`${user.name}`} className={styles.userImg} />
           )}
         </div>
         <div className={styles.commentInfo}>
-          <div className={styles.userName}>{comment.info.userName}</div>
-          <div className={styles.date}>{comment.info.commentDate.toDateString()}</div>
+          <div className={styles.userName}>{user.name}</div>
+          <div className={styles.date}>{timeForToday(date)}</div>
         </div>
       </div>
 
       <div className={styles.text}>{comment.text}</div>
 
       <div className={styles.replyContainer}>
-        {comment.reply ? (
+        {reply ? (
           <div className={styles.toggleButton} onClick={toggleReply}>
-            <span>{showReply ? '🐄  접기' : `🐮 ${comment.reply.length} 개의 댓글`}</span>
-            {showReply && comment.reply.map((item, index) => <Reply info={item.info} text={item.text} key={index} />)}
+            <span>{showReply ? '🐄  접기' : `🐮 ${reply.length} 개의 댓글`}</span>
+            {showReply && reply.map((item, index) => <Reply info={item.info} text={item.text} key={index} />)}
           </div>
         ) : (
           <div className={styles.noreply}>
