@@ -5,8 +5,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": ["dom", "es2019"],
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "es2019"
+    ],
     "target": "es2019",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -19,11 +22,25 @@
     "strict": true,
     "baseUrl": "./src",
     "paths": {
-      "@components/*": ["./components/*"],
-      "@styles/*": ["./styles/*"],
-      "@pages/*": ["./pages/*"]
+      "@components/*": [
+        "./components/*"
+      ],
+      "@styles/*": [
+        "./styles/*"
+      ],
+      "@pages/*": [
+        "./pages/*"
+      ]
     }
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "next.config.js", "next-env.d.ts", "additional.d.ts"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next.config.js",
+    "next-env.d.ts",
+    "additional.d.ts"
+  ]
 }
