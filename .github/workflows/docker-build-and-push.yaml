@@ -34,6 +34,18 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
+        env:
+          NEXT_PUBLIC_ROOT_PATH: /pr/${{ github.event.pull_request.number }}
+
+      - name: Build (PR)
+        if: contains(github.event.pull_request.labels.*.name, 'deploy')
+        run: yarn build
+        env:
+          NEXT_PUBLIC_ROOT_PATH: /pr/${{ github.event.pull_request.number }}
+
+      - name: Build (deployment)
+        if: "!contains(github.event.pull_request.labels.*.name, 'deploy')"
+        run: yarn build
 
       - name: Upload build
         uses: actions/upload-artifact@v2
