@@ -23,7 +23,7 @@ jobs:
       - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 16
 
       - uses: actions/cache@v2
         with:
@@ -54,7 +54,7 @@ jobs:
       - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 16
 
       - uses: actions/cache@v2
         with:
