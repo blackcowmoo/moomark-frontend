@@ -1,5 +1,5 @@
 import styles from './Comment.module.scss';
-import Content from './Content';
+import CommentContent from './CommentContent';
 
 interface IUserProfile {
   profileImgSrc?: string;
@@ -29,7 +29,7 @@ const Comment: React.FC<IComment> = ({ comments }) => {
   return (
     <div className={styles.comment}>
       {comments?.map((item, index) => (
-        <Content comment={item} key={index} />
+        <CommentContent comment={item} key={index} />
       ))}
     </div>
   );

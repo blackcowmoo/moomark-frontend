@@ -1,6 +1,6 @@
 import { timeForToday } from 'utils/common';
 import { ICommentInfo } from '..';
-import styles from './Content.module.scss';
+import styles from './CommentContent.module.scss';
 
 const CommentInfo: React.FC<ICommentInfo> = ({ user, date }) => {
   const { profileImgSrc, name } = user;

@@ -1,6 +1,5 @@
 import styles from './CommentInputForm.module.scss';
 
-
 const index = () => {
   return (
     <div className={styles.commentInputForm}>
