@@ -1,6 +1,6 @@
 import { IReply } from '@components/Comment';
 import CommentInfo from './CommentInfo';
-import CommentInputForm from './CommentInputForm';
+import CommentInputForm from '../CommentInputForm';
 import { ContentText } from '.';
 import styles from './CommentContent.module.scss';
 

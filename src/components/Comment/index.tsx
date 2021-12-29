@@ -1,4 +1,5 @@
 import styles from './Comment.module.scss';
+import CommentInputForm from './CommentInputForm';
 import CommentContent from './CommentContent';
 
 interface IUserProfile {
@@ -31,6 +32,7 @@ const Comment: React.FC<IComment> = ({ comments }) => {
       {comments?.map((item, index) => (
         <CommentContent comment={item} key={index} />
       ))}
+      <CommentInputForm/>
     </div>
   );
 };

@@ -12,6 +12,7 @@
 
 .CommentInfo {
   display: flex;
+  align-items: center;
   .profile {
     display: flex;
     align-items: center;
@@ -26,7 +27,10 @@
   .info {
     margin-left: 1rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     .name {
+      // margin: auto 0px;
     }
     .date {
       margin: 1rem;
