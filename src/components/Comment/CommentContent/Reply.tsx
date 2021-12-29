@@ -29,8 +29,8 @@ const Reply: React.FC<IReplyComponents> = ({ reply, showReply, toggleReply }) =>
       </div>
       {showReply && (
         <div className={styles.ContentContainer}>
-          {reply.map((item) => (
-            <ReplyContent info={item.info} text={item.text} like={item.like} />
+          {reply.map((item, index) => (
+            <ReplyContent key={index} info={item.info} text={item.text} like={item.like} />
           ))}
           <CommentInputForm />
         </div>
