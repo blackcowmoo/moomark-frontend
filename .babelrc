@@ -1,5 +1,5 @@
 {
-  "presets": ["next/babel"],
+  "presets": ["next/babel", "@babel/preset-env"],
   "plugins": [
     [
       "module-resolver",
@@ -7,9 +7,12 @@
         "root": ["./src"],
         "alias": {
           "@components": "./src/components",
-          "@styles": "./src/styles"
+          "@styles": "./src/styles",
+          "@pages": "./src/pages",
+          "utils/": "./src/utils/",
         }
       }
-    ]
+    ],
+    ["@babel/plugin-transform-runtime"]
   ]
 }
