@@ -1,5 +1,5 @@
-import { PostProps } from './index';
 import { ICommentContent } from '@components/Comment';
+import { PostProps } from './index';
 
 const mockDate = new Date(2020, 3, 1);
 
@@ -52,7 +52,7 @@ const mockData: PostProps = {
       ],
     },
     mockCommentContent,
-    mockCommentContent
+    mockCommentContent,
   ],
 };
 

@@ -1,5 +1,5 @@
 import PostContents from '@components/PostContents';
-import Comment, { ICommentContent} from '@components/Comment';
+import Comment, { ICommentContent } from '@components/Comment';
 import PostHeader from '@components/PostHeader';
 import styles from './PostViewer.module.scss';
 import mockData from './mockdata';

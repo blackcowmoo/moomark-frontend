@@ -1,4 +1,4 @@
-import styles from './comment.module.scss';
+import styles from './Comment.module.scss';
 import Content from './Content';
 
 interface IUserProfile {
@@ -6,12 +6,12 @@ interface IUserProfile {
   name: string;
 }
 
-interface ICommentInfo {
+export interface ICommentInfo {
   user: IUserProfile;
   date: Date;
 }
 
-interface IReply {
+export interface IReply {
   info: ICommentInfo;
   text: string;
   like: number;
@@ -28,8 +28,8 @@ interface IComment {
 const Comment: React.FC<IComment> = ({ comments }) => {
   return (
     <div className={styles.comment}>
-      {comments?.map((v, index) => (
-        <Content comment={v} key={index} />
+      {comments?.map((item, index) => (
+        <Content comment={item} key={index} />
       ))}
     </div>
   );
