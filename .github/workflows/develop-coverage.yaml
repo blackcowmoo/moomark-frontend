@@ -1,4 +1,4 @@
-name: github-actions/develop/build
+name: github-actions/develop/coverage
 on:
   pull_request:
     branches:
@@ -10,8 +10,11 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Test and Coverage
     runs-on: ubuntu-latest
+    # env:
+    #   GRAPHQL_SERVER: http://gateway:7000/graphql
+    #   GOOGLE_OAUTH_CLIENT_ID:
 
     steps:
       - uses: actions/checkout@v2
@@ -27,5 +30,7 @@ jobs:
       - name: Install packages
         run: yarn
 
-      - name: Run build
-        run: yarn build
+      - name: Run test
+        run: yarn test:coverage
+        env:
+          CI: true
