@@ -5,6 +5,7 @@
   padding: 1rem 0;
   .toggleButton{
     color: var(--text-primary);
+    font-weight: bold;
   }
 }
 
@@ -14,11 +15,6 @@
 }
 
 .Reply {
-  // .toggleButton {
-  //   span {
-  //     color: var(--text-primary);
-  //   }
-  // }
   .ContentContainer {
     border-radius: 4px;
     padding: 1rem;

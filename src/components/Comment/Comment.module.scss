@@ -1,20 +1,5 @@
-@import '@styles/utils';
-
-.Comment {
-  border-radius: 2rem;
-}
-
-.toggleButton {
-  cursor: pointer;
-  font-weight: bold;
-  border: 0px;
-  color: $default-green;
-  background-color: $global-background;
-  &:hover {
-    color: $dark-green;
-  }
-}
-
-.noreply {
-  padding-left: 1rem;
+.commentContainer {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: var(--accent) 1px solid;
 }

@@ -28,11 +28,13 @@ interface IComment {
 
 const Comment: React.FC<IComment> = ({ comments }) => {
   return (
-    <div className={styles.comment}>
-      {comments?.map((item, index) => (
-        <CommentContent comment={item} key={index} />
-      ))}
-      <CommentInputForm/>
+    <div className={styles.commentContainer}>
+      <div className={styles.comment}>
+        <CommentInputForm />
+        {comments?.map((item, index) => (
+          <CommentContent comment={item} key={index} />
+        ))}
+      </div>
     </div>
   );
 };

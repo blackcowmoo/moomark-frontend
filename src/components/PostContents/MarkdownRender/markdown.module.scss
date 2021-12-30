@@ -10,10 +10,10 @@
   word-break: keep-all;
   overflow-wrap: break-word;
   a {
-    color: var(--secondary);
+    color: var(--accent);
     text-decoration-line: none;
     &:hover {
-      color: var(--accent);
+      color: var(--secondary);
       text-decoration-line: underline;
     }
   }

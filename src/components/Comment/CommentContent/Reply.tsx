@@ -14,7 +14,7 @@ const Reply: React.FC<IReplyComponents> = ({ reply, showReply, toggleReply }) =>
   return (
     <div className={styles.Reply}>
       <div className={styles.toggleButton} onClick={toggleReply}>
-        <span>{showReply ? '🐄  접기' : `🐮 ${reply.length} 개의 댓글`}</span>
+        <span>{showReply ? '접기' : `${reply.length} 개의 댓글`}</span>
       </div>
       {showReply && (
         <div className={styles.ContentContainer}>
