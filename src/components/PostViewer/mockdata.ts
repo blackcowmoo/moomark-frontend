@@ -1,3 +1,4 @@
+import { ICommentContent } from '@components/Comment';
 import { PostProps } from './index';
 
 const mockDate = new Date(2020, 3, 1);
@@ -25,65 +26,33 @@ const markdown: string = `
 3. 모든 HTML 마크업을 대신하지 못한다.
 `;
 
+const mockCommentContent: ICommentContent = {
+  info: {
+    user: {
+      name: 'doge',
+    },
+    date: mockDate,
+  },
+  text: '안녕하세요. 일런 머스큽니다.',
+  like: -1,
+};
+
 const mockData: PostProps = {
   title: 'mockTitle ',
   postDate: mockDate,
   editorName: 'writerMock',
   content: markdown,
   tags: ['test', 'hasdasdfasf', 'loooooooooooooooooooooongStirng', '무마크'],
-  comments: [
+  comment: [
     {
-      info: {
-        userName: 'test1',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
+      ...mockCommentContent,
       reply: [
-        {
-          info: {
-            userName: 'reply1',
-            commentDate: mockDate,
-          },
-          text: 'mock reply',
-        },
+        mockCommentContent,
+        mockCommentContent,
       ],
     },
-    {
-      info: {
-        userName: 'test2',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-    {
-      info: {
-        userName: 'test3',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-    {
-      info: {
-        userName: 'test3',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-    {
-      info: {
-        userName: 'test3',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-    {
-      info: {
-        userName: 'test3',
-        commentDate: mockDate,
-      },
-      text: 'comment mocking',
-    },
-
+    mockCommentContent,
+    mockCommentContent,
   ],
 };
 

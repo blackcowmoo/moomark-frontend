@@ -1,5 +1,5 @@
 import PostContents from '@components/PostContents';
-import CommentBox, { CommentProps } from '@components/CommentBox';
+import Comment, { ICommentContent } from '@components/Comment';
 import PostHeader from '@components/PostHeader';
 import styles from './PostViewer.module.scss';
 import mockData from './mockdata';
@@ -10,7 +10,7 @@ export interface PostProps {
   editorName: string;
   content: string;
   tags: string[];
-  comments?: CommentProps[];
+  comment?: ICommentContent[];
 }
 
 export const mockProps = mockData;
@@ -24,7 +24,7 @@ const PostViewer: React.FC<postViewerProps> = ({ postProp = mockData }) => {
     <div className={styles.post}>
       <PostHeader title={postProp.title} editorName={postProp.editorName} tags={postProp.tags} postDate={postProp.postDate} />
       <PostContents contents={postProp.content} />
-      <CommentBox comments={postProp.comments} />
+      <Comment comments={postProp.comment} />
     </div>
   );
 };
