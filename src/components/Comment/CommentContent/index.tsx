@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ICommentContent } from '../index';
+import Content from './Content';
 import Reply from './Reply';
-import CommentInfo from './CommentInfo';
 import CommentInputForm from '../CommentInputForm';
 import styles from './CommentContent.module.scss';
 
@@ -9,21 +9,8 @@ interface Props {
   comment: ICommentContent;
 }
 
-interface IContentText {
-  text: string;
-}
-
-export const ContentText: React.FC<IContentText> = ({ text }) => {
-  return (
-    <div className={styles.ContentText}>
-      <p>{text}</p>
-    </div>
-  );
-};
-
 const CommentContent: React.FC<Props> = ({ comment }) => {
-  const { info, reply } = comment;
-  const { user, date } = info;
+  const { info, reply, text, like } = comment;
   const [showReply, setshowReply] = useState(false);
   const [openInputForm, setOpenInputForm] = useState(false);
 
@@ -37,10 +24,14 @@ const CommentContent: React.FC<Props> = ({ comment }) => {
 
   return (
     <div className={styles.Content}>
-      <CommentInfo user={user} date={date} />
-      <ContentText text={comment.text} />
-      {reply ? <Reply reply={reply} showReply={showReply} toggleReply={toggleReply} /> : <button onClick={toggleInputForm}>댓글 달기 </button>}
-
+      <Content info={info} text={text} like={like} />
+      {reply ? (
+        <Reply reply={reply} showReply={showReply} toggleReply={toggleReply} />
+      ) : (
+        <button className={styles.toggleButton} onClick={toggleInputForm}>
+          {openInputForm ? '접기' : '댓글 달기' }
+        </button>
+      )}
       {openInputForm && <CommentInputForm />}
     </div>
   );

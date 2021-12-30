@@ -3,6 +3,9 @@
   height: 100%;
   width: 100%;
   padding: 1rem 0;
+  .toggleButton{
+    color: var(--text-primary);
+  }
 }
 
 .ContentText {
@@ -10,38 +13,15 @@
   padding: 0 1rem;
 }
 
-.CommentInfo {
-  display: flex;
-  align-items: center;
-  .profile {
-    display: flex;
-    align-items: center;
-    .userImg {
-      width: 3rem;
-      height: 3rem;
-      display: block;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-  }
-  .info {
-    margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .name {
-      // margin: auto 0px;
-    }
-    .date {
-      margin: 1rem;
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-    }
-  }
-}
-
 .Reply {
+  // .toggleButton {
+  //   span {
+  //     color: var(--text-primary);
+  //   }
+  // }
   .ContentContainer {
+    border-radius: 4px;
+    padding: 1rem;
     margin-left: 2rem;
     background-color: var(--secondary);
   }

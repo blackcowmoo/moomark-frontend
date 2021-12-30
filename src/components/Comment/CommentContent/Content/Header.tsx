@@ -1,11 +1,11 @@
 import { timeForToday } from 'utils/common';
-import { ICommentInfo } from '..';
-import styles from './CommentContent.module.scss';
+import { ICommentInfo } from '../..';
+import styles from './Content.module.scss';
 
-const CommentInfo: React.FC<ICommentInfo> = ({ user, date }) => {
+const Header: React.FC<ICommentInfo> = ({ user, date }) => {
   const { profileImgSrc, name } = user;
   return (
-    <div className={styles.CommentInfo}>
+    <div className={styles.header}>
       <div className={styles.profile}>
         {profileImgSrc ? (
           <img src={profileImgSrc} alt={name} className={styles.userImg} />
@@ -21,4 +21,4 @@ const CommentInfo: React.FC<ICommentInfo> = ({ user, date }) => {
   );
 };
 
-export default CommentInfo;
+export default Header;

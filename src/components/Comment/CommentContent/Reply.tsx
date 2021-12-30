@@ -1,19 +1,8 @@
 import { IReply } from '@components/Comment';
-import CommentInfo from './CommentInfo';
-import CommentInputForm from '../CommentInputForm';
-import { ContentText } from '.';
-import styles from './CommentContent.module.scss';
+import Content from './Content';
 
-const ReplyContent: React.FC<IReply> = ({ info, text, like }) => {
-  const { user, date } = info;
-  return (
-    <div className={styles.reply}>
-      <CommentInfo user={user} date={date} />
-      <ContentText text={text} />
-      <div> 👍{like}</div>
-    </div>
-  );
-};
+import CommentInputForm from '../CommentInputForm';
+import styles from './CommentContent.module.scss';
 
 interface IReplyComponents {
   showReply: boolean;
@@ -30,7 +19,7 @@ const Reply: React.FC<IReplyComponents> = ({ reply, showReply, toggleReply }) =>
       {showReply && (
         <div className={styles.ContentContainer}>
           {reply.map((item, index) => (
-            <ReplyContent key={index} info={item.info} text={item.text} like={item.like} />
+            <Content key={index} info={item.info} text={item.text} like={item.like} />
           ))}
           <CommentInputForm />
         </div>
