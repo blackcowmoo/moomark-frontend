@@ -13,9 +13,14 @@ module.exports = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-    // config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
     if (process.env.NODE_ENV === 'development') config.plugins.push(new Dotenv());
     return config;
   },
   basePath: BASE_PATH,
+  // serverRuntimeConfig: {
+  //   NEXT_PUBLIC_ENV: process.env.NEXT_PUBLIC_ENV,
+  // },
+  publicRuntimeConfig: {
+    NEXT_PUBLIC_ENV: process.env.NEXT_PUBLIC_ENV,
+  },
 };

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import getConfig from 'next/config';
 import Link from 'next/link';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { userSessionAtom, loginUserState } from 'recoil/userSession';
@@ -15,10 +16,16 @@ import MainLogo from './Logo.svg';
 import styles from './header.module.scss';
 
 const GlobalHeader: React.FC = () => {
+  const { publicRuntimeConfig } = getConfig();
+  const [isDevEnv, setIsDevEnv] = useState(false);
+  // const isDevEnv = publicRuntimeConfig.NEXT_PUBLIC_ENV && publicRuntimeConfig.NEXT_PUBLIC_ENV === 'dev';
   const [userSession, setUserSession] = useRecoilState(userSessionAtom);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
+  useEffect(() => {
+    if (publicRuntimeConfig.NEXT_PUBLIC_ENV && publicRuntimeConfig.NEXT_PUBLIC_ENV === 'dev') setIsDevEnv(true);
+  }, []);
 
   const toggleDropdown = () => {
     setDropdown((prev) => !prev);
@@ -50,7 +57,7 @@ const GlobalHeader: React.FC = () => {
               <SearchLogo />
             </div>
           </Link>
-          {process.env.NEXT_PUBLIC_ENV === 'dev' && <HttpHeaderModifier />}
+          {isDevEnv && <HttpHeaderModifier />}
           <ThemeToggle />
           {userSession.id ? (
             <div className={styles.userNav}>
