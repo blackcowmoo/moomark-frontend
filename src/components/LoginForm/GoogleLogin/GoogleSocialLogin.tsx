@@ -6,12 +6,16 @@ import { customHeaderAtom } from 'recoil/customHeader';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from 'api/queries/auth.queries';
 import styles from '../LoginForm.module.scss';
+import getConfig from 'next/config';
 
 interface props {
   onClose: () => void;
 }
 
 const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
+  const {
+    publicRuntimeConfig: { GOOGLE_CLIENT_ID },
+  } = getConfig();
   const [customHeader] = useRecoilState(customHeaderAtom);
   const [, setUserSession] = useRecoilState(userSessionAtom);
   const updateUser = (res: any) => {
@@ -45,7 +49,7 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
   };
   return (
     <GoogleLogin
-      clientId={process.env.GOOGLE_CLIENT_ID as string}
+      clientId={GOOGLE_CLIENT_ID as string}
       buttonText='Login'
       onSuccess={onSuccess}
       onFailure={onFailure}

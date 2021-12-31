@@ -16,15 +16,16 @@ import MainLogo from './Logo.svg';
 import styles from './header.module.scss';
 
 const GlobalHeader: React.FC = () => {
-  const { publicRuntimeConfig } = getConfig();
+  const {
+    publicRuntimeConfig: { STAGE, GOOGLE_CLIENT_ID },
+  } = getConfig();
   const [isDevEnv, setIsDevEnv] = useState(false);
   const [userSession, setUserSession] = useRecoilState(userSessionAtom);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
   useEffect(() => {
-    if (publicRuntimeConfig.STAGE && publicRuntimeConfig.STAGE === 'dev') setIsDevEnv(true);
-    console.log(publicRuntimeConfig.STAGE);
+    if (STAGE === 'dev') setIsDevEnv(true);
   }, []);
 
   const toggleDropdown = () => {
@@ -74,7 +75,7 @@ const GlobalHeader: React.FC = () => {
                       <Link href='/setting'>설정</Link>
                       <div onClick={setLogOut}>
                         <GoogleLogout
-                          clientId={process.env.GOOGLE_CLIENT_ID as string}
+                          clientId={GOOGLE_CLIENT_ID as string}
                           onLogoutSuccess={setLogOut}
                           render={() => <div className={styles.logout}>로그아웃</div>}
                         />

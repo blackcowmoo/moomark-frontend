@@ -1,8 +1,10 @@
+import getConfig from 'next/config';
 import { ApolloClient, HttpLink, InMemoryCache, ApolloLink, from } from '@apollo/client';
 
-// const prod = process.env.ENV === 'prod';
-
-const uri = `${process.env.GATEWAY_URL}/graphql`;
+const {
+  publicRuntimeConfig: { GATEWAY_URL },
+} = getConfig();
+const uri = `${GATEWAY_URL}/graphql`;
 
 const httpLink = new HttpLink({ uri });
 
