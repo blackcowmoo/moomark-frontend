@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
-import { GoogleLogin } from 'react-google-login';
 import { useRecoilState } from 'recoil';
+import getConfig from 'next/config';
+import { useMutation } from '@apollo/client';
+import { GoogleLogin } from 'react-google-login';
+
 import { userSessionAtom } from 'recoil/userSession';
 import { customHeaderAtom } from 'recoil/customHeader';
-import { useMutation } from '@apollo/client';
 import { LOGIN } from 'api/queries/auth.queries';
+
 import styles from '../LoginForm.module.scss';
-import getConfig from 'next/config';
 
 interface props {
   onClose: () => void;

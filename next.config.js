@@ -20,6 +20,6 @@ module.exports = {
   publicRuntimeConfig: {
     STAGE: process.env.STAGE || 'dev',
     GATEWAY_URL: process.env.GATEWAY_URL,
-    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   },
 };
