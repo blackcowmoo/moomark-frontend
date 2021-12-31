@@ -6,9 +6,9 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "dev": "NEXT_PUBLIC_ENV=dev next",
+    "dev": "STAGE=dev next",
     "build": "next build",
-    "start": "NEXT_PUBLIC_ENV=dev next start",
+    "start": "next start",
     "type-check": "tsc --noEmit --esModuleInterop",
     "lint": "eslint ."
   },

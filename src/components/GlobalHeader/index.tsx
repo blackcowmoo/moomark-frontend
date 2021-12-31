@@ -18,13 +18,13 @@ import styles from './header.module.scss';
 const GlobalHeader: React.FC = () => {
   const { publicRuntimeConfig } = getConfig();
   const [isDevEnv, setIsDevEnv] = useState(false);
-  // const isDevEnv = publicRuntimeConfig.NEXT_PUBLIC_ENV && publicRuntimeConfig.NEXT_PUBLIC_ENV === 'dev';
   const [userSession, setUserSession] = useRecoilState(userSessionAtom);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
   useEffect(() => {
-    if (publicRuntimeConfig.NEXT_PUBLIC_ENV && publicRuntimeConfig.NEXT_PUBLIC_ENV === 'dev') setIsDevEnv(true);
+    if (publicRuntimeConfig.STAGE && publicRuntimeConfig.STAGE === 'dev') setIsDevEnv(true);
+    console.log(publicRuntimeConfig.STAGE);
   }, []);
 
   const toggleDropdown = () => {
@@ -74,7 +74,7 @@ const GlobalHeader: React.FC = () => {
                       <Link href='/setting'>설정</Link>
                       <div onClick={setLogOut}>
                         <GoogleLogout
-                          clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID as string}
+                          clientId={process.env.GOOGLE_CLIENT_ID as string}
                           onLogoutSuccess={setLogOut}
                           render={() => <div className={styles.logout}>로그아웃</div>}
                         />
