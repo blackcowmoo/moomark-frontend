@@ -37,19 +37,23 @@ const GlobalHeader: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.headerContainer}>
         <div className={styles.logoContainer}>
-          <Link href='/'>
-            <div className={styles.logo}>
-              <MainLogo />
-            </div>
-          </Link>
+          <div className={styles.logo}>
+            <Link href='/'>
+              <a>
+                <MainLogo />
+              </a>
+            </Link>
+          </div>
         </div>
         <SearchForm />
         <div className={styles.right}>
-          <Link href='/search'>
-            <div className={styles.logo}>
-              <SearchLogo />
-            </div>
-          </Link>
+          <div className={styles.logo}>
+            <Link href='/search'>
+              <a>
+                <SearchLogo />
+              </a>
+            </Link>
+          </div>
           {process.env.NEXT_PUBLIC_ENV === 'dev' && <HttpHeaderModifier />}
           <ThemeToggle />
           {userSession.id ? (
