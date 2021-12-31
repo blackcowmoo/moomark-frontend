@@ -1,7 +1,7 @@
 @import './utils';
 
 html {
-  font-size:16px;
+  font-size: 16px;
 }
 
 *,
@@ -14,25 +14,25 @@ body,
 body[data-theme='light'] {
   --accent: #ff6b00;
   --secondary: #ffcf70;
-  --text-primary: #27201a;
-  --text-secondary: #ffcf70;
+  --text-primary: #434742;
+  --text-secondary: #a9a9a9;
   --bg-primary: #fff;
   --bg-secondary: #fff;
   --bg-toggle: #fff8e0;
-  --theme: light;
-  --box-shadow:rgba(149, 157, 165, 0.2) 0px 6px 12px;
+  --theme: 'light';
+  --box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 12px;
 }
 
 body[data-theme='dark'] {
   --accent: #ff6b00;
   --secondary: #4a4742;
   --text-primary: #e8e6e1;
-  --text-secondary: #4a4742;
+  --text-secondary: #a39e93;
   --bg-primary: #3b3831;
   --bg-secondary: #25201d;
-  --bg-toggle: #a9a9a9;
+  --bg-toggle: #423d33;
   --theme: 'dark';
-  --box-shadow:rgba(0,0,0, 0.7) 0px 6px 12px;
+  --box-shadow: rgba(0, 0, 0, 0.7) 0px 6px 12px;
 }
 
 body {
