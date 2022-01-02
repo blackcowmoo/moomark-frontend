@@ -8,13 +8,16 @@ class MainDocument extends Document {
 
   render() {
     const setInitialTheme = `
-    function setUserLocalTheme() {
+    function getUserPreference() {
       if(window.localStorage.getItem('theme')) {
-        return window.localStorage.getItem('theme');
+        return window.localStorage.getItem('theme')
       }
-      return null;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
     }
-    document.body.dataset.theme = setUserLocalTheme() : 'light';
+    document.body.dataset.theme = getUserPreference();
+   
   `;
     return (
       <Html>
