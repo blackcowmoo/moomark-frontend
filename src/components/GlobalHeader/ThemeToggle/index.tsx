@@ -37,7 +37,14 @@ const index = () => {
 
   return (
     <div className={styles.container}>
-      <input type='checkbox' className={styles.checkbox} onChange={toggleTheme} checked={activeTheme === 'light'} id='chk' />
+      <input
+        type='checkbox'
+        className={styles.checkbox}
+        onChange={toggleTheme}
+        checked={activeTheme === 'light'}
+        defaultChecked={activeTheme === 'light'}
+        id='chk'
+      />
       {activeTheme && (
         <label className={styles.label} htmlFor='chk'>
           <div className={styles.ball}></div>
