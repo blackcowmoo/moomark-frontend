@@ -18,18 +18,17 @@ const TileViewItem: React.FC<props> = ({ value }) => {
               <img src={thumbnail || 'https://pbs.twimg.com/media/ESbTA4rUcAArJfB.jpg'} alt={thumbnail} />
             </div>
           }
-          <div className={styles.info}>
-            <h4> {title}</h4>
-            <div className={styles.description}>
-              <p>{description}</p>
-            </div>
-            <div className={styles.subInfo}>
-              <span>{timeForToday(date)}</span>
-            </div>
-          </div>
         </a>
       </Link>
-
+      <div className={styles.info}>
+        <h4> {title}</h4>
+        <div className={styles.description}>
+          <p>{description}</p>
+        </div>
+        <div className={styles.subInfo}>
+          <span>{timeForToday(date)}</span>
+        </div>
+      </div>
       <div className={styles.footer}>
         <Link href={`/user/${author}`}>
           <a className={styles.author}>

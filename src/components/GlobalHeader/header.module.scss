@@ -1,20 +1,16 @@
 @import '@styles/utils';
 
 .header {
-  position: relative;
-  top: 0;
-  width: 100%;
-  box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
-  font-size: 1.2rem;
-  height: 4rem;
+  height: 100%;
   background-color: var(--secondary);
+  padding: 1rem; 
+
   .headerContainer {
-    width: calc(100% - 2rem);
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 1rem;
     height: 100%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   .logo {
     margin-right: 1rem;

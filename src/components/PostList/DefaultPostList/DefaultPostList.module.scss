@@ -1,7 +1,11 @@
+@import '@styles/mixin';
 @import '@styles/utils';
 
 .container {
-  max-width: 30rem;
+  @include mobile{
+    width: calc(100% - 2rem);
+  }
+  width: 25rem;
   border-radius: 4px;
   background-color: var(--bg-primary);
   box-shadow: var(--box-shadow);
@@ -33,13 +37,13 @@
       a {
         color: var(--text-primary);
       }
+      width: 5rem;
       flex-grow: 4;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
     }
     .postInfo {
-      width: auto;
       display: flex;
       flex-direction: row;
       .author {
