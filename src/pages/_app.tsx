@@ -1,4 +1,5 @@
-import type { AppProps } from 'next/app';
+import { AppContext, AppInitialProps, AppProps } from 'next/app';
+import { NextComponentType } from 'next';
 import Head from 'next/head';
 import AppLayout from '@components/layout/AppLayout';
 import { ApolloProvider } from '@apollo/client';
@@ -6,7 +7,7 @@ import client from 'api/apolloClient';
 import { RecoilRoot } from 'recoil';
 import '@styles/global.scss';
 
-const App = ({ Component, pageProps }: AppProps | any) => {
+const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ Component, pageProps }) => {
   return (
     <ApolloProvider client={client}>
       <RecoilRoot>
@@ -20,6 +21,16 @@ const App = ({ Component, pageProps }: AppProps | any) => {
       </RecoilRoot>
     </ApolloProvider>
   );
+};
+
+App.getInitialProps = async ({ Component, ctx }: AppContext): Promise<AppInitialProps> => {
+  let pageProps = {};
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+
+  return { pageProps };
 };
 
 export default App;
