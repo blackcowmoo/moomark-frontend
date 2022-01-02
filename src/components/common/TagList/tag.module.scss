@@ -4,23 +4,18 @@
   display: block;
 }
 
-.tag{
+.tag {
   margin: 0 8px 0 0;
   padding: 0 7px;
-  height: auto;
-  border: solid 1px $tag-border;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 0.8rem;
   display: inline-block;
-  color: $tag-font;
-  background-color: $tag-background;
+  background-color: var(--secondary);
   font-weight: bold;
   margin-right: 1rem;
   a {
-    color: $tag-font;
-    text-decoration: none;
+    color: var(--text-primary);
   }
-
   button {
     background-color: transparent;
     color: $tag-font;
@@ -33,7 +28,7 @@
   }
 }
 
-.tagInput{
+.tagInput {
   display: inline-flex;
   outline: none;
   cursor: text;

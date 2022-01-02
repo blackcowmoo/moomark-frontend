@@ -12,7 +12,7 @@ const TileViewItem: React.FC<props> = ({ value }) => {
   return (
     <div>
       <div className={styles.item}>
-        <Link href={`/post/${id}`}>
+        <Link href={id === 0 ? '/post' : `/post/${id}`}>
           <a>
             {
               <div className={styles.thumbnail}>

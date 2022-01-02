@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import getConfig from 'next/config';
 import Link from 'next/link';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { userSessionAtom, loginUserState } from 'recoil/userSession';
@@ -15,10 +16,17 @@ import MainLogo from './Logo.svg';
 import styles from './header.module.scss';
 
 const GlobalHeader: React.FC = () => {
+  const {
+    publicRuntimeConfig: { STAGE, GOOGLE_CLIENT_ID },
+  } = getConfig();
+  const [isDevEnv, setIsDevEnv] = useState(false);
   const [userSession, setUserSession] = useRecoilState(userSessionAtom);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
+  useEffect(() => {
+    if (STAGE === 'dev') setIsDevEnv(true);
+  }, []);
 
   const toggleDropdown = () => {
     setDropdown((prev) => !prev);
@@ -50,7 +58,7 @@ const GlobalHeader: React.FC = () => {
               <SearchLogo />
             </div>
           </Link>
-          {process.env.NEXT_PUBLIC_ENV === 'dev' && <HttpHeaderModifier />}
+          {isDevEnv && <HttpHeaderModifier />}
           <ThemeToggle />
           {userSession.id ? (
             <div className={styles.userNav}>
@@ -67,7 +75,7 @@ const GlobalHeader: React.FC = () => {
                       <Link href='/setting'>설정</Link>
                       <div onClick={setLogOut}>
                         <GoogleLogout
-                          clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID as string}
+                          clientId={GOOGLE_CLIENT_ID as string}
                           onLogoutSuccess={setLogOut}
                           render={() => <div className={styles.logout}>로그아웃</div>}
                         />
