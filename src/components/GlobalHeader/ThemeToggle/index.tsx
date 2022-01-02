@@ -14,11 +14,11 @@ const index = () => {
   };
 
   useEffect(() => {
-    const wlsTheme = window.localStorage.getItem('theme');
-    console.log(wlsTheme, 'LOCALSTORAGE THEME');
-    const theme = isTheme(wlsTheme) ? wlsTheme : 'light';
-    // const htmlTheme = document.body.dataset.theme;
-    // const theme = isTheme(htmlTheme) ? htmlTheme : 'light';
+    // const wlsTheme = window.localStorage.getItem('theme');
+    // console.log(wlsTheme, 'LOCALSTORAGE THEME');
+    // const theme = isTheme(wlsTheme) ? wlsTheme : 'light';
+    const htmlTheme = document.body.dataset.theme;
+    const theme = isTheme(htmlTheme) ? htmlTheme : 'light';
     setActiveTheme(theme);
   }, []);
 
@@ -31,22 +31,23 @@ const index = () => {
   }, [activeTheme]);
 
   const toggleTheme = () => {
-    console.log('tt');
     setActiveTheme(inActiveTheme);
   };
 
   return (
     <div className={styles.container}>
-      <input type='checkbox' className={styles.checkbox} onChange={toggleTheme} checked={activeTheme !== 'dark'} id='chk' />
-      <label className={styles.label} htmlFor='chk'>
-        <div className={styles.ball}></div>
-        <div className={styles.sun}>
-          <SunIcon />
-        </div>
-        <div className={styles.moon}>
-          <MoonIcon />
-        </div>
-      </label>
+      <input type='checkbox' className={styles.checkbox} onChange={toggleTheme} checked={activeTheme === 'dark'} id='chk' />
+      {activeTheme && (
+        <label className={styles.label} htmlFor='chk'>
+          <div className={styles.sun}>
+            <SunIcon />
+          </div>
+          <div className={styles.moon}>
+            <MoonIcon />
+          </div>
+          <div className={styles.ball} style={{ transform: `translateX(${activeTheme === 'dark' ? '0px' : '24px'})` }}></div>
+        </label>
+      )}
     </div>
   );
 };
