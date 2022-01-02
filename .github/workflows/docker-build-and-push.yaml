@@ -38,7 +38,7 @@ jobs:
         if: contains(github.event.pull_request.labels.*.name, 'deploy')
         run: yarn build
         env:
-          NEXT_PUBLIC_ROOT_PATH: /pr/${{ github.event.pull_request.number }}
+          ROOT_PATH: /pr/${{ github.event.pull_request.number }}
 
       - name: Build (deployment)
         if: "!contains(github.event.pull_request.labels.*.name, 'deploy')"
