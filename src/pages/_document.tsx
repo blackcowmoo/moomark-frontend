@@ -7,23 +7,23 @@ class MainDocument extends Document {
   }
 
   render() {
-    const setInitialTheme = `
-    function setUserLocalTheme() {
-      if(window.localStorage.getItem('theme')) {
-        return window.localStorage.getItem('theme');
-      }
-      return null;
-    }
-    document.body.dataset.theme = setUserLocalTheme() : 'light';
-  `;
+    //   const setInitialTheme = `
+    //   function setUserLocalTheme() {
+    //     if(window.localStorage.getItem('theme')) {
+    //       return window.localStorage.getItem('theme');
+    //     }
+    //     return null;
+    //   }
+    //   document.body.dataset.theme = setUserLocalTheme() : 'light';
+    // `;
 
     return (
       <Html>
         <Head>
           <link rel='icon' href='favicon.svg' />
         </Head>
-        <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
         <body>
+          {/* <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} /> */}
           <Main />
           <NextScript />
           <div id='modal-root'></div>
