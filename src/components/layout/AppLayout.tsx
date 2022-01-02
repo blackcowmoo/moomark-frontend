@@ -6,7 +6,7 @@ const AppLayout: React.FC<ReactNode> = ({ children }) => {
   return (
     <>
       <GlobalHeader />
-      <div className={styles.container}>{children}</div>
+      <div className={styles.AppLayout}>{children}</div>
     </>
   );
 };

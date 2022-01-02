@@ -1,8 +1,16 @@
-.main_container {
+@import '@styles/mixin';
+
+.AppLayout{
+  @include mobile {
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    width: fit-content;
+  }
+  width: 80%;
   max-width: 1264px;
-  width: 100%;
   background: none;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  margin-top: 1.2rem;
 }

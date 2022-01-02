@@ -16,8 +16,11 @@
 .item {
   @include mobile {
     width: calc(50% -2rem);
+    margin: 0px;
   }
-  width: 14rem;
+  @include desktop{
+    width: 16rem;
+  }
   background: var(--bg-primary);
   border-radius: 4px;
   transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
