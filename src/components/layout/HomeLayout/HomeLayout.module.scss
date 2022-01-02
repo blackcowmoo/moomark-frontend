@@ -1,9 +1,10 @@
+@import '@styles/mixin';
 @import '@styles/utils';
 .container {
   max-width: 1264px;
-  width: 80%;
   background: none;
   justify-content: space-between;
+  align-items: stretch;
   margin: 0 auto;
 }
 
