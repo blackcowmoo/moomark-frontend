@@ -41,8 +41,7 @@ const index = () => {
         type='checkbox'
         className={styles.checkbox}
         onChange={toggleTheme}
-        checked={activeTheme === 'light'}
-        defaultChecked={activeTheme === 'light'}
+        checked={activeTheme !== 'dark'}
         id='chk'
       />
       {activeTheme && (
