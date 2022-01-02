@@ -10,14 +10,20 @@ class MainDocument extends Document {
     const setInitialTheme = `
     function getUserPreference() {
       if(window.localStorage.getItem('theme')) {
-        return window.localStorage.getItem('theme')
+        return window.localStorage.getItem('theme');
       }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light'
+      else if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        window.localStorage.setItem('theme', 'dark'); 
+        return 'dark';
+      }
+      else {
+        window.localStorage.setItem('theme', 'light'); 
+        return 'light'
+      }
     }
     document.body.dataset.theme = getUserPreference();
   `;
+
     return (
       <Html>
         <Head>

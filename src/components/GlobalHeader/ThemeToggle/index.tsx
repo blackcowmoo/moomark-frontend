@@ -14,8 +14,8 @@ const index = () => {
   };
 
   useEffect(() => {
-    const htmlTheme = document.body.dataset.theme;
-    const theme = isTheme(htmlTheme) ? htmlTheme : 'light';
+    const wlsTheme = window.localStorage.getItem('theme');
+    const theme = isTheme(wlsTheme) ? wlsTheme : 'light';
     setActiveTheme(theme);
   }, []);
 

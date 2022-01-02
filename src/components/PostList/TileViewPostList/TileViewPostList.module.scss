@@ -1,10 +1,11 @@
+@import '@styles/mixin';
+
 .tilePostList {
   width: 100%;
   .listWrapper {
     display: flex;
-    margin: -1rem;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    margin: 0 auto;
   }
 }
 
@@ -13,6 +14,9 @@
 }
 
 .item {
+  @include mobile {
+    width: calc(50% -2rem);
+  }
   width: 14rem;
   background: var(--bg-primary);
   border-radius: 4px;
@@ -78,7 +82,7 @@
     }
   }
   .footer {
-    border-top: 1px solid var(--text-secondary) ;
+    border-top: 1px solid var(--text-secondary);
     display: flex;
     padding: 0.625rem 1rem;
     font-size: 0.9rem;
@@ -91,7 +95,7 @@
       display: flex;
       -webkit-box-align: center;
       align-items: center;
-      b{
+      b {
         margin-left: 0.5rem;
       }
     }
