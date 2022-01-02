@@ -8,20 +8,13 @@ class MainDocument extends Document {
 
   render() {
     const setInitialTheme = `
-    function getUserPreference() {
+    function setUserLocalTheme() {
       if(window.localStorage.getItem('theme')) {
         return window.localStorage.getItem('theme');
       }
-      else if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-        window.localStorage.setItem('theme', 'dark'); 
-        return 'dark';
-      }
-      else {
-        window.localStorage.setItem('theme', 'light'); 
-        return 'light'
-      }
+      return null;
     }
-    document.body.dataset.theme = getUserPreference();
+    document.body.dataset.theme = setUserLocalTheme() : 'light';
   `;
 
     return (
@@ -29,8 +22,8 @@ class MainDocument extends Document {
         <Head>
           <link rel='icon' href='favicon.svg' />
         </Head>
+        <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
         <body>
-          <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
           <Main />
           <NextScript />
           <div id='modal-root'></div>

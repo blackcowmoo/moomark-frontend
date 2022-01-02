@@ -15,11 +15,15 @@ const index = () => {
 
   useEffect(() => {
     const wlsTheme = window.localStorage.getItem('theme');
+    console.log(wlsTheme, 'LOCALSTORAGE THEME');
     const theme = isTheme(wlsTheme) ? wlsTheme : 'light';
+    // const htmlTheme = document.body.dataset.theme;
+    // const theme = isTheme(htmlTheme) ? htmlTheme : 'light';
     setActiveTheme(theme);
   }, []);
 
   useEffect(() => {
+    console.log(activeTheme, 'USE_Effect  by Changed ActiveTheme');
     if (activeTheme) {
       document.body.dataset.theme = activeTheme;
       localStorage.setItem('theme', activeTheme);
