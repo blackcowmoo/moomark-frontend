@@ -17,6 +17,7 @@ class MainDocument extends Document {
                 : 'light'
     }
     document.body.dataset.theme = getUserPreference();
+   
   `;
     return (
       <Html>
