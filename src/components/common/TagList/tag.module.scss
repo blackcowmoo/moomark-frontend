@@ -2,11 +2,17 @@
 
 .tagList {
   display: block;
+  margin-bottom: 1rem;
+  .tagInput{
+    color: var(--text-primary);
+    background-color: var(--bg-toggle);
+
+  }
 }
 
 .tag {
-  margin: 0 8px 0 0;
-  padding: 0 7px;
+  margin-right: 0.5rem;
+  padding: 0 0.5rem;
   border-radius: 4px;
   font-size: 0.8rem;
   display: inline-block;
@@ -17,14 +23,12 @@
     color: var(--text-primary);
   }
   button {
+    margin-left: 0.5rem;
     background-color: transparent;
-    color: $tag-font;
+    color: var(--accent);
     border: 0px;
     outline: 0px;
     border-radius: 1rem;
-    &:hover {
-      color: $focus-red;
-    }
   }
 }
 
