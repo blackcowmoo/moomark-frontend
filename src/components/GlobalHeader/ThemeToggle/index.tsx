@@ -7,7 +7,6 @@ import MoonIcon from './Moon.svg';
 
 import styles from './ThemeToggle.module.scss';
 
-
 const index = () => {
   const [theme, setTheme] = useRecoilState(globalThemeState);
 
@@ -17,8 +16,7 @@ const index = () => {
 
   useEffect(() => {
     const htmlTheme = document.body.dataset.theme;
-    const theme = isTheme(htmlTheme) ? htmlTheme : 'light';
-    setTheme(theme);
+    setTheme(isTheme(htmlTheme) ? htmlTheme : 'light');
   }, []);
 
   useEffect(() => {

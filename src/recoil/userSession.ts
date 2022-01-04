@@ -5,7 +5,7 @@ interface IUserSession {
   userName: null | string;
 }
 
-export const userSessionState= atom<IUserSession>({
+export const userSessionState = atom<IUserSession>({
   key: 'userSession',
   default: { id: null, userName: null },
 });
