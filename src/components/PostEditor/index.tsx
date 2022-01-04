@@ -64,7 +64,7 @@ const PostEditor: React.FC<EditorProps> = (props) => {
         <div className={styles.tags}>
           <TagList isEditable={true} tagList={tags} setTagList={onChangeTags} />
         </div>
-        <div className={`editor-panel-editor${theme == 'dark' ? ' toastui-editor-dark' : ''}`}>
+        <div className={`editor-panel-editor${theme === 'dark' ? ' toastui-editor-dark' : ''}`}>
           <Editor
             ref={editorRef}
             previewStyle={width <= 760 ? 'tab' : 'vertical'}
