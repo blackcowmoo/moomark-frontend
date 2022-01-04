@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import '@toast-ui/editor/dist/toastui-editor.css';
+import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
 import { Editor } from '@toast-ui/react-editor';
 import TagList from '@components/common/TagList';
 import useWindowDimensions from 'utils/hooks/useWindowDimensions';
@@ -48,22 +49,25 @@ const PostEditor: React.FC<EditorProps> = (props) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.editor}>
+      <div className={styles.Posteditor}>
         <div className={styles.title}>
-          <input name='title' placeholder='Title' value={title} onChange={onChangeTitle} />
+          <input name='title' placeholder='제목' value={title} onChange={onChangeTitle} />
         </div>
         <div className={styles.tags}>
           <TagList isEditable={true} tagList={tags} setTagList={onChangeTags} />
         </div>
-        <Editor
-          ref={editorRef}
-          previewStyle={width <= 760 ? 'tab' : 'vertical'}
-          onChange={onChangeEditor}
-          height='100vh'
-          initialEditType='markdown'
-          useCommandShortcut={true}
-          initialValue={text || ''}
-        />
+        <div className={styles.editor}>
+          <Editor
+            ref={editorRef}
+            previewStyle={width <= 760 ? 'tab' : 'vertical'}
+            onChange={onChangeEditor}
+            height='75vh'
+            initialEditType='markdown'
+            useCommandShortcut={true}
+            initialValue={text || ''}
+            theme={'dark'}
+          />
+        </div>
       </div>
     </div>
   );

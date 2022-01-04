@@ -18,7 +18,6 @@
   display: inline-block;
   background-color: var(--secondary);
   font-weight: bold;
-  margin-right: 1rem;
   a {
     color: var(--text-primary);
   }
@@ -36,9 +35,18 @@
   display: inline-flex;
   outline: none;
   cursor: text;
-  font-size: 1.125rem;
+  font-size: 0.8rem;
+  font-weight: bold;
   line-height: 2rem;
   margin-bottom: 0.75rem;
   min-width: 8rem;
   border: none;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  background-color: var(--bg-toggle);
+  
+  &:focus{
+    border: 1px solid var(--accent);
+
+  }
 }
