@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { customHeaderAtom, defaultHeaderOption } from 'recoil/customHeader';
+import { customHeaderState, defaultHeaderOption } from 'recoil/customHeader';
 import styles from './HttpHeaderModifier.module.scss';
 
 interface ICustomOption {
@@ -11,7 +11,7 @@ interface ICustomOption {
 const HttpHeaderModifier = () => {
   const [customOption, setCustomOption] = useState<ICustomOption>({ customKey: '', customValue: '' });
   const { customKey, customValue } = customOption;
-  const [customHeader, setCustomHeader] = useRecoilState(customHeaderAtom);
+  const [customHeader, setCustomHeader] = useRecoilState(customHeaderState);
   const localStorageKey = 'mooMark-dev-customHeader';
 
   useEffect(() => {
