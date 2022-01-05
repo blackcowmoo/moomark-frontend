@@ -4,8 +4,8 @@ import getConfig from 'next/config';
 import { useMutation } from '@apollo/client';
 import { GoogleLogin } from 'react-google-login';
 
-import { userSessionAtom } from 'recoil/userSession';
-import { customHeaderAtom } from 'recoil/customHeader';
+import { userSessionState } from 'recoil/userSession';
+import { customHeaderState } from 'recoil/customHeader';
 import { LOGIN } from 'api/queries/auth.queries';
 
 import styles from '../LoginForm.module.scss';
@@ -18,8 +18,8 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
   const {
     publicRuntimeConfig: { GOOGLE_CLIENT_ID },
   } = getConfig();
-  const [customHeader] = useRecoilState(customHeaderAtom);
-  const [, setUserSession] = useRecoilState(userSessionAtom);
+  const [customHeader] = useRecoilState(customHeaderState);
+  const [, setUserSession] = useRecoilState(userSessionState);
   const updateUser = (res: any) => {
     console.log(res);
     setUserSession({ id: 'google', userName: 'googleLog' });
@@ -33,6 +33,9 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
     },
     onCompleted(res) {
       updateUser(res);
+    },
+    onError(error) {
+      console.log(error);
     },
   });
 
@@ -56,7 +59,7 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
       onSuccess={onSuccess}
       onFailure={onFailure}
       cookiePolicy={'single_host_origin'}
-      redirectUri='/'
+      redirectUri='/post'
       responseType='code'
       render={(renderProps) => (
         <div className={styles.googleBtn} onClick={renderProps.onClick}>
