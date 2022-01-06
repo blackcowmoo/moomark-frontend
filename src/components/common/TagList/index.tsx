@@ -54,7 +54,7 @@ const tagContainer: React.FC<tagContainerProps> = (props) => {
           })}
         {isEditable && (
           <input
-            placeholder={'input Tag'}
+            placeholder={'태그를 입력해주세요.'}
             className={styles.tagInput}
             ref={inputRef}
             onChange={(e) => setText(e.target.value)}
