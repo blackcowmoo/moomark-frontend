@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import getConfig from 'next/config';
 import Link from 'next/link';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { userSessionAtom, loginUserState } from 'recoil/userSession';
+import { userSessionState, loginUserState } from 'recoil/userSession';
 import { GoogleLogout } from 'react-google-login';
 import { useModal } from 'utils/hooks/useModal';
 import Modal from '@components/common/Modal';
@@ -20,7 +20,7 @@ const GlobalHeader: React.FC = () => {
     publicRuntimeConfig: { STAGE, GOOGLE_CLIENT_ID },
   } = getConfig();
   const [isDevEnv, setIsDevEnv] = useState(false);
-  const [userSession, setUserSession] = useRecoilState(userSessionAtom);
+  const [userSession, setUserSession] = useRecoilState(userSessionState);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
