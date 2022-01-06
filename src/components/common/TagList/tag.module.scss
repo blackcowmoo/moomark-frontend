@@ -2,29 +2,32 @@
 
 .tagList {
   display: block;
+  margin-bottom: 1rem;
+  .tagInput{
+    color: var(--text-primary);
+    background-color: var(--bg-toggle);
+
+  }
 }
 
 .tag {
-  margin: 0 8px 0 0;
-  padding: 0 7px;
+  margin-right: 0.5rem;
+  padding: 0 0.5rem;
   border-radius: 4px;
   font-size: 0.8rem;
   display: inline-block;
   background-color: var(--secondary);
   font-weight: bold;
-  margin-right: 1rem;
   a {
     color: var(--text-primary);
   }
   button {
+    margin-left: 0.5rem;
     background-color: transparent;
-    color: $tag-font;
+    color: var(--accent);
     border: 0px;
     outline: 0px;
     border-radius: 1rem;
-    &:hover {
-      color: $focus-red;
-    }
   }
 }
 
@@ -32,9 +35,18 @@
   display: inline-flex;
   outline: none;
   cursor: text;
-  font-size: 1.125rem;
+  font-size: 0.8rem;
+  font-weight: bold;
   line-height: 2rem;
   margin-bottom: 0.75rem;
   min-width: 8rem;
   border: none;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  background-color: var(--bg-toggle);
+  
+  &:focus{
+    border: 1px solid var(--accent);
+
+  }
 }

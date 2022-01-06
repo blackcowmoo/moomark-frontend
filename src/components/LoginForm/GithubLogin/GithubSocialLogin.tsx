@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { userSessionAtom } from 'recoil/userSession';
+import { userSessionState } from 'recoil/userSession';
 import GithubLogo from './GithubLogo.svg';
 import styles from './GithubSocialLogin.module.scss';
 
@@ -9,7 +9,7 @@ interface props {
 }
 
 const GithubSocialLogin: React.FC<props> = ({ onClose }) => {
-  const [, setUserSession] = useRecoilState(userSessionAtom);
+  const [, setUserSession] = useRecoilState(userSessionState);
   useEffect(() => {}, []);
 
   const requestLogin = (response: any) => {
