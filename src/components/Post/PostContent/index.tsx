@@ -1,8 +1,9 @@
 import { useEffect, createElement, memo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
-import { markDownID } from '@components/Post/PostContents/AnchorList';
-import styles from './markdown.module.scss';
+import { markDownID } from '@components/Post/PostHeader/HeadingList';
+
+import styles from './PostContent.module.scss';
 
 interface Props {
   markdown: string;
@@ -10,7 +11,7 @@ interface Props {
   updateFocusAnchor: (value: string) => void;
 }
 
-const MarkDownRender: React.FC<Props> = ({ markdown, updateAnchorList, updateFocusAnchor }) => {
+const PostContent: React.FC<Props> = ({ markdown, updateAnchorList, updateFocusAnchor }) => {
   const anchorList: markDownID[] = [];
 
   const generateId = (() => {
@@ -76,4 +77,4 @@ const MarkDownRender: React.FC<Props> = ({ markdown, updateAnchorList, updateFoc
   );
 };
 
-export default memo(MarkDownRender);
+export default memo(PostContent);

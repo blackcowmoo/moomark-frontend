@@ -1,4 +1,4 @@
-import styles from './headingAnchor.module.scss';
+import styles from './HeadingList.module.scss';
 
 export interface markDownID {
   level: number;
@@ -12,7 +12,7 @@ export interface AnchorListProps {
   focusAnchor: string;
 }
 
-const AnchorList: React.FC<AnchorListProps> = ({ anchorList, focusAnchor }) => {
+const HeadingList: React.FC<AnchorListProps> = ({ anchorList, focusAnchor }) => {
   return (
     <div className={styles.contentsSider}>
       <div className={styles.anchorPosition}>
@@ -37,4 +37,4 @@ const AnchorList: React.FC<AnchorListProps> = ({ anchorList, focusAnchor }) => {
   );
 };
 
-export default AnchorList;
+export default HeadingList;

@@ -1,8 +1,11 @@
-import PostContents from '@components/Post/PostContents';
+import { useState, useCallback } from 'react';
+import PostContent from './PostContent';
 import Comment, { ICommentContent } from '@components/Comment';
 import PostHeader from '@components/Post/PostHeader';
-import styles from './PostViewer.module.scss';
+import { markDownID } from './PostHeader/HeadingList';
 import mockData from './mockdata';
+
+import styles from './PostViewer.module.scss';
 
 export interface PostProps {
   title: string;
@@ -15,16 +18,28 @@ export interface PostProps {
 
 export const mockProps = mockData;
 
-interface postViewerProps{
+interface postViewerProps {
   postProp?: PostProps;
 }
 
 const Post: React.FC<postViewerProps> = ({ postProp = mockData }) => {
+  const { title, postDate, editorName, content, tags, comment } = postProp;
+  const [anchorList, setAnchorList] = useState<markDownID[]>([]);
+  const [focusAnchor, setFocusAnchor] = useState<string>('');
+
+  const updateAnchorList = useCallback((value: markDownID[]) => {
+    setAnchorList([...value]);
+  }, []);
+
+  const updateFocusAnchor = useCallback((anchorID: string) => {
+    setFocusAnchor(anchorID);
+  }, []);
+
   return (
     <div className={styles.post}>
-      <PostHeader title={postProp.title} editorName={postProp.editorName} tags={postProp.tags} postDate={postProp.postDate} />
-      <PostContents contents={postProp.content} />
-      <Comment comments={postProp.comment} />
+      <PostHeader title={title} editorName={editorName} tags={tags} postDate={postDate} anchorList={anchorList} focusAnchor={focusAnchor} />
+      <PostContent markdown={content} updateAnchorList={updateAnchorList} updateFocusAnchor={updateFocusAnchor} />
+      <Comment comments={comment} />
     </div>
   );
 };

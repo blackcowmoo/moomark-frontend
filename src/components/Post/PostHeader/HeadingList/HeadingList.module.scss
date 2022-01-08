@@ -12,6 +12,8 @@
 }
 
 .anchorList {
+  position: fixed;
+  top: 10rem;
   width: 240px;
   margin-left: 5rem;
   border-left: 2px solid var(--secondary);
