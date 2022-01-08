@@ -1,7 +1,7 @@
 import TagList from '@components/common/TagList';
 import { timeForToday } from 'utils/common';
-import { markDownID } from './HeadingList';
-import HeadingList from './HeadingList';
+import HeadingList, { markDownID } from './HeadingList';
+
 import styles from './PostHeader.module.scss';
 
 export interface PostHeaderProps {

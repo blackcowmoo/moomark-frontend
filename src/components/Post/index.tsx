@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
-import PostContent from './PostContent';
 import Comment, { ICommentContent } from '@components/Comment';
 import PostHeader from '@components/Post/PostHeader';
+import PostContent from './PostContent';
 import { markDownID } from './PostHeader/HeadingList';
 import mockData from './mockdata';
 
