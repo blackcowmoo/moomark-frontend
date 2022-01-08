@@ -1,7 +1,7 @@
 import { useEffect, createElement, memo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
-import { markDownID } from '@components/PostContents/AnchorList';
+import { markDownID } from '@components/Post/PostContents/AnchorList';
 import styles from './markdown.module.scss';
 
 interface Props {

@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import AnchorList, { markDownID } from '@components/PostContents/AnchorList';
+import AnchorList, { markDownID } from '@components/Post/PostContents/AnchorList';
 import MarkdownRender from './MarkdownRender';
 
 interface Props {
@@ -17,11 +17,12 @@ const PostContents: React.FC<Props> = ({ contents }) => {
   const updateFocusAnchor = useCallback((anchorID: string) => {
     setFocusAnchor(anchorID);
   }, []);
+
   return (
-    <div >
+    <>
       <AnchorList anchorList={anchorList} focusAnchor={focusAnchor} />
       <MarkdownRender markdown={contents} updateFocusAnchor={updateFocusAnchor} updateAnchorList={updateAnchorList} />
-    </div>
+    </>
   );
 };
 

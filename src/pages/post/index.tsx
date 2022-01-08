@@ -1,7 +1,7 @@
 import { CommentProps } from 'antd';
-import PostViewer from '@components/PostViewer';
+import Post from '@components/Post';
 
-export interface PostProps{
+export interface PostProps {
   editorName: string;
   content: string;
   tags?: string[];
@@ -11,7 +11,7 @@ export interface PostProps{
 const PostPage: React.FC<PostProps> = () => {
   return (
     <>
-      <PostViewer />
+      <Post />
     </>
   );
 };

@@ -1,13 +1,3 @@
-// const debounce = (func: any, delay: number) => {
-//   let inDebounce: NodeJS.Timeout;
-//   return (...args: any[]) => {
-//     if (inDebounce) {
-//       clearTimeout(inDebounce);
-//     }
-//     inDebounce = setTimeout(() => func(...args), delay);
-//   };
-// };
-
 const timeForToday = (value: Date): string => {
   const today = new Date();
   const timeValue = new Date(value);
@@ -30,7 +20,4 @@ const timeForToday = (value: Date): string => {
   return `${value.getFullYear()}년 ${value.getMonth()}월 ${value.getDay()}일`;
 };
 
-export {
-  // debounce,
-  timeForToday,
-};
+export { timeForToday };

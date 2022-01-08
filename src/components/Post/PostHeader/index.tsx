@@ -15,7 +15,7 @@ const PostHeader: React.FC<PostHeaderProps> = ({ title, editorName, tags, postDa
       <h1 className={styles.title}>{title}</h1>
       {editorName && <div className={styles.editorName}>{editorName}</div>}
       {postDate && <div className={styles.editDate}>{timeForToday(postDate)}</div>}
-     {tags && <TagList isEditable={false} tagList={tags} /> }
+      {tags && <TagList isEditable={false} tagList={tags} />}
     </div>
   );
 };
