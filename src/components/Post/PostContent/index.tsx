@@ -72,7 +72,9 @@ const PostContent: React.FC<Props> = ({ markdown, updateAnchorList, updateFocusA
 
   return (
     <div className={styles.markdown}>
-      <ReactMarkdown children={markdown} renderers={{ heading: headingRenderer }} plugins={[gfm]} />
+      <ReactMarkdown renderers={{ heading: headingRenderer }} plugins={[gfm]}>
+        {markdown}
+      </ReactMarkdown>
     </div>
   );
 };
