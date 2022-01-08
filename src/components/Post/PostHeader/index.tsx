@@ -11,9 +11,10 @@ export interface PostHeaderProps {
   postDate: Date;
   anchorList?: markDownID[];
   focusAnchor?: string;
+  view: number;
 }
 
-const PostHeader: React.FC<PostHeaderProps> = ({ title, editorName, tags, postDate, anchorList, focusAnchor = '' }) => {
+const PostHeader: React.FC<PostHeaderProps> = ({ title, editorName, tags, postDate, anchorList, focusAnchor = '', view }) => {
   return (
     <div className={styles.postHeader}>
       <h1 className={styles.title}>{title}</h1>
@@ -23,7 +24,7 @@ const PostHeader: React.FC<PostHeaderProps> = ({ title, editorName, tags, postDa
           <div className={styles.editDate}>{timeForToday(postDate)}</div>
         </div>
         <div className={styles.right}>
-
+          <div className={styles.view}>{view}명 읽음</div>
         </div>
       </div>
       {tags && <TagList isEditable={false} tagList={tags} />}

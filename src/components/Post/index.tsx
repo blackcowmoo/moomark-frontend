@@ -14,6 +14,7 @@ export interface PostProps {
   content: string;
   tags: string[];
   comment?: ICommentContent[];
+  view: number;
 }
 
 export const mockProps = mockData;
@@ -23,7 +24,7 @@ interface postViewerProps {
 }
 
 const Post: React.FC<postViewerProps> = ({ postProp = mockData }) => {
-  const { title, postDate, editorName, content, tags, comment } = postProp;
+  const { title, postDate, editorName, content, tags, comment, view } = postProp;
   const [anchorList, setAnchorList] = useState<markDownID[]>([]);
   const [focusAnchor, setFocusAnchor] = useState<string>('');
 
@@ -37,7 +38,7 @@ const Post: React.FC<postViewerProps> = ({ postProp = mockData }) => {
 
   return (
     <div className={styles.post}>
-      <PostHeader title={title} editorName={editorName} tags={tags} postDate={postDate} anchorList={anchorList} focusAnchor={focusAnchor} />
+      <PostHeader title={title} editorName={editorName} tags={tags} postDate={postDate} anchorList={anchorList} focusAnchor={focusAnchor} view={view} />
       <PostContent markdown={content} updateAnchorList={updateAnchorList} updateFocusAnchor={updateFocusAnchor} />
       <Comment comments={comment} />
     </div>

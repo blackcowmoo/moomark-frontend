@@ -41,6 +41,7 @@ const mockData: PostProps = {
   title: 'mockTitle ',
   postDate: mockDate,
   editorName: 'writerMock',
+  view: 2230,
   content: markdown,
   tags: ['test', 'hasdasdfasf', 'loooooooooooooooooooooongStirng', '무마크'],
   comment: [
