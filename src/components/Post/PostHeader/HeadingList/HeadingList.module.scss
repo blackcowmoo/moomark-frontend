@@ -12,11 +12,13 @@
 }
 
 .anchorList {
+  position: fixed;
+  top: 10rem;
   width: 240px;
   margin-left: 5rem;
-  border-left: 2px solid rgb(233, 236, 239);
+  border-left: 2px solid var(--secondary);
   padding: 0.25rem 0.75rem;
-  color: rgb(134, 142, 150);
+  color: var(--text-primary);
   line-height: 1.5;
   font-size: 0.875rem;
   max-height: calc(100vh - 128px);
@@ -34,7 +36,7 @@
       margin-left: ($i - 1) * 0.7rem;
     }
     .hlevel__#{$i}_focus {
-      color: black;
+      color: var(--accent);
       font-weight: bold;
       margin-left: ($i - 1) * 0.7rem;
     }
