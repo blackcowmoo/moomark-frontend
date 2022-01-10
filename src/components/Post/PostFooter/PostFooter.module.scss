@@ -1,0 +1,38 @@
+.PostFooter {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+
+  .likeWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div{
+      padding: 0 1rem;
+      margin: 0 1rem;
+
+    }
+    .default{
+      border: 0.2rem solid var(--text-secondary);
+      border-radius: 4px;
+      color: var(--text-secondary);
+
+    }
+    .activeLike{
+      border: 0.2rem solid var(--accent);
+      border-radius: 4px;
+      color: var(--accent);
+    }
+    .activeDislike{
+      border: 0.2rem solid var(--text-primary);
+      border-radius: 4px;
+      color: var(--text-primary);
+    }
+  }
+  .reportWrapper{
+    display: flex;
+    justify-content: flex-end;
+
+
+  }
+}

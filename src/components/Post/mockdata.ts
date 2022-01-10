@@ -47,14 +47,12 @@ const mockData: PostProps = {
   comment: [
     {
       ...mockCommentContent,
-      reply: [
-        mockCommentContent,
-        mockCommentContent,
-      ],
+      reply: [mockCommentContent, mockCommentContent],
     },
     mockCommentContent,
     mockCommentContent,
   ],
+  like: 0,
 };
 
 export default mockData;
