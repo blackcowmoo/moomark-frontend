@@ -5,7 +5,7 @@ import { PostListViewProps } from 'types';
 import DefaultViewItem from '@components/PostList/DefaultPostList/DefaultViewItem';
 
 const date = new Date(2021, 1, 2);
-const mockDefaultPostListItem: PostListViewProps = { id: 1, title: '투자의 책임은 너에게', author: 'gosu', like: 222, date: date };
+const mockDefaultPostListItem: PostListViewProps = { id: 1, title: '투자의 책임은 너에게', author: 'gosu', like: 222, date };
 
 describe('<DefaultPostList/>', () => {
   it('matches snapshot', () => {
