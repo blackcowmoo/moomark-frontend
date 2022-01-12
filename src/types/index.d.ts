@@ -3,10 +3,10 @@ export interface PostListViewProps{
   title: string;
   author: string;
   like: number;
-  tags?: string[];
-  thumbnail?: string;
   date: Date;
 }
 export interface TilePostProps extends PostListViewProps{
+  thumbnail?: string;
+  tags?: string[];
   description: string;
 }

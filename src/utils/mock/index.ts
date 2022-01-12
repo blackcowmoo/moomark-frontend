@@ -65,7 +65,6 @@ export const HomePageListMock: PostListViewProps[] = [
     title: '투자의 책임은 너에게',
     author: 'gosu',
     like: 222,
-    tags: ['응애'],
     date,
   },
   {
@@ -73,7 +72,6 @@ export const HomePageListMock: PostListViewProps[] = [
     title: '버진은 날아오른다',
     author: 'blackCOw',
     like: 222,
-    tags: ['JobJu'],
     date,
   },
   {
@@ -81,7 +79,6 @@ export const HomePageListMock: PostListViewProps[] = [
     title: '숲을 먼저 보고 나무를 보아라.',
     author: 'gosu',
     like: 222,
-    tags: ['응애'],
     date,
   },
   {
@@ -89,7 +86,6 @@ export const HomePageListMock: PostListViewProps[] = [
     title: '사는 것 보다 파는 것이 더 중요하다',
     author: '의문의 주식고수',
     like: 222,
-    tags: ['응애'],
     date,
   },
   {
@@ -97,7 +93,6 @@ export const HomePageListMock: PostListViewProps[] = [
     title: 'ddd',
     author: 'gosu',
     like: 1,
-    tags: ['응애'],
     date,
   },
   {
@@ -105,7 +100,6 @@ export const HomePageListMock: PostListViewProps[] = [
     title: 'ddd',
     author: 'gosu',
     like: 222,
-    tags: ['응애'],
     date,
   },
 ];

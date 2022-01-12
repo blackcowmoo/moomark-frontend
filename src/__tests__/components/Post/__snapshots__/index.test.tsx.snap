@@ -1,0 +1,477 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Post/> matches snapshot 1`] = `
+"<Post>
+  <div className=\\"post\\">
+    <PostHeader title=\\"mockTitle \\" editorName=\\"writerMock\\" tags={{...}} postDate={{...}} anchorList={{...}} focusAnchor=\\"\\" view={2230}>
+      <div className=\\"postHeader\\">
+        <h1 className=\\"title\\">
+          mockTitle 
+        </h1>
+        <div className=\\"writerWrapper\\">
+          <div className=\\"left\\">
+            <div className=\\"editorName\\">
+              writerMock
+            </div>
+            <div className=\\"editDate\\">
+              2020년 4월 1일
+            </div>
+          </div>
+          <div className=\\"right\\">
+            <div className=\\"view\\">
+              2230
+              명 읽음
+            </div>
+          </div>
+        </div>
+        <tagContainer isEditable={false} tagList={{...}}>
+          <div className=\\"tagList\\">
+            <Tag deleteable={false} text=\\"test\\" index={0} removeTag={[Function: removeTag]}>
+              <div className=\\"tag\\">
+                <Link href=\\"/search\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/search\\">
+                    test
+                  </a>
+                </Link>
+              </div>
+            </Tag>
+            <Tag deleteable={false} text=\\"hasdasdfasf\\" index={1} removeTag={[Function: removeTag]}>
+              <div className=\\"tag\\">
+                <Link href=\\"/search\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/search\\">
+                    hasdasdfasf
+                  </a>
+                </Link>
+              </div>
+            </Tag>
+            <Tag deleteable={false} text=\\"loooooooooooooooooooooongStirng\\" index={2} removeTag={[Function: removeTag]}>
+              <div className=\\"tag\\">
+                <Link href=\\"/search\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/search\\">
+                    loooooooooooooooooooooongStirng
+                  </a>
+                </Link>
+              </div>
+            </Tag>
+            <Tag deleteable={false} text=\\"무마크\\" index={3} removeTag={[Function: removeTag]}>
+              <div className=\\"tag\\">
+                <Link href=\\"/search\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/search\\">
+                    무마크
+                  </a>
+                </Link>
+              </div>
+            </Tag>
+          </div>
+        </tagContainer>
+        <HeadingList anchorList={{...}} focusAnchor=\\"\\">
+          <div className=\\"contentsSider\\">
+            <div className=\\"anchorPosition\\">
+              <div className=\\"anchorList\\">
+                <div className=\\"hlevel__1\\">
+                  <a href=\\"#h1-1\\">
+                     
+                    <TextRenderer nodeKey=\\"text-2-3-0\\" value=\\"1. 마크다운에 관하여\\" node={{...}}>
+                      1. 마크다운에 관하여
+                    </TextRenderer>
+                     
+                  </a>
+                </div>
+                <div className=\\"hlevel__2\\">
+                  <a href=\\"#h2-1\\">
+                     
+                    <TextRenderer nodeKey=\\"text-3-4-0\\" value=\\"1.1. 마크다운이란?\\" node={{...}}>
+                      1.1. 마크다운이란?
+                    </TextRenderer>
+                     
+                  </a>
+                </div>
+                <div className=\\"hlevel__2\\">
+                  <a href=\\"#h2-2\\">
+                     
+                    <TextRenderer nodeKey=\\"text-9-4-0\\" value=\\"1.2. 마크다운의 장-단점\\" node={{...}}>
+                      1.2. 마크다운의 장-단점
+                    </TextRenderer>
+                     
+                  </a>
+                </div>
+                <div className=\\"hlevel__3\\">
+                  <a href=\\"#h3-1\\">
+                     
+                    <TextRenderer nodeKey=\\"text-10-5-0\\" value=\\"1.2.1. 장점\\" node={{...}}>
+                      1.2.1. 장점
+                    </TextRenderer>
+                     
+                  </a>
+                </div>
+                <div className=\\"hlevel__3\\">
+                  <a href=\\"#h3-2\\">
+                     
+                    <TextRenderer nodeKey=\\"text-18-5-0\\" value=\\"1.2.2. 단점\\" node={{...}}>
+                      1.2.2. 단점
+                    </TextRenderer>
+                     
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </HeadingList>
+      </div>
+    </PostHeader>
+    <Memo(PostContent) markdown=\\"\\\\n# 1. 마크다운에 관하여\\\\n## 1.1. 마크다운이란?\\\\n[**Markdown**](http://whatismarkdown.com/)은 텍스트 기반의 마크업언어로 2004년 존그루버에 의해 만들어졌으며 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다.\\\\n특수기호와 문자를 이용한 매우 간단한 구조의 문법을 사용하여 웹에서도 보다 빠르게 컨텐츠를 작성하고 보다 직관적으로 인식할 수 있다.\\\\n마크다운이 최근 각광받기 시작한 이유는 깃헙([https://github.com](https://github.com)) 덕분이다. 깃헙의 저장소Repository에 관한 정보를 기록하는 README.md는 깃헙을 사용하는 사람이라면 누구나 가장 먼저 접하게 되는 마크다운 문서였다.\\\\n마크다운을 통해서 설치방법, 소스코드 설명, 이슈 등을 간단하게 기록하고 가독성을 높일 수 있다는 강점이 부각되면서 점점 여러 곳으로 퍼져가게 된다.\\\\n\\\\n## 1.2. 마크다운의 장-단점\\\\n### 1.2.1. 장점\\\\n1. 간결하다.\\\\n2. 별도의 도구없이 작성가능하다.\\\\n3. 다양한 형태로 변환이 가능하다.\\\\n4. 텍스트(Text)로 저장되기 때문에 용량이 적어 보관이 용이하다.\\\\n5. 텍스트파일이기 때문에 버전관리시스템을 이용하여 변경이력을 관리할 수 있다.\\\\n6. 지원하는 프로그램과 플랫폼이 다양하다.\\\\n\\\\n### 1.2.2. 단점\\\\n1. 표준이 없다.\\\\n2. 표준이 없기 때문에 도구에 따라서 변환방식이나 생성물이 다르다.\\\\n3. 모든 HTML 마크업을 대신하지 못한다.\\\\n\\" updateAnchorList={[Function (anonymous)]} updateFocusAnchor={[Function (anonymous)]}>
+      <div className=\\"markdown\\">
+        <ReactMarkdown source=\\"\\\\n# 1. 마크다운에 관하여\\\\n## 1.1. 마크다운이란?\\\\n[**Markdown**](http://whatismarkdown.com/)은 텍스트 기반의 마크업언어로 2004년 존그루버에 의해 만들어졌으며 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다.\\\\n특수기호와 문자를 이용한 매우 간단한 구조의 문법을 사용하여 웹에서도 보다 빠르게 컨텐츠를 작성하고 보다 직관적으로 인식할 수 있다.\\\\n마크다운이 최근 각광받기 시작한 이유는 깃헙([https://github.com](https://github.com)) 덕분이다. 깃헙의 저장소Repository에 관한 정보를 기록하는 README.md는 깃헙을 사용하는 사람이라면 누구나 가장 먼저 접하게 되는 마크다운 문서였다.\\\\n마크다운을 통해서 설치방법, 소스코드 설명, 이슈 등을 간단하게 기록하고 가독성을 높일 수 있다는 강점이 부각되면서 점점 여러 곳으로 퍼져가게 된다.\\\\n\\\\n## 1.2. 마크다운의 장-단점\\\\n### 1.2.1. 장점\\\\n1. 간결하다.\\\\n2. 별도의 도구없이 작성가능하다.\\\\n3. 다양한 형태로 변환이 가능하다.\\\\n4. 텍스트(Text)로 저장되기 때문에 용량이 적어 보관이 용이하다.\\\\n5. 텍스트파일이기 때문에 버전관리시스템을 이용하여 변경이력을 관리할 수 있다.\\\\n6. 지원하는 프로그램과 플랫폼이 다양하다.\\\\n\\\\n### 1.2.2. 단점\\\\n1. 표준이 없다.\\\\n2. 표준이 없기 때문에 도구에 따라서 변환방식이나 생성물이 다르다.\\\\n3. 모든 HTML 마크업을 대신하지 못한다.\\\\n\\" skipHtml={false} renderers={{...}} plugins={{...}} transformLinkUri={[Function: uriTransformer]}>
+          <Root node={{...}}>
+            <headingRenderer level={1} node={{...}}>
+              <h1 id=\\"h1-1\\">
+                <TextRenderer nodeKey=\\"text-2-3-0\\" value=\\"1. 마크다운에 관하여\\" node={{...}}>
+                  1. 마크다운에 관하여
+                </TextRenderer>
+              </h1>
+            </headingRenderer>
+            <headingRenderer level={2} node={{...}}>
+              <h2 id=\\"h2-1\\">
+                <TextRenderer nodeKey=\\"text-3-4-0\\" value=\\"1.1. 마크다운이란?\\" node={{...}}>
+                  1.1. 마크다운이란?
+                </TextRenderer>
+              </h2>
+            </headingRenderer>
+            <p>
+              <a href=\\"http://whatismarkdown.com/\\">
+                <strong>
+                  <TextRenderer nodeKey=\\"text-4-4-0\\" value=\\"Markdown\\" node={{...}}>
+                    Markdown
+                  </TextRenderer>
+                </strong>
+              </a>
+              <TextRenderer nodeKey=\\"text-4-43-1\\" value=\\"은 텍스트 기반의 마크업언어로 2004년 존그루버에 의해 만들어졌으며 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다.\\\\n특수기호와 문자를 이용한 매우 간단한 구조의 문법을 사용하여 웹에서도 보다 빠르게 컨텐츠를 작성하고 보다 직관적으로 인식할 수 있다.\\\\n마크다운이 최근 각광받기 시작한 이유는 깃헙(\\" node={{...}}>
+                은 텍스트 기반의 마크업언어로 2004년 존그루버에 의해 만들어졌으며 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다.
+                특수기호와 문자를 이용한 매우 간단한 구조의 문법을 사용하여 웹에서도 보다 빠르게 컨텐츠를 작성하고 보다 직관적으로 인식할 수 있다.
+                마크다운이 최근 각광받기 시작한 이유는 깃헙(
+              </TextRenderer>
+              <a href=\\"https://github.com\\">
+                <TextRenderer nodeKey=\\"text-6-27-0\\" value=\\"https://github.com\\" node={{...}}>
+                  https://github.com
+                </TextRenderer>
+              </a>
+              <TextRenderer nodeKey=\\"text-6-66-3\\" value=\\") 덕분이다. 깃헙의 저장소Repository에 관한 정보를 기록하는 README.md는 깃헙을 사용하는 사람이라면 누구나 가장 먼저 접하게 되는 마크다운 문서였다.\\\\n마크다운을 통해서 설치방법, 소스코드 설명, 이슈 등을 간단하게 기록하고 가독성을 높일 수 있다는 강점이 부각되면서 점점 여러 곳으로 퍼져가게 된다.\\" node={{...}}>
+                ) 덕분이다. 깃헙의 저장소Repository에 관한 정보를 기록하는 README.md는 깃헙을 사용하는 사람이라면 누구나 가장 먼저 접하게 되는 마크다운 문서였다.
+                마크다운을 통해서 설치방법, 소스코드 설명, 이슈 등을 간단하게 기록하고 가독성을 높일 수 있다는 강점이 부각되면서 점점 여러 곳으로 퍼져가게 된다.
+              </TextRenderer>
+            </p>
+            <headingRenderer level={2} node={{...}}>
+              <h2 id=\\"h2-2\\">
+                <TextRenderer nodeKey=\\"text-9-4-0\\" value=\\"1.2. 마크다운의 장-단점\\" node={{...}}>
+                  1.2. 마크다운의 장-단점
+                </TextRenderer>
+              </h2>
+            </headingRenderer>
+            <headingRenderer level={3} node={{...}}>
+              <h3 id=\\"h3-1\\">
+                <TextRenderer nodeKey=\\"text-10-5-0\\" value=\\"1.2.1. 장점\\" node={{...}}>
+                  1.2.1. 장점
+                </TextRenderer>
+              </h3>
+            </headingRenderer>
+            <List start={1} ordered={true} spread={false} depth={0} node={{...}}>
+              <ol>
+                <ListItem checked={{...}} spread={false} ordered={true} index={0} node={{...}}>
+                  <li>
+                    <TextRenderer nodeKey=\\"text-11-4-0\\" value=\\"간결하다.\\" node={{...}}>
+                      간결하다.
+                    </TextRenderer>
+                  </li>
+                </ListItem>
+                <ListItem checked={{...}} spread={false} ordered={true} index={1} node={{...}}>
+                  <li>
+                    <TextRenderer nodeKey=\\"text-12-4-0\\" value=\\"별도의 도구없이 작성가능하다.\\" node={{...}}>
+                      별도의 도구없이 작성가능하다.
+                    </TextRenderer>
+                  </li>
+                </ListItem>
+                <ListItem checked={{...}} spread={false} ordered={true} index={2} node={{...}}>
+                  <li>
+                    <TextRenderer nodeKey=\\"text-13-4-0\\" value=\\"다양한 형태로 변환이 가능하다.\\" node={{...}}>
+                      다양한 형태로 변환이 가능하다.
+                    </TextRenderer>
+                  </li>
+                </ListItem>
+                <ListItem checked={{...}} spread={false} ordered={true} index={3} node={{...}}>
+                  <li>
+                    <TextRenderer nodeKey=\\"text-14-4-0\\" value=\\"텍스트(Text)로 저장되기 때문에 용량이 적어 보관이 용이하다.\\" node={{...}}>
+                      텍스트(Text)로 저장되기 때문에 용량이 적어 보관이 용이하다.
+                    </TextRenderer>
+                  </li>
+                </ListItem>
+                <ListItem checked={{...}} spread={false} ordered={true} index={4} node={{...}}>
+                  <li>
+                    <TextRenderer nodeKey=\\"text-15-4-0\\" value=\\"텍스트파일이기 때문에 버전관리시스템을 이용하여 변경이력을 관리할 수 있다.\\" node={{...}}>
+                      텍스트파일이기 때문에 버전관리시스템을 이용하여 변경이력을 관리할 수 있다.
+                    </TextRenderer>
+                  </li>
+                </ListItem>
+                <ListItem checked={{...}} spread={false} ordered={true} index={5} node={{...}}>
+                  <li>
+                    <TextRenderer nodeKey=\\"text-16-4-0\\" value=\\"지원하는 프로그램과 플랫폼이 다양하다.\\" node={{...}}>
+                      지원하는 프로그램과 플랫폼이 다양하다.
+                    </TextRenderer>
+                  </li>
+                </ListItem>
+              </ol>
+            </List>
+            <headingRenderer level={3} node={{...}}>
+              <h3 id=\\"h3-2\\">
+                <TextRenderer nodeKey=\\"text-18-5-0\\" value=\\"1.2.2. 단점\\" node={{...}}>
+                  1.2.2. 단점
+                </TextRenderer>
+              </h3>
+            </headingRenderer>
+            <List start={1} ordered={true} spread={false} depth={0} node={{...}}>
+              <ol>
+                <ListItem checked={{...}} spread={false} ordered={true} index={0} node={{...}}>
+                  <li>
+                    <TextRenderer nodeKey=\\"text-19-4-0\\" value=\\"표준이 없다.\\" node={{...}}>
+                      표준이 없다.
+                    </TextRenderer>
+                  </li>
+                </ListItem>
+                <ListItem checked={{...}} spread={false} ordered={true} index={1} node={{...}}>
+                  <li>
+                    <TextRenderer nodeKey=\\"text-20-4-0\\" value=\\"표준이 없기 때문에 도구에 따라서 변환방식이나 생성물이 다르다.\\" node={{...}}>
+                      표준이 없기 때문에 도구에 따라서 변환방식이나 생성물이 다르다.
+                    </TextRenderer>
+                  </li>
+                </ListItem>
+                <ListItem checked={{...}} spread={false} ordered={true} index={2} node={{...}}>
+                  <li>
+                    <TextRenderer nodeKey=\\"text-21-4-0\\" value=\\"모든 HTML 마크업을 대신하지 못한다.\\" node={{...}}>
+                      모든 HTML 마크업을 대신하지 못한다.
+                    </TextRenderer>
+                  </li>
+                </ListItem>
+              </ol>
+            </List>
+          </Root>
+        </ReactMarkdown>
+      </div>
+    </Memo(PostContent)>
+    <PostFooter liked={0} likeCount={0}>
+      <div className=\\"PostFooter\\">
+        <div className=\\"likeWrapper\\">
+          <div id=\\"likePost\\" className=\\"default\\" onClick={[Function: toggleLikeButton]}>
+            추천 🍕
+            0
+          </div>
+          <div id=\\"dislikePost\\" className=\\"default\\" onClick={[Function: toggleDislikeButton]}>
+            비추
+          </div>
+        </div>
+        <div className=\\"reportWrapper\\">
+          🚨
+        </div>
+      </div>
+    </PostFooter>
+    <Comment comments={{...}}>
+      <div className=\\"commentContainer\\">
+        <div className=\\"comment\\">
+          <index>
+            <div className=\\"commentInputForm\\">
+              <textarea placeholder=\\"댓글 부탁해요.\\" />
+              <div className=\\"buttonContainer\\">
+                <button>
+                  입력
+                </button>
+              </div>
+            </div>
+          </index>
+          <CommentContent comment={{...}}>
+            <div className=\\"Content\\">
+              <index info={{...}} text=\\"안녕하세요. 일런 머스큽니다.\\" like={-1}>
+                <div className=\\"reply\\">
+                  <Header user={{...}} date={{...}}>
+                    <div className=\\"header\\">
+                      <div className=\\"profile\\">
+                        <img src=\\"/mockprofile.PNG\\" alt=\\"doge\\" className=\\"userImg\\" />
+                      </div>
+                      <div className=\\"info\\">
+                        <div className=\\"name\\">
+                          doge
+                        </div>
+                        <div className=\\"date\\">
+                          2020년 4월 1일
+                        </div>
+                      </div>
+                    </div>
+                  </Header>
+                  <ContentText text=\\"안녕하세요. 일런 머스큽니다.\\">
+                    <div className=\\"text\\">
+                      <p>
+                        안녕하세요. 일런 머스큽니다.
+                      </p>
+                    </div>
+                  </ContentText>
+                  <Footer like={-1}>
+                    <div className=\\"footer\\">
+                      <div className=\\"like\\">
+                        <span>
+                          <a href=\\"#\\">
+                            👍
+                            -1
+                          </a>
+                          <a href=\\"#\\">
+                            👎
+                          </a>
+                        </span>
+                      </div>
+                      <div className=\\"report\\">
+                        <span>
+                          🚨
+                        </span>
+                      </div>
+                    </div>
+                  </Footer>
+                </div>
+              </index>
+              <Reply reply={{...}} showReply={false} toggleReply={[Function: toggleReply]}>
+                <div className=\\"Reply\\">
+                  <div className=\\"toggleButton\\" onClick={[Function: toggleReply]}>
+                    <span>
+                      2 개의 댓글
+                    </span>
+                  </div>
+                </div>
+              </Reply>
+            </div>
+          </CommentContent>
+          <CommentContent comment={{...}}>
+            <div className=\\"Content\\">
+              <index info={{...}} text=\\"안녕하세요. 일런 머스큽니다.\\" like={-1}>
+                <div className=\\"reply\\">
+                  <Header user={{...}} date={{...}}>
+                    <div className=\\"header\\">
+                      <div className=\\"profile\\">
+                        <img src=\\"/mockprofile.PNG\\" alt=\\"doge\\" className=\\"userImg\\" />
+                      </div>
+                      <div className=\\"info\\">
+                        <div className=\\"name\\">
+                          doge
+                        </div>
+                        <div className=\\"date\\">
+                          2020년 4월 1일
+                        </div>
+                      </div>
+                    </div>
+                  </Header>
+                  <ContentText text=\\"안녕하세요. 일런 머스큽니다.\\">
+                    <div className=\\"text\\">
+                      <p>
+                        안녕하세요. 일런 머스큽니다.
+                      </p>
+                    </div>
+                  </ContentText>
+                  <Footer like={-1}>
+                    <div className=\\"footer\\">
+                      <div className=\\"like\\">
+                        <span>
+                          <a href=\\"#\\">
+                            👍
+                            -1
+                          </a>
+                          <a href=\\"#\\">
+                            👎
+                          </a>
+                        </span>
+                      </div>
+                      <div className=\\"report\\">
+                        <span>
+                          🚨
+                        </span>
+                      </div>
+                    </div>
+                  </Footer>
+                </div>
+              </index>
+              <button className=\\"toggleButton\\" onClick={[Function: toggleInputForm]}>
+                댓글 달기
+              </button>
+            </div>
+          </CommentContent>
+          <CommentContent comment={{...}}>
+            <div className=\\"Content\\">
+              <index info={{...}} text=\\"안녕하세요. 일런 머스큽니다.\\" like={-1}>
+                <div className=\\"reply\\">
+                  <Header user={{...}} date={{...}}>
+                    <div className=\\"header\\">
+                      <div className=\\"profile\\">
+                        <img src=\\"/mockprofile.PNG\\" alt=\\"doge\\" className=\\"userImg\\" />
+                      </div>
+                      <div className=\\"info\\">
+                        <div className=\\"name\\">
+                          doge
+                        </div>
+                        <div className=\\"date\\">
+                          2020년 4월 1일
+                        </div>
+                      </div>
+                    </div>
+                  </Header>
+                  <ContentText text=\\"안녕하세요. 일런 머스큽니다.\\">
+                    <div className=\\"text\\">
+                      <p>
+                        안녕하세요. 일런 머스큽니다.
+                      </p>
+                    </div>
+                  </ContentText>
+                  <Footer like={-1}>
+                    <div className=\\"footer\\">
+                      <div className=\\"like\\">
+                        <span>
+                          <a href=\\"#\\">
+                            👍
+                            -1
+                          </a>
+                          <a href=\\"#\\">
+                            👎
+                          </a>
+                        </span>
+                      </div>
+                      <div className=\\"report\\">
+                        <span>
+                          🚨
+                        </span>
+                      </div>
+                    </div>
+                  </Footer>
+                </div>
+              </index>
+              <button className=\\"toggleButton\\" onClick={[Function: toggleInputForm]}>
+                댓글 달기
+              </button>
+            </div>
+          </CommentContent>
+        </div>
+      </div>
+    </Comment>
+  </div>
+</Post>"
+`;
+
+exports[`<PostFooter/> matches snapshot 1`] = `
+"<PostFooter likeCount={33} liked={0}>
+  <div className=\\"PostFooter\\">
+    <div className=\\"likeWrapper\\">
+      <div id=\\"likePost\\" className=\\"default\\" onClick={[Function: toggleLikeButton]}>
+        추천 🍕
+        33
+      </div>
+      <div id=\\"dislikePost\\" className=\\"default\\" onClick={[Function: toggleDislikeButton]}>
+        비추
+      </div>
+    </div>
+    <div className=\\"reportWrapper\\">
+      🚨
+    </div>
+  </div>
+</PostFooter>"
+`;

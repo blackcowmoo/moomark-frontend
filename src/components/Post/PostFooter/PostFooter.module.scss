@@ -7,32 +7,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    div{
+    div {
       padding: 0 1rem;
       margin: 0 1rem;
-
+      &:hover {
+        background-color: var(--secondary);
+      }
     }
-    .default{
+    .default {
       border: 0.2rem solid var(--text-secondary);
       border-radius: 4px;
       color: var(--text-secondary);
-
     }
-    .activeLike{
+    .activeLike {
       border: 0.2rem solid var(--accent);
       border-radius: 4px;
       color: var(--accent);
     }
-    .activeDislike{
+    .activeDislike {
       border: 0.2rem solid var(--text-primary);
       border-radius: 4px;
       color: var(--text-primary);
     }
   }
-  .reportWrapper{
+  .reportWrapper {
     display: flex;
     justify-content: flex-end;
-
-
   }
 }

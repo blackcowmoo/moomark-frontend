@@ -4,31 +4,32 @@ import PostHeader from '@components/Post/PostHeader';
 import PostContent from './PostContent';
 import PostFooter from './PostFooter';
 import { markDownID } from './PostHeader/HeadingList';
-import mockData from './mockdata';
+import { mockPost } from './mockdata';
 
 import styles from './PostViewer.module.scss';
 
 export type LikeType = 0 | 1 | -1;
 
-export interface PostProps {
+export interface IPost {
   title: string;
   postDate: Date;
   editorName: string;
   content: string;
   tags: string[];
   comment?: ICommentContent[];
-  like: LikeType;
+  likeCount: number;
+  liked: LikeType;
   view: number;
 }
 
-export const mockProps = mockData;
+// export const mockProps = mockData;
 
 interface postViewerProps {
-  postProp?: PostProps;
+  postProp?: IPost;
 }
 
-const Post: React.FC<postViewerProps> = ({ postProp = mockData }) => {
-  const { title, postDate, editorName, content, tags, comment, view, like } = postProp;
+const Post: React.FC<postViewerProps> = ({ postProp = mockPost }) => {
+  const { title, postDate, editorName, content, tags, comment, view, likeCount, liked } = postProp;
   const [anchorList, setAnchorList] = useState<markDownID[]>([]);
   const [focusAnchor, setFocusAnchor] = useState<string>('');
 
@@ -44,7 +45,7 @@ const Post: React.FC<postViewerProps> = ({ postProp = mockData }) => {
     <div className={styles.post}>
       <PostHeader title={title} editorName={editorName} tags={tags} postDate={postDate} anchorList={anchorList} focusAnchor={focusAnchor} view={view} />
       <PostContent markdown={content} updateAnchorList={updateAnchorList} updateFocusAnchor={updateFocusAnchor} />
-      <PostFooter like={like} />
+      <PostFooter liked={liked} likeCount={likeCount} />
       <Comment comments={comment} />
     </div>
   );

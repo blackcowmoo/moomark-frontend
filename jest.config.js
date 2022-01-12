@@ -21,8 +21,8 @@ const customJestConfig = {
   coveragePathIgnorePatterns: ['/node_modules/', '/.next/'],
   coverageThreshold: {
     global: {
-      lines: 5,
-      statements: 5,
+      lines: 30,
+      statements: 30,
     },
   },
 };
