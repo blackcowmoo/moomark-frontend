@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DefaultPostList/> matches snapshot 1`] = `
+"<DefaultPostList listTitle=\\"테스트\\" postList={{...}}>
+  <div className=\\"container\\">
+    <h2 className=\\"listTitle\\">
+      테스트
+    </h2>
+    <ul>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/1\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/1\\">
+                  투자의 책임은 너에게
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                222
+              </div>
+              <div className=\\"author\\">
+                gosu
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/2\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/2\\">
+                  버진은 날아오른다
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                222
+              </div>
+              <div className=\\"author\\">
+                blackCOw
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/3\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/3\\">
+                  숲을 먼저 보고 나무를 보아라.
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                222
+              </div>
+              <div className=\\"author\\">
+                gosu
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/4\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/4\\">
+                  사는 것 보다 파는 것이 더 중요하다
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                222
+              </div>
+              <div className=\\"author\\">
+                의문의 주식고수
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/5\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/5\\">
+                  ddd
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                1
+              </div>
+              <div className=\\"author\\">
+                gosu
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/6\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/6\\">
+                  ddd
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                222
+              </div>
+              <div className=\\"author\\">
+                gosu
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
+    </ul>
+  </div>
+</DefaultPostList>"
+`;
+
+exports[`<DefaultViewItem matches snapshot 1`] = `
+"<DefaultViewItem value={{...}}>
+  <li className=\\"DefaultViewItem\\">
+    <h5 className=\\"listItemWrapper\\">
+      <div className=\\"title\\">
+        <Link href=\\"/post/1\\">
+          <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/1\\">
+            투자의 책임은 너에게
+          </a>
+        </Link>
+      </div>
+      <div className=\\"postInfo\\">
+        <div className=\\"like\\">
+          222
+        </div>
+        <div className=\\"author\\">
+          gosu
+        </div>
+        <div className=\\"date\\">
+          2021년 2월 2일
+        </div>
+      </div>
+    </h5>
+  </li>
+</DefaultViewItem>"
+`;
