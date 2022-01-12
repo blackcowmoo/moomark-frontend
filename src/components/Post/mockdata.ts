@@ -1,5 +1,5 @@
 import { ICommentContent } from '@components/Comment';
-import { PostProps } from './index';
+import { IPost } from './index';
 
 const mockDate = new Date(2020, 3, 1);
 
@@ -26,7 +26,7 @@ const markdown: string = `
 3. 모든 HTML 마크업을 대신하지 못한다.
 `;
 
-const mockCommentContent: ICommentContent = {
+export const mockCommentContent: ICommentContent = {
   info: {
     user: {
       name: 'doge',
@@ -37,7 +37,7 @@ const mockCommentContent: ICommentContent = {
   like: -1,
 };
 
-const mockData: PostProps = {
+export const mockPost: IPost = {
   title: 'mockTitle ',
   postDate: mockDate,
   editorName: 'writerMock',
@@ -52,7 +52,7 @@ const mockData: PostProps = {
     mockCommentContent,
     mockCommentContent,
   ],
-  like: 0,
+  likeCount: 0,
+  liked: 0,
 };
 
-export default mockData;
