@@ -1,8 +1,9 @@
-const timeForToday = (value: Date): string => {
-  const today = new Date();
+const timeForToday = (value: Date, todayValue?: Date): string => {
+  const today = todayValue || new Date();
   const timeValue = new Date(value);
 
   const betweenTime = Math.floor((today.getTime() - timeValue.getTime()) / 1000 / 60);
+  console.log(betweenTime);
   if (betweenTime < 1) return '방금전';
   if (betweenTime < 60) {
     return `${betweenTime}분전`;
@@ -17,7 +18,7 @@ const timeForToday = (value: Date): string => {
   if (betweenTimeDay < 30) {
     return `${betweenTimeDay}일전`;
   }
-  return `${value.getFullYear()}년 ${value.getMonth()}월 ${value.getDay()}일`;
+  return `${value.getFullYear()}년 ${value.getMonth() + 1}월 ${value.getDate()}일`;
 };
 
 export { timeForToday };
