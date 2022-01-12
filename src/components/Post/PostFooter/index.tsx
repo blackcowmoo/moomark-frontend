@@ -28,7 +28,7 @@ const PostFooter: React.FC<IPostFooter> = ({ liked, likeCount }) => {
     <div className={styles.PostFooter}>
       <div className={styles.likeWrapper}>
         <div id='likePost' className={isLike === 1 ? styles.activeLike : styles.default} onClick={toggleLikeButton}>
-          추천 🍕 
+          추천 🍕
           {likeCount + isLike}
         </div>
         <div id='dislikePost' className={isLike === -1 ? styles.activeDislike : styles.default} onClick={toggleDislikeButton}>
