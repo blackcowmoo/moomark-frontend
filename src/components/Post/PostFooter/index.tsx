@@ -27,12 +27,12 @@ const PostFooter: React.FC<IPostFooter> = ({ liked, likeCount }) => {
   return (
     <div className={styles.PostFooter}>
       <div className={styles.likeWrapper}>
-        <div className={isLike === 1 ? styles.activeLike : styles.default} onClick={toggleLikeButton}>
-          추천 🍕
+        <div id='likePost' className={isLike === 1 ? styles.activeLike : styles.default} onClick={toggleLikeButton}>
+          추천 🍕 
           {likeCount + isLike}
         </div>
-        <div className={isLike === -1 ? styles.activeDislike : styles.default} onClick={toggleDislikeButton}>
-          {isLike === -1 ? '비추 🐃 ' : '비추'}
+        <div id='dislikePost' className={isLike === -1 ? styles.activeDislike : styles.default} onClick={toggleDislikeButton}>
+          {isLike === -1 ? '비추 🐃' : '비추'}
         </div>
       </div>
       <div className={styles.reportWrapper}>🚨</div>

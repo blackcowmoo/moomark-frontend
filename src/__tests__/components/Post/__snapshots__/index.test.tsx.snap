@@ -259,11 +259,11 @@ exports[`<Post/> matches snapshot 1`] = `
     <PostFooter liked={0} likeCount={0}>
       <div className=\\"PostFooter\\">
         <div className=\\"likeWrapper\\">
-          <div className=\\"default\\" onClick={[Function: toggleLikeButton]}>
+          <div id=\\"likePost\\" className=\\"default\\" onClick={[Function: toggleLikeButton]}>
             추천 🍕
             0
           </div>
-          <div className=\\"default\\" onClick={[Function: toggleDislikeButton]}>
+          <div id=\\"dislikePost\\" className=\\"default\\" onClick={[Function: toggleDislikeButton]}>
             비추
           </div>
         </div>
@@ -461,11 +461,11 @@ exports[`<PostFooter/> matches snapshot 1`] = `
 "<PostFooter likeCount={33} liked={0}>
   <div className=\\"PostFooter\\">
     <div className=\\"likeWrapper\\">
-      <div className=\\"default\\" onClick={[Function: toggleLikeButton]}>
+      <div id=\\"likePost\\" className=\\"default\\" onClick={[Function: toggleLikeButton]}>
         추천 🍕
         33
       </div>
-      <div className=\\"default\\" onClick={[Function: toggleDislikeButton]}>
+      <div id=\\"dislikePost\\" className=\\"default\\" onClick={[Function: toggleDislikeButton]}>
         비추
       </div>
     </div>
