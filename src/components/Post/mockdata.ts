@@ -55,4 +55,3 @@ export const mockPost: IPost = {
   likeCount: 0,
   liked: 0,
 };
-
