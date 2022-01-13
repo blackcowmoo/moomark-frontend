@@ -9,8 +9,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
     <div className=\\"listWrapper\\">
       <TileViewItem value={{...}}>
         <div className=\\"item\\">
-          <Link href=\\"/post\\">
-            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post\\">
+          <Link href=\\"/post/0\\">
+            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
               <div className=\\"thumbnail\\">
                 <img src=\\"https://pbs.twimg.com/media/ESbTA4rUcAArJfB.jpg\\" alt={[undefined]} />
               </div>
@@ -50,8 +50,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
       </TileViewItem>
       <TileViewItem value={{...}}>
         <div className=\\"item\\">
-          <Link href=\\"/post\\">
-            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post\\">
+          <Link href=\\"/post/0\\">
+            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
               <div className=\\"thumbnail\\">
                 <img src=\\"https://pbs.twimg.com/media/ESbTA4rUcAArJfB.jpg\\" alt={[undefined]} />
               </div>
@@ -91,8 +91,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
       </TileViewItem>
       <TileViewItem value={{...}}>
         <div className=\\"item\\">
-          <Link href=\\"/post\\">
-            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post\\">
+          <Link href=\\"/post/0\\">
+            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
               <div className=\\"thumbnail\\">
                 <img src=\\"https://pbs.twimg.com/media/ESbTA4rUcAArJfB.jpg\\" alt={[undefined]} />
               </div>
@@ -132,8 +132,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
       </TileViewItem>
       <TileViewItem value={{...}}>
         <div className=\\"item\\">
-          <Link href=\\"/post\\">
-            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post\\">
+          <Link href=\\"/post/0\\">
+            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
               <div className=\\"thumbnail\\">
                 <img src=\\"https://pbs.twimg.com/media/ESbTA4rUcAArJfB.jpg\\" alt={[undefined]} />
               </div>
@@ -173,8 +173,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
       </TileViewItem>
       <TileViewItem value={{...}}>
         <div className=\\"item\\">
-          <Link href=\\"/post\\">
-            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post\\">
+          <Link href=\\"/post/0\\">
+            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
               <div className=\\"thumbnail\\">
                 <img src=\\"https://pbs.twimg.com/media/ESbTA4rUcAArJfB.jpg\\" alt={[undefined]} />
               </div>
@@ -214,8 +214,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
       </TileViewItem>
       <TileViewItem value={{...}}>
         <div className=\\"item\\">
-          <Link href=\\"/post\\">
-            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post\\">
+          <Link href=\\"/post/0\\">
+            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
               <div className=\\"thumbnail\\">
                 <img src=\\"https://pbs.twimg.com/media/ESbTA4rUcAArJfB.jpg\\" alt={[undefined]} />
               </div>
