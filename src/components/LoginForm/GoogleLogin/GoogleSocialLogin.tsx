@@ -7,6 +7,7 @@ import { GoogleLogin } from 'react-google-login';
 import { userSessionState } from 'recoil/userSession';
 import { customHeaderState } from 'recoil/customHeader';
 import { LOGIN } from 'api/queries/auth.queries';
+import GoogleLogo from './GoogleLogo.svg';
 
 import styles from '../LoginForm.module.scss';
 
@@ -64,7 +65,9 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
       render={(renderProps) => (
         <div className={styles.googleBtn} onClick={renderProps.onClick}>
           <div className={styles.iconWrapper}>
-            <img className={styles.googleIcon} src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg' />
+            <div className={styles.googleIcon}>
+              <GoogleLogo />
+            </div>
           </div>
           <p className={styles.btnText}>
             <b>google 로그인 / 회원가입</b>
