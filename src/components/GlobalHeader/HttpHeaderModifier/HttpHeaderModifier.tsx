@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { customHeaderState, defaultHeaderOption } from 'recoil/customHeader';
 import styles from './HttpHeaderModifier.module.scss';
