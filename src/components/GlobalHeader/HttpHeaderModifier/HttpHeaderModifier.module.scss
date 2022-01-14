@@ -2,9 +2,14 @@
   width: 3rem;
 }
 
-.contents {
+.wrapper {
   min-width: 25rem;
   padding: 1rem;
+
+  .headerWrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .item {
     border-bottom: solid var(--secondary) 1px;
@@ -22,8 +27,21 @@
     color: var(--text-primary);
     background-color: var(--accent);
   }
+  .inputContainer {
+    border-top: solid 1px var(--accent);
+  }
   .resetButton {
     background-color: var(--accent);
+  }
+  .textareaWrapper {
+    padding: 1rem;
+    textarea {
+      width: 80%;
+      height: 10rem;
+      resize: none;
+      color: var(--text-primary);
+      background-color: var(--bg-secondary);
+    }
   }
   .result {
     color: var(--text-primary);
