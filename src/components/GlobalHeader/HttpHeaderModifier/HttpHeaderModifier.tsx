@@ -92,7 +92,7 @@ const HttpHeaderModifier = () => {
       <div className={styles.headerWrapper}>
         {Object.entries(customHeader).map(([key, value]) => (
           <div className={styles.item} key={key}>
-            <input value={key} />
+            <input value={key} readOnly />
             <input onChange={(e) => onChangeHeaderValue(key, e)} value={value} />
             <button onClick={() => removeOption(customHeader, key)}>remove</button>
           </div>

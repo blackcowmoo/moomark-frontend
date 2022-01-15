@@ -14,6 +14,7 @@ const customJestConfig = {
     '^@styles/(.*)$': '<rootDir>/src/styles/$1',
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^recoil/(.*)$': '<rootDir>/src/recoil/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
   coverageReporters: ['text'],
