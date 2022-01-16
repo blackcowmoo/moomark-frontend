@@ -8,7 +8,7 @@ exports[`<HttpHeaderModifier/> matches snapshot 1`] = `
       <div className=\\"wrapper\\">
         <div className=\\"headerWrapper\\">
           <div className=\\"item\\">
-            <input value=\\"x-moom-route\\" readOnly={true} />
+            <input onChange={[Function: onChange]} value=\\"x-moom-route\\" />
             <input onChange={[Function: onChange]} value=\\"\\" />
             <button onClick={[Function: onClick]}>
               remove
@@ -28,7 +28,7 @@ exports[`<HttpHeaderModifier/> matches snapshot 1`] = `
         <div className=\\"textareaWrapper\\">
           <textarea className=\\"result\\" value=\\"{\\"x-moom-route\\":\\"\\"}\\" onChange={[Function: onChangeTextarea]} />
           <button onClick={[Function: onSaveTextarea]}>
-            Save Option TextArea
+            Save Header Option in TextArea
           </button>
           <button className=\\"resetButton\\" onClick={[Function: resetHeaderOption]}>
             Reset Option

@@ -35,7 +35,14 @@ const HttpHeaderModifier = () => {
     return { ...customHeader, [key]: value };
   };
 
-  const onChangeHeaderValue = (key: string, e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHeaderKey = (oldKey: string, e: ChangeEvent<HTMLInputElement>, object: Object) => {
+    const clonedObj = clone(object);
+    const newKey = e.target.value;
+    delete Object.assign(clonedObj, { [newKey]: clonedObj[oldKey] })[oldKey];
+    setCustomHeader(clonedObj);
+  };
+
+  const onChangeHeaderValue = (key: string, e: ChangeEvent<HTMLInputElement>) => {
     setCustomHeader(changeHeaderValue(key, e.target.value));
   };
 
@@ -90,9 +97,9 @@ const HttpHeaderModifier = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.headerWrapper}>
-        {Object.entries(customHeader).map(([key, value]) => (
-          <div className={styles.item} key={key}>
-            <input value={key} readOnly />
+        {Object.entries(customHeader).map(([key, value], index) => (
+          <div className={styles.item} key={index} >
+            <input onChange={(e) => onChangeHeaderKey(key, e, customHeader)} value={key} />
             <input onChange={(e) => onChangeHeaderValue(key, e)} value={value} />
             <button onClick={() => removeOption(customHeader, key)}>remove</button>
           </div>
@@ -106,7 +113,7 @@ const HttpHeaderModifier = () => {
       </div>
       <div className={styles.textareaWrapper}>
         <textarea className={styles.result} value={textareaCustomHeader} onChange={onChangeTextarea} />
-        <button onClick={onSaveTextarea}>Save Option TextArea</button>
+        <button onClick={onSaveTextarea}>Save Header Option in TextArea</button>
         <button className={styles.resetButton} onClick={resetHeaderOption}>
           Reset Option
         </button>
