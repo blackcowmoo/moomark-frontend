@@ -84,7 +84,7 @@ const HttpHeaderModifier = () => {
     setTextareaCustomHeader(e.target.value);
   };
 
-  const onSaveInputArray = () => {
+  const onApplyInputArray = () => {
     const object = inputArray.reduce((obj, item) => ({ ...obj, [item.customKey]: item.customValue }), {});
     setCustomHeader(object);
   };
@@ -115,7 +115,7 @@ const HttpHeaderModifier = () => {
             </div>
           );
         })}
-        <button onClick={onSaveInputArray}>save</button>
+        <button onClick={onApplyInputArray}>apply input</button>
         <button onClick={() => convertObjectToInputArray(customHeader)}>reset input</button>
       </div>
       <div className={styles.inputContainer}>
