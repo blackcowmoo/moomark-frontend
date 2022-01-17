@@ -7,17 +7,16 @@ exports[`<HttpHeaderModifier/> matches snapshot 1`] = `
     <HttpHeaderModifier>
       <div className=\\"wrapper\\">
         <div className=\\"headerWrapper\\">
-          <div className=\\"item\\">
-            <input value=\\"x-moom-route\\" readOnly={true} />
-            <input onChange={[Function: onChange]} value=\\"\\" />
-            <button onClick={[Function: onClick]}>
-              remove
-            </button>
-          </div>
+          <button onClick={[Function: onApplyInputArray]}>
+            apply input
+          </button>
+          <button onClick={[Function: onClick]}>
+            reset input
+          </button>
         </div>
         <div className=\\"inputContainer\\">
           <div>
-            custom input
+            input new option
           </div>
           <input value=\\"\\" onChange={[Function: onChange]} />
           <input value=\\"\\" onChange={[Function: onChange]} />
@@ -26,12 +25,15 @@ exports[`<HttpHeaderModifier/> matches snapshot 1`] = `
           </button>
         </div>
         <div className=\\"textareaWrapper\\">
+          <div>
+            Result
+          </div>
           <textarea className=\\"result\\" value=\\"{\\"x-moom-route\\":\\"\\"}\\" onChange={[Function: onChangeTextarea]} />
           <button onClick={[Function: onSaveTextarea]}>
-            Save Option TextArea
+            textarea save
           </button>
           <button className=\\"resetButton\\" onClick={[Function: resetHeaderOption]}>
-            Reset Option
+            reset header
           </button>
         </div>
       </div>
