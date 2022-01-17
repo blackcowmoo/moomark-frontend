@@ -10,16 +10,26 @@ interface ICustomOption {
 
 const HttpHeaderModifier = () => {
   const [optionInput, setOptionInput] = useState<ICustomOption>({ customKey: '', customValue: '' });
-  const { customKey, customValue } = optionInput;
+  const [inputArray, setInputArray] = useState<ICustomOption[]>([]);
+  // const { customKey, customValue } = optionInput;
   const [customHeader, setCustomHeader] = useRecoilState(customHeaderState);
   const [textareaCustomHeader, setTextareaCustomHeader] = useState<string>('');
 
   const LOCAL_STORAGE_KEY = 'mooMark-dev-customHeader';
 
+  const convertObjectToInputArray = (input: object) => {
+    const tmp = Object.entries(input).map(([key, value]) => {
+      return { customKey: key, customValue: value };
+    });
+    setInputArray(tmp);
+  };
+
   useEffect(() => {
     const savedCustomHeader = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (savedCustomHeader) {
-      setCustomHeader(JSON.parse(savedCustomHeader));
+      const parsedHeader = JSON.parse(savedCustomHeader);
+      setCustomHeader(parsedHeader);
+      convertObjectToInputArray(parsedHeader);
       setTextareaCustomHeader(savedCustomHeader);
     }
   }, []);
@@ -30,21 +40,6 @@ const HttpHeaderModifier = () => {
   }, [customHeader]);
 
   const clone = (obj: any) => ({ ...obj });
-
-  const changeHeaderValue = (key: string, value: string) => {
-    return { ...customHeader, [key]: value };
-  };
-
-  const onChangeHeaderKey = (oldKey: string, e: ChangeEvent<HTMLInputElement>, object: Object) => {
-    const clonedObj = clone(object);
-    const newKey = e.target.value;
-    delete Object.assign(clonedObj, { [newKey]: clonedObj[oldKey] })[oldKey];
-    setCustomHeader(clonedObj);
-  };
-
-  const onChangeHeaderValue = (key: string, e: ChangeEvent<HTMLInputElement>) => {
-    setCustomHeader(changeHeaderValue(key, e.target.value));
-  };
 
   const removeOption = (object: Object, key: string) => {
     const clonedObj = clone(object);
@@ -63,9 +58,13 @@ const HttpHeaderModifier = () => {
   };
 
   const addCustomOption = (key: string, value: string) => {
-    setCustomHeader((prev) => {
-      return { ...prev, [key]: value };
-    });
+    setInputArray([
+      ...inputArray,
+      {
+        customKey: key,
+        customValue: value,
+      },
+    ]);
     clearCustomOption();
   };
 
@@ -85,6 +84,11 @@ const HttpHeaderModifier = () => {
     setTextareaCustomHeader(e.target.value);
   };
 
+  const onSaveInputArray = () => {
+    const object = inputArray.reduce((obj, item) => ({ ...obj, [item.customKey]: item.customValue }), {});
+    setCustomHeader(object);
+  };
+
   const onSaveTextarea = () => {
     try {
       setCustomHeader(JSON.parse(textareaCustomHeader));
@@ -94,28 +98,38 @@ const HttpHeaderModifier = () => {
     }
   };
 
+  const handleInput = (e: ChangeEvent<HTMLInputElement>, index: number, key: string) => {
+    const arr = [...inputArray];
+    arr[index] = { ...arr[index], [key]: e.target.value };
+    setInputArray(arr);
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles.headerWrapper}>
-        {Object.entries(customHeader).map(([key, value], index) => (
-          <div className={styles.item} key={index} >
-            <input onChange={(e) => onChangeHeaderKey(key, e, customHeader)} value={key} />
-            <input onChange={(e) => onChangeHeaderValue(key, e)} value={value} />
-            <button onClick={() => removeOption(customHeader, key)}>remove</button>
-          </div>
-        ))}
+        {inputArray.map(({ customKey, customValue }, index) => {
+          return (
+            <div className={styles.item} key={index}>
+              <input onChange={(e) => handleInput(e, index, 'customKey')} value={customKey} />
+              <input onChange={(e) => handleInput(e, index, 'customValue')} value={customValue} />
+              <button onClick={() => removeOption(customHeader, customKey)}>remove</button>
+            </div>
+          );
+        })}
+        <button onClick={onSaveInputArray}>save</button>
+        <button onClick={() => convertObjectToInputArray(customHeader)}>reset input</button>
       </div>
       <div className={styles.inputContainer}>
-        <div>custom input</div>
-        <input value={customKey} onChange={(e) => handleCustomKey(e)} />
-        <input value={customValue} onChange={(e) => handleCustomValue(e)} />
-        <button onClick={() => addCustomOption(customKey, customValue)}>add</button>
+        <div>input new option</div>
+        <input value={optionInput.customKey} onChange={(e) => handleCustomKey(e)} />
+        <input value={optionInput.customValue} onChange={(e) => handleCustomValue(e)} />
+        <button onClick={() => addCustomOption(optionInput.customKey, optionInput.customValue)}>add</button>
       </div>
       <div className={styles.textareaWrapper}>
+        <div>Result</div>
         <textarea className={styles.result} value={textareaCustomHeader} onChange={onChangeTextarea} />
-        <button onClick={onSaveTextarea}>Save Header Option in TextArea</button>
+        <button onClick={onSaveTextarea}>textarea save</button>
         <button className={styles.resetButton} onClick={resetHeaderOption}>
-          Reset Option
+          reset header
         </button>
       </div>
     </div>
