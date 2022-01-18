@@ -1,7 +1,9 @@
 @import '@styles/utils';
 
 .header {
-  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: var(--secondary);
   padding: 1rem; 
 

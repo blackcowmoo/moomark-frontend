@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import getConfig from 'next/config';
 import Link from 'next/link';
 import { useRecoilState, useRecoilValue } from 'recoil';
@@ -13,19 +13,44 @@ import HttpHeaderModifier from './HttpHeaderModifier';
 
 import SearchLogo from './SearchForm/Search.svg';
 import MainLogo from './Logo.svg';
-import styles from './header.module.scss';
+import styles from './GlobalHeader.module.scss';
 
 const GlobalHeader: React.FC = () => {
   const {
     publicRuntimeConfig: { STAGE, GOOGLE_CLIENT_ID },
   } = getConfig();
+
   const [isDevEnv, setIsDevEnv] = useState(false);
   const [userSession, setUserSession] = useRecoilState(userSessionState);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
+  const [isUp, setIsUp] = useState(true);
+  const [y, setY] = useState(0);
+  const handleScroll = useCallback(
+    (e) => {
+      const window = e.currentTarget;
+      if (y > window.scrollY) {
+        setIsUp(true);
+      } else if (y < window.scrollY) {
+        setIsUp(false);
+      }
+      setY(window.scrollY);
+    },
+    [y],
+  );
+  useEffect(() => {
+    setY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleScroll]);
+
   useEffect(() => {
     if (STAGE === 'dev') setIsDevEnv(true);
+    setY(window.scrollY);
   }, []);
 
   const toggleDropdown = () => {
@@ -42,7 +67,7 @@ const GlobalHeader: React.FC = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} style={{ marginTop: isUp ? 0 : -y }}>
       <div className={styles.headerContainer}>
         <div className={styles.logoContainer}>
           <div className={styles.logo}>
