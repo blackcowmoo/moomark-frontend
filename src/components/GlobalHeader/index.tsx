@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import getConfig from 'next/config';
 import Link from 'next/link';
 import { useRecoilState, useRecoilValue } from 'recoil';
@@ -20,37 +20,15 @@ const GlobalHeader: React.FC = () => {
     publicRuntimeConfig: { STAGE, GOOGLE_CLIENT_ID },
   } = getConfig();
 
+  const [scrollDir, setScrollDir] = useState('down');
   const [isDevEnv, setIsDevEnv] = useState(false);
   const [userSession, setUserSession] = useRecoilState(userSessionState);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
-  const [isUp, setIsUp] = useState(true);
-  const [y, setY] = useState(0);
-  const handleScroll = useCallback(
-    (e) => {
-      const window = e.currentTarget;
-      if (y > window.scrollY) {
-        setIsUp(true);
-      } else if (y < window.scrollY) {
-        setIsUp(false);
-      }
-      setY(window.scrollY);
-    },
-    [y],
-  );
-  useEffect(() => {
-    setY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [handleScroll]);
 
   useEffect(() => {
     if (STAGE === 'dev') setIsDevEnv(true);
-    setY(window.scrollY);
   }, []);
 
   const toggleDropdown = () => {
@@ -66,8 +44,38 @@ const GlobalHeader: React.FC = () => {
     closeDropdown();
   };
 
+  useEffect(() => {
+    const threshold = 0;
+    let lastScrollY = window.pageYOffset;
+    let ticking = false;
+
+    const updateScrollDir = () => {
+      const scrollY = window.pageYOffset;
+      if (Math.abs(scrollY - lastScrollY) < threshold) {
+        ticking = false;
+        return;
+      }
+      setScrollDir(scrollY > lastScrollY ? 'down' : 'up');
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollDir);
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollDir]);
+
   return (
-    <header className={styles.header} style={{ marginTop: isUp ? 0 : -y }}>
+    <header
+      className={styles.header}
+      style={scrollDir === 'down' ? { marginTop: -155, transition: 'margin 100ms ease-in-out' } : { marginTop: 0, transition: 'margin 100ms ease-in-out' }}
+    >
       <div className={styles.headerContainer}>
         <div className={styles.logoContainer}>
           <div className={styles.logo}>
