@@ -72,10 +72,7 @@ const GlobalHeader: React.FC = () => {
   }, [scrollDir]);
 
   return (
-    <header
-      className={styles.header}
-      style={scrollDir === 'down' ? { marginTop: -155, transition: 'margin 100ms ease-in-out' } : { marginTop: 0, transition: 'margin 100ms ease-in-out' }}
-    >
+    <header className={styles.header} style={{ marginTop: scrollDir === 'down' ? -155 : 0, transition: 'margin 100ms ease-in-out' }}>
       <div className={styles.headerContainer}>
         <div className={styles.logoContainer}>
           <div className={styles.logo}>
