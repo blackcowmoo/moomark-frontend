@@ -20,7 +20,7 @@ const GlobalHeader: React.FC = () => {
     publicRuntimeConfig: { STAGE, GOOGLE_CLIENT_ID },
   } = getConfig();
 
-  const [scrollDir, setScrollDir] = useState('down');
+  const [scrollDir, setScrollDir] = useState('up');
   const [isDevEnv, setIsDevEnv] = useState(false);
   const [userSession, setUserSession] = useRecoilState(userSessionState);
   const { userName } = useRecoilValue(loginUserState);
