@@ -13,17 +13,20 @@ import HttpHeaderModifier from './HttpHeaderModifier';
 
 import SearchLogo from './SearchForm/Search.svg';
 import MainLogo from './Logo.svg';
-import styles from './header.module.scss';
+import styles from './GlobalHeader.module.scss';
 
 const GlobalHeader: React.FC = () => {
   const {
     publicRuntimeConfig: { STAGE, GOOGLE_CLIENT_ID },
   } = getConfig();
+
+  const [scrollDir, setScrollDir] = useState('up');
   const [isDevEnv, setIsDevEnv] = useState(false);
   const [userSession, setUserSession] = useRecoilState(userSessionState);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
+
   useEffect(() => {
     if (STAGE === 'dev') setIsDevEnv(true);
   }, []);
@@ -41,8 +44,35 @@ const GlobalHeader: React.FC = () => {
     closeDropdown();
   };
 
+  useEffect(() => {
+    const threshold = 0;
+    let lastScrollY = window.pageYOffset;
+    let ticking = false;
+
+    const updateScrollDir = () => {
+      const scrollY = window.pageYOffset;
+      if (Math.abs(scrollY - lastScrollY) < threshold) {
+        ticking = false;
+        return;
+      }
+      setScrollDir(scrollY > lastScrollY ? 'down' : 'up');
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollDir);
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollDir]);
+
   return (
-    <header className={styles.header}>
+    <header className={styles.header} style={{ marginTop: scrollDir === 'down' ? -155 : 0, transition: 'margin 100ms ease-in-out' }}>
       <div className={styles.headerContainer}>
         <div className={styles.logoContainer}>
           <div className={styles.logo}>
