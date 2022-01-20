@@ -1,9 +1,12 @@
 @import '@styles/utils';
 
 .header {
-  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: var(--secondary);
   padding: 1rem; 
+  z-index: 100;
 
   .headerContainer {
     margin: 0 1rem;
