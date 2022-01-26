@@ -22,7 +22,11 @@ exports[`<DefaultPostList/> matches snapshot 1`] = `
                 222
               </div>
               <div className=\\"author\\">
-                gosu
+                <Link href=\\"/user/gosu\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+                    gosu
+                  </a>
+                </Link>
               </div>
               <div className=\\"date\\">
                 2021년 3월 10일
@@ -46,7 +50,11 @@ exports[`<DefaultPostList/> matches snapshot 1`] = `
                 222
               </div>
               <div className=\\"author\\">
-                blackCOw
+                <Link href=\\"/user/blackCOw\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/blackCOw\\">
+                    blackCOw
+                  </a>
+                </Link>
               </div>
               <div className=\\"date\\">
                 2021년 3월 10일
@@ -70,7 +78,11 @@ exports[`<DefaultPostList/> matches snapshot 1`] = `
                 222
               </div>
               <div className=\\"author\\">
-                gosu
+                <Link href=\\"/user/gosu\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+                    gosu
+                  </a>
+                </Link>
               </div>
               <div className=\\"date\\">
                 2021년 3월 10일
@@ -94,7 +106,11 @@ exports[`<DefaultPostList/> matches snapshot 1`] = `
                 222
               </div>
               <div className=\\"author\\">
-                의문의 주식고수
+                <Link href=\\"/user/의문의 주식고수\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/%EC%9D%98%EB%AC%B8%EC%9D%98%20%EC%A3%BC%EC%8B%9D%EA%B3%A0%EC%88%98\\">
+                    의문의 주식고수
+                  </a>
+                </Link>
               </div>
               <div className=\\"date\\">
                 2021년 3월 10일
@@ -118,7 +134,11 @@ exports[`<DefaultPostList/> matches snapshot 1`] = `
                 1
               </div>
               <div className=\\"author\\">
-                gosu
+                <Link href=\\"/user/gosu\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+                    gosu
+                  </a>
+                </Link>
               </div>
               <div className=\\"date\\">
                 2021년 3월 10일
@@ -142,7 +162,11 @@ exports[`<DefaultPostList/> matches snapshot 1`] = `
                 222
               </div>
               <div className=\\"author\\">
-                gosu
+                <Link href=\\"/user/gosu\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+                    gosu
+                  </a>
+                </Link>
               </div>
               <div className=\\"date\\">
                 2021년 3월 10일
@@ -172,7 +196,11 @@ exports[`<DefaultViewItem matches snapshot 1`] = `
           222
         </div>
         <div className=\\"author\\">
-          gosu
+          <Link href=\\"/user/gosu\\">
+            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+              gosu
+            </a>
+          </Link>
         </div>
         <div className=\\"date\\">
           2021년 2월 2일

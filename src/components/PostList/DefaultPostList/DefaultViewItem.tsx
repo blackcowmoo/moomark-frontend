@@ -17,7 +17,9 @@ const DefaultViewItem: React.FC<props> = ({ value }) => {
         </div>
         <div className={styles.postInfo}>
           <div className={styles.like}>{like}</div>
-          <div className={styles.author}>{author}</div>
+          <div className={styles.author}>
+            <Link href={`/user/${author}`}>{author}</Link>
+          </div>
           <div className={styles.date}>{timeForToday(date)}</div>
         </div>
       </h5>
