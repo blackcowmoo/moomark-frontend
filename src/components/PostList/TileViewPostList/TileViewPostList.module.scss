@@ -92,13 +92,15 @@
     -webkit-box-pack: justify;
     justify-content: space-between;
     .author {
-      text-decoration: none;
       color: inherit;
       display: flex;
       -webkit-box-align: center;
       align-items: center;
       b {
         margin-left: 0.5rem;
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
     .like {

@@ -1,3 +1,36 @@
-.UserProfile{
+.UserProfile {
+  margin-top: 4rem;
+  width: 100%;
+  .profile {
+    display: flex;
+    padding: 2rem 1rem;
+    img {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      box-shadow: var(--box-shadow);
+    }
+    .info {
+      padding-left: 4rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+  .userLog {
+    border-top: 1px solid var(--secondary);
+    .wrapper {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
 
+.CountInfo {
+  flex: 3;
+  background-color: var(--bg-toggle);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
 }
