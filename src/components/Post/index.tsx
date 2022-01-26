@@ -25,11 +25,11 @@ export interface IPost {
 // export const mockProps = mockData;
 
 interface postViewerProps {
-  postProp?: IPost;
+  postProps?: IPost;
 }
 
-const Post: React.FC<postViewerProps> = ({ postProp = mockPost }) => {
-  const { title, postDate, editorName, content, tags, comment, view, likeCount, liked } = postProp;
+const Post: React.FC<postViewerProps> = ({ postProps = mockPost }) => {
+  const { title, postDate, editorName, content, tags, comment, view, likeCount, liked } = postProps;
   const [anchorList, setAnchorList] = useState<markDownID[]>([]);
   const [focusAnchor, setFocusAnchor] = useState<string>('');
 
