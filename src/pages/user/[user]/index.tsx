@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import UserProfile, { IUserProfile } from '@components/User/UserProfile';
 import DefaultPostList from '@components/PostList/DefaultPostList';
+import TablePostList from '@components/PostList/TablePostList';
 import { HomePageListMock } from 'utils/mock';
 
 const UserPage = () => {
-  const { user } = useRouter().query;
+  const { user, page } = useRouter().query;
   const [userProfile, setUserProfile] = useState<IUserProfile | undefined>(undefined);
   useEffect(() => {
     if (typeof user === 'string') {
@@ -22,9 +23,10 @@ const UserPage = () => {
   return (
     <>
       <UserProfile profile={userProfile} />
-      <div>
+      <>
         <DefaultPostList listTitle={`${user}님이 작성한 글`} postList={HomePageListMock} />
-      </div>
+        <TablePostList listTitle={`${user}님이 작성한 글`} currentPage={Number(page) || 1} range={10}  />
+      </>
     </>
   );
 };
