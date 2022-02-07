@@ -83,7 +83,6 @@ const GlobalHeader: React.FC = () => {
             </Link>
           </div>
         </div>
-        <SearchForm />
         <div className={styles.right}>
           <Link href='/search'>
             <a>
