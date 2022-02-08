@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 import { timeForToday } from 'utils/common';
 import { IPostList } from 'types';
 import { HomePageListMock } from 'utils/mock';
+import Pagination from './Pagination';
 
 import styles from './TablePostList.module.scss';
 
 interface ITablePostList {
   listTitle: string;
-  currentPage: number;
-  range: number;
+  postsPerPage: number;
 }
 
 interface IPostListFooter {
@@ -17,29 +17,26 @@ interface IPostListFooter {
   endPage: number;
 }
 
-const TablePostList: React.FC<ITablePostList> = ({ listTitle, currentPage, range }) => {
+const TablePostList: React.FC<ITablePostList> = ({ listTitle,  postsPerPage }) => {
+  const [currentPage, setCurrentPage ] = useState<number>(1);
   const [postList, setPostList] = useState<IPostList[]>([]);
-  const [totalListCount, setTotalListCount] = useState<number>(0);
-  const [pageList, setPageList] = useState<number[]>([]);
-  const [isNextButton, setIsNextButton] = useState<boolean>(false);
-  const [isPrevButton, setIsPrevButton] = useState<boolean>(false);
-  const listSize = 10;
+  const [totalPostCount, setTotalPostCount] = useState<number>(0);
+
   useEffect(() => {
-    setTotalListCount(2000);
-  });
+    setTotalPostCount(100);
+  }, []);
   useEffect(() => {
     //Query via currentpage, rowCount
     setPostList(HomePageListMock);
-    let { startPage, endPage }: IPostListFooter = {
-      startPage: 0,
-      endPage: 0,
-    };
 
-    startPage = (currentPage - 1) * listSize;
-    endPage = range * listSize;
+    function rangeArray(size: number, startAt = 0) {
+      return [...Array(size).keys()].map((i) => i + startAt);
+    }
   }, [currentPage]);
 
-  const renderFooter = () => {};
+  const paginate= (input: number) => {
+    setCurrentPage(input);
+  }
 
   return (
     <div className={styles.TablePostList}>
@@ -77,8 +74,7 @@ const TablePostList: React.FC<ITablePostList> = ({ listTitle, currentPage, range
         </tbody>
       </table>
       <div className={styles.footer}>
-        <ul className={styles.pagination}>
-        </ul>
+        <Pagination totalPostCount={totalPostCount} limit = {postsPerPage} currentPage={currentPage} setPage={paginate} />
       </div>
     </div>
   );
