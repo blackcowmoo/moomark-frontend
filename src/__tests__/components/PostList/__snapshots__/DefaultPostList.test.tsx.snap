@@ -175,6 +175,118 @@ exports[`<DefaultPostList/> matches snapshot 1`] = `
           </h5>
         </li>
       </DefaultViewItem>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/7\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/7\\">
+                  ddd
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                222
+              </div>
+              <div className=\\"author\\">
+                <Link href=\\"/user/gosu\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+                    gosu
+                  </a>
+                </Link>
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/8\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/8\\">
+                  ddd
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                222
+              </div>
+              <div className=\\"author\\">
+                <Link href=\\"/user/gosu\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+                    gosu
+                  </a>
+                </Link>
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/9\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/9\\">
+                  ddd
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                222
+              </div>
+              <div className=\\"author\\">
+                <Link href=\\"/user/gosu\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+                    gosu
+                  </a>
+                </Link>
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
+      <DefaultViewItem value={{...}}>
+        <li className=\\"DefaultViewItem\\">
+          <h5 className=\\"listItemWrapper\\">
+            <div className=\\"title\\">
+              <Link href=\\"/post/10\\">
+                <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/10\\">
+                  ddd
+                </a>
+              </Link>
+            </div>
+            <div className=\\"postInfo\\">
+              <div className=\\"like\\">
+                222
+              </div>
+              <div className=\\"author\\">
+                <Link href=\\"/user/gosu\\">
+                  <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+                    gosu
+                  </a>
+                </Link>
+              </div>
+              <div className=\\"date\\">
+                2021년 3월 10일
+              </div>
+            </div>
+          </h5>
+        </li>
+      </DefaultViewItem>
     </ul>
   </div>
 </DefaultPostList>"

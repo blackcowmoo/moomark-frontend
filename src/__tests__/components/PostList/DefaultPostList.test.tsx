@@ -1,11 +1,11 @@
 import { mount } from 'enzyme';
 import DefaultPostList from '@components/PostList/DefaultPostList';
 import { HomePageListMock } from 'utils/mock';
-import { PostListViewProps } from 'types';
+import { IPostList } from 'types';
 import DefaultViewItem from '@components/PostList/DefaultPostList/DefaultViewItem';
 
 const mockDate = new Date(2021, 1, 2);
-const mockDefaultPostListItem: PostListViewProps = { id: 1, title: '투자의 책임은 너에게', author: 'gosu', like: 222, date: mockDate };
+const mockDefaultPostListItem: IPostList = { id: 1, title: '투자의 책임은 너에게', author: 'gosu', like: 222, date: mockDate };
 
 describe('<DefaultPostList/>', () => {
   it('matches snapshot', () => {

@@ -1,13 +1,13 @@
-import { PostListViewProps } from 'types';
+import { IPostList } from 'types';
 import DefaultViewItem from './DefaultViewItem';
 import styles from './DefaultPostList.module.scss';
 
-interface props {
+export interface IDefaultPostList{
   listTitle: string;
-  postList: PostListViewProps[];
+  postList: IPostList[];
 }
 
-const DefaultPostList: React.FC<props> = ({ listTitle, postList }) => {
+const DefaultPostList: React.FC<IDefaultPostList> = ({ listTitle, postList }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.listTitle}>{listTitle}</h2>
