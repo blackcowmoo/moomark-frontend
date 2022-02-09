@@ -20,4 +20,6 @@ const timeForToday = (value: Date, todayValue?: Date): string => {
   return `${value.getFullYear()}년 ${value.getMonth() + 1}월 ${value.getDate()}일`;
 };
 
-export { timeForToday };
+const isNumeric = (num: any) => (typeof num === 'number' || (typeof num === 'string' && num.trim() !== '')) && !Number.isNaN(num as number);
+
+export { timeForToday, isNumeric };
