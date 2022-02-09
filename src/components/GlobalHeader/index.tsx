@@ -3,7 +3,6 @@ import getConfig from 'next/config';
 import Link from 'next/link';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { userSessionState, loginUserState } from 'recoil/userSession';
-import { GoogleLogout } from 'react-google-login';
 import { useModal } from 'utils/hooks/useModal';
 import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginForm';
@@ -18,7 +17,7 @@ import styles from './GlobalHeader.module.scss';
 
 const GlobalHeader: React.FC = () => {
   const {
-    publicRuntimeConfig: { STAGE, GOOGLE_CLIENT_ID },
+    publicRuntimeConfig: { STAGE },
   } = getConfig();
 
   const [scrollDir, setScrollDir] = useState('up');

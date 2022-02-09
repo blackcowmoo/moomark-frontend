@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { timeForToday } from 'utils/common';
+import { timeForToday, isNumeric } from 'utils/common';
 import { IPostList } from 'types';
 import { HomePageListMock } from 'utils/mock';
 import Pagination from './Pagination';
@@ -12,31 +13,32 @@ interface ITablePostList {
   postsPerPage: number;
 }
 
-interface IPostListFooter {
-  startPage: number;
-  endPage: number;
-}
-
-const TablePostList: React.FC<ITablePostList> = ({ listTitle,  postsPerPage }) => {
-  const [currentPage, setCurrentPage ] = useState<number>(1);
+const TablePostList: React.FC<ITablePostList> = ({ listTitle, postsPerPage }) => {
+  const { page } = useRouter().query;
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [postList, setPostList] = useState<IPostList[]>([]);
   const [totalPostCount, setTotalPostCount] = useState<number>(0);
 
-  useEffect(() => {
-    setTotalPostCount(100);
-  }, []);
-  useEffect(() => {
-    //Query via currentpage, rowCount
-    setPostList(HomePageListMock);
+  // const lastPostIndex = currentPage * postsPerPage;
+  // const firstPostIndex = lastPostIndex - postsPerPage;
 
-    function rangeArray(size: number, startAt = 0) {
-      return [...Array(size).keys()].map((i) => i + startAt);
-    }
+  // const currentPosts = postList.slice(firstPostIndex, lastPostIndex);
+
+  useEffect(() => {
+    // Mocking
+    setTotalPostCount(100);
+    if (isNumeric(page)) setCurrentPage(Number(page));
+  }, [page]);
+  useEffect(() => {
+    // Query via currentpage, rowCount
+    // console.log(currentPage);
+
+    setPostList(HomePageListMock);
   }, [currentPage]);
 
-  const paginate= (input: number) => {
+  const paginate = (input: number) => {
     setCurrentPage(input);
-  }
+  };
 
   return (
     <div className={styles.TablePostList}>
@@ -52,9 +54,9 @@ const TablePostList: React.FC<ITablePostList> = ({ listTitle,  postsPerPage }) =
           </tr>
         </thead>
         <tbody>
-          {postList.map(({ title, author, like, commentCount, date, id }) => {
+          {postList.map(({ title, author, like, commentCount, date, id }, index) => {
             return (
-              <tr>
+              <tr className={index % 2 ? styles.odd : styles.even} key={index}>
                 <td className={styles.title}>
                   <Link href={`/post/${id}`}>
                     <a>{title}</a>
@@ -74,7 +76,7 @@ const TablePostList: React.FC<ITablePostList> = ({ listTitle,  postsPerPage }) =
         </tbody>
       </table>
       <div className={styles.footer}>
-        <Pagination totalPostCount={totalPostCount} limit = {postsPerPage} currentPage={currentPage} setPage={paginate} />
+        <Pagination totalPostCount={totalPostCount} pageRange={postsPerPage} currentPage={currentPage} setPage={paginate} />
       </div>
     </div>
   );
