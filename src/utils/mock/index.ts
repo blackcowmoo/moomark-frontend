@@ -103,6 +103,34 @@ export const HomePageListMock: IPostList[] = [
     like: 222,
     date,
   },
+  {
+    id: 7,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    date,
+  },
+  {
+    id: 8,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    date,
+  },
+  {
+    id: 9,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    date,
+  },
+  {
+    id: 10,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    date,
+  },
 ];
 
 export const mockUserPageProfile: IUserProfile = {
@@ -112,3 +140,4 @@ export const mockUserPageProfile: IUserProfile = {
   commentCount: 2103333,
   likeCount: 0,
 };
+export const TablePostListMock: IPostList[] = [...HomePageListMock, ...HomePageListMock, ...HomePageListMock];
