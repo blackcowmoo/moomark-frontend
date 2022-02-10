@@ -1,4 +1,4 @@
-import { TilePostProps, PostListViewProps } from 'types';
+import { TilePostProps, IPostList } from 'types';
 import { IUserProfile } from '@components/User/UserProfile';
 
 const date = new Date(2021, 2, 10);
@@ -60,7 +60,7 @@ export const HomePageTileMock: TilePostProps[] = [
   },
 ];
 
-export const HomePageListMock: PostListViewProps[] = [
+export const HomePageListMock: IPostList[] = [
   {
     id: 1,
     title: '투자의 책임은 너에게',
@@ -103,6 +103,34 @@ export const HomePageListMock: PostListViewProps[] = [
     like: 222,
     date,
   },
+  {
+    id: 7,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    date,
+  },
+  {
+    id: 8,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    date,
+  },
+  {
+    id: 9,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    date,
+  },
+  {
+    id: 10,
+    title: 'ddd',
+    author: 'gosu',
+    like: 222,
+    date,
+  },
 ];
 
 export const mockUserPageProfile: IUserProfile = {
@@ -112,3 +140,4 @@ export const mockUserPageProfile: IUserProfile = {
   commentCount: 2103333,
   likeCount: 0,
 };
+export const TablePostListMock: IPostList[] = [...HomePageListMock, ...HomePageListMock, ...HomePageListMock];

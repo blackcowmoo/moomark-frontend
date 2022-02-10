@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { PostListViewProps } from 'types';
+import { IPostList } from 'types';
 import { timeForToday } from 'utils/common';
 import styles from './DefaultPostList.module.scss';
 
 interface props {
-  value: PostListViewProps;
+  value: IPostList;
 }
 
 const DefaultViewItem: React.FC<props> = ({ value }) => {
