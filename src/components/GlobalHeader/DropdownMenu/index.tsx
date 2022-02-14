@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import getConfig from 'next/config';
 import { GoogleLogout } from 'react-google-login';
@@ -6,15 +7,31 @@ import styles from './DropdownMenu.module.scss';
 
 interface IDropdownMenu {
   userName: string | null;
+  toggleDropDown: () => void;
   setLogOut: () => void;
 }
 
-const DropdownMenu: React.FC<IDropdownMenu> = ({ userName, setLogOut }) => {
+const DropdownMenu: React.FC<IDropdownMenu> = ({ userName, setLogOut, toggleDropDown }) => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: Event) => {
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+      toggleDropDown();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  });
+
   const {
     publicRuntimeConfig: { GOOGLE_CLIENT_ID },
   } = getConfig();
   return (
-    <div className={styles.DropdownMenu}>
+    <div className={styles.DropdownMenu} ref={wrapperRef}>
       <div className={styles.menuWrapper}>
         <div className={styles.userInfo}>{userName}님 환영합니다!</div>
         <Link href='/'>마이페이지</Link>
