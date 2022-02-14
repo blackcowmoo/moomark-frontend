@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import getConfig from 'next/config';
 import { GoogleLogout } from 'react-google-login';
@@ -15,21 +15,18 @@ const DropdownMenu: React.FC<IDropdownMenu> = ({ userName, setLogOut, toggleDrop
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (event: Event) => {
-      if (
-          wrapperRef.current &&
-          !wrapperRef.current.contains(event.target as Node)
-      ) {
-          toggleDropDown();
-      }
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+      toggleDropDown();
+    }
   };
 
   useEffect(() => {
-      document.addEventListener('click', handleClickOutside, true);
-      return () => {
-          document.removeEventListener('click', handleClickOutside, true);
-      };
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
   });
- 
+
   const {
     publicRuntimeConfig: { GOOGLE_CLIENT_ID },
   } = getConfig();
