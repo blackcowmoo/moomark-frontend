@@ -97,7 +97,7 @@ const GlobalHeader: React.FC = () => {
             <div className={styles.userNav}>
               <div className={styles.userNav__user}>
                 <img src='/mockprofile.PNG' alt='mockNick' onClick={toggleDropdown} />
-                {isDropdown && <DropdownMenu userName={userName} setLogOut={setLogOut} />}
+                {isDropdown && <DropdownMenu userName={userName} setLogOut={setLogOut} toggleDropDown={toggleDropdown}/>}
               </div>
             </div>
           ) : (
