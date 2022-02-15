@@ -19,17 +19,13 @@ const GlobalHeader: React.FC = () => {
   const {
     publicRuntimeConfig: { STAGE },
   } = getConfig();
+  const isDevEnv = STAGE === 'dev';
 
   const [scrollDir, setScrollDir] = useState('up');
-  const [isDevEnv, setIsDevEnv] = useState(false);
   const [userSession, setUserSession] = useRecoilState(userSessionState);
   const { userName } = useRecoilValue(loginUserState);
   const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
-
-  useEffect(() => {
-    if (STAGE === 'dev') setIsDevEnv(true);
-  }, []);
 
   const toggleDropdown = () => {
     setDropdown((prev) => !prev);
@@ -97,7 +93,7 @@ const GlobalHeader: React.FC = () => {
             <div className={styles.userNav}>
               <div className={styles.userNav__user}>
                 <img src='/mockprofile.PNG' alt='mockNick' onClick={toggleDropdown} />
-                {isDropdown && <DropdownMenu userName={userName} setLogOut={setLogOut} toggleDropDown={toggleDropdown}/>}
+                {isDropdown && <DropdownMenu userName={userName} setLogOut={setLogOut} toggleDropDown={toggleDropdown} />}
               </div>
             </div>
           ) : (
