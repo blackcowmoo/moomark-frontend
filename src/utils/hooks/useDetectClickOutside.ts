@@ -8,7 +8,6 @@ export default function useDetectClickOutside(ref: RefObject<HTMLDivElement>, on
   };
 
   useEffect(() => {
-    console.log('tt');
     document.addEventListener('click', handleClickOutside, true);
     return () => {
       document.removeEventListener('click', handleClickOutside, true);

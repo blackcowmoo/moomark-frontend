@@ -1,4 +1,3 @@
-import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import getConfig from 'next/config';
 import { GoogleLogout } from 'react-google-login';
@@ -7,11 +6,10 @@ import styles from './DropdownMenu.module.scss';
 
 interface IDropdownMenu {
   userName: string | null;
-  toggleDropDown: () => void;
   setLogOut: () => void;
 }
 
-const DropdownMenu: React.FC<IDropdownMenu> = ({ userName, setLogOut, toggleDropDown }) => {
+const DropdownMenu: React.FC<IDropdownMenu> = ({ userName, setLogOut }) => {
   const {
     publicRuntimeConfig: { GOOGLE_CLIENT_ID },
   } = getConfig();

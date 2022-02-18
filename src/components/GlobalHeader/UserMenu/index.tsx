@@ -6,6 +6,7 @@ import { loginUserState, userSessionState } from 'recoil/userSession';
 import DropdownMenu from './DropdownMenu';
 
 import styles from './UserMenu.module.scss';
+
 interface IUserMenu {
   handleLogin: () => void;
 }
@@ -35,7 +36,7 @@ const index: React.FC<IUserMenu> = ({ handleLogin }) => {
     <div className={styles.wrapper} ref={ref}>
       <div className={styles.UserProfile}>
         <img src='/mockprofile.PNG' alt='mockNick' id='userProfile' onClick={toggleDropdown} />
-        {isDropdown && <DropdownMenu userName={userName} setLogOut={setLogOut} toggleDropDown={toggleDropdown} />}
+        {isDropdown && <DropdownMenu userName={userName} setLogOut={setLogOut} />}
       </div>
     </div>
   ) : (
