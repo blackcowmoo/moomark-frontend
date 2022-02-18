@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
 import getConfig from 'next/config';
 import Link from 'next/link';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { userSessionState, loginUserState } from 'recoil/userSession';
 import { useModal } from 'utils/hooks/useModal';
 import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginForm';
-import DropdownMenu from './DropdownMenu';
 import ThemeToggle from './ThemeToggle';
-import SearchForm from './SearchForm';
+import UserMenu from './UserMenu';
 import HttpHeaderModifier from './HttpHeaderModifier';
 
 import SearchLogo from './SearchForm/Search.svg';
@@ -22,23 +19,7 @@ const GlobalHeader: React.FC = () => {
   const isDevEnv = STAGE === 'dev';
 
   const [scrollDir, setScrollDir] = useState('up');
-  const [userSession, setUserSession] = useRecoilState(userSessionState);
-  const { userName } = useRecoilValue(loginUserState);
-  const [isDropdown, setDropdown] = useState(false);
   const { isShown, toggle } = useModal();
-
-  const toggleDropdown = () => {
-    setDropdown((prev) => !prev);
-  };
-
-  const closeDropdown = () => {
-    setDropdown(false);
-  };
-
-  const setLogOut = () => {
-    setUserSession({ ...userSession, id: null });
-    closeDropdown();
-  };
 
   useEffect(() => {
     const threshold = 0;
@@ -71,13 +52,13 @@ const GlobalHeader: React.FC = () => {
     <header className={styles.header} style={{ marginTop: scrollDir === 'down' ? -155 : 0, transition: 'margin 100ms ease-in-out' }}>
       <div className={styles.headerContainer}>
         <div className={styles.logoContainer}>
-          <div className={styles.logo}>
-            <Link href='/'>
-              <a>
+          <Link href='/'>
+            <a>
+              <div className={styles.logo}>
                 <MainLogo />
-              </a>
-            </Link>
-          </div>
+              </div>
+            </a>
+          </Link>
         </div>
         <div className={styles.right}>
           <Link href='/search'>
@@ -89,21 +70,10 @@ const GlobalHeader: React.FC = () => {
           </Link>
           {isDevEnv && <HttpHeaderModifier />}
           <ThemeToggle />
-          {userSession.id ? (
-            <div className={styles.userNav}>
-              <div className={styles.userNav__user}>
-                <img src='/mockprofile.PNG' alt='mockNick' onClick={toggleDropdown} />
-                {isDropdown && <DropdownMenu userName={userName} setLogOut={setLogOut} toggleDropDown={toggleDropdown} />}
-              </div>
-            </div>
-          ) : (
-            <button className={styles.loginButton} onClick={toggle}>
-              Login
-            </button>
-          )}
+          <UserMenu handleLogin={toggle} />
         </div>
       </div>
-      <Modal title='mooMark' isShown={isShown} onClose={toggle} content={<ModalLoginForm onClose={toggle} />} />
+      <Modal title='로그인' isShown={isShown} onClose={toggle} content={<ModalLoginForm onClose={toggle} />} />
     </header>
   );
 };
