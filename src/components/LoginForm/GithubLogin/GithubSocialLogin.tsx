@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { userSessionState } from 'recoil/userSession';
-import GithubLogo from './GithubLogo.svg';
+import GithubLogo from '@components/svg/GithubLogo.svg';
 import styles from './GithubSocialLogin.module.scss';
 
 interface props {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import Close from './Close.svg';
+import Close from '@components/svg/Close.svg';
 import styles from './Modal.module.scss';
 
 interface ModalProps {

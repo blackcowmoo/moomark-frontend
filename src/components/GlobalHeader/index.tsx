@@ -8,8 +8,8 @@ import ThemeToggle from './ThemeToggle';
 import UserMenu from './UserMenu';
 import HttpHeaderModifier from './HttpHeaderModifier';
 
-import SearchLogo from './SearchForm/Search.svg';
-import MainLogo from './Logo.svg';
+import SearchLogo from '@components/svg/Search.svg';
+import MainLogo from '@components/svg/Logo.svg';
 import styles from './GlobalHeader.module.scss';
 
 const GlobalHeader: React.FC = () => {
