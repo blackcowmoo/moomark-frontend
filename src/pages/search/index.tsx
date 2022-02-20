@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 import TileViewPostList from '@components/PostList/TileViewPostList';
-import SearchForm from '@components/GlobalHeader/SearchForm';
+import SearchForm from '@components/SearchForm';
 import { HomePageTileMock } from 'utils/mock';
 
 const SearchPage: NextPage = () => {
