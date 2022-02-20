@@ -21,9 +21,7 @@ const UserPage = () => {
   return (
     <>
       <UserProfile profile={userProfile} />
-      <>
-        <TablePostList listTitle={`${user}님이 작성한 글`} postsPerPage={10} />
-      </>
+      <TablePostList listTitle={`${user}님이 작성한 글`} postsPerPage={10} />
     </>
   );
 };

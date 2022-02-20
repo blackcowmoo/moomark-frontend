@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './TablePostList.module.scss';
 
@@ -17,7 +16,7 @@ const Pagination: React.FC<IPagination> = ({ totalPostCount, pageRange, currentP
   }
 
   const handlePaginate = (input: number) => {
-    // route.push({ query: { page: input } });
+    router.push({ query: { ...router.query, page: input } }, undefined, { shallow: true });
     setPage(input);
   };
 
@@ -26,16 +25,7 @@ const Pagination: React.FC<IPagination> = ({ totalPostCount, pageRange, currentP
       {pageNumbers.map((number) => {
         return (
           <button className={currentPage === number ? styles.activePage : styles.page} key={number} onClick={() => handlePaginate(number)}>
-            <Link
-              href={{
-                pathname: router.pathname,
-                query: { ...router.query, page: number },
-              }}
-              shallow
-              replace
-            >
-              <a>{number}</a>
-            </Link>
+            {number}
           </button>
         );
       })}
