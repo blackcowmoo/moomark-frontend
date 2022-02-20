@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useInput from 'utils/hooks/useInput';
-import styles from './SearchForm.module.scss';
 import SearchLogo from '@components/svg/Search.svg';
+import styles from './SearchForm.module.scss';
 
 interface ISearchForm {
   searchInput?: string;
@@ -10,7 +10,7 @@ interface ISearchForm {
 
 const SearchForm: React.FC<ISearchForm> = ({ searchInput }) => {
   const router = useRouter();
-  const [value, _, handleInput] = useInput<string>(searchInput || '');
+  const [value, , handleInput] = useInput<string>(searchInput || '');
 
   useEffect(() => {
     router.push({ query: { ...router.query, q: value } }, undefined, { shallow: true });

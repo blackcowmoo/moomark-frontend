@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { useModal } from 'utils/hooks/useModal';
 import Modal from '@components/common/Modal';
 import ModalLoginForm from '@components/LoginForm';
+import SearchLogo from '@components/svg/Search.svg';
+import MainLogo from '@components/svg/Logo.svg';
 import ThemeToggle from './ThemeToggle';
 import UserMenu from './UserMenu';
 import HttpHeaderModifier from './HttpHeaderModifier';
 
-import SearchLogo from '@components/svg/Search.svg';
-import MainLogo from '@components/svg/Logo.svg';
 import styles from './GlobalHeader.module.scss';
 
 const GlobalHeader: React.FC = () => {
