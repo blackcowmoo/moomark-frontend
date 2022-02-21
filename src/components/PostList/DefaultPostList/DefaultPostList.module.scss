@@ -2,7 +2,7 @@
 @import '@styles/utils';
 
 .container {
-  @include mobile{
+  @include mobile {
     width: calc(100% - 2rem);
   }
   width: 25rem;
@@ -47,6 +47,9 @@
       display: flex;
       flex-direction: row;
       .author {
+        a {
+          color: var(--text-primary);
+        }
         margin-left: 1rem;
         flex-grow: 1;
         text-overflow: ellipsis;
@@ -56,7 +59,7 @@
       .like {
         margin-left: 1rem;
         flex-grow: 1;
-        color: var(--accent)
+        color: var(--accent);
       }
       .date {
         margin-left: 1rem;

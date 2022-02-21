@@ -71,7 +71,9 @@ button {
 
 a {
   text-decoration: none;
-  color: $default-black;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 li {
