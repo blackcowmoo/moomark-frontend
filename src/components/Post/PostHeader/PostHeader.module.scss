@@ -1,0 +1,35 @@
+@import '@styles/utils.scss';
+
+.postHeader {
+  .title {
+    font-size: 4rem;
+    line-height: 1.5;
+    letter-spacing: -0.006em;
+    margin-top: 0.6rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    word-break: keep-all;
+  }
+  .writerWrapper {
+    display: flex;
+    justify-content: space-between;
+    .left {
+      display: flex;
+      margin: 0 1rem;
+      .editorName {
+        color: var(--text-primary);
+        margin-right: 1rem;
+      }
+      .editDate {
+        color: var(--text-secondary);
+      }
+    }
+    .right {
+      margin: 0 1rem;
+      .view {
+        color: var(--text-secondary);
+      }
+    }
+  }
+}

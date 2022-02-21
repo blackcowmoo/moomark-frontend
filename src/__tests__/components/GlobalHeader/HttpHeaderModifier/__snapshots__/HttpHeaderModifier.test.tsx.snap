@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HttpHeaderModifier/> matches snapshot 1`] = `
+"<RecoilRoot>
+  <RecoilRoot_INTERNAL>
+    <Batcher setNotifyBatcherOfChange={[Function (anonymous)]} />
+    <HttpHeaderModifier>
+      <div className=\\"wrapper\\">
+        <div className=\\"headerWrapper\\">
+          <button onClick={[Function: onApplyInputArray]}>
+            apply input
+          </button>
+          <button onClick={[Function: onClick]}>
+            reset input
+          </button>
+        </div>
+        <div className=\\"inputContainer\\">
+          <div>
+            input new option
+          </div>
+          <input value=\\"\\" onChange={[Function: onChange]} />
+          <input value=\\"\\" onChange={[Function: onChange]} />
+          <button onClick={[Function: onClick]}>
+            add
+          </button>
+        </div>
+        <div className=\\"textareaWrapper\\">
+          <div>
+            Result
+          </div>
+          <textarea className=\\"result\\" value=\\"{\\"x-moom-route\\":\\"\\"}\\" onChange={[Function: onChangeTextarea]} />
+          <button onClick={[Function: onSaveTextarea]}>
+            textarea save
+          </button>
+          <button className=\\"resetButton\\" onClick={[Function: resetHeaderOption]}>
+            reset header
+          </button>
+        </div>
+      </div>
+    </HttpHeaderModifier>
+  </RecoilRoot_INTERNAL>
+</RecoilRoot>"
+`;

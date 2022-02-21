@@ -1,13 +1,29 @@
-export interface SearchProps{
-  search: string;
-  searchType: string;
-}
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { NextPage } from 'next';
+import useDebounce from 'utils/hooks/useDebounce';
+import TileViewPostList from '@components/PostList/TileViewPostList';
+import SearchForm from '@components/SearchForm';
+import { HomePageTileMock } from 'utils/mock';
+import { TilePostProps } from 'types';
 
-const SearchPage: React.FC<SearchProps> = (props) => {
+const SearchPage: NextPage = () => {
+  const { q } = useRouter().query;
+
+  const [postList, setPostList] = useState<TilePostProps[]>(HomePageTileMock);
+  const debouncedValue = useDebounce<TilePostProps[]>(postList, 500);
+
+  // Fetch api
+  useEffect(() => {
+    // console.log(debouncedValue);
+    console.log(q);
+    setPostList(debouncedValue);
+  }, [debouncedValue, q]);
+
   return (
     <>
-    {props.search}
-    {props.searchType}
+      <SearchForm searchInput={typeof q === 'string' ? q : ''} />
+      <TileViewPostList postList={postList} />
     </>
   );
 };

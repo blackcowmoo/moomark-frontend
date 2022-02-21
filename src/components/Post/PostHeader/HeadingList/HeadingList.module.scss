@@ -1,0 +1,44 @@
+.contentsSider {
+  position: relative;
+  margin-top: 2rem;
+}
+.anchorPosition {
+  position: absolute;
+  left: 100%;
+}
+.wrapper {
+  position: fixed;
+  top: 112px;
+}
+
+.anchorList {
+  position: fixed;
+  top: 10rem;
+  width: 240px;
+  margin-left: 5rem;
+  border-left: 2px solid var(--secondary);
+  padding: 0.25rem 0.75rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  max-height: calc(100vh - 128px);
+  overflow: hidden auto;
+
+  div {
+    margin-top: 4px;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  @for $i from 1 through 6 {
+    .hlevel__#{$i} {
+      margin-left: ($i - 1) * 0.7rem;
+    }
+    .hlevel__#{$i}_focus {
+      color: var(--accent);
+      font-weight: bold;
+      margin-left: ($i - 1) * 0.7rem;
+    }
+  }
+}

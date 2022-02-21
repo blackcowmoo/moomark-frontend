@@ -28,7 +28,6 @@
       width: 150px;
       height: 1px;
       background-color: #dddfe4;
-      // background-color: var(--bg-primary) ;
       @include mobile {
         width: 40%;
       }
@@ -75,11 +74,11 @@ $button-active-blue: #1669f2;
     background-color: $white;
   }
   .googleIcon {
-    position: absolute;
-    margin-top: 11px;
-    margin-left: 11px;
-    width: 18px;
-    height: 18px;
+    position: relative;
+    padding: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
   }
   p {
     display: block;
