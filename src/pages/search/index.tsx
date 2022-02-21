@@ -23,7 +23,7 @@ const SearchPage: NextPage = () => {
   return (
     <>
       <SearchForm searchInput={typeof q === 'string' ? q : ''} />
-      <TileViewPostList postList={postList} />
+      <TileViewPostList postList={postList} viewType='large' />
     </>
   );
 };
