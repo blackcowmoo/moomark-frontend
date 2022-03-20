@@ -46,7 +46,7 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
 
   const onSuccess = (response: any) => {
     console.log(customHeader);
-    login({ variables: { type: 'Google', code: response.code } });
+    login({ variables: { type: 'Google', code: response.code, state: response.state } });
     onClose();
   };
 
