@@ -5,6 +5,13 @@ export const LOGIN = gql`
     login(type: $type, code: $code) {
       token
       refreshToken
+      user {
+        name
+        email
+        nickname
+        picture
+        role
+      }
     }
   }
 `;
