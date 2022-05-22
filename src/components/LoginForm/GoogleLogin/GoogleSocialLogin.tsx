@@ -6,7 +6,7 @@ import { GoogleLogin } from 'react-google-login';
 
 import { userSessionState } from 'recoil/userSession';
 import { customHeaderState } from 'recoil/customHeader';
-import { LOGIN } from 'api/queries/auth.queries';
+import { LOGIN } from 'api/queries/user.queries';
 import GoogleLogo from '@components/svg/GoogleLogo.svg';
 
 import styles from '../LoginForm.module.scss';
