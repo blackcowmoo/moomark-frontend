@@ -11,7 +11,7 @@ interface props {
 }
 
 const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
-  const { loginUser } = useUser();
+  const [, loginUser] = useUser();
   const {
     publicRuntimeConfig: { GOOGLE_CLIENT_ID },
   } = getConfig();
@@ -26,6 +26,7 @@ const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
   const onFailure = (error: Error) => {
     console.error(error);
   };
+
   return (
     <GoogleLogin
       clientId={GOOGLE_CLIENT_ID as string}

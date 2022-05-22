@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import useDetectClickOutside from 'utils/hooks/useDetectClickOutside';
 import useUser from 'utils/hooks/useUser';
@@ -13,7 +13,7 @@ interface IUserMenu {
 const index: React.FC<IUserMenu> = ({ handleLogin }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isDropdown, setDropdown] = useState(false);
-  const { currentUser, logoutUser } = useUser();
+  const [currentUser, , logoutUser, getMe] = useUser();
 
   const closeDropdown = () => {
     setDropdown(false);
@@ -29,10 +29,16 @@ const index: React.FC<IUserMenu> = ({ handleLogin }) => {
     setDropdown((prev) => !prev);
   };
 
+  useEffect(() => {
+    if (!currentUser.name) {
+      getMe();
+    }
+  }, []);
+
   return currentUser.name ? (
     <div className={styles.wrapper} ref={ref}>
       <div className={styles.UserProfile}>
-        <img src='/mockprofile.PNG' alt='mockNick' id='userProfile' onClick={toggleDropdown} />
+        <img src={currentUser.picture || '/mockprofile.PNG'} alt='mockNick' id='userProfile' onClick={toggleDropdown} />
         {isDropdown && <DropdownMenu userName={currentUser.name} setLogOut={setLogOut} />}
       </div>
     </div>

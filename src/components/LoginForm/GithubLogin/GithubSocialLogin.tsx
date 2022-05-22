@@ -8,7 +8,7 @@ interface props {
 }
 
 const GithubSocialLogin: React.FC<props> = ({ onClose }) => {
-  const { loginUser } = useUser();
+  const [, loginUser] = useUser();
 
   const requestLogin = (response: any) => {
     // loginUser('gitHub', response.code);
