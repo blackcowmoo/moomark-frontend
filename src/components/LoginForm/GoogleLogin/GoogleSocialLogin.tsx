@@ -1,12 +1,7 @@
-import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
 import getConfig from 'next/config';
-import { useMutation } from '@apollo/client';
-import { GoogleLogin } from 'react-google-login';
+import { GoogleLogin, GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login';
 
-import { userSessionState } from 'recoil/userSession';
-import { customHeaderState } from 'recoil/customHeader';
-import { LOGIN } from 'api/queries/user.queries';
+import useUser from 'utils/hooks/useUser';
 import GoogleLogo from '@components/svg/GoogleLogo.svg';
 
 import styles from '../LoginForm.module.scss';
@@ -16,38 +11,16 @@ interface props {
 }
 
 const GoogleSocialLogin: React.FC<props> = ({ onClose }) => {
+  const { loginUser } = useUser();
   const {
     publicRuntimeConfig: { GOOGLE_CLIENT_ID },
   } = getConfig();
-  const [customHeader] = useRecoilState(customHeaderState);
-  const [, setUserSession] = useRecoilState(userSessionState);
-  const updateUser = (res: any) => {
-    console.log(res);
-    setUserSession({ id: 'google', userName: 'googleLog' });
-  };
 
-  const [login, { data }] = useMutation(LOGIN, {
-    context: {
-      headers: {
-        ...customHeader,
-      },
-    },
-    onCompleted(res) {
-      updateUser(res);
-    },
-    onError(error) {
-      console.log(error);
-    },
-  });
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
-  const onSuccess = (response: any) => {
-    console.log(customHeader);
-    login({ variables: { type: 'Google', code: response.code } });
-    onClose();
+  const onSuccess = ({ code }: GoogleLoginResponse | GoogleLoginResponseOffline) => {
+    if (code) {
+      loginUser('Google', code);
+      onClose();
+    }
   };
 
   const onFailure = (error: Error) => {

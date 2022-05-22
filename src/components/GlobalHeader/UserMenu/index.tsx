@@ -1,8 +1,7 @@
 import { useState, useRef } from 'react';
-import { useRecoilValue, useRecoilState } from 'recoil';
 
 import useDetectClickOutside from 'utils/hooks/useDetectClickOutside';
-import { loginUserState, userSessionState } from 'recoil/userSession';
+import useUser from 'utils/hooks/useUser';
 import DropdownMenu from './DropdownMenu';
 
 import styles from './UserMenu.module.scss';
@@ -14,8 +13,7 @@ interface IUserMenu {
 const index: React.FC<IUserMenu> = ({ handleLogin }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isDropdown, setDropdown] = useState(false);
-  const { userName } = useRecoilValue(loginUserState);
-  const [userSession, setUserSession] = useRecoilState(userSessionState);
+  const { currentUser, logoutUser } = useUser();
 
   const closeDropdown = () => {
     setDropdown(false);
@@ -24,19 +22,18 @@ const index: React.FC<IUserMenu> = ({ handleLogin }) => {
   useDetectClickOutside(ref, closeDropdown);
 
   const setLogOut = () => {
-    setUserSession({ ...userSession, id: null });
+    logoutUser();
     closeDropdown();
   };
   const toggleDropdown = () => {
-    console.log('toggle');
     setDropdown((prev) => !prev);
   };
 
-  return userSession.id ? (
+  return currentUser.name ? (
     <div className={styles.wrapper} ref={ref}>
       <div className={styles.UserProfile}>
         <img src='/mockprofile.PNG' alt='mockNick' id='userProfile' onClick={toggleDropdown} />
-        {isDropdown && <DropdownMenu userName={userName} setLogOut={setLogOut} />}
+        {isDropdown && <DropdownMenu userName={currentUser.name} setLogOut={setLogOut} />}
       </div>
     </div>
   ) : (
