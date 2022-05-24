@@ -1,5 +1,6 @@
 import getConfig from 'next/config';
 import { ApolloClient, HttpLink, InMemoryCache, ApolloLink, from } from '@apollo/client';
+import { getCookie } from 'utils/cookie';
 
 const {
   publicRuntimeConfig: { GATEWAY_URL },
@@ -13,7 +14,7 @@ const authMiddleware = new ApolloLink((operation, forward) => {
   operation.setContext(({ headers = {} }) => ({
     headers: {
       ...headers,
-      authorization: localStorage.getItem('token') || null,
+      authorization: getCookie('access-token') || null,
     },
   }));
 
@@ -23,6 +24,7 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: from([authMiddleware, httpLink]),
+  ssrMode: true,
 });
 
 export default client;

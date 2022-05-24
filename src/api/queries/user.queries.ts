@@ -15,3 +15,15 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const ME = gql`
+  query Me {
+    me {
+      name
+      email
+      nickname
+      picture
+      role
+    }
+  }
+`;

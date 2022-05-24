@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { userSessionState } from 'recoil/userSession';
+import useUser from 'utils/hooks/useUser';
+
 import GithubLogo from '@components/svg/GithubLogo.svg';
 import styles from './GithubSocialLogin.module.scss';
 
@@ -9,12 +8,12 @@ interface props {
 }
 
 const GithubSocialLogin: React.FC<props> = ({ onClose }) => {
-  const [, setUserSession] = useRecoilState(userSessionState);
-  useEffect(() => {}, []);
+  const [, loginUser] = useUser();
 
-  const requestLogin = (response: any) => {
-    console.log(response);
-    setUserSession({ id: 'githubLogin', userName: 'mock_github' });
+  const requestLogin = () => {
+    // loginUser('gitHub', response.code);
+    // Test-code
+    loginUser('Google', 'test-1234');
     onClose();
   };
 
@@ -27,7 +26,8 @@ const GithubSocialLogin: React.FC<props> = ({ onClose }) => {
           </div>
         </div>
         <p className={styles.btnText}>
-          <b>github 로그인 / 회원가입</b>
+          {/* <b>github 로그인 / 회원가입</b> */}
+          <b>test 로그인 / 회원가입</b>
         </p>
       </div>
     </>
