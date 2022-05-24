@@ -6,14 +6,25 @@ import { useRecoilState } from 'recoil';
 import { LOGIN, ME } from 'api/queries/user.queries';
 import { customHeaderState } from '@recoil/customHeader';
 import { setCookie, removeCookie } from 'utils/cookie';
+import { CookieSetOptions } from 'universal-cookie';
 
-type UseUserProps = [IUser, (socialType: string, authCode: string) => void, () => void, () => void];
+type SocialType = 'Google' | 'Github';
+
+type UseUserProps = [IUser, (socialType: SocialType, authCode: string) => void, () => void, () => void];
+
+const cookiePathOption: CookieSetOptions = {
+  path: '/',
+};
 
 const useUser = (): UseUserProps => {
-  const [currentUser, setCurrentUser] = useRecoilState(userRecoilState);
+  const [user, setUser] = useRecoilState(userRecoilState);
   // remove on service
   const [customHeader] = useRecoilState(customHeaderState);
+  const oneDay = 24 * 3600;
+  const oneWeek = 7 * oneDay;
+  const oneMonth = 30 * oneDay;
 
+  // get user data when access token is on cookie
   const [getMe, { loading, data }] = useLazyQuery(ME, {
     context: {
       headers: {
@@ -32,7 +43,7 @@ const useUser = (): UseUserProps => {
         picture: me.picture,
         role: me.role,
       };
-      setCurrentUser(responsedUser);
+      setUser(responsedUser);
     }
   }, [data, loading]);
 
@@ -43,39 +54,43 @@ const useUser = (): UseUserProps => {
       },
     },
     onCompleted: ({ login }) => {
-      const { user } = login;
-      console.log(login);
-      setCookie('access-token', login.token);
-      setCookie('refresh-token', login.refreshToken);
+      setCookie('access-token', login.token, {
+        ...cookiePathOption,
+        maxAge: oneWeek,
+      });
+      setCookie('refresh-token', login.refreshToken, {
+        ...cookiePathOption,
+        maxAge: 3 * oneMonth,
+      });
       const responsedUser: IUser = {
-        name: user.name,
-        email: user.email,
-        nickname: user.nickname,
-        picture: user.picture,
-        role: user.role,
+        name: login.user.name,
+        email: login.user.email,
+        nickname: login.user.nickname,
+        picture: login.user.picture,
+        role: login.user.role,
       };
-      setCurrentUser(responsedUser);
+      setUser(responsedUser);
     },
     onError: (err) => {
       console.log(err);
     },
   });
 
-  const loginUser = (socialType: string, authCode: string) => {
-    if (socialType === 'gitHub') {
-      setCurrentUser({ name: 'githublogin', nickname: 'git', email: '', picture: null, role: 'USER' });
+  const loginUser = (socialType: SocialType, authCode: string) => {
+    if (socialType === 'Github') {
+      setUser({ name: 'githublogin', nickname: 'git', email: '', picture: null, role: 'USER' });
     } else {
       requestLogin({ variables: { type: socialType, code: authCode } });
     }
   };
 
   const logoutUser = () => {
-    setCurrentUser(initialUserState);
-    removeCookie('access-token');
-    removeCookie('refresh-token');
+    setUser(initialUserState);
+    removeCookie('access-token', cookiePathOption);
+    removeCookie('refresh-token', cookiePathOption);
   };
 
-  return [currentUser, loginUser, logoutUser, getMe];
+  return [user, loginUser, logoutUser, getMe];
 };
 
 export default useUser;

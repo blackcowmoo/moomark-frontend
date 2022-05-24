@@ -10,10 +10,9 @@ interface props {
 const GithubSocialLogin: React.FC<props> = ({ onClose }) => {
   const [, loginUser] = useUser();
 
-  const requestLogin = (response: any) => {
+  const requestLogin = () => {
     // loginUser('gitHub', response.code);
     // Test-code
-    console.log(response);
     loginUser('Google', 'test-1234');
     onClose();
   };
@@ -27,7 +26,8 @@ const GithubSocialLogin: React.FC<props> = ({ onClose }) => {
           </div>
         </div>
         <p className={styles.btnText}>
-          <b>github 로그인 / 회원가입</b>
+          {/* <b>github 로그인 / 회원가입</b> */}
+          <b>test 로그인 / 회원가입</b>
         </p>
       </div>
     </>
