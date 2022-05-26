@@ -10,7 +10,7 @@ import { CookieSetOptions } from 'universal-cookie';
 
 type SocialType = 'Google' | 'Github';
 
-type UseUserProps = [IUser, (socialType: SocialType, authCode: string) => void, () => void, () => void];
+type UseUserProps = [IUser, (socialType: SocialType, authCode: string) => void, () => void, { getMe: () => void; loading: boolean }];
 
 const cookiePathOption: CookieSetOptions = {
   path: '/',
@@ -90,7 +90,7 @@ const useUser = (): UseUserProps => {
     removeCookie('refresh-token', cookiePathOption);
   };
 
-  return [user, loginUser, logoutUser, getMe];
+  return [user, loginUser, logoutUser, { getMe, loading }];
 };
 
 export default useUser;
