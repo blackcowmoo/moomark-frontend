@@ -1,15 +1,13 @@
 import Link from 'next/link';
 import { TilePostProps } from 'types';
-import { ViewType } from './TileViewPostList';
 import { timeForToday } from 'utils/common';
-import styles from './TileViewPostList.module.scss';
+import styles from './ThumbNailPostList.module.scss';
 
 interface props {
-  viewType: ViewType;
   value: TilePostProps;
 }
 
-const TileViewItem: React.FC<props> = ({ value, viewType }) => {
+const TileViewItem: React.FC<props> = ({ value }) => {
   const { id, title, author, like, date, thumbnail, description } = value;
   return (
     <div className={styles.item}>
