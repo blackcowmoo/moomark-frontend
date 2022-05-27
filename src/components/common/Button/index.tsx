@@ -24,7 +24,7 @@ const index: React.FC<Props> = ({
       className={styles.Button}
       style={{
         color: textColor,
-        border: border,
+        border,
         backgroundColor: buttonColor,
       }}
       onClick={onClick}
