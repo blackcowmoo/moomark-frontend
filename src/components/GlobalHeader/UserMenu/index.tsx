@@ -51,9 +51,6 @@ const index: React.FC<IUserMenu> = ({ handleLogin }) => {
     </div>
   ) : (
     <Button onClick={handleLogin} text='로그인' />
-    // <button className={styles.LoginButton} onClick={handleLogin}>
-    //   Login
-    // </button>
   );
 };
 
