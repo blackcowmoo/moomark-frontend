@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 import useDebounce from 'utils/hooks/useDebounce';
-import TileViewPostList from '@components/PostList/TileViewPostList';
+import ThumbNailPostList from '@components/PostList/ThumbNailPostList';
 import SearchForm from '@components/SearchForm';
 import { HomePageTileMock } from 'utils/mock';
 import { TilePostProps } from 'types';
@@ -23,7 +23,7 @@ const SearchPage: NextPage = () => {
   return (
     <>
       <SearchForm searchInput={typeof q === 'string' ? q : ''} />
-      <TileViewPostList postList={postList} />
+      <ThumbNailPostList postList={postList} viewType='large' />
     </>
   );
 };

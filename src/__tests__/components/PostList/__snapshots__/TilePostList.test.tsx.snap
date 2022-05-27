@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TilePostList/> matches snapshot 1`] = `
-"<TilePostList listTitle=\\"인기\\" postList={{...}}>
-  <div className=\\"tilePostList\\">
+"<ThumbNailPostList listTitle=\\"인기\\" postList={{...}}>
+  <div className=\\"TilePostList\\">
     <h2 className=\\"listTitle\\">
       인기
     </h2>
-    <div className=\\"listWrapper\\">
+    <div className=\\"smallWrapper\\">
       <TileViewItem value={{...}}>
         <div className=\\"item\\">
           <Link href=\\"/post/0\\">
@@ -255,5 +255,5 @@ exports[`<TilePostList/> matches snapshot 1`] = `
       </TileViewItem>
     </div>
   </div>
-</TilePostList>"
+</ThumbNailPostList>"
 `;

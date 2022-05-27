@@ -1,0 +1,23 @@
+.wrapper {
+  max-width: 750px;
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+
+.Button {
+  height: 2rem;
+  color: var(--bg-secondary);
+  background: var(--accent);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: cubic-bezier(1, 0, 0, 1);
+  &:hover {
+    color: var(--text-primary);
+    background: var(--secondary);
+  }
+}

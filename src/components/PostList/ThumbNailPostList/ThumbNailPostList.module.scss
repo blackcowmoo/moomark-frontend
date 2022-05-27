@@ -1,8 +1,13 @@
 @import '@styles/mixin';
 
-.tilePostList {
+.TilePostList {
   width: 100%;
-  .listWrapper {
+  .smallWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .largeWrapper {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -98,7 +103,7 @@
       align-items: center;
       b {
         margin-left: 0.5rem;
-        &:hover{
+        &:hover {
           text-decoration: underline;
         }
       }

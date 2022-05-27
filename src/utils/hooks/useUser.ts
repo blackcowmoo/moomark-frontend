@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useLazyQuery, useMutation } from '@apollo/client';
 import { userRecoilState, IUser, initialUserState } from '@recoil/user';
 import { useRecoilState } from 'recoil';
@@ -10,7 +9,7 @@ import { CookieSetOptions } from 'universal-cookie';
 
 type SocialType = 'Google' | 'Github';
 
-type UseUserProps = [IUser, (socialType: SocialType, authCode: string) => void, () => void, () => void];
+type UseUserProps = [IUser, (socialType: SocialType, authCode: string) => void, () => void, { getMe: () => void; loading: boolean }];
 
 const cookiePathOption: CookieSetOptions = {
   path: '/',
@@ -25,27 +24,31 @@ const useUser = (): UseUserProps => {
   const oneMonth = 30 * oneDay;
 
   // get user data when access token is on cookie
-  const [getMe, { loading, data }] = useLazyQuery(ME, {
+  const [getMe, { loading }] = useLazyQuery(ME, {
     context: {
       headers: {
         ...customHeader,
       },
     },
+    onCompleted: ({ me }) => {
+      if (me) {
+        const responsedUser: IUser = {
+          name: me.name,
+          email: me.email,
+          nickname: me.nickname,
+          picture: me.picture,
+          role: me.role,
+        };
+        setUser(responsedUser);
+      }
+    },
+    onError: ({ networkError }) => {
+      if (networkError && 'statusCode' in networkError && networkError?.statusCode === 401) {
+        // REQUEST REFRESH TOKEN
+        console.log(networkError.statusCode);
+      }
+    },
   });
-
-  useEffect(() => {
-    if (data && data.me) {
-      const { me } = data;
-      const responsedUser: IUser = {
-        name: me.name,
-        email: me.email,
-        nickname: me.nickname,
-        picture: me.picture,
-        role: me.role,
-      };
-      setUser(responsedUser);
-    }
-  }, [data, loading]);
 
   const [requestLogin] = useMutation(LOGIN, {
     context: {
@@ -54,22 +57,24 @@ const useUser = (): UseUserProps => {
       },
     },
     onCompleted: ({ login }) => {
-      setCookie('access-token', login.token, {
-        ...cookiePathOption,
-        maxAge: oneWeek,
-      });
-      setCookie('refresh-token', login.refreshToken, {
-        ...cookiePathOption,
-        maxAge: 3 * oneMonth,
-      });
-      const responsedUser: IUser = {
-        name: login.user.name,
-        email: login.user.email,
-        nickname: login.user.nickname,
-        picture: login.user.picture,
-        role: login.user.role,
-      };
-      setUser(responsedUser);
+      if (login) {
+        setCookie('access-token', login.token, {
+          ...cookiePathOption,
+          maxAge: oneWeek,
+        });
+        setCookie('refresh-token', login.refreshToken, {
+          ...cookiePathOption,
+          maxAge: 3 * oneMonth,
+        });
+        const responsedUser: IUser = {
+          name: login.user.name,
+          email: login.user.email,
+          nickname: login.user.nickname,
+          picture: login.user.picture,
+          role: login.user.role,
+        };
+        setUser(responsedUser);
+      }
     },
     onError: (err) => {
       console.log(err);
@@ -90,7 +95,7 @@ const useUser = (): UseUserProps => {
     removeCookie('refresh-token', cookiePathOption);
   };
 
-  return [user, loginUser, logoutUser, getMe];
+  return [user, loginUser, logoutUser, { getMe, loading }];
 };
 
 export default useUser;

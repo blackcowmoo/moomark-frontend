@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 
 import useDetectClickOutside from 'utils/hooks/useDetectClickOutside';
 import useUser from 'utils/hooks/useUser';
+import { getCookie } from 'utils/cookie';
+import Button from 'components/common/Button';
 import DropdownMenu from './DropdownMenu';
 
 import styles from './UserMenu.module.scss';
@@ -13,7 +15,8 @@ interface IUserMenu {
 const index: React.FC<IUserMenu> = ({ handleLogin }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isDropdown, setDropdown] = useState(false);
-  const [currentUser, , logoutUser, getMe] = useUser();
+  const [user, , logoutUser, { getMe, loading }] = useUser();
+  const [loadedUser, setLoadedUser] = useState(false);
 
   const closeDropdown = () => {
     setDropdown(false);
@@ -30,22 +33,24 @@ const index: React.FC<IUserMenu> = ({ handleLogin }) => {
   };
 
   useEffect(() => {
-    if (!currentUser.name) {
+    const accessToken = getCookie('access-token');
+    if (!user.name && accessToken) {
       getMe();
     }
+    setLoadedUser(true);
   }, []);
 
-  return currentUser.name ? (
+  if (!loadedUser || loading) return <div className={styles.wrapper}></div>;
+
+  return user.email ? (
     <div className={styles.wrapper} ref={ref}>
       <div className={styles.UserProfile}>
-        <img src={currentUser.picture || '/mockprofile.PNG'} alt='mockNick' id='userProfile' onClick={toggleDropdown} />
-        {isDropdown && <DropdownMenu userName={currentUser.name} setLogOut={setLogOut} />}
+        <img src={user.picture || '/mockprofile.PNG'} alt='mockNick' id='userProfile' onClick={toggleDropdown} />
+        {isDropdown && <DropdownMenu userName={user.name} setLogOut={setLogOut} />}
       </div>
     </div>
   ) : (
-    <button className={styles.LoginButton} onClick={handleLogin}>
-      Login
-    </button>
+    <Button onClick={handleLogin} text='로그인' />
   );
 };
 

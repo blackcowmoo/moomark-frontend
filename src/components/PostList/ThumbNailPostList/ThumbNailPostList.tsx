@@ -1,17 +1,20 @@
 import { TilePostProps } from 'types';
 import TileViewItem from './TileViewItem';
-import styles from './TileViewPostList.module.scss';
+import styles from './ThumbNailPostList.module.scss';
+
+export type ViewType = 'small' | 'large';
 
 interface Props {
   listTitle?: string;
+  viewType?: ViewType;
   postList: TilePostProps[];
 }
 
-const TilePostList: React.FC<Props> = ({ listTitle, postList }) => {
+const ThumbNailPostList: React.FC<Props> = ({ listTitle, postList, viewType = 'small' }) => {
   return (
-    <div className={styles.tilePostList}>
+    <div className={styles.TilePostList}>
       {listTitle && <h2 className={styles.listTitle}>{listTitle}</h2>}
-      <div className={styles.listWrapper}>
+      <div className={viewType === 'small' ? styles.smallWrapper : styles.largeWrapper}>
         {postList.map((value, index) => {
           return <TileViewItem value={value} key={index} />;
         })}
@@ -20,4 +23,4 @@ const TilePostList: React.FC<Props> = ({ listTitle, postList }) => {
   );
 };
 
-export default TilePostList;
+export default ThumbNailPostList;
