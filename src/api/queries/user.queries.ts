@@ -27,3 +27,11 @@ export const ME = gql`
     }
   }
 `;
+
+export const REFRESH = gql`
+  mutation RefreshToken($refreshToken: String!) {
+    nullrefreshToken(refreshToken: $refreshToken) {
+    
+    }
+  }
+`;
