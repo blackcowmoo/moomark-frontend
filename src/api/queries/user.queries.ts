@@ -28,10 +28,18 @@ export const ME = gql`
   }
 `;
 
-export const REFRESH = gql`
+export const REFRESH_TOKEN = gql`
   mutation RefreshToken($refreshToken: String!) {
-    nullrefreshToken(refreshToken: $refreshToken) {
-    
+    refreshToken(refreshToken: $refreshToken) {
+      token
+      refreshToken
+      user {
+        email
+        nickname
+        picture
+        role
+        name
+      }
     }
   }
 `;
