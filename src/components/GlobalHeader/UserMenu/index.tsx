@@ -15,7 +15,7 @@ interface IUserMenu {
 const index: React.FC<IUserMenu> = ({ handleLogin }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isDropdown, setDropdown] = useState(false);
-  const [user, , logoutUser, { getMe, loading }] = useUser();
+  const [user, , logoutUser, { getMe, loading }, refreshUser] = useUser();
   const [loadedUser, setLoadedUser] = useState(false);
 
   const closeDropdown = () => {
@@ -34,8 +34,11 @@ const index: React.FC<IUserMenu> = ({ handleLogin }) => {
 
   useEffect(() => {
     const accessToken = getCookie('access-token');
+    const refreshToken = getCookie('refresh-token');
     if (!user.name && accessToken) {
       getMe();
+    } else if (!user.name && refreshToken) {
+      refreshUser(refreshToken);
     }
     setLoadedUser(true);
   }, []);
