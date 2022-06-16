@@ -3,7 +3,7 @@
 exports[`<Post/> matches snapshot 1`] = `
 "<Post>
   <div className=\\"post\\">
-    <PostHeader title=\\"mockTitle \\" editorName=\\"writerMock\\" tags={{...}} postDate={{...}} anchorList={{...}} focusAnchor=\\"\\" view={2230}>
+    <PostHeader title=\\"mockTitle \\" editorName=\\"writerMock\\" tags={{...}} postDate=\\"Wed Apr 01 2020\\" anchorList={{...}} focusAnchor=\\"\\" view={2230}>
       <div className=\\"postHeader\\">
         <h1 className=\\"title\\">
           mockTitle 
@@ -289,7 +289,7 @@ exports[`<Post/> matches snapshot 1`] = `
             <div className=\\"Content\\">
               <index info={{...}} text=\\"안녕하세요. 일런 머스큽니다.\\" like={-1}>
                 <div className=\\"reply\\">
-                  <Header user={{...}} date={{...}}>
+                  <Header user={{...}} date=\\"Wed Apr 01 2020\\">
                     <div className=\\"header\\">
                       <div className=\\"profile\\">
                         <img src=\\"/mockprofile.PNG\\" alt=\\"doge\\" className=\\"userImg\\" />
@@ -348,7 +348,7 @@ exports[`<Post/> matches snapshot 1`] = `
             <div className=\\"Content\\">
               <index info={{...}} text=\\"안녕하세요. 일런 머스큽니다.\\" like={-1}>
                 <div className=\\"reply\\">
-                  <Header user={{...}} date={{...}}>
+                  <Header user={{...}} date=\\"Wed Apr 01 2020\\">
                     <div className=\\"header\\">
                       <div className=\\"profile\\">
                         <img src=\\"/mockprofile.PNG\\" alt=\\"doge\\" className=\\"userImg\\" />
@@ -401,7 +401,7 @@ exports[`<Post/> matches snapshot 1`] = `
             <div className=\\"Content\\">
               <index info={{...}} text=\\"안녕하세요. 일런 머스큽니다.\\" like={-1}>
                 <div className=\\"reply\\">
-                  <Header user={{...}} date={{...}}>
+                  <Header user={{...}} date=\\"Wed Apr 01 2020\\">
                     <div className=\\"header\\">
                       <div className=\\"profile\\">
                         <img src=\\"/mockprofile.PNG\\" alt=\\"doge\\" className=\\"userImg\\" />

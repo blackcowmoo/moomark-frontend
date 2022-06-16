@@ -23,7 +23,7 @@ exports[`<DefaultPostItem /> matches snapshot 1`] = `
           </Link>
         </div>
         <div className=\\"date\\">
-          2021년 2월 2일
+          2021년 1월 2일
         </div>
       </div>
     </h5>

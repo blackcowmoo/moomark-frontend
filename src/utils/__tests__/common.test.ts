@@ -11,19 +11,19 @@ describe('timeForToday', () => {
     expect(timeForToday(timeValue, today)).toBe('10분전');
   });
   it('1hour ago', () => {
-    const timeValue = '1995-12-17T03:14:00';
+    const timeValue = '1995-12-17T02:24:00';
     expect(timeForToday(timeValue, today)).toBe('1시간전');
   });
   it('23hour ago', () => {
-    const timeValue = '1995-12-16T03:14:00';
+    const timeValue = '1995-12-16T04:14:00';
     expect(timeForToday(timeValue, today)).toBe('23시간전');
   });
   it('1 day ago', () => {
-    const timeValue = '1995-12-17T02:14:00';
+    const timeValue = '1995-12-16T02:14:00';
     expect(timeForToday(timeValue, today)).toBe('1일전');
   });
   it('default describe', () => {
-    const timeValue = '1995-12-17T02:14:00';
-    expect(timeForToday(timeValue, today)).toBe('1995년 12월 17일');
+    const timeValue = '1994-12-17T02:14:00';
+    expect(timeForToday(timeValue, today)).toBe('1994년 12월 17일');
   });
 });
