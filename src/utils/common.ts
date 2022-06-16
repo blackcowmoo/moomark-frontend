@@ -1,4 +1,4 @@
-const timeForToday = (value: Date, todayValue?: Date): string => {
+const timeForToday = (value: string, todayValue?: Date): string => {
   const today = todayValue || new Date();
   const timeValue = new Date(value);
 
@@ -17,7 +17,7 @@ const timeForToday = (value: Date, todayValue?: Date): string => {
   if (betweenTimeDay < 30) {
     return `${betweenTimeDay}일전`;
   }
-  return `${value.getFullYear()}년 ${value.getMonth() + 1}월 ${value.getDate()}일`;
+  return `${timeValue.getFullYear()}년 ${timeValue.getMonth() + 1}월 ${timeValue.getDate()}일`;
 };
 
 const isNumeric = (num: any) => (typeof num === 'number' || (typeof num === 'string' && num.trim() !== '')) && !Number.isNaN(num as number);
