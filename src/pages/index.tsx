@@ -1,14 +1,14 @@
-import ThumbNailPostList from '@components/PostList/ThumbNailPostList';
+import GridPostList from '@components/PostList/GridPostList';
 import DefaultPostList from '@components/PostList/DefaultPostList/DefaultPostList';
-import HomeLayout from '@components/layout/HomeLayout';
-import styles from '@components/layout/HomeLayout/HomeLayout.module.scss';
+import HomeLayout from '@components/AppLayout/HomeLayout';
+import styles from 'components/AppLayout/HomeLayout/HomeLayout.module.scss';
 import { HomePageListMock, HomePageTileMock } from 'utils/mock';
 
 const HomePage = () => {
   return (
     <HomeLayout>
       <div className={styles.tile}>
-        <ThumbNailPostList listTitle={'인기'} postList={HomePageTileMock} />
+        <GridPostList listTitle={'인기'} postList={HomePageTileMock} />
       </div>
       <div className={styles.default}>
         <DefaultPostList listTitle={'해외 주식'} postList={HomePageListMock} />

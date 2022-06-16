@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TilePostList/> matches snapshot 1`] = `
+exports[`<GridPostList/> matches snapshot 1`] = `
 "<ThumbNailPostList listTitle=\\"인기\\" postList={{...}}>
   <div className=\\"TilePostList\\">
     <h2 className=\\"listTitle\\">
       인기
     </h2>
     <div className=\\"smallWrapper\\">
-      <TileViewItem value={{...}}>
+      <GridViewItem value={{...}}>
         <div className=\\"item\\">
           <Link href=\\"/post/0\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
@@ -47,8 +47,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
             </div>
           </div>
         </div>
-      </TileViewItem>
-      <TileViewItem value={{...}}>
+      </GridViewItem>
+      <GridViewItem value={{...}}>
         <div className=\\"item\\">
           <Link href=\\"/post/0\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
@@ -88,8 +88,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
             </div>
           </div>
         </div>
-      </TileViewItem>
-      <TileViewItem value={{...}}>
+      </GridViewItem>
+      <GridViewItem value={{...}}>
         <div className=\\"item\\">
           <Link href=\\"/post/0\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
@@ -129,8 +129,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
             </div>
           </div>
         </div>
-      </TileViewItem>
-      <TileViewItem value={{...}}>
+      </GridViewItem>
+      <GridViewItem value={{...}}>
         <div className=\\"item\\">
           <Link href=\\"/post/0\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
@@ -170,8 +170,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
             </div>
           </div>
         </div>
-      </TileViewItem>
-      <TileViewItem value={{...}}>
+      </GridViewItem>
+      <GridViewItem value={{...}}>
         <div className=\\"item\\">
           <Link href=\\"/post/0\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
@@ -211,8 +211,8 @@ exports[`<TilePostList/> matches snapshot 1`] = `
             </div>
           </div>
         </div>
-      </TileViewItem>
-      <TileViewItem value={{...}}>
+      </GridViewItem>
+      <GridViewItem value={{...}}>
         <div className=\\"item\\">
           <Link href=\\"/post/0\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/0\\">
@@ -252,7 +252,7 @@ exports[`<TilePostList/> matches snapshot 1`] = `
             </div>
           </div>
         </div>
-      </TileViewItem>
+      </GridViewItem>
     </div>
   </div>
 </ThumbNailPostList>"

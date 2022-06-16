@@ -1,7 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<DefaultPostItem /> matches snapshot 1`] = `
+"<DefaultViewItem value={{...}}>
+  <li className=\\"DefaultViewItem\\">
+    <h5 className=\\"listItemWrapper\\">
+      <div className=\\"title\\">
+        <Link href=\\"/post/1\\">
+          <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/1\\">
+            투자의 책임은 너에게
+          </a>
+        </Link>
+      </div>
+      <div className=\\"postInfo\\">
+        <div className=\\"like\\">
+          222
+        </div>
+        <div className=\\"author\\">
+          <Link href=\\"/user/gosu\\">
+            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
+              gosu
+            </a>
+          </Link>
+        </div>
+        <div className=\\"date\\">
+          2021년 2월 2일
+        </div>
+      </div>
+    </h5>
+  </li>
+</DefaultViewItem>"
+`;
+
 exports[`<DefaultPostList/> matches snapshot 1`] = `
-"<DefaultPostList listTitle=\\"테스트\\" postList={{...}}>
+"<GridPostList listTitle=\\"테스트\\" postList={{...}}>
   <div className=\\"container\\">
     <h2 className=\\"listTitle\\">
       테스트
@@ -289,36 +320,5 @@ exports[`<DefaultPostList/> matches snapshot 1`] = `
       </DefaultViewItem>
     </ul>
   </div>
-</DefaultPostList>"
-`;
-
-exports[`<DefaultViewItem matches snapshot 1`] = `
-"<DefaultViewItem value={{...}}>
-  <li className=\\"DefaultViewItem\\">
-    <h5 className=\\"listItemWrapper\\">
-      <div className=\\"title\\">
-        <Link href=\\"/post/1\\">
-          <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/1\\">
-            투자의 책임은 너에게
-          </a>
-        </Link>
-      </div>
-      <div className=\\"postInfo\\">
-        <div className=\\"like\\">
-          222
-        </div>
-        <div className=\\"author\\">
-          <Link href=\\"/user/gosu\\">
-            <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/gosu\\">
-              gosu
-            </a>
-          </Link>
-        </div>
-        <div className=\\"date\\">
-          2021년 2월 2일
-        </div>
-      </div>
-    </h5>
-  </li>
-</DefaultViewItem>"
+</GridPostList>"
 `;
