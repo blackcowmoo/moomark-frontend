@@ -6,7 +6,6 @@ export const LOGIN = gql`
       token
       refreshToken
       user {
-        name
         email
         nickname
         picture
@@ -19,7 +18,6 @@ export const LOGIN = gql`
 export const ME = gql`
   query Me {
     me {
-      name
       email
       nickname
       picture
