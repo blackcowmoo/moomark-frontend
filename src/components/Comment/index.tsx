@@ -9,7 +9,7 @@ interface IUserProfile {
 
 export interface ICommentInfo {
   user: IUserProfile;
-  date: Date;
+  date: string;
 }
 
 export interface IReply {

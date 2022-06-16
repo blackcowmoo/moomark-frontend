@@ -8,7 +8,7 @@ export interface PostHeaderProps {
   title: string;
   editorName: string;
   tags?: string[];
-  postDate: Date;
+  postDate: string;
   anchorList?: markDownID[];
   focusAnchor?: string;
   view: number;

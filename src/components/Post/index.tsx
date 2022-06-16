@@ -12,7 +12,7 @@ export type LikeType = 0 | 1 | -1;
 
 export interface IPost {
   title: string;
-  postDate: Date;
+  postDate: string;
   editorName: string;
   content: string;
   tags: string[];

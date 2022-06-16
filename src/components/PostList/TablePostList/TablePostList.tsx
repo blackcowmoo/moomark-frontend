@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { timeForToday, isNumeric } from 'utils/common';
-import { IPostList } from 'types';
+import { IPostList } from 'types/post';
 import { HomePageListMock } from 'utils/mock';
 import Pagination from './Pagination';
 
@@ -54,7 +54,7 @@ const TablePostList: React.FC<ITablePostList> = ({ listTitle, postsPerPage }) =>
           </tr>
         </thead>
         <tbody>
-          {postList.map(({ title, author, like, commentCount, date, id }, index) => {
+          {postList.map(({ title, author, like, commentCount, uploadTime, id }, index) => {
             return (
               <tr className={index % 2 ? styles.odd : styles.even} key={index}>
                 <td className={styles.title}>
@@ -69,7 +69,7 @@ const TablePostList: React.FC<ITablePostList> = ({ listTitle, postsPerPage }) =>
                 </td>
                 <td>{like}</td>
                 <td>{commentCount || 0}</td>
-                <td>{timeForToday(date)}</td>
+                <td>{timeForToday(uploadTime)}</td>
               </tr>
             );
           })}

@@ -5,7 +5,7 @@ import useDebounce from 'utils/hooks/useDebounce';
 import GridPostList from '@components/PostList/GridPostList';
 import SearchForm from '@components/SearchForm';
 import { HomePageTileMock } from 'utils/mock';
-import { TilePostProps } from 'types';
+import { TilePostProps } from 'types/post';
 
 const SearchPage: NextPage = () => {
   const { q } = useRouter().query;

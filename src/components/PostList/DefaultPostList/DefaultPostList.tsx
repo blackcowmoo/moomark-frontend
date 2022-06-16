@@ -1,5 +1,5 @@
-import { IPostList } from 'types';
-import DefaultViewItem from './DefaultPostItem';
+import { IPostList } from 'types/post';
+import Item from './DefaultPostItem';
 import styles from './DefaultPostList.module.scss';
 
 interface Props{
@@ -13,7 +13,7 @@ const GridPostList: React.FC<Props> = ({ listTitle, postList }) => {
       <h2 className={styles.listTitle}>{listTitle}</h2>
       <ul>
         {postList.map((value, index) => {
-          return <DefaultViewItem value={value} key={index} />;
+          return <Item value={value} key={index} />;
         })}
       </ul>
     </div>

@@ -1,4 +1,4 @@
-import { TilePostProps } from 'types';
+import { TilePostProps } from 'types/post';
 import TileViewItem from './GridPostItem';
 import styles from './GridPostList.module.scss';
 
