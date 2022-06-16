@@ -36,7 +36,6 @@ export const REFRESH_TOKEN = gql`
         nickname
         picture
         role
-        name
       }
     }
   }
