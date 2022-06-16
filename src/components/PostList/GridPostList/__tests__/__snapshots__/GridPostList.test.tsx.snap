@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GridPostList/> matches snapshot 1`] = `
-"<ThumbNailPostList listTitle=\\"인기\\" postList={{...}}>
+"<GridPostList listTitle=\\"인기\\" postList={{...}}>
   <div className=\\"TilePostList\\">
     <h2 className=\\"listTitle\\">
       인기
@@ -255,5 +255,5 @@ exports[`<GridPostList/> matches snapshot 1`] = `
       </GridViewItem>
     </div>
   </div>
-</ThumbNailPostList>"
+</GridPostList>"
 `;
