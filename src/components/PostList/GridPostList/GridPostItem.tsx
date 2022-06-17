@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { TilePostProps } from 'types';
+import { TilePostProps } from 'types/post';
 import { timeForToday } from 'utils/common';
-import styles from './ThumbNailPostList.module.scss';
+import styles from './GridPostList.module.scss';
 
 interface props {
   value: TilePostProps;
 }
 
-const TileViewItem: React.FC<props> = ({ value }) => {
-  const { id, title, author, like, date, thumbnail, description } = value;
+const GridViewItem: React.FC<props> = ({ value }) => {
+  const { id, title, author, like, uploadTime, thumbnail, description } = value;
   return (
     <div className={styles.item}>
       <Link href={`/post/${id}`}>
@@ -26,7 +26,7 @@ const TileViewItem: React.FC<props> = ({ value }) => {
           <p>{description}</p>
         </div>
         <div className={styles.subInfo}>
-          <span>{timeForToday(date)}</span>
+          <span>{timeForToday(uploadTime)}</span>
         </div>
       </div>
       <div className={styles.footer}>
@@ -41,4 +41,4 @@ const TileViewItem: React.FC<props> = ({ value }) => {
   );
 };
 
-export default TileViewItem;
+export default GridViewItem;

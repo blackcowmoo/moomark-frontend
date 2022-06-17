@@ -1,7 +1,7 @@
-import { TilePostProps, IPostList } from 'types';
+import { TilePostProps, IPostList } from 'types/post';
 import { IUserProfile } from '@components/User/UserProfile';
 
-const date = new Date(2021, 2, 10);
+const mockDate = new Date(2021, 2, 10).toString();
 const desSample: string = '1. 주식을 사기 보다는 때를 사라.챠트는 시세의 길잡이다.2.숲을 먼저 보고 나무를 보아라.3.사는 것 보다 파는 것이 더 중요하다.4.자신에게 가장 알맞는 투자 방법을 개발하라. 5.대중이 가는 뒤안 길에 꽃길이 있다.';
 export const HomePageTileMock: TilePostProps[] = [
   {
@@ -10,7 +10,7 @@ export const HomePageTileMock: TilePostProps[] = [
     author: 'gosu',
     like: 222,
     tags: ['mockTag'],
-    date,
+    uploadTime: mockDate,
     description: desSample,
   },
   {
@@ -19,7 +19,7 @@ export const HomePageTileMock: TilePostProps[] = [
     author: 'gosu',
     like: 222,
     tags: ['mockTag'],
-    date,
+    uploadTime: mockDate,
     description: desSample,
   },
   {
@@ -28,7 +28,7 @@ export const HomePageTileMock: TilePostProps[] = [
     author: '영암머스크멜론',
     like: 0,
     tags: ['mockTag'],
-    date,
+    uploadTime: mockDate,
     description: '화성 갈꺼니까',
   },
   {
@@ -37,7 +37,7 @@ export const HomePageTileMock: TilePostProps[] = [
     author: 'gosu',
     like: 222,
     tags: ['mockTag'],
-    date,
+    uploadTime: mockDate,
     description: '123123',
   },
   {
@@ -46,7 +46,7 @@ export const HomePageTileMock: TilePostProps[] = [
     author: 'gosu',
     like: 222,
     tags: ['mockTag'],
-    date,
+    uploadTime: mockDate,
     description: '123123',
   },
   {
@@ -55,7 +55,7 @@ export const HomePageTileMock: TilePostProps[] = [
     author: 'gosu',
     like: 222,
     tags: ['mockTag'],
-    date,
+    uploadTime: mockDate,
     description: '123123',
   },
 ];
@@ -66,70 +66,70 @@ export const HomePageListMock: IPostList[] = [
     title: '투자의 책임은 너에게',
     author: 'gosu',
     like: 222,
-    date,
+    uploadTime: mockDate,
   },
   {
     id: 2,
     title: '버진은 날아오른다',
     author: 'blackCOw',
     like: 222,
-    date,
+    uploadTime: mockDate,
   },
   {
     id: 3,
     title: '숲을 먼저 보고 나무를 보아라.',
     author: 'gosu',
     like: 222,
-    date,
+    uploadTime: mockDate,
   },
   {
     id: 4,
     title: '사는 것 보다 파는 것이 더 중요하다',
     author: '의문의 주식고수',
     like: 222,
-    date,
+    uploadTime: mockDate,
   },
   {
     id: 5,
     title: 'ddd',
     author: 'gosu',
     like: 1,
-    date,
+    uploadTime: mockDate,
   },
   {
     id: 6,
     title: 'ddd',
     author: 'gosu',
     like: 222,
-    date,
+    uploadTime: mockDate,
   },
   {
     id: 7,
     title: 'ddd',
     author: 'gosu',
     like: 222,
-    date,
+    uploadTime: mockDate,
   },
   {
     id: 8,
     title: 'ddd',
     author: 'gosu',
     like: 222,
-    date,
+    uploadTime: mockDate,
   },
   {
     id: 9,
     title: 'ddd',
     author: 'gosu',
     like: 222,
-    date,
+    uploadTime: mockDate,
   },
   {
     id: 10,
     title: 'ddd',
     author: 'gosu',
     like: 222,
-    date,
+    uploadTime: mockDate,
   },
 ];
 

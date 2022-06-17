@@ -1,23 +1,23 @@
-import { IPostList } from 'types';
-import DefaultViewItem from './DefaultViewItem';
+import { IPostList } from 'types/post';
+import Item from './DefaultPostItem';
 import styles from './DefaultPostList.module.scss';
 
-export interface IDefaultPostList{
+interface Props{
   listTitle: string;
   postList: IPostList[];
 }
 
-const DefaultPostList: React.FC<IDefaultPostList> = ({ listTitle, postList }) => {
+const GridPostList: React.FC<Props> = ({ listTitle, postList }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.listTitle}>{listTitle}</h2>
       <ul>
         {postList.map((value, index) => {
-          return <DefaultViewItem value={value} key={index} />;
+          return <Item value={value} key={index} />;
         })}
       </ul>
     </div>
   );
 };
 
-export default DefaultPostList;
+export default GridPostList;

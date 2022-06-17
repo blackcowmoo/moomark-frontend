@@ -1,14 +1,14 @@
 import { atom } from 'recoil';
 
 export interface IUser {
-  name: null | string;
   nickname: string;
   email: string;
   picture: null | string;
-  role: string;
+  role: string | null;
 }
 
-export const initialUserState: IUser = { name: null, nickname: '', email: '', picture: null, role: '' };
+export const initialUserState: IUser = { nickname: '', email: '', picture: null, role: null };
+
 export const userRecoilState = atom<IUser>({
   key: 'currentUser',
   default: initialUserState,

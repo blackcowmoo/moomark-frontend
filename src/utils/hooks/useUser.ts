@@ -48,7 +48,6 @@ const useUser = (): UseUserProps => {
     onCompleted: ({ login }) => {
       if (login) {
         const responsedUser: IUser = {
-          name: login.user.name,
           email: login.user.email,
           nickname: login.user.nickname,
           picture: login.user.picture,
@@ -82,7 +81,6 @@ const useUser = (): UseUserProps => {
     onCompleted: ({ me }) => {
       if (me) {
         const responsedUser: IUser = {
-          name: me.name,
           email: me.email,
           nickname: me.nickname,
           picture: me.picture,
@@ -101,7 +99,7 @@ const useUser = (): UseUserProps => {
 
   const loginUser = (socialType: SocialType, authCode: string) => {
     if (socialType === 'Github') {
-      setUser({ name: 'githublogin', nickname: 'git', email: '', picture: null, role: 'USER' });
+      setUser({ nickname: 'git', email: '', picture: null, role: 'USER' });
     } else {
       requestLogin({ variables: { type: socialType, code: authCode } });
     }

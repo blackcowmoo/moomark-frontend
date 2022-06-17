@@ -1,13 +1,18 @@
-export interface IPostList{
+export interface IPostList {
   id: number;
   title: string;
   author: string;
   like: number;
-  date: Date;
+  uploadTime: string;
   commentCount?: number;
 }
-export interface TilePostProps extends IPostList{
+
+export interface TilePostProps extends IPostList {
   thumbnail?: string;
   tags?: string[];
   description: string;
+}
+
+export interface IPost {
+
 }

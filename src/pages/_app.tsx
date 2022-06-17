@@ -1,7 +1,7 @@
 import { AppContext, AppInitialProps, AppProps } from 'next/app';
 import { NextComponentType } from 'next';
 import Head from 'next/head';
-import AppLayout from '@components/layout/AppLayout';
+import AppLayout from '@components/AppLayout/AppLayout';
 import { ApolloProvider } from '@apollo/client';
 import client from 'api/apolloClient';
 import { RecoilRoot } from 'recoil';

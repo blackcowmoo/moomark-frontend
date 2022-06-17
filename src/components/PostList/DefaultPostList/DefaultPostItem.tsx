@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { IPostList } from 'types';
+import { IPostList } from 'types/post';
 import { timeForToday } from 'utils/common';
 import styles from './DefaultPostList.module.scss';
 
@@ -8,7 +8,7 @@ interface props {
 }
 
 const DefaultViewItem: React.FC<props> = ({ value }) => {
-  const { id, title, author, like, date } = value;
+  const { id, title, author, like, uploadTime } = value;
   return (
     <li className={styles.DefaultViewItem}>
       <h5 className={styles.listItemWrapper}>
@@ -20,7 +20,7 @@ const DefaultViewItem: React.FC<props> = ({ value }) => {
           <div className={styles.author}>
             <Link href={`/user/${author}`}>{author}</Link>
           </div>
-          <div className={styles.date}>{timeForToday(date)}</div>
+          <div className={styles.date}>{timeForToday(uploadTime)}</div>
         </div>
       </h5>
     </li>

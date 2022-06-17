@@ -1,6 +1,6 @@
-import { TilePostProps } from 'types';
-import TileViewItem from './TileViewItem';
-import styles from './ThumbNailPostList.module.scss';
+import { TilePostProps } from 'types/post';
+import TileViewItem from './GridPostItem';
+import styles from './GridPostList.module.scss';
 
 export type ViewType = 'small' | 'large';
 
@@ -10,7 +10,7 @@ interface Props {
   postList: TilePostProps[];
 }
 
-const ThumbNailPostList: React.FC<Props> = ({ listTitle, postList, viewType = 'small' }) => {
+const GridPostList: React.FC<Props> = ({ listTitle, postList, viewType = 'small' }) => {
   return (
     <div className={styles.TilePostList}>
       {listTitle && <h2 className={styles.listTitle}>{listTitle}</h2>}
@@ -23,4 +23,4 @@ const ThumbNailPostList: React.FC<Props> = ({ listTitle, postList, viewType = 's
   );
 };
 
-export default ThumbNailPostList;
+export default GridPostList;

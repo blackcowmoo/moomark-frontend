@@ -35,9 +35,9 @@ const index: React.FC<IUserMenu> = ({ handleLogin }) => {
   useEffect(() => {
     const accessToken = getCookie('access-token');
     const refreshToken = getCookie('refresh-token');
-    if (!user.name && accessToken) {
+    if (!user.role && accessToken) {
       getMe();
-    } else if (!user.name && refreshToken) {
+    } else if (!user.role && refreshToken) {
       refreshUser(refreshToken);
     }
     setLoadedUser(true);
@@ -49,7 +49,7 @@ const index: React.FC<IUserMenu> = ({ handleLogin }) => {
     <div className={styles.wrapper} ref={ref}>
       <div className={styles.UserProfile}>
         <img src={user.picture || '/mockprofile.PNG'} alt='mockNick' id='userProfile' onClick={toggleDropdown} />
-        {isDropdown && <DropdownMenu userName={user.name} setLogOut={setLogOut} />}
+        {isDropdown && <DropdownMenu userName={user.nickname} setLogOut={setLogOut} />}
       </div>
     </div>
   ) : (

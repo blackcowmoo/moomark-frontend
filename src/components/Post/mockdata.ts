@@ -1,7 +1,7 @@
 import { ICommentContent } from '@components/Comment';
 import { IPost } from './index';
 
-const mockDate = new Date(2020, 3, 1);
+const mockDate = new Date(2020, 3, 1).toDateString();
 
 const markdown: string = `
 # 1. 마크다운에 관하여
