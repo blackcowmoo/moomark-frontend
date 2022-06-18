@@ -4,7 +4,7 @@ import client from 'api/apolloClient';
 
 import { HomePageTileMock } from 'utils/mock';
 import GridPostList from '@components/PostList/GridPostList';
-import DefaultPostList from '@components/PostList/DefaultPostList/DefaultPostList';
+import DefaultPostList from '@components/PostList/DefaultPostList';
 import HomeLayout from '@components/AppLayout/HomeLayout';
 import { IPostList } from 'types/post';
 import { GET_POSTLIST } from 'api/queries/post.queries';

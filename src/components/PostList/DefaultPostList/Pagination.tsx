@@ -1,5 +1,4 @@
-import { useRouter } from 'next/router';
-import styles from './TablePostList.module.scss';
+import styles from './DefaultPostList.module.scss';
 
 interface IPagination {
   totalPostCount: number;
@@ -9,14 +8,12 @@ interface IPagination {
 }
 
 const Pagination: React.FC<IPagination> = ({ totalPostCount, pageRange, currentPage, setPage }) => {
-  const router = useRouter();
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalPostCount / pageRange); i += 1) {
     pageNumbers.push(i);
   }
 
   const handlePaginate = (input: number) => {
-    router.push({ query: { ...router.query, page: input } }, undefined, { shallow: true });
     setPage(input);
   };
 
