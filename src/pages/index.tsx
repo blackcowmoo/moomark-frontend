@@ -7,7 +7,7 @@ import GridPostList from '@components/PostList/GridPostList';
 import DefaultPostList from '@components/PostList/DefaultPostList';
 import HomeLayout from '@components/AppLayout/HomeLayout';
 import { IPostList } from 'types/post';
-import { GET_POSTLIST } from 'api/queries/post.queries';
+import { GET_POSTLIST_MAIN } from 'api/queries/post.queries';
 
 import styles from 'components/AppLayout/HomeLayout/HomeLayout.module.scss';
 import { useEffect } from 'react';
@@ -36,14 +36,14 @@ const HomePage: NextPage<Props> = ({ postList }) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await client.query({
-    query: GET_POSTLIST,
+    query: GET_POSTLIST_MAIN,
     variables: { limit: 10 },
   });
 
   return {
     props: {
-      postList: data.posts
-        ? data.posts.map((post: any) => ({
+      postList: data.listPosts.posts
+        ? data.listPosts.posts.map((post: any) => ({
           id: post.id,
           title: post.title,
           author: post.user.nickname,
