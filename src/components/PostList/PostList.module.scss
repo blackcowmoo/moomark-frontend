@@ -1,0 +1,67 @@
+@import '@styles/mixin';
+@import '@styles/utils';
+
+.PostList {
+  position: relative;
+  h2 {
+    position: relative;
+    font-weight: 700;
+    height: 54px;
+    padding-right: 0;
+    padding-left: 34px;
+    line-height: 54px;
+    border-bottom: 1px solid var(--text-secondary);
+  }
+  @include mobile {
+    width: 100%;
+  }
+
+  @include desktop {
+    width: calc(50% - 20px);
+    margin-top: 45px;
+    padding: 0 1.2rem;
+    border-bottom: none;
+  }
+}
+
+.PostListItem {
+  position: relative;
+  border-bottom: 1px solid var(--text-secondary);
+  a {
+    color: var(--text-primary);
+  }
+
+  .title {
+    max-width: calc(100% - 55px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .info {
+    display: flex;
+    gap: 0.2rem;
+    position: absolute;
+    top: calc(50% + 2px);
+    right: 0;
+    transform: translateY(-50%);
+    margin-top: 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    .author {
+      max-width: 5rem;
+      color: var(--accent);
+      margin-left: 1rem;
+      flex-grow: 1;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .date {
+      margin-left: 1rem;
+      flex-grow: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
