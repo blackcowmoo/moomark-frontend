@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ThemeToggle/> matches snapshot 1`] = `
+"<RecoilRoot>
+  <RecoilRoot_INTERNAL>
+    <Batcher setNotifyBatcherOfChange={[Function (anonymous)]} />
+    <index>
+      <div className=\\"container\\">
+        <input type=\\"checkbox\\" className=\\"checkbox\\" onChange={[Function: toggleTheme]} checked={false} id=\\"chk\\" />
+        <label className=\\"label\\" htmlFor=\\"chk\\">
+          <div className=\\"sun\\">
+            <test-file-stub />
+          </div>
+          <div className=\\"moon\\">
+            <test-file-stub />
+          </div>
+          <div className=\\"ball\\" style={{...}} />
+        </label>
+      </div>
+    </index>
+  </RecoilRoot_INTERNAL>
+</RecoilRoot>"
+`;

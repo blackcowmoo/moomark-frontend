@@ -2,7 +2,8 @@ export interface IPostList {
   id: number;
   title: string;
   author: string;
-  like: number;
+  recommendCount: number;
+  viewsCount: number;
   uploadTime: string;
   commentCount?: number;
 }

@@ -2,15 +2,14 @@ import type { NextPage } from 'next';
 import { GetServerSideProps } from 'next';
 import client from 'api/apolloClient';
 
-import { HomePageTileMock } from 'utils/mock';
-import GridPostList from '@components/PostList/GridPostList';
-import DefaultPostList from '@components/PostList/DefaultPostList/DefaultPostList';
-import HomeLayout from '@components/AppLayout/HomeLayout';
+import { GET_POSTLIST_MAIN } from 'api/queries/post.queries';
+import PostList from '@components/PostList';
+import HomeLayout from 'components/AppLayout/HomeLayout';
 import { IPostList } from 'types/post';
-import { GET_POSTLIST } from 'api/queries/post.queries';
+
+import { useEffect } from 'react';
 
 import styles from 'components/AppLayout/HomeLayout/HomeLayout.module.scss';
-import { useEffect } from 'react';
 
 interface Props {
   postList: IPostList[];
@@ -22,13 +21,10 @@ const HomePage: NextPage<Props> = ({ postList }) => {
   }, []);
   return (
     <HomeLayout>
-      <div className={styles.tile}>
-        <GridPostList listTitle={'인기'} postList={HomePageTileMock} />
-      </div>
-      <div className={styles.default}>
-        <DefaultPostList listTitle={'해외 주식'} postList={postList} />
-        <DefaultPostList listTitle={'국내 주식'} postList={postList} />
-        <DefaultPostList listTitle={'암호 화폐'} postList={postList} />
+      <div className={styles.homeList}>
+        <PostList listTitle='해외주식' postList={postList} />
+        <PostList listTitle='취미' postList={postList} />
+        <PostList listTitle='잡담' postList={postList} />
       </div>
     </HomeLayout>
   );
@@ -36,18 +32,19 @@ const HomePage: NextPage<Props> = ({ postList }) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await client.query({
-    query: GET_POSTLIST,
+    query: GET_POSTLIST_MAIN,
     variables: { limit: 10 },
   });
 
   return {
     props: {
-      postList: data.posts
-        ? data.posts.map((post: any) => ({
+      postList: data.listPosts.posts
+        ? data.listPosts.posts.map((post: any) => ({
           id: post.id,
           title: post.title,
           author: post.user.nickname,
-          like: post.recommendCount,
+          recommendCount: post.recommendCount,
+          viewsCount: post.viewsCount,
           uploadTime: post.uploadTime,
         }))
         : [],

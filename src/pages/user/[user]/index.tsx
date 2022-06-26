@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+
 import UserProfile, { IUserProfile } from '@components/User/UserProfile';
-import TablePostList from '@components/PostList/TablePostList';
+import PostList from '@components/PostList';
+import { HomePageListMock } from 'utils/mock';
 
 const UserPage = () => {
   const { user } = useRouter().query;
@@ -21,7 +23,7 @@ const UserPage = () => {
   return (
     <>
       <UserProfile profile={userProfile} />
-      <TablePostList listTitle={`${user}님이 작성한 글`} postsPerPage={10} />
+      <PostList listTitle={`${user}님 작성글`} postList={HomePageListMock} />
     </>
   );
 };

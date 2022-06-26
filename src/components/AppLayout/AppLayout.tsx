@@ -8,6 +8,9 @@ const AppLayout: React.FC<ReactNode> = ({ children }) => {
     <>
       <GlobalHeader />
       <div className={styles.AppLayout}>{children}</div>
+      <footer className={styles.footer}>
+        @black-cow-moo Moomark
+      </footer>
     </>
   );
 };
