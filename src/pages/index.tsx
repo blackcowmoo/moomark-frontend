@@ -40,13 +40,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       postList: data.listPosts.posts
         ? data.listPosts.posts.map((post: any) => ({
-            id: post.id,
-            title: post.title,
-            author: post.user.nickname,
-            recommendCount: post.recommendCount,
-            viewsCount: post.viewsCount,
-            uploadTime: post.uploadTime,
-          }))
+          id: post.id,
+          title: post.title,
+          author: post.user.nickname,
+          recommendCount: post.recommendCount,
+          viewsCount: post.viewsCount,
+          uploadTime: post.uploadTime,
+        }))
         : [],
     },
   };

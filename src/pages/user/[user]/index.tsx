@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import UserProfile, { IUserProfile } from '@components/User/UserProfile';
-import DefaultPostList from '@components/PostList/DefaultPostList';
+import PostList from '@components/PostList';
 import { HomePageListMock } from 'utils/mock';
 
 const UserPage = () => {
@@ -23,7 +23,7 @@ const UserPage = () => {
   return (
     <>
       <UserProfile profile={userProfile} />
-      <DefaultPostList listTitle={`${user}님 작성글`} postList={HomePageListMock} />
+      <PostList listTitle={`${user}님 작성글`} postList={HomePageListMock} />
     </>
   );
 };
