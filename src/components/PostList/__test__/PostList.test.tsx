@@ -15,7 +15,7 @@ const mockDefaultPostListItem: IPostList = {
 
 describe('<PostList/>', () => {
   it('matches snapshot', () => {
-    const wrapper = mount(<PostList listTitle='테스트' postList={HomePageListMock} />);
+    const wrapper = mount(<PostList listTitle='테스트' posts={HomePageListMock} />);
     expect(wrapper.debug()).toMatchSnapshot();
   });
 });

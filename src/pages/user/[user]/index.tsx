@@ -23,7 +23,7 @@ const UserPage = () => {
   return (
     <>
       <UserProfile profile={userProfile} />
-      <PostList listTitle={`${user}님 작성글`} postList={HomePageListMock} />
+      <PostList listTitle={`${user}님 작성글`} posts={HomePageListMock} />
     </>
   );
 };

@@ -22,9 +22,9 @@ const HomePage: NextPage<Props> = ({ postList }) => {
   return (
     <HomeLayout>
       <div className={styles.homeList}>
-        <PostList listTitle='해외주식' postList={postList} />
-        <PostList listTitle='취미' postList={postList} />
-        <PostList listTitle='잡담' postList={postList} />
+        <PostList listTitle='해외주식' posts={postList} />
+        <PostList listTitle='취미' posts={postList} />
+        <PostList listTitle='잡담' posts={postList} />
       </div>
     </HomeLayout>
   );
