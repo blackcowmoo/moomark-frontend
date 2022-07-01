@@ -2,12 +2,13 @@ import type { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'ne
 
 import client from 'api/apolloClient';
 import { GET_POST } from 'api/queries/post.queries';
-import Post, { IPost } from '@components/Post';
+import Post from '@components/Post';
+import { IPostDetail } from 'types/post';
 import HeadMeta from '@components/common/HeadMeta';
 import { mockPost } from '@components/Post/mockdata';
 
 type Props = {
-  post: IPost;
+  post: IPostDetail;
 };
 
 const PostPage: NextPage<Props> = ({ post }) => {
@@ -28,10 +29,13 @@ export const getServerSideProps: GetServerSideProps = async (context: GetServerS
       query: GET_POST,
       variables: { postId: id },
     });
-
+    console.log(data);
     return {
       props: {
-        post: data,
+        post: {
+          author: data.post.user,
+          ...data.post,
+        },
       },
     };
   } catch (err) {

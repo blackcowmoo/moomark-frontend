@@ -7,7 +7,9 @@ import PostListItem from '../PostListItem';
 const mockDefaultPostListItem: IPostList = {
   id: 1,
   title: '투자의 책임은 너에게',
-  author: 'gosu',
+  author: {
+    nickname: 'gosu',
+  },
   recommendCount: 222,
   viewsCount: 22,
   uploadTime: '2021-1-2',

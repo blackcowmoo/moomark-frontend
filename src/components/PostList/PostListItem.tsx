@@ -22,20 +22,16 @@ const PostListItem: React.FC<props> = ({ post }) => {
       </div>
       <div className={styles.info}>
         <span>
-          <LikeOutlined />
-          {' '}
-          {recommendCount}
+          <LikeOutlined /> {recommendCount}
         </span>
         <span>
-          <EyeOutlined />
-          {' '}
-          {viewsCount}
+          <EyeOutlined /> {viewsCount}
         </span>
-        {author === isWithDrawn ? (
+        {author.nickname === isWithDrawn ? (
           <span>탈퇴한유저</span>
         ) : (
           <span className={styles.author}>
-            <Link href={`/user/${author}`}>{author}</Link>
+            <Link href={`/user/${author.nickname}`}>{author.nickname}</Link>
           </span>
         )}
         <span className={styles.date}>{timeForToday(uploadTime)}</span>

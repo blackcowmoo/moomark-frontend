@@ -7,7 +7,9 @@ export const HomePageListMock: IPostList[] = [
   {
     id: 1,
     title: '테스트 제목 Mock',
-    author: 'MockUser',
+    author: {
+      nickname: 'MockUser',
+    },
     recommendCount: 222,
     viewsCount: 222,
     uploadTime: mockDate,
@@ -15,7 +17,9 @@ export const HomePageListMock: IPostList[] = [
   {
     id: 2,
     title: '테스트 제목 Mock',
-    author: 'MockUser',
+    author: {
+      nickname: 'MockUser',
+    },
     recommendCount: 222,
     viewsCount: 222,
     uploadTime: mockDate,
@@ -23,7 +27,9 @@ export const HomePageListMock: IPostList[] = [
   {
     id: 3,
     title: '테스트 제목 Mock',
-    author: 'blackCOw',
+    author: {
+      nickname: 'MockUser',
+    },
     recommendCount: 222,
     viewsCount: 222,
     uploadTime: mockDate,
@@ -31,7 +37,9 @@ export const HomePageListMock: IPostList[] = [
   {
     id: 4,
     title: '테스트 제목 Mock',
-    author: 'blackCOw',
+    author: {
+      nickname: 'MockUser',
+    },
     recommendCount: 222,
     viewsCount: 222,
     uploadTime: mockDate,
@@ -39,7 +47,9 @@ export const HomePageListMock: IPostList[] = [
   {
     id: 5,
     title: '테스트 제목 Mock',
-    author: 'blackCOw',
+    author: {
+      nickname: 'MockUser',
+    },
     recommendCount: 222,
     viewsCount: 222,
     uploadTime: mockDate,
@@ -47,7 +57,9 @@ export const HomePageListMock: IPostList[] = [
   {
     id: 6,
     title: '테스트 제목 Mock',
-    author: 'blackCOw',
+    author: {
+      nickname: 'MockUser',
+    },
     recommendCount: 222,
     viewsCount: 222,
     uploadTime: mockDate,

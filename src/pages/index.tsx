@@ -15,6 +15,7 @@ interface Props {
 }
 
 const HomePage: NextPage<Props> = ({ postList }) => {
+  console.log(postList);
   return (
     <>
       <HeadMeta title='MooMark Home' description='moomark home page' />
@@ -41,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         ? data.listPosts.posts.map((post: any) => ({
           id: post.id,
           title: post.title,
-          author: post.user.nickname,
+          author: post.user,
           recommendCount: post.recommendCount,
           viewsCount: post.viewsCount,
           uploadTime: post.uploadTime,
