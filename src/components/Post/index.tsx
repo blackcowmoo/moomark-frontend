@@ -19,7 +19,6 @@ const Post: React.FC<postViewerProps> = ({ postProps = mockPost }) => {
   const { title, uploadTime, author, content, tags, comment, viewsCount, recommendCount } = postProps;
   const [anchorList, setAnchorList] = useState<markDownID[]>([]);
   const [focusAnchor, setFocusAnchor] = useState<string>('');
-  console.log(postProps);
 
   const updateAnchorList = useCallback((value: markDownID[]) => {
     setAnchorList([...value]);

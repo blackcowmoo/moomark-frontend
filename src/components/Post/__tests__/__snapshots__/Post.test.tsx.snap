@@ -3,7 +3,7 @@
 exports[`<Post/> matches snapshot 1`] = `
 "<Post>
   <div className=\\"post\\">
-    <PostHeader title=\\"mockTitle \\" editorName=\\"writerMock\\" tags={{...}} postDate=\\"Wed Apr 01 2020\\" anchorList={{...}} focusAnchor=\\"\\" view={2230}>
+    <PostHeader title=\\"mockTitle \\" editorName=\\"mockWriter\\" tags={{...}} postDate=\\"Wed Apr 01 2020\\" anchorList={{...}} focusAnchor=\\"\\" view={2230}>
       <div className=\\"postHeader\\">
         <h1 className=\\"title\\">
           mockTitle 
@@ -11,7 +11,7 @@ exports[`<Post/> matches snapshot 1`] = `
         <div className=\\"writerWrapper\\">
           <div className=\\"left\\">
             <div className=\\"editorName\\">
-              writerMock
+              mockWriter
             </div>
             <div className=\\"editDate\\">
               2020년 4월 1일
@@ -256,19 +256,16 @@ exports[`<Post/> matches snapshot 1`] = `
         </ReactMarkdown>
       </div>
     </Memo(PostContent)>
-    <PostFooter liked={0} likeCount={0}>
+    <PostFooter liked={false} likeCount={0}>
       <div className=\\"PostFooter\\">
         <div className=\\"likeWrapper\\">
           <div id=\\"likePost\\" className=\\"default\\" onClick={[Function: toggleLikeButton]}>
             추천 🍕
             0
           </div>
-          <div id=\\"dislikePost\\" className=\\"default\\" onClick={[Function: toggleDislikeButton]}>
-            비추
-          </div>
         </div>
         <div className=\\"reportWrapper\\">
-          🚨
+          🚨 report
         </div>
       </div>
     </PostFooter>
@@ -287,17 +284,15 @@ exports[`<Post/> matches snapshot 1`] = `
           </index>
           <CommentContent comment={{...}}>
             <div className=\\"Content\\">
-              <index info={{...}} text=\\"안녕하세요. 일런 머스큽니다.\\" like={-1}>
+              <index info={{...}} content=\\"안녕하세요. 일런 머스큽니다.\\" recommendCount={-1}>
                 <div className=\\"reply\\">
                   <Header user={{...}} date=\\"Wed Apr 01 2020\\">
                     <div className=\\"header\\">
                       <div className=\\"profile\\">
-                        <img src=\\"/mockprofile.PNG\\" alt=\\"doge\\" className=\\"userImg\\" />
+                        <img src=\\"/mockprofile.PNG\\" alt={[undefined]} className=\\"userImg\\" />
                       </div>
                       <div className=\\"info\\">
-                        <div className=\\"name\\">
-                          doge
-                        </div>
+                        <div className=\\"name\\" />
                         <div className=\\"date\\">
                           2020년 4월 1일
                         </div>
@@ -346,17 +341,15 @@ exports[`<Post/> matches snapshot 1`] = `
           </CommentContent>
           <CommentContent comment={{...}}>
             <div className=\\"Content\\">
-              <index info={{...}} text=\\"안녕하세요. 일런 머스큽니다.\\" like={-1}>
+              <index info={{...}} content=\\"안녕하세요. 일런 머스큽니다.\\" recommendCount={-1}>
                 <div className=\\"reply\\">
                   <Header user={{...}} date=\\"Wed Apr 01 2020\\">
                     <div className=\\"header\\">
                       <div className=\\"profile\\">
-                        <img src=\\"/mockprofile.PNG\\" alt=\\"doge\\" className=\\"userImg\\" />
+                        <img src=\\"/mockprofile.PNG\\" alt={[undefined]} className=\\"userImg\\" />
                       </div>
                       <div className=\\"info\\">
-                        <div className=\\"name\\">
-                          doge
-                        </div>
+                        <div className=\\"name\\" />
                         <div className=\\"date\\">
                           2020년 4월 1일
                         </div>
@@ -399,17 +392,15 @@ exports[`<Post/> matches snapshot 1`] = `
           </CommentContent>
           <CommentContent comment={{...}}>
             <div className=\\"Content\\">
-              <index info={{...}} text=\\"안녕하세요. 일런 머스큽니다.\\" like={-1}>
+              <index info={{...}} content=\\"안녕하세요. 일런 머스큽니다.\\" recommendCount={-1}>
                 <div className=\\"reply\\">
                   <Header user={{...}} date=\\"Wed Apr 01 2020\\">
                     <div className=\\"header\\">
                       <div className=\\"profile\\">
-                        <img src=\\"/mockprofile.PNG\\" alt=\\"doge\\" className=\\"userImg\\" />
+                        <img src=\\"/mockprofile.PNG\\" alt={[undefined]} className=\\"userImg\\" />
                       </div>
                       <div className=\\"info\\">
-                        <div className=\\"name\\">
-                          doge
-                        </div>
+                        <div className=\\"name\\" />
                         <div className=\\"date\\">
                           2020년 4월 1일
                         </div>
@@ -458,19 +449,16 @@ exports[`<Post/> matches snapshot 1`] = `
 `;
 
 exports[`<PostFooter/> matches snapshot 1`] = `
-"<PostFooter likeCount={33} liked={0}>
+"<PostFooter likeCount={33} liked={false}>
   <div className=\\"PostFooter\\">
     <div className=\\"likeWrapper\\">
       <div id=\\"likePost\\" className=\\"default\\" onClick={[Function: toggleLikeButton]}>
         추천 🍕
         33
       </div>
-      <div id=\\"dislikePost\\" className=\\"default\\" onClick={[Function: toggleDislikeButton]}>
-        비추
-      </div>
     </div>
     <div className=\\"reportWrapper\\">
-      🚨
+      🚨 report
     </div>
   </div>
 </PostFooter>"

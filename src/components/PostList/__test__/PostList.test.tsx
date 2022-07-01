@@ -31,7 +31,7 @@ describe('<PostListItem />', () => {
     const wrapper = mount(<PostListItem post={mockDefaultPostListItem} />);
     expect(wrapper.props().post.id).toBe(1);
     expect(wrapper.props().post.title).toBe('투자의 책임은 너에게');
-    expect(wrapper.props().post.author).toBe('gosu');
+    expect(wrapper.props().post.author.nickname).toBe('gosu');
     expect(wrapper.props().post.recommendCount).toBe(222);
   });
 });

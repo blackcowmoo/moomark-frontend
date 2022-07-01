@@ -153,9 +153,9 @@ exports[`<PostList/> matches snapshot 1`] = `
             222
           </span>
           <span className=\\"author\\">
-            <Link href=\\"/user/blackCOw\\">
-              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/blackCOw\\">
-                blackCOw
+            <Link href=\\"/user/MockUser\\">
+              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/MockUser\\">
+                MockUser
               </a>
             </Link>
           </span>
@@ -206,9 +206,9 @@ exports[`<PostList/> matches snapshot 1`] = `
             222
           </span>
           <span className=\\"author\\">
-            <Link href=\\"/user/blackCOw\\">
-              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/blackCOw\\">
-                blackCOw
+            <Link href=\\"/user/MockUser\\">
+              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/MockUser\\">
+                MockUser
               </a>
             </Link>
           </span>
@@ -259,9 +259,9 @@ exports[`<PostList/> matches snapshot 1`] = `
             222
           </span>
           <span className=\\"author\\">
-            <Link href=\\"/user/blackCOw\\">
-              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/blackCOw\\">
-                blackCOw
+            <Link href=\\"/user/MockUser\\">
+              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/MockUser\\">
+                MockUser
               </a>
             </Link>
           </span>
@@ -312,9 +312,9 @@ exports[`<PostList/> matches snapshot 1`] = `
             222
           </span>
           <span className=\\"author\\">
-            <Link href=\\"/user/blackCOw\\">
-              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/blackCOw\\">
-                blackCOw
+            <Link href=\\"/user/MockUser\\">
+              <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/user/MockUser\\">
+                MockUser
               </a>
             </Link>
           </span>
