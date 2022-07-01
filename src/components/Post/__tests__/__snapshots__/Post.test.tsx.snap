@@ -286,13 +286,15 @@ exports[`<Post/> matches snapshot 1`] = `
             <div className=\\"Content\\">
               <index info={{...}} content=\\"안녕하세요. 일런 머스큽니다.\\" recommendCount={-1}>
                 <div className=\\"reply\\">
-                  <Header user={{...}} date=\\"Wed Apr 01 2020\\">
+                  <Header user={{...}} uploadTime=\\"Wed Apr 01 2020\\">
                     <div className=\\"header\\">
                       <div className=\\"profile\\">
-                        <img src=\\"/mockprofile.PNG\\" alt={[undefined]} className=\\"userImg\\" />
+                        <img src=\\"/mockprofile.PNG\\" alt=\\"default picture\\" className=\\"userImg\\" />
                       </div>
                       <div className=\\"info\\">
-                        <div className=\\"name\\" />
+                        <div className=\\"name\\">
+                          doge
+                        </div>
                         <div className=\\"date\\">
                           2020년 4월 1일
                         </div>
@@ -343,13 +345,15 @@ exports[`<Post/> matches snapshot 1`] = `
             <div className=\\"Content\\">
               <index info={{...}} content=\\"안녕하세요. 일런 머스큽니다.\\" recommendCount={-1}>
                 <div className=\\"reply\\">
-                  <Header user={{...}} date=\\"Wed Apr 01 2020\\">
+                  <Header user={{...}} uploadTime=\\"Wed Apr 01 2020\\">
                     <div className=\\"header\\">
                       <div className=\\"profile\\">
-                        <img src=\\"/mockprofile.PNG\\" alt={[undefined]} className=\\"userImg\\" />
+                        <img src=\\"/mockprofile.PNG\\" alt=\\"default picture\\" className=\\"userImg\\" />
                       </div>
                       <div className=\\"info\\">
-                        <div className=\\"name\\" />
+                        <div className=\\"name\\">
+                          doge
+                        </div>
                         <div className=\\"date\\">
                           2020년 4월 1일
                         </div>
@@ -394,13 +398,15 @@ exports[`<Post/> matches snapshot 1`] = `
             <div className=\\"Content\\">
               <index info={{...}} content=\\"안녕하세요. 일런 머스큽니다.\\" recommendCount={-1}>
                 <div className=\\"reply\\">
-                  <Header user={{...}} date=\\"Wed Apr 01 2020\\">
+                  <Header user={{...}} uploadTime=\\"Wed Apr 01 2020\\">
                     <div className=\\"header\\">
                       <div className=\\"profile\\">
-                        <img src=\\"/mockprofile.PNG\\" alt={[undefined]} className=\\"userImg\\" />
+                        <img src=\\"/mockprofile.PNG\\" alt=\\"default picture\\" className=\\"userImg\\" />
                       </div>
                       <div className=\\"info\\">
-                        <div className=\\"name\\" />
+                        <div className=\\"name\\">
+                          doge
+                        </div>
                         <div className=\\"date\\">
                           2020년 4월 1일
                         </div>
