@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const GET_POSTLIST_MAIN = gql`
-  query ($limit: Int) {
+  query($limit: Int) {
     listPosts(limit: $limit) {
       posts {
         user {
@@ -20,7 +20,7 @@ export const GET_POSTLIST_MAIN = gql`
 `;
 
 export const GET_POSTLIST_WITH_TOTAL = gql`
-  query ($limit: Int) {
+  query($limit: Int) {
     listPosts(limit: $limit) {
       total
       posts {
@@ -35,6 +35,25 @@ export const GET_POSTLIST_WITH_TOTAL = gql`
         id
         content
       }
+    }
+  }
+`;
+
+export const GET_POST = gql`
+  query Post($postId: Int!) {
+    post(id: $postId) {
+      id
+      user {
+        id
+        email
+        nickname
+        picture
+      }
+      title
+      content
+      uploadTime
+      recommendCount
+      viewsCount
     }
   }
 `;
