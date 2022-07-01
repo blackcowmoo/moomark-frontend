@@ -1,6 +1,5 @@
 import { AppContext, AppInitialProps, AppProps } from 'next/app';
 import { NextComponentType } from 'next';
-import Head from 'next/head';
 import AppLayout from '@components/AppLayout/AppLayout';
 import { ApolloProvider } from '@apollo/client';
 import client from 'api/apolloClient';
@@ -11,10 +10,6 @@ const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ Compone
   return (
     <ApolloProvider client={client}>
       <RecoilRoot>
-        <Head>
-          <title>MooMark</title>
-          <meta name='viewport' content='initial-scale=1.0, width=device-width user-scalable=yes, initial-scale=1.0, maximun-scale=3.0' />
-        </Head>
         <AppLayout>
           <Component {...pageProps} />
         </AppLayout>
