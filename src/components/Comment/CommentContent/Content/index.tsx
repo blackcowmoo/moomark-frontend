@@ -19,7 +19,7 @@ const index: React.FC<IReply> = ({ info, content, recommendCount }) => {
   const { user, uploadTime } = info;
   return (
     <div className={styles.reply}>
-      <Header user={user} date={uploadTime} />
+      <Header user={user} uploadTime={uploadTime} />
       <ContentText text={content} />
       <Footer like={recommendCount} />
     </div>
