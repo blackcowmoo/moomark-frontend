@@ -6,8 +6,7 @@ import { GET_POSTLIST_MAIN } from 'api/queries/post.queries';
 import PostList from '@components/PostList';
 import HomeLayout from 'components/AppLayout/HomeLayout';
 import { IPostList } from 'types/post';
-
-import { useEffect } from 'react';
+import HeadMeta from '@components/common/HeadMeta';
 
 import styles from 'components/AppLayout/HomeLayout/HomeLayout.module.scss';
 
@@ -16,17 +15,17 @@ interface Props {
 }
 
 const HomePage: NextPage<Props> = ({ postList }) => {
-  useEffect(() => {
-    console.log(postList);
-  }, []);
   return (
-    <HomeLayout>
-      <div className={styles.homeList}>
-        <PostList listTitle='해외주식' postList={postList} />
-        <PostList listTitle='취미' postList={postList} />
-        <PostList listTitle='잡담' postList={postList} />
-      </div>
-    </HomeLayout>
+    <>
+      <HeadMeta title='MooMark Home' description='moomark home page' />
+      <HomeLayout>
+        <div className={styles.homeList}>
+          <PostList listTitle='해외주식' postList={postList} />
+          <PostList listTitle='취미' postList={postList} />
+          <PostList listTitle='잡담' postList={postList} />
+        </div>
+      </HomeLayout>
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+import HeadMeta from '@components/common/HeadMeta';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 
@@ -8,6 +9,7 @@ const SearchPage: NextPage = () => {
 
   return (
     <>
+      <HeadMeta title='MooMark | Search Page' description='moomark search page' />
       <SearchForm searchInput={typeof q === 'string' ? q : ''} />
     </>
   );
