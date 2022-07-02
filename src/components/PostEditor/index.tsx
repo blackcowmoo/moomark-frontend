@@ -1,12 +1,16 @@
+import Router from 'next/router';
 import { useState, useEffect, useRef } from 'react';
 import { useRecoilState } from 'recoil';
+import { useMutation } from '@apollo/client';
 import { Editor } from '@toast-ui/react-editor';
-import TagList from '@components/common/TagList';
+
 import useWindowDimensions from 'utils/hooks/useWindowDimensions';
+import { themeState } from '@recoil/theme';
+import TagList from '@components/common/TagList';
+import { WRITE_POST } from 'api/queries/post.queries';
 
 import '@toast-ui/editor/dist/toastui-editor.css';
 import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
-import { themeState } from '@recoil/theme';
 import styles from './editor.module.scss';
 
 interface EditorInput {
@@ -21,10 +25,15 @@ interface EditorProps extends EditorInput {
 }
 
 const PostEditor: React.FC<EditorProps> = (props) => {
+  const [writePost] = useMutation(WRITE_POST, {
+    onCompleted: (data) => {
+      Router.push(`post/${data.writePost.id}`);
+    },
+  });
   const [theme] = useRecoilState(themeState);
   const [title, setTitle] = useState<string>('');
   const [tags, setTags] = useState<string[]>([]);
-  const [text, setText] = useState<string>('');
+  const [content, setContent] = useState<string>('');
   const { width } = useWindowDimensions();
   const editorRef = useRef<Editor>(null);
 
@@ -32,7 +41,7 @@ const PostEditor: React.FC<EditorProps> = (props) => {
     if (!props.isNewPost) {
       setTitle(props.title);
       setTags(props.tags);
-      setText(props.text);
+      setContent(props.text);
     }
   }, []);
 
@@ -42,13 +51,23 @@ const PostEditor: React.FC<EditorProps> = (props) => {
 
   const onChangeEditor = () => {
     if (editorRef.current) {
-      setText(editorRef.current.getInstance().getMarkdown());
+      setContent(editorRef.current.getInstance().getMarkdown());
     }
-    console.log(text);
   };
 
   const onChangeTags = (input: string[]) => {
     setTags(input);
+  };
+
+  const onSubmitPost = () => {
+    writePost({
+      variables: {
+        post: {
+          title,
+          content,
+        },
+      },
+    });
   };
 
   return (
@@ -68,8 +87,11 @@ const PostEditor: React.FC<EditorProps> = (props) => {
             height='75vh'
             initialEditType='markdown'
             useCommandShortcut={true}
-            initialValue={text || ''}
+            initialValue={content || ''}
           />
+        </div>
+        <div className={styles.buttons}>
+          <button onClick={() => onSubmitPost()}>Submit</button>
         </div>
       </div>
     </div>
