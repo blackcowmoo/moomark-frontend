@@ -24,16 +24,16 @@ export const GET_POSTLIST_WITH_OFFSET = gql`
     listPosts(limit: 10, offset: $offset) {
       total
       posts {
-        id
-        uploadTime
-        recommendCount
-        viewsCount
-        title
-        content
         user {
           nickname
           id
         }
+        uploadTime
+        recommendCount
+        viewsCount
+        title
+        id
+        content
       }
     }
   }
