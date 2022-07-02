@@ -6,7 +6,7 @@ import useWindowDimensions from 'utils/hooks/useWindowDimensions';
 
 import '@toast-ui/editor/dist/toastui-editor.css';
 import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
-import { globalThemeState } from 'recoil/globalTheme';
+import { themeState } from '@recoil/theme';
 import styles from './editor.module.scss';
 
 interface EditorInput {
@@ -21,7 +21,7 @@ interface EditorProps extends EditorInput {
 }
 
 const PostEditor: React.FC<EditorProps> = (props) => {
-  const [theme] = useRecoilState(globalThemeState);
+  const [theme] = useRecoilState(themeState);
   const [title, setTitle] = useState<string>('');
   const [tags, setTags] = useState<string[]>([]);
   const [text, setText] = useState<string>('');
@@ -35,10 +35,6 @@ const PostEditor: React.FC<EditorProps> = (props) => {
       setText(props.text);
     }
   }, []);
-
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
 
   const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
