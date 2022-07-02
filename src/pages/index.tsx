@@ -20,9 +20,7 @@ const HomePage: NextPage<Props> = ({ postList }) => {
       <HeadMeta title='MooMark Home' description='moomark home page' />
       <HomeLayout>
         <div className={styles.homeList}>
-          <PostList listTitle='해외주식' posts={postList} />
-          <PostList listTitle='취미' posts={postList} />
-          <PostList listTitle='잡담' posts={postList} />
+          <PostList posts={postList} />
         </div>
       </HomeLayout>
     </>
@@ -37,16 +35,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      postList: data.listPosts.posts
-        ? data.listPosts.posts.map((post: any) => ({
-          id: post.id,
-          title: post.title,
-          author: post.user,
-          recommendCount: post.recommendCount,
-          viewsCount: post.viewsCount,
-          uploadTime: post.uploadTime,
-        }))
-        : [],
+      postList: data.listPosts.posts || [],
     },
   };
 };

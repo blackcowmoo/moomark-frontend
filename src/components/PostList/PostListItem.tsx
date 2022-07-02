@@ -11,7 +11,7 @@ interface props {
 }
 
 const PostListItem: React.FC<props> = ({ post }) => {
-  const { id, title, author, recommendCount, uploadTime, viewsCount } = post;
+  const { id, title, user, recommendCount, uploadTime, viewsCount } = post;
   const isWithDrawn: string = 'this_user_has_been_withdrawn';
   return (
     <div className={styles.PostListItem}>
@@ -27,11 +27,11 @@ const PostListItem: React.FC<props> = ({ post }) => {
         <span>
           <EyeOutlined /> {viewsCount}
         </span>
-        {author.nickname === isWithDrawn ? (
+        {user.nickname === isWithDrawn ? (
           <span>탈퇴한유저</span>
         ) : (
           <span className={styles.author}>
-            <Link href={`/user/${author.nickname}`}>{author.nickname}</Link>
+            <Link href={`/user/${user.nickname}`}>{user.nickname}</Link>
           </span>
         )}
         <span className={styles.date}>{timeForToday(uploadTime)}</span>
