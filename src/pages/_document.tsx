@@ -22,7 +22,7 @@ class MainDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel='icon' href='favicon.svg' />
+          <link rel='icon' href='/favicon.svg' />
         </Head>
         <body>
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />

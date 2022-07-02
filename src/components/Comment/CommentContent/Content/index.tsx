@@ -1,4 +1,4 @@
-import { IReply } from '@components/Comment';
+import { IReply } from 'types/post';
 import Header from './Header';
 import Footer from './Footer';
 import styles from './Content.module.scss';
@@ -15,13 +15,13 @@ export const ContentText: React.FC<IContentText> = ({ text }) => {
   );
 };
 
-const index: React.FC<IReply> = ({ info, text, like }) => {
-  const { user, date } = info;
+const index: React.FC<IReply> = ({ info, content, recommendCount }) => {
+  const { user, uploadTime } = info;
   return (
     <div className={styles.reply}>
-      <Header user={user} date={date} />
-      <ContentText text={text} />
-      <Footer like={like} />
+      <Header user={user} uploadTime={uploadTime} />
+      <ContentText text={content} />
+      <Footer like={recommendCount} />
     </div>
   );
 };

@@ -1,32 +1,15 @@
-import styles from './Comment.module.scss';
+import { ICommentContent } from 'types/post';
+
 import CommentInputForm from './CommentInputForm';
 import CommentContent from './CommentContent';
 
-interface IUserProfile {
-  profileImgSrc?: string;
-  name: string;
-}
+import styles from './Comment.module.scss';
 
-export interface ICommentInfo {
-  user: IUserProfile;
-  date: string;
-}
-
-export interface IReply {
-  info: ICommentInfo;
-  text: string;
-  like: number;
-}
-
-export interface ICommentContent extends IReply {
-  reply?: IReply[];
-}
-
-interface IComment {
+type Props = {
   comments?: ICommentContent[];
-}
+};
 
-const Comment: React.FC<IComment> = ({ comments }) => {
+const Comment: React.FC<Props> = ({ comments }) => {
   return (
     <div className={styles.commentContainer}>
       <div className={styles.comment}>

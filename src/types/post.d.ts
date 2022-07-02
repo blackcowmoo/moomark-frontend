@@ -1,7 +1,15 @@
+export type User = {
+  nickname: string;
+  id?: number;
+  picture?: string;
+  email?: string;
+};
+
 export interface IPostList {
   id: number;
   title: string;
-  author: string;
+  author: User;
+  content?: string;
   recommendCount: number;
   viewsCount: number;
   uploadTime: string;
@@ -14,6 +22,23 @@ export interface TilePostProps extends IPostList {
   description: string;
 }
 
-export interface IPost {
+export type CommentInfo = {
+  user: User;
+  uploadTime: string;
+};
 
+export interface IReply {
+  info: CommentInfo;
+  content: string;
+  recommendCount: number;
+}
+
+export interface ICommentContent extends IReply {
+  reply?: IComment[];
+}
+
+export interface IPostDetail extends IPostList {
+  tags?: string[];
+  content: string;
+  comment?: ICommentContent[];
 }
