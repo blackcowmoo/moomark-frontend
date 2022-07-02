@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<PostList/> matches snapshot 1`] = `
-"<PostList listTitle=\\"테스트\\" postList={{...}}>
+"<PostList listTitle=\\"테스트\\" posts={{...}}>
   <div className=\\"PostList\\">
     <h2>
       테스트
