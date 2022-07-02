@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next';
 import client from 'api/apolloClient';
 
 import { GET_POSTLIST_MAIN } from 'api/queries/post.queries';
-import PostList from '@components/PostList';
+import ScrollablePostList from '@components/PostList/ScrollablePostList';
 import HomeLayout from 'components/AppLayout/HomeLayout';
 import { IPostList } from 'types/post';
 import HeadMeta from '@components/common/HeadMeta';
@@ -20,7 +20,7 @@ const HomePage: NextPage<Props> = ({ postList }) => {
       <HeadMeta title='MooMark Home' description='moomark home page' />
       <HomeLayout>
         <div className={styles.homeList}>
-          <PostList posts={postList} />
+          <ScrollablePostList preRenderPosts={postList} />
         </div>
       </HomeLayout>
     </>

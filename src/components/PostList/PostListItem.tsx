@@ -15,6 +15,7 @@ const PostListItem: React.FC<props> = ({ post }) => {
   const isWithDrawn: string = 'this_user_has_been_withdrawn';
   return (
     <div className={styles.PostListItem}>
+      <p>{id}</p>
       <div className={styles.title}>
         <Link href={`/post/${id}`}>
           <a>{title}</a>
