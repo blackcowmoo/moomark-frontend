@@ -1,5 +1,4 @@
-import { ICommentContent } from '@components/Comment';
-import { IPost } from './index';
+import { IPostDetail, ICommentContent } from 'types/post';
 
 const mockDate = new Date(2020, 3, 1).toDateString();
 
@@ -29,19 +28,22 @@ const markdown: string = `
 export const mockCommentContent: ICommentContent = {
   info: {
     user: {
-      name: 'doge',
+      nickname: 'doge',
     },
-    date: mockDate,
+    uploadTime: mockDate,
   },
-  text: '안녕하세요. 일런 머스큽니다.',
-  like: -1,
+  content: '안녕하세요. 일런 머스큽니다.',
+  recommendCount: -1,
 };
 
-export const mockPost: IPost = {
+export const mockPost: IPostDetail = {
+  id: 0,
   title: 'mockTitle ',
-  postDate: mockDate,
-  editorName: 'writerMock',
-  view: 2230,
+  uploadTime: mockDate,
+  author: {
+    nickname: 'mockWriter',
+  },
+  viewsCount: 2230,
   content: markdown,
   tags: ['test', 'hasdasdfasf', 'loooooooooooooooooooooongStirng', '무마크'],
   comment: [
@@ -52,6 +54,5 @@ export const mockPost: IPost = {
     mockCommentContent,
     mockCommentContent,
   ],
-  likeCount: 0,
-  liked: 0,
+  recommendCount: 0,
 };

@@ -1,41 +1,29 @@
-import { useState, useEffect } from 'react';
-import { LikeType } from '..';
+import { useState } from 'react';
 
 import styles from './PostFooter.module.scss';
 
 interface IPostFooter {
   likeCount: number;
-  liked: LikeType;
+  liked: boolean;
 }
 
 const PostFooter: React.FC<IPostFooter> = ({ liked, likeCount }) => {
-  const [isLike, setIsLike] = useState<LikeType>(0);
-
-  useEffect(() => {
-    setIsLike(liked);
-  }, []);
+  const [isLike, setIsLike] = useState<boolean>(liked);
 
   const toggleLikeButton = () => {
     // QUERY ADD TOGGLE LIKE
-    setIsLike((prev) => (prev === 1 ? 0 : 1));
-  };
-
-  const toggleDislikeButton = () => {
-    setIsLike((prev) => (prev === -1 ? 0 : -1));
+    setIsLike((prev) => !prev);
   };
 
   return (
     <div className={styles.PostFooter}>
       <div className={styles.likeWrapper}>
-        <div id='likePost' className={isLike === 1 ? styles.activeLike : styles.default} onClick={toggleLikeButton}>
+        <div id='likePost' className={liked ? styles.activeLike : styles.default} onClick={toggleLikeButton}>
           추천 🍕
-          {likeCount + isLike}
-        </div>
-        <div id='dislikePost' className={isLike === -1 ? styles.activeDislike : styles.default} onClick={toggleDislikeButton}>
-          {isLike === -1 ? '비추 🐃' : '비추'}
+          {likeCount + Number(isLike)}
         </div>
       </div>
-      <div className={styles.reportWrapper}>🚨</div>
+      <div className={styles.reportWrapper}>🚨 report</div>
     </div>
   );
 };

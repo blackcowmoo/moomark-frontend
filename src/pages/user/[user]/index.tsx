@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import UserProfile, { IUserProfile } from '@components/User/UserProfile';
 import PostList from '@components/PostList';
 import { HomePageListMock } from 'utils/mock';
+import HeadMeta from '@components/common/HeadMeta';
 
 const UserPage = () => {
   const { user } = useRouter().query;
@@ -22,6 +23,7 @@ const UserPage = () => {
 
   return (
     <>
+      <HeadMeta title={`${user}님 작성글`} description={`moomark에서 작성한 ${user}님의 게시글 모음`} />
       <UserProfile profile={userProfile} />
       <PostList listTitle={`${user}님 작성글`} posts={HomePageListMock} />
     </>

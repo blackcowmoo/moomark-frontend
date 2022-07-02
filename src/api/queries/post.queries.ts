@@ -58,3 +58,22 @@ export const GET_POSTLIST_WITH_TOTAL = gql`
     }
   }
 `;
+
+export const GET_POST = gql`
+  query Post($postId: Int!) {
+    post(id: $postId) {
+      id
+      user {
+        id
+        email
+        nickname
+        picture
+      }
+      title
+      content
+      uploadTime
+      recommendCount
+      viewsCount
+    }
+  }
+`;

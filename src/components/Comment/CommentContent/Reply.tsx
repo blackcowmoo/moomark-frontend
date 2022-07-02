@@ -1,7 +1,7 @@
-import { IReply } from '@components/Comment';
+import { IReply } from 'types/post';
 import Content from './Content';
-
 import CommentInputForm from '../CommentInputForm';
+
 import styles from './CommentContent.module.scss';
 
 interface IReplyComponents {
@@ -19,7 +19,7 @@ const Reply: React.FC<IReplyComponents> = ({ reply, showReply, toggleReply }) =>
       {showReply && (
         <div className={styles.ContentContainer}>
           {reply.map((item, index) => (
-            <Content key={index} info={item.info} text={item.text} like={item.like} />
+            <Content key={index} info={item.info} content={item.content} recommendCount={item.recommendCount} />
           ))}
           <CommentInputForm />
         </div>
