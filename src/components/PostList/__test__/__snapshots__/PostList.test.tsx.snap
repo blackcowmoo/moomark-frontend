@@ -8,6 +8,9 @@ exports[`<PostList/> matches snapshot 1`] = `
     </h2>
     <PostListItem post={{...}}>
       <div className=\\"PostListItem\\">
+        <p>
+          1
+        </p>
         <div className=\\"title\\">
           <Link href=\\"/post/1\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/1\\">
@@ -61,6 +64,9 @@ exports[`<PostList/> matches snapshot 1`] = `
     </PostListItem>
     <PostListItem post={{...}}>
       <div className=\\"PostListItem\\">
+        <p>
+          2
+        </p>
         <div className=\\"title\\">
           <Link href=\\"/post/2\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/2\\">
@@ -114,6 +120,9 @@ exports[`<PostList/> matches snapshot 1`] = `
     </PostListItem>
     <PostListItem post={{...}}>
       <div className=\\"PostListItem\\">
+        <p>
+          3
+        </p>
         <div className=\\"title\\">
           <Link href=\\"/post/3\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/3\\">
@@ -167,6 +176,9 @@ exports[`<PostList/> matches snapshot 1`] = `
     </PostListItem>
     <PostListItem post={{...}}>
       <div className=\\"PostListItem\\">
+        <p>
+          4
+        </p>
         <div className=\\"title\\">
           <Link href=\\"/post/4\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/4\\">
@@ -220,6 +232,9 @@ exports[`<PostList/> matches snapshot 1`] = `
     </PostListItem>
     <PostListItem post={{...}}>
       <div className=\\"PostListItem\\">
+        <p>
+          5
+        </p>
         <div className=\\"title\\">
           <Link href=\\"/post/5\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/5\\">
@@ -273,6 +288,9 @@ exports[`<PostList/> matches snapshot 1`] = `
     </PostListItem>
     <PostListItem post={{...}}>
       <div className=\\"PostListItem\\">
+        <p>
+          6
+        </p>
         <div className=\\"title\\">
           <Link href=\\"/post/6\\">
             <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/6\\">
@@ -331,6 +349,9 @@ exports[`<PostList/> matches snapshot 1`] = `
 exports[`<PostListItem /> matches snapshot 1`] = `
 "<PostListItem post={{...}}>
   <div className=\\"PostListItem\\">
+    <p>
+      1
+    </p>
     <div className=\\"title\\">
       <Link href=\\"/post/1\\">
         <a onClick={[Function: onClick]} onMouseEnter={[Function (anonymous)]} href=\\"/post/1\\">
