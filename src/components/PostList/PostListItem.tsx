@@ -11,31 +11,29 @@ interface props {
 }
 
 const PostListItem: React.FC<props> = ({ post }) => {
-  const { id, title, user, recommendCount, uploadTime, viewsCount } = post;
+  const { id, title, user, recommendCount, uploadTime, viewsCount, content } = post;
   const isWithDrawn: string = 'this_user_has_been_withdrawn';
   return (
     <div className={styles.PostListItem}>
-      <p>{id}</p>
-      <div className={styles.title}>
+      <div className={styles.content}>
         <Link href={`/post/${id}`}>
-          <a>{title}</a>
+          <a>
+            <h4>{title}</h4>
+            <p className={styles.description}>{content}</p>
+          </a>
         </Link>
       </div>
-      <div className={styles.info}>
-        <span>
-          <LikeOutlined /> {recommendCount}
-        </span>
-        <span>
-          <EyeOutlined /> {viewsCount}
-        </span>
-        {user.nickname === isWithDrawn ? (
-          <span>탈퇴한유저</span>
-        ) : (
-          <span className={styles.author}>
-            <Link href={`/user/${user.nickname}`}>{user.nickname}</Link>
-          </span>
-        )}
-        <span className={styles.date}>{timeForToday(uploadTime)}</span>
+      <div className={styles.footer}>
+        <div className={styles.author}>{user.nickname === isWithDrawn ? '탈퇴한유저' : <Link href={`/user/${user.nickname}`}>{user.nickname}</Link>}</div>
+        <div className={styles.info}>
+          <div>
+            <LikeOutlined /> {recommendCount}
+          </div>
+          <div>
+            <EyeOutlined /> {viewsCount}
+          </div>
+          <div className={styles.date}>{timeForToday(uploadTime)}</div>
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
 
 .PostList {
   position: relative;
+  display: flex;
   h2 {
     position: relative;
     font-weight: 700;
@@ -14,54 +15,111 @@
   }
   @include mobile {
     width: 100%;
+    flex-direction: column;
   }
 
   @include desktop {
-    width: calc(50% - 20px);
-    margin-top: 45px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3rem;
     padding: 0 1.2rem;
     border-bottom: none;
   }
 }
 
 .PostListItem {
-  position: relative;
-  border-bottom: 1px solid var(--text-secondary);
+  // position: relative;
+  display: flex;
+  @include desktop {
+    width: 20rem;
+    margin: 1rem;
+    flex-direction: column;
+    box-shadow: var(--box-shadow);
+    top: 0;
+    transition: top ease 0.3s;
+    &:hover {
+      top: -0.7rem;
+    }
+  }
+  @include mobile {
+    height: 4rem;
+    border-bottom: 1px solid var(--text-secondary);
+    justify-content: space-between;
+  }
   a {
     color: var(--text-primary);
   }
-
-  .title {
-    max-width: calc(100% - 55px);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  .content {
+    padding: 1rem;
+    @include mobile {
+      flex: 1;
+    }
+    @include desktop {
+      width: 100%;
+      height: 10rem;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+    }
+    h4 {
+      font-size: 1rem;
+      margin: 0px 0px 0.25rem;
+      line-height: 1.5;
+      word-break: break-word;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .description {
+      color: var(--text-secondary);
+      flex: 1 1 0%;
+      font-size: 0.8rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      @include mobile {
+        display: none;
+      }
+    }
   }
-  .info {
+
+  .footer {
     display: flex;
-    gap: 0.2rem;
-    position: absolute;
-    top: calc(50% + 2px);
-    right: 0;
-    transform: translateY(-50%);
-    margin-top: 0;
+    justify-content: space-between;
     font-size: 0.8rem;
     color: var(--text-secondary);
+    padding: 0.625rem 1rem;
+    @include mobile {
+      width: fit-content;
+      gap: 1rem;
+      margin-top: 0;
+    }
+    @include desktop {
+      border-top: 1px solid var(--text-secondary);
+    }
     .author {
       max-width: 5rem;
       color: var(--accent);
-      margin-left: 1rem;
       flex-grow: 1;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
     }
-    .date {
-      margin-left: 1rem;
-      flex-grow: 3;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+    .info {
+      display: flex;
+      gap: 1rem;
+      div{
+        flex-grow: 1;
+      }
+      .date {
+        flex-grow: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
   }
 }

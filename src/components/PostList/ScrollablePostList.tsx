@@ -54,19 +54,21 @@ const ScrollablePostList: React.FC<Props> = ({ listTitle, preRenderPosts }) => {
   }, [lastPost]);
 
   return (
-    <div className={styles.PostList}>
-      {listTitle && <h2>{listTitle}</h2>}
-      {postList.map((post, index) => {
-        return index === postList.length - 1 ? (
-          <div ref={setLastPost} key={post.id}>
-            <PostListItem post={post} />
-          </div>
-        ) : (
-          <PostListItem post={post} key={post.id} />
-        );
-      })}
+    <>
+      <div className={styles.PostList}>
+        {listTitle && <h2>{listTitle}</h2>}
+        {postList.map((post, index) => {
+          return index === postList.length - 1 ? (
+            <div ref={setLastPost} key={post.id}>
+              <PostListItem post={post} />
+            </div>
+          ) : (
+            <PostListItem post={post} key={post.id} />
+          );
+        })}
+      </div>
       {loading && <div>loading...</div>}
-    </div>
+    </>
   );
 };
 

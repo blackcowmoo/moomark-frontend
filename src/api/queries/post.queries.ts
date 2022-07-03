@@ -33,7 +33,7 @@ export const GET_POSTLIST_WITH_OFFSET = gql`
         viewsCount
         title
         id
-        content
+        content(length: 30)
       }
     }
   }
