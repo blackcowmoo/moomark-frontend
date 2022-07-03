@@ -15,14 +15,14 @@ const PostListItem: React.FC<props> = ({ post }) => {
   const isWithDrawn: string = 'this_user_has_been_withdrawn';
   return (
     <div className={styles.PostListItem}>
-      <div className={styles.content}>
-        <Link href={`/post/${id}`}>
-          <a>
+      <Link href={`/post/${id}`}>
+        <a>
+          <div className={styles.content}>
             <h4>{title}</h4>
             <p className={styles.description}>{content}</p>
-          </a>
-        </Link>
-      </div>
+          </div>
+        </a>
+      </Link>
       <div className={styles.footer}>
         <div className={styles.author}>
           {user.nickname === isWithDrawn ? (
