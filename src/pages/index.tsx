@@ -8,8 +8,6 @@ import HomeLayout from 'components/AppLayout/HomeLayout';
 import { IPostList } from 'types/post';
 import HeadMeta from '@components/common/HeadMeta';
 
-import styles from 'components/AppLayout/HomeLayout/HomeLayout.module.scss';
-
 interface Props {
   postList: IPostList[];
 }
@@ -19,9 +17,7 @@ const HomePage: NextPage<Props> = ({ postList }) => {
     <>
       <HeadMeta title='MooMark Home' description='moomark home page' />
       <HomeLayout>
-        <div className={styles.homeList}>
-          <ScrollablePostList preRenderPosts={postList} />
-        </div>
+        <ScrollablePostList preRenderPosts={postList} />
       </HomeLayout>
     </>
   );

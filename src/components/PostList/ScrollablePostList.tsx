@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { GET_POSTLIST_WITH_OFFSET } from 'api/queries/post.queries';
 import { IPostList } from 'types/post';
 import PostListItem from './PostListItem';
+import SkeletonPostListItem from './SkeletonPostListItem';
 
 import styles from './PostList.module.scss';
 
@@ -66,8 +67,16 @@ const ScrollablePostList: React.FC<Props> = ({ listTitle, preRenderPosts }) => {
             <PostListItem post={post} key={post.id} />
           );
         })}
+        {loading && (
+          <>
+            <SkeletonPostListItem />
+            <SkeletonPostListItem />
+            <SkeletonPostListItem />
+            <SkeletonPostListItem />
+            <SkeletonPostListItem />
+          </>
+        )}
       </div>
-      {loading && <div>loading...</div>}
     </>
   );
 };
