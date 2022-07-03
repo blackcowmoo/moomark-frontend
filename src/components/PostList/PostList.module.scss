@@ -4,6 +4,19 @@
 .PostList {
   position: relative;
   display: flex;
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  @include desktop {
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding: 0 1.2rem;
+    border-bottom: none;
+    justify-content: center;
+  }
   h2 {
     position: relative;
     font-weight: 700;
@@ -13,23 +26,9 @@
     line-height: 54px;
     border-bottom: 1px solid var(--text-secondary);
   }
-  @include mobile {
-    width: 100%;
-    flex-direction: column;
-    align-content: center;
-  }
-
-  @include desktop {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 3rem;
-    padding: 0 1.2rem;
-    border-bottom: none;
-  }
 }
 
 .PostListItem {
-  // position: relative;
   display: flex;
   @include desktop {
     width: 20rem;
