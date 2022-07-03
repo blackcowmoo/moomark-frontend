@@ -1,12 +1,11 @@
 @import '@styles/mixin';
 @import '@styles/utils';
 .container {
-  max-width: 1264px;
-  background: none;
-  justify-content: space-between;
-  align-items: stretch;
-  margin: 0 auto;
-  @include desktop{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  @include desktop {
     min-height: 800px;
   }
 }

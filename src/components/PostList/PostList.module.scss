@@ -2,7 +2,6 @@
 @import '@styles/utils';
 
 .PostList {
-  position: relative;
   display: flex;
   @include mobile {
     width: 100%;
@@ -13,9 +12,17 @@
   @include desktop {
     flex-wrap: wrap;
     margin-top: 3rem;
-    padding: 0 1.2rem;
-    border-bottom: none;
-    justify-content: center;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    width: 704px;
+  }
+  @media (min-width: 1120px) {
+    width: 1056px;
+  }
+  @media (min-width: 1472px) {
+    width: 1408px;
   }
   h2 {
     position: relative;
@@ -33,7 +40,9 @@
   @include desktop {
     width: 20rem;
     margin: 1rem;
+    height: 14rem;
     flex-direction: column;
+    justify-content: space-between;
     box-shadow: var(--box-shadow);
     top: 0;
     transition: top ease 0.3s;
@@ -127,4 +136,10 @@
       }
     }
   }
+}
+
+.skeleton {
+  height: 1rem;
+  margin: 3px;
+  background-image: linear-gradient(var(--text-secondary) 15px, transparent 0)
 }
