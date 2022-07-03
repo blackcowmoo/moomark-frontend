@@ -8,7 +8,7 @@ export type User = {
 export interface IPostList {
   id: number;
   title: string;
-  author: User;
+  user: User;
   content?: string;
   recommendCount: number;
   viewsCount: number;

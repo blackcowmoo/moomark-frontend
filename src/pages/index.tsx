@@ -3,28 +3,21 @@ import { GetServerSideProps } from 'next';
 import client from 'api/apolloClient';
 
 import { GET_POSTLIST_MAIN } from 'api/queries/post.queries';
-import PostList from '@components/PostList';
+import ScrollablePostList from '@components/PostList/ScrollablePostList';
 import HomeLayout from 'components/AppLayout/HomeLayout';
 import { IPostList } from 'types/post';
 import HeadMeta from '@components/common/HeadMeta';
-
-import styles from 'components/AppLayout/HomeLayout/HomeLayout.module.scss';
 
 interface Props {
   postList: IPostList[];
 }
 
 const HomePage: NextPage<Props> = ({ postList }) => {
-  console.log(postList);
   return (
     <>
       <HeadMeta title='MooMark Home' description='moomark home page' />
       <HomeLayout>
-        <div className={styles.homeList}>
-          <PostList listTitle='해외주식' postList={postList} />
-          <PostList listTitle='취미' postList={postList} />
-          <PostList listTitle='잡담' postList={postList} />
-        </div>
+        <ScrollablePostList preRenderPosts={postList} />
       </HomeLayout>
     </>
   );
@@ -38,16 +31,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      postList: data.listPosts.posts
-        ? data.listPosts.posts.map((post: any) => ({
-          id: post.id,
-          title: post.title,
-          author: post.user,
-          recommendCount: post.recommendCount,
-          viewsCount: post.viewsCount,
-          uploadTime: post.uploadTime,
-        }))
-        : [],
+      postList: data.listPosts.posts || [],
     },
   };
 };

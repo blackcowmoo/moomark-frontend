@@ -40,7 +40,7 @@ export const mockPost: IPostDetail = {
   id: 0,
   title: 'mockTitle ',
   uploadTime: mockDate,
-  author: {
+  user: {
     nickname: 'mockWriter',
   },
   viewsCount: 2230,
