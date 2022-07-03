@@ -48,7 +48,6 @@ const PostEditor: React.FC<EditorProps> = (props) => {
     if (editorRef.current) {
       setText(editorRef.current.getInstance().getMarkdown());
     }
-    console.log(text);
   };
 
   const onChangeTags = (input: string[]) => {

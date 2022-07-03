@@ -21,7 +21,6 @@ const DropdownMenu: React.FC<IDropdownMenu> = ({ userName, setLogOut }) => {
         <Link href='/'>내 북마크</Link>
         <Link href='/edit'>새 글 작성</Link>
         <Link href='/'>임시글 리스트</Link>
-        <Link href='/setting'>설정</Link>
         <div onClick={setLogOut}>
           <GoogleLogout clientId={GOOGLE_CLIENT_ID as string} onLogoutSuccess={setLogOut} render={() => <div className={styles.logout}>로그아웃</div>} />
         </div>
