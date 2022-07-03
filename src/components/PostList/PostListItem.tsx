@@ -24,7 +24,15 @@ const PostListItem: React.FC<props> = ({ post }) => {
         </Link>
       </div>
       <div className={styles.footer}>
-        <div className={styles.author}>{user.nickname === isWithDrawn ? '탈퇴한유저' : <Link href={`/user/${user.nickname}`}>{user.nickname}</Link>}</div>
+        <div className={styles.author}>
+          {user.nickname === isWithDrawn ? (
+            '탈퇴한유저'
+          ) : (
+            <Link href={`/user/${user.nickname}`}>
+              <a>{user.nickname}</a>
+            </Link>
+          )}
+        </div>
         <div className={styles.info}>
           <div>
             <LikeOutlined /> {recommendCount}

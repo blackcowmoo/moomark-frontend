@@ -16,6 +16,7 @@
   @include mobile {
     width: 100%;
     flex-direction: column;
+    align-content: center;
   }
 
   @include desktop {
@@ -44,6 +45,7 @@
   @include mobile {
     height: 4rem;
     border-bottom: 1px solid var(--text-secondary);
+    align-items: center;
     justify-content: space-between;
   }
   a {
@@ -64,12 +66,14 @@
     }
     h4 {
       font-size: 1rem;
-      margin: 0px 0px 0.25rem;
       line-height: 1.5;
       word-break: break-word;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+      @include desktop {
+        margin: 0px 0px 0.25rem;
+      }
     }
     .description {
       color: var(--text-secondary);
@@ -102,16 +106,18 @@
     }
     .author {
       max-width: 5rem;
-      color: var(--accent);
       flex-grow: 1;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+      a {
+        color: var(--accent);
+      }
     }
     .info {
       display: flex;
       gap: 1rem;
-      div{
+      div {
         flex-grow: 1;
       }
       .date {
