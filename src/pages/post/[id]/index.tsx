@@ -6,13 +6,13 @@ import Post from '@components/Post';
 import { IPostDetail } from 'types/post';
 import HeadMeta from '@components/common/HeadMeta';
 import { mockPost } from '@components/Post/mockdata';
+import { captureException } from '@sentry/nextjs';
 
 type Props = {
   post: IPostDetail;
 };
 
 const PostPage: NextPage<Props> = ({ post }) => {
-  console.log(post);
   const { title, content } = post;
   return (
     <>
@@ -39,6 +39,7 @@ export const getServerSideProps: GetServerSideProps = async (context: GetServerS
       },
     };
   } catch (err) {
+    captureException(err);
     return {
       props: {
         post: mockPost,
