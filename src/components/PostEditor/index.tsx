@@ -8,10 +8,11 @@ import useWindowDimensions from 'utils/hooks/useWindowDimensions';
 import { themeState } from '@recoil/theme';
 import TagList from '@components/common/TagList';
 import { WRITE_POST } from 'api/queries/post.queries';
+import Button from '@components/common/Button';
 
 import '@toast-ui/editor/dist/toastui-editor.css';
 import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
-import styles from './editor.module.scss';
+import styles from './PostEditor.module.scss';
 
 interface EditorInput {
   title: string;
@@ -60,21 +61,27 @@ const PostEditor: React.FC<EditorProps> = (props) => {
   };
 
   const onSubmitPost = () => {
-    writePost({
-      variables: {
-        post: {
-          title,
-          content,
+    if (title && content) {
+      writePost({
+        variables: {
+          post: {
+            title,
+            content,
+          },
         },
-      },
-    });
+      });
+    }
+  };
+
+  const onCancelEdit = () => {
+    Router.back();
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.Posteditor}>
         <div className={styles.title}>
-          <input name='title' placeholder='제목' value={title} onChange={onChangeTitle} />
+          <input name='title' placeholder='제목을 입력해주세요' value={title} onChange={onChangeTitle} required />
         </div>
         <div className={styles.tags}>
           <TagList isEditable={true} tagList={tags} setTagList={onChangeTags} />
@@ -84,14 +91,15 @@ const PostEditor: React.FC<EditorProps> = (props) => {
             ref={editorRef}
             previewStyle={width <= 760 ? 'tab' : 'vertical'}
             onChange={onChangeEditor}
-            height='75vh'
+            height='65vh'
             initialEditType='markdown'
             useCommandShortcut={true}
             initialValue={content || ''}
           />
         </div>
         <div className={styles.buttons}>
-          <button onClick={() => onSubmitPost()}>Submit</button>
+          <Button onClick={() => onSubmitPost()}>업로드</Button>
+          <Button onClick={() => onCancelEdit()}>취소</Button>
         </div>
       </div>
     </div>

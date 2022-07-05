@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import ToolBar from './ToolBar';
-import styles from '../editor.module.scss';
+import styles from '../PostEditor.module.scss';
 
 interface editorProps {
   changeText: (e: React.ChangeEvent<HTMLTextAreaElement> | string) => void;
