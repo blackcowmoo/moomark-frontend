@@ -16,7 +16,7 @@ interface postViewerProps {
 }
 
 const Post: React.FC<postViewerProps> = ({ postProps = mockPost }) => {
-  const { title, uploadTime, author, content, tags, comment, viewsCount, recommendCount } = postProps;
+  const { title, uploadTime, user, content, tags, comment, viewsCount, recommendCount } = postProps;
   const [anchorList, setAnchorList] = useState<markDownID[]>([]);
   const [focusAnchor, setFocusAnchor] = useState<string>('');
 
@@ -32,7 +32,7 @@ const Post: React.FC<postViewerProps> = ({ postProps = mockPost }) => {
     <div className={styles.post}>
       <PostHeader
         title={title}
-        editorName={author.nickname}
+        editorName={user.nickname}
         tags={tags}
         postDate={uploadTime}
         anchorList={anchorList}

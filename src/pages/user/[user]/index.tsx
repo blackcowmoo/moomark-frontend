@@ -25,7 +25,7 @@ const UserPage = () => {
     <>
       <HeadMeta title={`${user}님 작성글`} description={`moomark에서 작성한 ${user}님의 게시글 모음`} />
       <UserProfile profile={userProfile} />
-      <PostList listTitle={`${user}님 작성글`} postList={HomePageListMock} />
+      <PostList listTitle={`${user}님 작성글`} posts={HomePageListMock} />
     </>
   );
 };

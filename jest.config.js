@@ -15,6 +15,7 @@ const customJestConfig = {
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^utils/(.*)$': '<rootDir>/src/utils/$1',
     '^recoil/(.*)$': '<rootDir>/src/recoil/$1',
+    '^api/(.*)$': '<rootDir>/src/api/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
   coverageReporters: ['text'],

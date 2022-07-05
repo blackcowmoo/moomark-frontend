@@ -19,6 +19,26 @@ export const GET_POSTLIST_MAIN = gql`
   }
 `;
 
+export const GET_POSTLIST_WITH_OFFSET = gql`
+  query($offset: Int) {
+    listPosts(limit: 10, offset: $offset) {
+      total
+      posts {
+        user {
+          nickname
+          id
+        }
+        uploadTime
+        recommendCount
+        viewsCount
+        title
+        id
+        content(length: 30)
+      }
+    }
+  }
+`;
+
 export const GET_POSTLIST_WITH_TOTAL = gql`
   query($limit: Int) {
     listPosts(limit: $limit) {
