@@ -36,6 +36,16 @@
   }
 }
 
+.contentInfo {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  display: flex;
+  span {
+    display: flex;
+    justify-content: flex-end;
+    width: 5rem;
+  }
+}
 .previewContainer {
   background-color: $preview-background;
   width: 50%;

@@ -37,6 +37,7 @@ const PostEditor: React.FC<EditorProps> = (props) => {
   const [content, setContent] = useState<string>('');
   const { width } = useWindowDimensions();
   const editorRef = useRef<Editor>(null);
+  const maxContentLength = 5000;
 
   useEffect(() => {
     if (!props.isNewPost) {
@@ -61,7 +62,7 @@ const PostEditor: React.FC<EditorProps> = (props) => {
   };
 
   const onSubmitPost = () => {
-    if (title && content) {
+    if (title && content && content.length <= maxContentLength) {
       writePost({
         variables: {
           post: {
@@ -70,6 +71,9 @@ const PostEditor: React.FC<EditorProps> = (props) => {
           },
         },
       });
+    } else {
+      // TODO toast message
+      console.log('can not post');
     }
   };
 
@@ -86,6 +90,13 @@ const PostEditor: React.FC<EditorProps> = (props) => {
         <div className={styles.tags}>
           <TagList isEditable={true} tagList={tags} setTagList={onChangeTags} />
         </div>
+        <div className={styles.contentInfo}>
+          글자수
+          <span>
+            {content.length}/ {maxContentLength}
+          </span>
+        </div>
+
         <div className={`editor-panel-editor${theme === 'dark' ? ' toastui-editor-dark' : ''}`}>
           <Editor
             ref={editorRef}
