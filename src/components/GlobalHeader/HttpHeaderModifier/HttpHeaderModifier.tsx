@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from 'react';
-import useCustomHeader from 'utils/hooks/useCustomHeader';
-import { defaultHeaderOption } from 'recoil/customHeader';
+import useCustomHeader from '@utils/hooks/useCustomHeader';
+import { defaultHeaderOption } from '@recoil/customHeader';
 import styles from './HttpHeaderModifier.module.scss';
 
 interface ICustomOption {

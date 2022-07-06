@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import { IPostList } from 'types/post';
-import { HomePageListMock } from 'utils/mock';
+import { HomePageListMock } from '@utils/mock';
 import PostList from '..';
 import PostListItem from '../PostListItem';
 

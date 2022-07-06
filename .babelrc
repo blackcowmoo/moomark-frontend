@@ -9,7 +9,10 @@
           "@components": "./src/components",
           "@styles": "./src/styles",
           "@pages": "./src/pages",
-          "utils/": "./src/utils/",
+          "@api": "./src/api",
+          "@types": "./src/api",
+          "@utils": "./src/utils",
+          "@recoil": "./src/recoil"
         }
       }
     ],

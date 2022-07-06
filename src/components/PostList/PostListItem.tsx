@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { IPostList } from 'types/post';
-import { timeForToday } from 'utils/common';
+import { timeForToday } from '@utils/common';
 
 import { EyeOutlined, LikeOutlined } from '@ant-design/icons';
 

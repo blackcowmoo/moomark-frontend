@@ -1,7 +1,7 @@
 import { useLazyQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
 
-import { GET_POSTLIST_WITH_OFFSET } from 'api/queries/post.queries';
+import { GET_POSTLIST_WITH_OFFSET } from '@api/queries/post.queries';
 import { IPostList } from 'types/post';
 import PostListItem from './PostListItem';
 import SkeletonPostListItem from './SkeletonPostListItem';

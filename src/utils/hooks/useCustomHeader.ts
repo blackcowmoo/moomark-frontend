@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { customHeaderState } from 'recoil/customHeader';
+import { customHeaderState } from '@recoil/customHeader';
 
 export default function useCustomHeader() {
   const [customHeader, setCustomHeader] = useRecoilState(customHeaderState);

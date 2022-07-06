@@ -1,5 +1,5 @@
 import TagList from '@components/common/TagList';
-import { timeForToday } from 'utils/common';
+import { timeForToday } from '@utils/common';
 import HeadingList, { markDownID } from './HeadingList';
 
 import styles from './PostHeader.module.scss';
