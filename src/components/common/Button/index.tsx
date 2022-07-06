@@ -6,6 +6,7 @@ interface Props {
   buttonColor?: string;
   backgroundColor?: string;
   border?: string;
+  type?: 'button' | 'submit' | 'reset' | undefined;
   text?: string;
   textColor?: string;
   width?: string;
@@ -14,6 +15,7 @@ interface Props {
 const index: React.FC<Props> = ({
   onClick,
   text = 'Button',
+  type,
   buttonColor = 'var(--accent)',
   border = 'none',
   textColor = 'var(--bg-secondary)',
@@ -22,6 +24,7 @@ const index: React.FC<Props> = ({
   return (
     <button
       className={styles.Button}
+      type={type}
       style={{
         color: textColor,
         border,

@@ -77,3 +77,11 @@ export const GET_POST = gql`
     }
   }
 `;
+
+export const WRITE_POST = gql`
+  mutation WritePost($post: PostInput!) {
+    writePost(post: $post) {
+      id
+    }
+  }
+`;

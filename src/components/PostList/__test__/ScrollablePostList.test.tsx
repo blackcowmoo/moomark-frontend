@@ -1,7 +1,7 @@
 import { MockedProvider } from '@apollo/client/testing';
 import { mount } from 'enzyme';
 
-import { HomePageListMock } from 'utils/mock';
+import { HomePageListMock } from '@utils/mock';
 import ScrollablePostList from '../ScrollablePostList';
 
 describe('<ScrollablePostList/>', () => {

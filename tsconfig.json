@@ -22,6 +22,9 @@
     "strict": true,
     "baseUrl": "./src",
     "paths": {
+      "@api/*": [
+        "./api/*"
+      ],
       "@components/*": [
         "./components/*"
       ],
@@ -33,6 +36,12 @@
       ],
       "@recoil/*": [
         "./recoil/*"
+      ],
+      "@types/*": [
+        "./types/*"
+      ],
+      "@utils/*": [
+        "./utils/*"
       ]
     }
   },

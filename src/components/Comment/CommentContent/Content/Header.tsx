@@ -1,4 +1,4 @@
-import { timeForToday } from 'utils/common';
+import { timeForToday } from '@utils/common';
 import { CommentInfo } from 'types/post';
 
 import styles from './Content.module.scss';

@@ -1,4 +1,4 @@
-import { timeForToday } from 'utils/common';
+import { timeForToday } from '@utils/common';
 
 describe('timeForToday', () => {
   const today = new Date('1995-12-17T03:24:30');

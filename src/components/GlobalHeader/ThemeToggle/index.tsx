@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { globalThemeState, Theme } from 'recoil/globalTheme';
+import { themeState, Theme } from '@recoil/theme';
 
 import SunIcon from './Sun.svg';
 import MoonIcon from './Moon.svg';
@@ -8,7 +8,7 @@ import MoonIcon from './Moon.svg';
 import styles from './ThemeToggle.module.scss';
 
 const index = () => {
-  const [theme, setTheme] = useRecoilState(globalThemeState);
+  const [theme, setTheme] = useRecoilState(themeState);
 
   const isTheme = (value: any): value is Theme => {
     return typeof value === 'string' && (value === 'light' || value === 'dark') && typeof value !== 'undefined';

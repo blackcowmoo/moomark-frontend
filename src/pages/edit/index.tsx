@@ -1,11 +1,8 @@
 import dynamic from 'next/dynamic';
 
-const PostEditor = dynamic(
-  () => import('@components/PostEditor'),
-  { ssr: false },
-);
+const PostEditor = dynamic(() => import('@components/PostEditor'), { ssr: false });
 
-interface editPostProps{
+interface editPostProps {
   editorName: string;
   isNewPost: boolean;
 }
@@ -13,7 +10,7 @@ interface editPostProps{
 const EditPage: React.FC<editPostProps> = (props) => {
   return (
     <>
-      <PostEditor editorName={'mockCow'} isNewPost={props.isNewPost} text={''} tags={[]} title={''}/>
+      <PostEditor editorName={'mockCow'} isNewPost={props.isNewPost} text={''} tags={[]} title={''} />
     </>
   );
 };

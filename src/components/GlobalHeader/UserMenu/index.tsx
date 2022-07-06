@@ -12,7 +12,7 @@ interface IUserMenu {
   handleLogin: () => void;
 }
 
-const index: React.FC<IUserMenu> = ({ handleLogin }) => {
+const UserMenu: React.FC<IUserMenu> = ({ handleLogin }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isDropdown, setDropdown] = useState(false);
   const [user, , logoutUser, { getMe, loading }, refreshUser] = useUser();
@@ -57,4 +57,4 @@ const index: React.FC<IUserMenu> = ({ handleLogin }) => {
   );
 };
 
-export default index;
+export default UserMenu;
