@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { GetServerSideProps } from 'next';
+import * as Sentry from '@sentry/nextjs';
 import client from 'api/apolloClient';
 
 import { GET_POSTLIST_MAIN } from 'api/queries/post.queries';
@@ -24,16 +25,25 @@ const HomePage: NextPage<Props> = ({ postList }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { data } = await client.query({
-    query: GET_POSTLIST_MAIN,
-    variables: { limit: 10 },
-  });
+  try {
+    const { data } = await client.query({
+      query: GET_POSTLIST_MAIN,
+      variables: { limit: 10 },
+    });
 
-  return {
-    props: {
-      postList: data.listPosts.posts || [],
-    },
-  };
+    return {
+      props: {
+        postList: data.listPosts.posts || [],
+      },
+    };
+  } catch (err) {
+    Sentry.captureException(err);
+    return {
+      props: {
+        postList: [],
+      },
+    };
+  }
 };
 
 export default HomePage;
