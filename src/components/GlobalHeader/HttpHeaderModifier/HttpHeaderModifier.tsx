@@ -92,7 +92,6 @@ const HttpHeaderModifier = () => {
     try {
       setCustomHeader(JSON.parse(textareaCustomHeader));
     } catch (e) {
-      console.log('textarea value is not JSON');
       setTextareaCustomHeader(JSON.stringify(customHeader));
     }
   };
